@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pulse AI - Autonomous Agentic Analytics</title>
+  <style>
+    :root {
+      --bg: #030712;
+      --card: #0b1329;
+      --border: #1e293b;
+      --text: #f3f4f6;
+      --muted: #9ca3af;
+      --accent: #3b82f6;
+      --accent-glow: rgba(59, 130, 246, 0.3);
+      --cyan: #06b6d4;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      padding-bottom: 120px;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 3rem;
+      border-bottom: 1px solid var(--border);
+      background: rgba(3, 7, 18, 0.8);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, #60a5fa, #06b6d4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .nav { display: flex; gap: 2rem; align-items: center; }
+    .nav a { color: var(--muted); text-decoration: none; font-size: 0.95rem; transition: color 0.2s; }
+    .nav a:hover { color: var(--text); }
+    .btn {
+      background: var(--accent);
+      color: white;
+      padding: 0.6rem 1.4rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: 0 0 20px var(--accent-glow);
+      transition: all 0.2s;
+    }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 0 30px rgba(59, 130, 246, 0.5); }
+    .hero {
+      max-width: 1100px;
+      margin: 5rem auto 3rem;
+      text-align: center;
+      padding: 0 1.5rem;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.3rem 1rem;
+      background: rgba(59, 130, 246, 0.1);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      border-radius: 9999px;
+      color: #93c5fd;
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.04em;
+    }
+    .hero h1 span {
+      background: linear-gradient(135deg, #ffffff 30%, #93c5fd);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--muted);
+      max-width: 720px;
+      margin: 0 auto 2.5rem;
+    }
+    .dashboard-preview {
+      max-width: 1000px;
+      margin: 2rem auto;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 4rem auto;
+      padding: 0 1.5rem;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.8rem;
+    }
+    .card h3 { font-size: 1.2rem; margin-bottom: 0.6rem; color: #f3f4f6; }
+    .card p { color: var(--muted); font-size: 0.95rem; }
+    .footer-promo {
+      text-align: center;
+      padding: 3rem 1.5rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      margin-top: 4rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">⚡ Pulse AI</div>
+    <nav class="nav">
+      <a href="#features">Agents</a>
+      <a href="#benchmarks">Benchmarks</a>
+      <a href="#docs">API</a>
+      <a href="#pricing" class="btn">Deploy Agent</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="badge">✨ Autonomous Intelligence Platform</div>
+    <h1>Autonomous Agentic Analytics<br><span>For Engineering Teams</span></h1>
+    <p>Pulse AI connects directly to your telemetry, log streams, and database clusters to autonomously detect anomalies and patch regressions in real time.</p>
+    
+    <div class="dashboard-preview">
+      <div style="display:flex; justify-content:space-between; margin-bottom:1rem; color:var(--muted); font-size:0.85rem;">
+        <span>CLUSTER: prod-us-east-1</span>
+        <span style="color:#10b981;">● AGENT ACTIVE</span>
+      </div>
+      <div style="height: 180px; background: linear-gradient(180deg, rgba(59,130,246,0.15), transparent); border-radius: 8px; border: 1px dashed var(--border); display: flex; align-items: center; justify-content: center; color: #93c5fd; font-family: monospace;">
+        [Autonomous Log Stream - 14,200 events/sec analyzed - 0 latency regressions detected]
+      </div>
+    </div>
+  </section>
+
+  <section class="grid" id="features">
+    <div class="card">
+      <h3>🤖 Self-Healing Pipelines</h3>
+      <p>Agents identify failing SQL queries and automatically rewrite execution plans before downstream alerts trigger.</p>
+    </div>
+    <div class="card">
+      <h3>⚡ Micro-Latency Tracing</h3>
+      <p>Sub-millisecond root cause analysis across distributed microservices and serverless infrastructure.</p>
+    </div>
+    <div class="card">
+      <h3>🔒 Zero-Trust Privacy</h3>
+      <p>Your telemetry data never leaves your VPC. Agents operate fully local with homomorphic encryption.</p>
+    </div>
+  </section>
+
+  <footer class="footer-promo">
+    <p>© 2026 Pulse AI Inc. - Promotional Concept Website.</p>
+  </footer>
+</body>
+</html>

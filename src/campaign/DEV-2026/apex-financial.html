@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apex Financial — Global Liquidity & Treasury Engine</title>
+  <style>
+    :root {
+      --bg: #090a0f;
+      --card: #11131f;
+      --border: #1f2438;
+      --text: #ffffff;
+      --muted: #8e99b7;
+      --gold: #f59e0b;
+      --green: #10b981;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.5;
+      padding-bottom: 120px;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .brand { font-size: 1.4rem; font-weight: 800; letter-spacing: -0.02em; color: var(--gold); }
+    .btn-gold {
+      background: var(--gold);
+      color: #000;
+      padding: 0.6rem 1.3rem;
+      border-radius: 6px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .hero {
+      max-width: 1000px;
+      margin: 4rem auto;
+      text-align: center;
+      padding: 0 1.5rem;
+    }
+    .hero h1 { font-size: 3.2rem; font-weight: 800; margin-bottom: 1rem; }
+    .hero p { color: var(--muted); font-size: 1.2rem; max-width: 680px; margin: 0 auto 2rem; }
+    .stat-bar {
+      display: flex;
+      justify-content: space-around;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      max-width: 900px;
+      margin: 2rem auto;
+    }
+    .stat-val { font-size: 2rem; font-weight: 800; color: var(--green); }
+    .stat-lbl { color: var(--muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="brand">▲ APEX FINANCIAL</div>
+    <div><a href="#" class="btn-gold">Institutional Access</a></div>
+  </header>
+  <section class="hero">
+    <h1>Global Liquidity & Institutional Treasury Engine</h1>
+    <p>Settle multi-currency enterprise cross-border transactions in real time with automated compliance auditing and zero counterparty risk.</p>
+
+    <div class="stat-bar">
+      <div>
+        <div class="stat-val">$4.2B+</div>
+        <div class="stat-lbl">Daily Settlement Volume</div>
+      </div>
+      <div>
+        <div class="stat-val">&lt; 80ms</div>
+        <div class="stat-lbl">Execution Latency</div>
+      </div>
+      <div>
+        <div class="stat-val">99.999%</div>
+        <div class="stat-lbl">Uptime SLA</div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
