@@ -107,14 +107,20 @@ const brandFont = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: "Devinsol Leads & Explore",
   description: "100% Free promotional websites for businesses on Google Maps.",
+  appleWebApp: {
+    title: "Devinsol",
+    capable: true,
+    statusBarStyle: "default",
+  },
   icons: {
     icon: [
-      { url: "/favicon.ico" },
-      { url: "/logo.png", type: "image/png" },
-      { url: "/icon.png", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-96x96.png", type: "image/png", sizes: "96x96" },
     ],
-    shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
   },
   manifest: "/manifest.json",
 };
