@@ -42,7 +42,16 @@ export default async function CampaignPage({ params }: CampaignPageProps) {
   }
 
   // Read campaign HTML source of truth from filesystem:
-  // src/campaign/<campaignCode>/<website-slug>.html
+  // First check src/campaign/<campaignCode>/<website-slug>/index.html
+  // Then fallback to src/campaign/<campaignCode>/<website-slug>.html
+  const htmlDirPath = path.join(
+    process.cwd(),
+    "src",
+    "campaign",
+    campaignCode,
+    slug,
+    "index.html"
+  );
   const htmlFilePath = path.join(
     process.cwd(),
     "src",
@@ -53,7 +62,9 @@ export default async function CampaignPage({ params }: CampaignPageProps) {
 
   let htmlContent = "";
   try {
-    if (fs.existsSync(htmlFilePath)) {
+    if (fs.existsSync(htmlDirPath)) {
+      htmlContent = fs.readFileSync(htmlDirPath, "utf-8");
+    } else if (fs.existsSync(htmlFilePath)) {
       htmlContent = fs.readFileSync(htmlFilePath, "utf-8");
     } else {
       // Fallback content if specific HTML file doesn't exist on disk yet

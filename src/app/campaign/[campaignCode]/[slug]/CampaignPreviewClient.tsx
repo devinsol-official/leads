@@ -20,8 +20,8 @@ export function CampaignPreviewClient({
 
   return (
     <div className="relative min-h-screen bg-black font-sans selection:bg-blue-500 selection:text-white">
-      {/* Top Floating Return Navigation Bar */}
-      <div className="fixed top-3 left-3 z-40 flex items-center gap-2 rounded-full border border-white/10 bg-zinc-950/80 px-3.5 py-1.5 text-xs text-white backdrop-blur-md shadow-lg">
+      {/* Bottom Floating Return Navigation Bar */}
+      <div className="fixed bottom-24 sm:bottom-6 left-3 sm:left-6 z-40 flex items-center gap-2 rounded-full border border-white/10 bg-zinc-950/80 px-3.5 py-1.5 text-xs text-white backdrop-blur-md shadow-lg">
         <Link
           href="/explore"
           className="flex items-center gap-1.5 font-semibold text-zinc-300 transition-colors hover:text-white"
