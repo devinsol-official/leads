@@ -67,6 +67,17 @@ export default async function CampaignPage({ params }: CampaignPageProps) {
     } else if (fs.existsSync(htmlFilePath)) {
       htmlContent = fs.readFileSync(htmlFilePath, "utf-8");
     } else {
+      // Fallback: scan slug directory for first .html file
+      const slugDir = path.join(process.cwd(), "src", "campaign", campaignCode, slug);
+      if (fs.existsSync(slugDir) && fs.statSync(slugDir).isDirectory()) {
+        const htmlFile = fs.readdirSync(slugDir).find((f) => f.endsWith(".html"));
+        if (htmlFile) {
+          htmlContent = fs.readFileSync(path.join(slugDir, htmlFile), "utf-8");
+        }
+      }
+    }
+
+    if (!htmlContent) {
       // Fallback content if specific HTML file doesn't exist on disk yet
       htmlContent = `
         <!DOCTYPE html>
