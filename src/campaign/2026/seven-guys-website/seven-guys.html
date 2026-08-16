@@ -8,7 +8,9 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     * {
@@ -32,7 +34,8 @@
     body {
       background: #0d1117;
       color: #fff;
-      font-family: 'Outfit', Arial, sans-serif;
+      font-family: 'Poppins', Arial, sans-serif;
+      font-weight: 400;
       overflow-x: hidden;
     }
 
@@ -121,17 +124,7 @@
       }
     }
 
-    @keyframes glow {
-
-      0%,
-      100% {
-        text-shadow: 0 0 10px rgba(247, 148, 29, 0.5);
-      }
-
-      50% {
-        text-shadow: 0 0 20px rgba(247, 148, 29, 0.8);
-      }
-    }
+    /* glow animation removed to eliminate shining effect on text */
 
     @keyframes float {
 
@@ -173,15 +166,7 @@
       }
     }
 
-    @keyframes shimmer {
-      0% {
-        background-position: -1000px 0;
-      }
-
-      100% {
-        background-position: 1000px 0;
-      }
-    }
+    /* shimmer animation removed */
 
     /* Utility Classes */
     .animate-fade-up {
@@ -213,7 +198,7 @@
     }
 
     .animate-glow {
-      animation: glow 2s ease-in-out infinite;
+      animation: none !important;
     }
 
     /* Stagger animations */
@@ -262,8 +247,19 @@
     }
 
     .font-impact {
-      font-family: Impact, 'Arial Black', sans-serif;
-      letter-spacing: 0.02em;
+      font-family: 'Luckiest Guy', 'Arial Black', sans-serif;
+      letter-spacing: 0.04em;
+      line-height: 0.9;
+    }
+
+    h1,
+    .section-title,
+    .card-title,
+    .stat-value,
+    .feature-section .section-title,
+    .location-section .section-title {
+      font-family: 'Luckiest Guy', 'Arial Black', sans-serif;
+      letter-spacing: 0.04em;
     }
 
     /* Header */
@@ -276,7 +272,7 @@
       color: #0d1117;
       padding: 12px 16px;
       font-size: 11px;
-      font-weight: 900;
+      font-weight: 700;
       letter-spacing: 0.1em;
       animation: fadeInDown 0.5s ease-out;
     }
@@ -293,7 +289,8 @@
 
     header {
       backdrop-filter: blur(20px);
-      background: rgba(13, 17, 23, 0.95);
+      background: #037F40;
+      /* exact brand green */
       border-bottom: 2px solid #f7941d;
       transition: all 0.3s ease;
       animation: fadeInDown 0.6s ease-out;
@@ -303,35 +300,68 @@
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     }
 
+    /* Nav link tweaks: ensure white color, slightly thinner and spaced */
+    header nav a,
+    .mobile-nav a,
+    .primary-btn,
+    .secondary-btn,
+    .add-btn,
+    .checkout-btn,
+    .tab,
+    .section-kicker {
+      font-family: 'Poppins', Arial, sans-serif;
+    }
+
+    header nav a {
+      color: #ffffff !important;
+      letter-spacing: 0.06em;
+      font-weight: 500 !important;
+    }
+
+    /* Mobile nav links match desktop styling */
+    .mobile-nav a {
+      color: #ffffff !important;
+      letter-spacing: 0.06em;
+      font-weight: 500 !important;
+    }
+
+    /* Hide cart icon visually but keep DOM for JS safety */
+    button[aria-label="Open cart"] {
+      display: none !important;
+    }
+
     section[id] {
       scroll-margin-top: 88px;
     }
 
     .logo-img {
       transition: all 0.3s ease;
+      border: none !important;
+      box-shadow: none !important;
+      background: transparent !important;
     }
 
     .hero {
-      padding-top: 5rem;
-      padding-bottom: 5rem;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
     }
 
     .menu-section,
     .testimonials-section,
     .gallery-section {
-      padding-top: 6rem;
-      padding-bottom: 6rem;
+      padding-top: 4rem;
+      padding-bottom: 4rem;
     }
 
     .feature-section,
     .location-section {
-      padding-top: 7rem;
-      padding-bottom: 7rem;
+      padding-top: 5rem;
+      padding-bottom: 5rem;
     }
 
     footer {
-      padding-top: 4rem;
-      padding-bottom: 3rem;
+      padding-top: 2.5rem;
+      padding-bottom: 2rem;
     }
 
     .footer-content {
@@ -339,7 +369,7 @@
     }
 
     .logo-img:hover {
-      transform: scale(1.1) rotate(5deg);
+      transform: scale(1.05);
     }
 
     nav button:hover {
@@ -435,7 +465,7 @@
       gap: 8px;
       color: #f7941d;
       font-size: 12px;
-      font-weight: 900;
+      font-weight: 600;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       animation: fadeInLeft 0.6s ease-out;
@@ -451,8 +481,6 @@
 
     .gold-text {
       color: #f7941d;
-      text-shadow: 4px 4px 0 #006837, 0 0 20px rgba(247, 148, 29, 0.5);
-      animation: glow 2s ease-in-out infinite;
     }
 
     .green-text {
@@ -477,7 +505,7 @@
       gap: 10px;
       border-radius: 50px;
       padding: 15px 26px;
-      font-weight: 900;
+      font-weight: 600;
       font-size: 12px;
       letter-spacing: 0.08em;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -552,6 +580,47 @@
       animation: fadeInRight 0.7s ease-out 0.2s both;
     }
 
+    /* Prominent hero burger image (replaces previous ring widget) */
+    .hero-image {
+      position: relative;
+      width: 100%;
+      display: grid;
+      place-items: center;
+      z-index: 3;
+      padding-left: 8px;
+    }
+
+    .hero-main {
+      width: min(520px, 48vw);
+      max-width: 520px;
+      border-radius: 16px;
+      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.45);
+      /* start hidden and slightly offset for reveal animation */
+      opacity: 0;
+      transform: translateY(40px) scale(0.95) rotate(-8deg);
+      transition: transform 900ms cubic-bezier(0.2, 0.9, 0.2, 1), opacity 700ms ease-out;
+      background: transparent;
+      /* removed white panel */
+      display: block;
+      object-fit: contain;
+    }
+
+    .hero-main.revealed {
+      opacity: 1;
+      transform: translateY(0) scale(1) rotate(-4deg);
+    }
+
+    @media (max-width: 768px) {
+      .hero-main {
+        width: min(360px, 70vw);
+        transform: rotate(0deg);
+      }
+
+      .hero-visual {
+        width: min(100%, 420px);
+      }
+    }
+
     .hero-ring {
       position: relative;
       aspect-ratio: 1;
@@ -615,8 +684,9 @@
     }
 
     .floating-card strong {
-      font-family: Impact;
+      font-family: 'Poppins', Arial, sans-serif;
       font-size: 32px;
+      font-weight: 700;
       line-height: 1;
       color: #f7941d;
       margin-top: 4px;
@@ -640,11 +710,11 @@
       background: linear-gradient(135deg, #f7941d 0%, #ff6b35 100%);
       color: #0d1117;
       text-align: center;
-      font: 22px/0.85 Impact;
+      font: 22px/0.85 'Poppins', Arial, sans-serif;
       transform: rotate(-12deg);
       box-shadow: 0 0 0 10px #006837, 0 8px 25px rgba(0, 0, 0, 0.3);
       animation: float 2.5s ease-in-out infinite;
-      font-weight: 900;
+      font-weight: 700;
     }
 
     .stats {
@@ -662,15 +732,14 @@
 
     .stat-value {
       font-size: 32px;
-      font-weight: 900;
-      font-family: Impact;
+      font-weight: 700;
+      font-family: 'Poppins', Arial, sans-serif;
       color: #f7941d;
-      text-shadow: 2px 2px 0 #006837;
     }
 
     .stat-label {
       font-size: 12px;
-      font-weight: 700;
+      font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: #ffffff99;
@@ -706,7 +775,7 @@
       gap: 8px;
       color: #f7941d;
       font-size: 12px;
-      font-weight: 900;
+      font-weight: 600;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       margin-bottom: 10px;
@@ -714,8 +783,8 @@
 
     .section-title {
       font-size: clamp(2rem, 8vw, 4rem);
-      font-family: Impact;
-      font-weight: 900;
+      font-family: 'Luckiest Guy', 'Arial Black', sans-serif;
+      font-weight: 400;
       line-height: 1.1;
       color: #111827;
       margin-bottom: 15px;
@@ -741,7 +810,7 @@
       padding: 12px 20px;
       color: #11182799;
       font-size: 12px;
-      font-weight: 800;
+      font-weight: 600;
       background: transparent;
       cursor: pointer;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -845,9 +914,8 @@
     }
 
     .card-title {
-      font-family: Impact;
       font-size: 20px;
-      font-weight: 900;
+      font-weight: 600;
       line-height: 1.2;
       color: #111827;
       text-transform: uppercase;
@@ -856,10 +924,9 @@
     .price {
       white-space: nowrap;
       color: #f7941d;
-      font-family: Impact;
+      font-family: 'Poppins', Arial, sans-serif;
       font-size: 24px;
-      font-weight: 900;
-      text-shadow: 2px 2px 0 rgba(0, 104, 55, 0.2);
+      font-weight: 700;
     }
 
     .card-description {
@@ -1439,10 +1506,10 @@
   <main class="overflow-hidden bg-[#0d1117] text-white">
     <!-- Announcement Bar -->
     <div class="announcement">
-      <span>🎉 OPEN DAILY 2:00 PM – 2:00 AM 🎉</span>
+      <span>OPEN DAILY 2:00 PM – 2:00 AM</span>
       <span class="hidden sm:inline">•</span>
-      <span class="hidden sm:inline">📍 SIALKOT ROAD, GUJRANWALA</span>
-      <a href="tel:+923194800036">📞 CALL +92 319 4800036</a>
+      <span class="hidden sm:inline">SIALKOT ROAD, GUJRANWALA</span>
+      <a href="tel:+923194800036">CALL +92 319 4800036</a>
     </div>
 
     <!-- Header -->
@@ -1450,8 +1517,8 @@
       <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
         <a href="#home" class="flex items-center gap-3 group">
           <img src="./650378223_122162781704900565_455845062440384597_n.jpg" alt="Seven Guys logo"
-            class="h-12 w-12 rounded-full object-cover ring-3 ring-[#f7941d] logo-img" />
-          <span class="font-impact text-2xl tracking-wider">SEVEN <b class="text-[#f7941d] inline-block">GUYS</b></span>
+            class="h-16 w-16 object-contain logo-img" />
+          <span class="sr-only">Seven Guys</span>
         </a>
         <div class="hidden items-center gap-10 text-sm font-bold text-white/70 md:flex">
           <a href="#menu" class="hover:text-[#f7941d] transition-colors">Menu</a>
@@ -1461,8 +1528,8 @@
         </div>
         <div class="flex items-center gap-4">
           <a href="tel:+923194800036"
-            class="hidden rounded-full bg-gradient-to-r from-[#f7941d] to-[#ff6b35] px-5 py-2 text-sm font-bold text-[#0d1117] sm:block hover:shadow-lg transition-all">CALL
-            NOW</a>
+            class="rounded-full bg-[#EDA51B] px-4 py-2 text-sm font-semibold text-[#0d1117] hover:shadow-lg transition-all">CALL
+            +92 319 4800036</a>
           <button aria-label="Open cart" onclick="toggleCart()"
             class="relative rounded-full border-2 border-white/20 p-3 hover:border-[#f7941d] transition-all">
             <i class="fas fa-shopping-bag text-lg"></i>
@@ -1474,28 +1541,28 @@
         </div>
       </nav>
       <div class="mobile-nav" id="mobileNav">
-        <a href="#menu" onclick="toggleMobileNav()">📋 Menu</a>
-        <a href="#detroit" onclick="toggleMobileNav()">🍕 Detroit Pizzas</a>
-        <a href="#testimonials" onclick="toggleMobileNav()">⭐ Reviews</a>
-        <a href="#location" onclick="toggleMobileNav()">📍 Location</a>
+        <a href="#menu" onclick="toggleMobileNav()">Menu</a>
+        <a href="#detroit" onclick="toggleMobileNav()">Detroit Pizzas</a>
+        <a href="#testimonials" onclick="toggleMobileNav()">Reviews</a>
+        <a href="#location" onclick="toggleMobileNav()">Location</a>
       </div>
     </header>
 
     <!-- Hero Section -->
     <section id="home"
-      class="hero mx-auto flex max-w-7xl flex-col items-center gap-16 px-5 pb-32 pt-24 lg:flex-row lg:px-8 lg:pb-40 lg:pt-32">
+      class="hero mx-auto flex max-w-7xl flex-col items-center gap-16 px-5 pb-20 pt-16 lg:flex-row lg:px-8 lg:pb-28 lg:pt-20">
       <div class="hero-content flex-1">
         <div class="eyebrow"><i class="fas fa-lightning-bolt"></i> GUJRANWALA'S #1 CRAVING</div>
-        <h1 class="font-impact mt-8 text-5xl leading-[0.9] tracking-tight sm:text-7xl lg:text-8xl">
+        <h1 class="font-impact mt-6 text-5xl leading-[0.9] tracking-tight sm:text-7xl lg:text-8xl">
           BIG TASTE.<br />
           <span class="gold-text">BIGGER</span><br />
           SATISFACTION.
         </h1>
-        <p class="hero-description mt-8 max-w-lg text-lg leading-relaxed text-white/70">
+        <p class="hero-description mt-6 max-w-lg text-lg leading-relaxed text-white/70">
           Stacked Detroit-style pizzas, loaded burgers, and saucy sides made for the hungry. Your next great meal is
           just one tap away. Open till 2 AM!
         </p>
-        <div class="btn-group flex flex-wrap gap-4">
+        <div class="btn-group mt-8 flex flex-wrap gap-4">
           <button onclick="document.getElementById('menu').scrollIntoView({ behavior: 'smooth' })" class="primary-btn">
             EXPLORE MENU <i class="fas fa-arrow-right"></i>
           </button>
@@ -1519,24 +1586,18 @@
         </div>
       </div>
       <div class="hero-visual">
-        <div class="burst">HOT<br />DROP</div>
-        <div class="hero-ring">
-          <img src="./Gemini_Generated_Image_boa1mzboa1mzboa1.jfif" alt="Premium burger and pizza combo" />
-          <div class="floating-card">
-            <span>Try The</span>
-            <strong>SEVEN GUYS</strong>
-            <small>From RS. 300</small>
-          </div>
+        <div class="hero-image">
+          <img class="hero-main" src="./IMG_3347.PNG" alt="Signature burger" />
         </div>
       </div>
     </section>
 
     <!-- Menu Section -->
-    <section id="menu" class="menu-section px-5 py-32 text-[#111827] lg:px-8">
+    <section id="menu" class="menu-section px-5 py-20 text-[#111827] lg:px-8">
       <div class="mx-auto max-w-7xl">
         <div class="section-header flex flex-col justify-between gap-10 md:flex-row md:items-end">
           <div>
-            <div class="section-kicker">🍽️ THE LINEUP</div>
+            <div class="section-kicker">THE LINEUP</div>
             <h2 class="section-title">PICK YOUR<br /><span class="green-text">POWER MOVE.</span></h2>
           </div>
           <p class="max-w-xs leading-relaxed text-[#111827]/60 text-base">From a quick bite to a full table takeover,
@@ -1552,7 +1613,7 @@
     <section id="detroit" class="feature-section">
       <div class="mx-auto grid max-w-7xl items-center gap-16 px-5 lg:grid-cols-[.9fr_1.1fr] lg:px-8">
         <div class="feature-content animate-fade-left">
-          <div class="section-kicker gold">🍕 SQUARE NEVER LOOKED SO GOOD</div>
+          <div class="section-kicker gold">SQUARE NEVER LOOKED SO GOOD</div>
           <h2 class="section-title text-white">
             THE<br />
             <span class="gold-text">DETROIT</span><br />
@@ -1572,10 +1633,10 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials-section px-5 py-32 lg:px-8">
+    <section id="testimonials" class="testimonials-section px-5 py-20 lg:px-8">
       <div class="mx-auto max-w-7xl">
         <div class="mb-16 animate-fade-up">
-          <div class="section-kicker">⭐ WHAT PEOPLE SAY</div>
+          <div class="section-kicker">WHAT PEOPLE SAY</div>
           <h2 class="section-title text-white">LOVED BY<br /><span class="gold-text">FOODIES.</span></h2>
         </div>
         <div class="testimonials-grid">
@@ -1620,10 +1681,10 @@
     </section>
 
     <!-- Gallery Section -->
-    <section id="visit" class="gallery-section px-5 py-32 text-[#111827] lg:px-8">
+    <section id="visit" class="gallery-section px-5 py-20 text-[#111827] lg:px-8">
       <div class="mx-auto max-w-7xl">
         <div class="mb-16">
-          <div class="section-kicker">📸 PULL UP A CHAIR</div>
+          <div class="section-kicker">PULL UP A CHAIR</div>
           <h2 class="section-title">YOUR NEW<br /><span class="green-text">HANGOUT.</span></h2>
           <p class="mt-6 max-w-2xl text-base text-[#111827]/70">Experience the vibrant atmosphere, meet fellow foodies,
             and create unforgettable memories with amazing food and great company.</p>
@@ -1640,7 +1701,7 @@
     <section id="location" class="location-section">
       <div class="mx-auto grid max-w-7xl gap-16 px-5 lg:grid-cols-2 lg:px-8">
         <div class="location-content">
-          <div class="section-kicker gold animate-fade-up">🗺️ FIND THE GUYS</div>
+          <div class="section-kicker gold animate-fade-up">FIND THE GUYS</div>
           <h2 class="section-title text-white animate-fade-up">COME<br /><span class="gold-text">HUNGRY.</span></h2>
           <div class="mt-12 space-y-6">
             <div class="info-block">
@@ -1696,15 +1757,15 @@
     </section>
 
     <!-- Footer -->
-    <footer class="px-5 py-16 lg:px-8">
+    <footer class="px-5 py-10 lg:px-8">
       <div class="mx-auto max-w-7xl">
         <div class="footer-content flex flex-col items-center justify-between gap-8 sm:flex-row">
           <div class="flex items-center gap-3">
             <span class="font-impact text-2xl text-white">SEVEN <b class="text-[#f7941d]">GUYS</b></span>
           </div>
-          <span class="text-center text-white/60">🍕 Premium Detroit Pizza & Loaded Burgers 🍔<br />Made for big
+          <span class="text-center text-white/60">Premium Detroit Pizza & Loaded Burgers<br />Made for big
             appetites in Gujranwala</span>
-          <a href="tel:+923194800036" class="text-[#f7941d] font-bold hover:scale-110 transition-transform">📞 +92 319
+          <a href="tel:+923194800036" class="text-[#f7941d] font-bold hover:scale-110 transition-transform">+92 319
             4800036</a>
         </div>
         <div class="mt-8 border-t border-white/10 pt-8 text-center text-sm text-white/40">
@@ -1920,7 +1981,61 @@
     }
 
     // Initialize
-    window.addEventListener('load', init)
+    // Make near-white pixels transparent for the hero image so it blends into the layout
+    function makeImageTransparent(imgEl, threshold = 240) {
+      if (!imgEl) return
+      const tmp = new Image()
+      tmp.crossOrigin = 'anonymous'
+      tmp.src = imgEl.src
+      tmp.onload = () => {
+        const canvas = document.createElement('canvas')
+        canvas.width = tmp.naturalWidth
+        canvas.height = tmp.naturalHeight
+        const ctx = canvas.getContext('2d')
+        ctx.drawImage(tmp, 0, 0)
+        try {
+          const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height)
+          const data = imgData.data
+          for (let i = 0; i < data.length; i += 4) {
+            const r = data[i], g = data[i + 1], b = data[i + 2]
+            if (r >= threshold && g >= threshold && b >= threshold) {
+              data[i + 3] = 0
+            }
+          }
+          ctx.putImageData(imgData, 0, 0)
+          imgEl.src = canvas.toDataURL('image/png')
+        } catch (e) {
+          // security or other error; fail silently
+          console.warn('Image processing failed:', e)
+        }
+      }
+    }
+
+    window.addEventListener('load', () => {
+      init()
+      const hero = document.querySelector('.hero-main')
+      // If the hero image is a PNG (already with alpha), skip canvas background processing
+      if (hero) {
+        try {
+          const isPng = /\.png$/i.test(hero.src)
+          if (!isPng) makeImageTransparent(hero, 240)
+        } catch (e) {
+          // ignore and proceed
+        }
+
+        // Reveal the hero burger on scroll using IntersectionObserver
+        const io = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('revealed')
+              observer.unobserve(entry.target)
+            }
+          })
+        }, { threshold: 0.35 })
+
+        io.observe(hero)
+      }
+    })
   </script>
 </body>
 
