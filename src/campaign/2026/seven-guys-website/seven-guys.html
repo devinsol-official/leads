@@ -1,26 +1,1927 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Seven Guys | Pizza & Burger</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seven Guys - Premium Pizza & Burgers | Gujranwala</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={theme:{extend:{colors:{brand:'#07833f',gold:'#ffb512',ink:'#10251b'}}}}</script>
-  <style>html{scroll-behavior:smooth}body{background:#fbfaf5;color:#10251b}.hero-pattern{background-color:#07833f;background-image:radial-gradient(rgba(255,181,18,.16) 1px,transparent 1px);background-size:18px 18px}.hide-scrollbar::-webkit-scrollbar{display:none}.hide-scrollbar{scrollbar-width:none}</style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --background: #0d1117;
+      --foreground: #fff;
+      --green: #006837;
+      --gold: #f7941d;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: #0d1117;
+    }
+
+    body {
+      background: #0d1117;
+      color: #fff;
+      font-family: 'Outfit', Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Scrollbar Styling */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #1a1f26;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #f7941d;
+      border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #006837;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes glow {
+
+      0%,
+      100% {
+        text-shadow: 0 0 10px rgba(247, 148, 29, 0.5);
+      }
+
+      50% {
+        text-shadow: 0 0 20px rgba(247, 148, 29, 0.8);
+      }
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.7;
+      }
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes slide {
+      from {
+        transform: translateX(100%);
+      }
+
+      to {
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: -1000px 0;
+      }
+
+      100% {
+        background-position: 1000px 0;
+      }
+    }
+
+    /* Utility Classes */
+    .animate-fade-up {
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    .animate-fade-down {
+      animation: fadeInDown 0.6s ease-out;
+    }
+
+    .animate-fade-left {
+      animation: fadeInLeft 0.6s ease-out;
+    }
+
+    .animate-fade-right {
+      animation: fadeInRight 0.6s ease-out;
+    }
+
+    .animate-scale {
+      animation: scaleIn 0.6s ease-out;
+    }
+
+    .animate-float {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .animate-pulse {
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    .animate-glow {
+      animation: glow 2s ease-in-out infinite;
+    }
+
+    /* Stagger animations */
+    .stagger>* {
+      animation: fadeInUp 0.6s ease-out both;
+    }
+
+    .stagger> :nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    .stagger> :nth-child(2) {
+      animation-delay: 0.1s;
+    }
+
+    .stagger> :nth-child(3) {
+      animation-delay: 0.2s;
+    }
+
+    .stagger> :nth-child(4) {
+      animation-delay: 0.3s;
+    }
+
+    .stagger> :nth-child(5) {
+      animation-delay: 0.4s;
+    }
+
+    .stagger> :nth-child(6) {
+      animation-delay: 0.5s;
+    }
+
+    .stagger> :nth-child(7) {
+      animation-delay: 0.6s;
+    }
+
+    .stagger> :nth-child(8) {
+      animation-delay: 0.7s;
+    }
+
+    .stagger> :nth-child(9) {
+      animation-delay: 0.8s;
+    }
+
+    .stagger> :nth-child(10) {
+      animation-delay: 0.9s;
+    }
+
+    .font-impact {
+      font-family: Impact, 'Arial Black', sans-serif;
+      letter-spacing: 0.02em;
+    }
+
+    /* Header */
+    .announcement {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      background: linear-gradient(135deg, #f7941d 0%, #ff6b35 100%);
+      color: #0d1117;
+      padding: 12px 16px;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      animation: fadeInDown 0.5s ease-out;
+    }
+
+    .announcement a {
+      color: #006837;
+      font-weight: 900;
+      transition: all 0.3s ease;
+    }
+
+    .announcement a:hover {
+      transform: scale(1.1);
+    }
+
+    header {
+      backdrop-filter: blur(20px);
+      background: rgba(13, 17, 23, 0.95);
+      border-bottom: 2px solid #f7941d;
+      transition: all 0.3s ease;
+      animation: fadeInDown 0.6s ease-out;
+    }
+
+    header.scrolled {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    section[id] {
+      scroll-margin-top: 88px;
+    }
+
+    .logo-img {
+      transition: all 0.3s ease;
+    }
+
+    .hero {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+
+    .menu-section,
+    .testimonials-section,
+    .gallery-section {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+
+    .feature-section,
+    .location-section {
+      padding-top: 7rem;
+      padding-bottom: 7rem;
+    }
+
+    footer {
+      padding-top: 4rem;
+      padding-bottom: 3rem;
+    }
+
+    .footer-content {
+      gap: 1rem;
+    }
+
+    .logo-img:hover {
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    nav button:hover {
+      transform: translateY(-2px);
+    }
+
+    .badge {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      display: grid;
+      place-items: center;
+      min-width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #f7941d 0%, #ff6b35 100%);
+      color: #0d1117;
+      font-size: 10px;
+      font-weight: 900;
+      box-shadow: 0 2px 8px rgba(247, 148, 29, 0.4);
+      animation: scaleIn 0.3s ease-out;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      gap: 15px;
+      padding: 20px;
+      border-top: 2px solid #f7941d;
+      color: #fff;
+      font-weight: 700;
+      background: linear-gradient(180deg, #0d1117 0%, #1a1f26 100%);
+      animation: slide 0.3s ease-out;
+    }
+
+    .mobile-nav.active {
+      display: flex;
+    }
+
+    .mobile-nav a {
+      padding: 10px;
+      transition: all 0.3s ease;
+      border-left: 3px solid transparent;
+    }
+
+    .mobile-nav a:hover {
+      border-left-color: #f7941d;
+      padding-left: 15px;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      right: -180px;
+      top: 40px;
+      border-radius: 50%;
+      background: #006837;
+      filter: blur(100px);
+      opacity: 0.6;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      left: -80px;
+      bottom: -50px;
+      border-radius: 50%;
+      background: #f7941d;
+      filter: blur(80px);
+      opacity: 0.3;
+      animation: float 8s ease-in-out infinite reverse;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #f7941d;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      animation: fadeInLeft 0.6s ease-out;
+    }
+
+    .eyebrow i {
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    h1 {
+      animation: fadeInUp 0.7s ease-out 0.1s both;
+    }
+
+    .gold-text {
+      color: #f7941d;
+      text-shadow: 4px 4px 0 #006837, 0 0 20px rgba(247, 148, 29, 0.5);
+      animation: glow 2s ease-in-out infinite;
+    }
+
+    .green-text {
+      color: #006837;
+    }
+
+    .hero-description {
+      animation: fadeInUp 0.7s ease-out 0.2s both;
+    }
+
+    .btn-group {
+      animation: fadeInUp 0.7s ease-out 0.3s both;
+    }
+
+    .primary-btn,
+    .secondary-btn,
+    .add-btn,
+    .checkout-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 50px;
+      padding: 15px 26px;
+      font-weight: 900;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .primary-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+      z-index: -1;
+    }
+
+    .primary-btn:hover::before {
+      left: 100%;
+    }
+
+    .primary-btn {
+      background: linear-gradient(135deg, #f7941d 0%, #ff6b35 100%);
+      color: #0d1117;
+      box-shadow: 0 10px 30px rgba(247, 148, 29, 0.4);
+    }
+
+    .primary-btn:hover {
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 15px 40px rgba(247, 148, 29, 0.6);
+    }
+
+    .primary-btn:active {
+      transform: translateY(-2px) scale(1.02);
+    }
+
+    .secondary-btn {
+      border: 2px solid #f7941d;
+      color: #fff;
+      background: transparent;
+    }
+
+    .secondary-btn:hover {
+      background: #f7941d;
+      color: #0d1117;
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 10px 30px rgba(247, 148, 29, 0.3);
+    }
+
+    .add-btn {
+      width: 100%;
+      margin-top: 18px;
+      padding: 12px;
+      background: linear-gradient(135deg, #006837 0%, #004d29 100%);
+      color: #fff;
+    }
+
+    .add-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 104, 55, 0.4);
+    }
+
+    /* Hero Visual */
+    .hero-visual {
+      position: relative;
+      z-index: 1;
+      width: min(100%, 530px);
+      animation: fadeInRight 0.7s ease-out 0.2s both;
+    }
+
+    .hero-ring {
+      position: relative;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      border: 2px solid #f7941d;
+      background: radial-gradient(circle, #006837 0 42%, #00683788 43% 56%, transparent 57%);
+      box-shadow: 0 0 60px #f7941d66, inset 0 0 30px #00683733;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .hero-ring::after {
+      content: '';
+      position: absolute;
+      inset: 8%;
+      border: 2px dashed #f7941d;
+      border-radius: 50%;
+      animation: spin 30s linear infinite;
+    }
+
+    .hero-ring img {
+      position: relative;
+      z-index: 1;
+      width: 70%;
+      height: 70%;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 10px solid #f7941d;
+      transform: rotate(-8deg);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      transition: all 0.3s ease;
+    }
+
+    .hero-ring:hover img {
+      transform: rotate(-8deg) scale(1.05);
+    }
+
+    .floating-card {
+      position: absolute;
+      z-index: 2;
+      right: 4%;
+      bottom: 12%;
+      display: flex;
+      flex-direction: column;
+      padding: 18px 20px;
+      background: linear-gradient(135deg, #f8fafc 0%, #f0f0f0 100%);
+      color: #111827;
+      transform: rotate(8deg);
+      box-shadow: 12px 16px 0 #f7941d, 0 8px 20px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      animation: float 3s ease-in-out infinite;
+      border: 2px solid #f7941d;
+    }
+
+    .floating-card span {
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .floating-card strong {
+      font-family: Impact;
+      font-size: 32px;
+      line-height: 1;
+      color: #f7941d;
+      margin-top: 4px;
+    }
+
+    .floating-card small {
+      color: #006837;
+      margin-top: 4px;
+    }
+
+    .burst {
+      position: absolute;
+      z-index: 3;
+      top: 5%;
+      left: 2%;
+      display: grid;
+      place-items: center;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #f7941d 0%, #ff6b35 100%);
+      color: #0d1117;
+      text-align: center;
+      font: 22px/0.85 Impact;
+      transform: rotate(-12deg);
+      box-shadow: 0 0 0 10px #006837, 0 8px 25px rgba(0, 0, 0, 0.3);
+      animation: float 2.5s ease-in-out infinite;
+      font-weight: 900;
+    }
+
+    .stats {
+      display: flex;
+      gap: 30px;
+      margin-top: 40px;
+      animation: fadeInUp 0.7s ease-out 0.4s both;
+    }
+
+    .stat {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .stat-value {
+      font-size: 32px;
+      font-weight: 900;
+      font-family: Impact;
+      color: #f7941d;
+      text-shadow: 2px 2px 0 #006837;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #ffffff99;
+    }
+
+    /* Menu Section */
+    .menu-section {
+      background: linear-gradient(180deg, #f8fafc 0%, #f0f0f0 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .menu-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: #f7941d;
+      opacity: 0.05;
+      z-index: 0;
+    }
+
+    .section-header {
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    .section-kicker {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #f7941d;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 8vw, 4rem);
+      font-family: Impact;
+      font-weight: 900;
+      line-height: 1.1;
+      color: #111827;
+      margin-bottom: 15px;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 12px;
+      overflow: auto;
+      padding: 45px 0 28px;
+      scrollbar-width: none;
+      animation: fadeInUp 0.6s ease-out 0.1s both;
+    }
+
+    .tabs::-webkit-scrollbar {
+      display: none;
+    }
+
+    .tab {
+      flex: none;
+      border: 2px solid #11182722;
+      border-radius: 50px;
+      padding: 12px 20px;
+      color: #11182799;
+      font-size: 12px;
+      font-weight: 800;
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .tab:hover {
+      border-color: #f7941d;
+      color: #f7941d;
+    }
+
+    .tab.active {
+      background: linear-gradient(135deg, #006837 0%, #004d29 100%);
+      color: #fff;
+      border-color: #006837;
+      box-shadow: 0 8px 22px rgba(0, 104, 55, 0.4);
+      transform: translateY(-3px);
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      gap: 20px;
+      animation: fadeInUp 0.6s ease-out 0.2s both;
+    }
+
+    .menu-card {
+      overflow: hidden;
+      border: 2px solid #11182710;
+      background: #fff;
+      box-shadow: 0 10px 30px rgba(17, 24, 39, 0.08);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border-radius: 15px;
+      position: relative;
+    }
+
+    .menu-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(247, 148, 29, 0.1), transparent);
+      z-index: 1;
+      transition: left 0.5s ease;
+    }
+
+    .menu-card:hover::before {
+      left: 100%;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 25px 50px rgba(0, 104, 55, 0.15);
+      border-color: #f7941d;
+    }
+
+    .image-wrap {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #006837 0%, #004d29 100%);
+      border-radius: 15px 15px 0 0;
+    }
+
+    .image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(1.2) brightness(1.1);
+      transition: all 0.4s ease;
+    }
+
+    .menu-card:hover .image-wrap img {
+      transform: scale(1.1) rotate(2deg);
+      filter: saturate(1.3) brightness(1.2);
+    }
+
+    .tag {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: linear-gradient(135deg, #f7941d 0%, #ff6b35 100%);
+      color: #fff;
+      padding: 8px 14px;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      border-radius: 50px;
+      text-transform: uppercase;
+      box-shadow: 0 4px 15px rgba(247, 148, 29, 0.3);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .card-content {
+      padding: 22px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-title {
+      font-family: Impact;
+      font-size: 20px;
+      font-weight: 900;
+      line-height: 1.2;
+      color: #111827;
+      text-transform: uppercase;
+    }
+
+    .price {
+      white-space: nowrap;
+      color: #f7941d;
+      font-family: Impact;
+      font-size: 24px;
+      font-weight: 900;
+      text-shadow: 2px 2px 0 rgba(0, 104, 55, 0.2);
+    }
+
+    .card-description {
+      font-size: 13px;
+      line-height: 1.6;
+      color: #11182788;
+      margin-top: 12px;
+      min-height: 48px;
+    }
+
+    /* Feature Section */
+    .feature-section {
+      background: linear-gradient(135deg, #006837 0%, #004d29 100%);
+      padding: 140px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-section::before {
+      content: 'DETROIT';
+      position: absolute;
+      right: -100px;
+      bottom: -50px;
+      color: rgba(255, 255, 255, 0.05);
+      font: 280px Impact;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .feature-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .feature-section .gold {
+      color: #f7941d;
+    }
+
+    .board-frame {
+      position: relative;
+      border: 18px solid #f7941d;
+      transform: rotate(3deg);
+      box-shadow: 25px 25px 0 #0d1117, 0 15px 40px rgba(0, 0, 0, 0.4);
+      border-radius: 10px;
+      animation: fadeInRight 0.8s ease-out;
+      transition: all 0.4s ease;
+    }
+
+    .board-frame:hover {
+      transform: rotate(0deg) scale(1.03);
+      box-shadow: 30px 30px 0 #0d1117, 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    .board-frame img {
+      display: block;
+      width: 100%;
+      max-height: 540px;
+      object-fit: cover;
+      border-radius: 0;
+    }
+
+    .board-stamp {
+      position: absolute;
+      right: -35px;
+      bottom: 30px;
+      display: grid;
+      place-items: center;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0d1117 0%, #1a1f26 100%);
+      color: #fff;
+      text-align: center;
+      font: 28px/.85 Impact;
+      transform: rotate(15deg);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      border: 3px solid #f7941d;
+      animation: float 3s ease-in-out infinite;
+      font-weight: 900;
+    }
+
+    .board-stamp span {
+      color: #f7941d;
+      font-size: 20px;
+    }
+
+    /* Testimonials Section */
+    .testimonials-section {
+      background: linear-gradient(180deg, #0d1117 0%, #1a1f26 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonials-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: #f7941d;
+      opacity: 0.08;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 24px;
+      animation: fadeInUp 0.6s ease-out;
+      position: relative;
+      z-index: 1;
+    }
+
+    .testimonial-card {
+      background: linear-gradient(135deg, #1a1f26 0%, #252d35 100%);
+      padding: 30px;
+      border-radius: 15px;
+      border: 2px solid #f7941d33;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      font-size: 120px;
+      opacity: 0.1;
+      color: #f7941d;
+      font-family: Impact;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-8px);
+      border-color: #f7941d;
+      box-shadow: 0 15px 40px rgba(247, 148, 29, 0.15);
+    }
+
+    .stars {
+      color: #f7941d;
+      margin-bottom: 15px;
+      font-size: 14px;
+      letter-spacing: 2px;
+    }
+
+    .testimonial-text {
+      color: #ffffff99;
+      font-size: 14px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .author-avatar {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #f7941d 0%, #006837 100%);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      color: #fff;
+    }
+
+    .author-info {
+      flex: 1;
+    }
+
+    .author-name {
+      font-weight: 900;
+      color: #f7941d;
+      font-size: 14px;
+    }
+
+    .author-title {
+      font-size: 12px;
+      color: #ffffff66;
+    }
+
+    /* Gallery Section */
+    .gallery-section {
+      background: linear-gradient(180deg, #f8fafc 0%, #f0f0f0 100%);
+      position: relative;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 20px;
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border: 8px solid #006837;
+      border-radius: 15px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .gallery img:first-child {
+      object-fit: contain;
+      background: #006837;
+    }
+
+    .gallery img:hover {
+      transform: rotate(-3deg) scale(1.05);
+      box-shadow: 0 20px 50px rgba(0, 104, 55, 0.2);
+    }
+
+    /* Location Section */
+    .location-section {
+      background: linear-gradient(135deg, #006837 0%, #004d29 100%);
+      padding: 140px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .location-section::after {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      right: -100px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 50%;
+      background: rgba(247, 148, 29, 0.1);
+    }
+
+    .location-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .info-block {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 24px;
+      animation: fadeInUp 0.6s ease-out;
+      align-items: flex-start;
+    }
+
+    .info-icon {
+      width: 50px;
+      height: 50px;
+      background: rgba(247, 148, 29, 0.2);
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      color: #f7941d;
+      font-size: 24px;
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+    }
+
+    .info-block:hover .info-icon {
+      background: #f7941d;
+      color: #006837;
+      transform: scale(1.1);
+    }
+
+    .info-text {
+      flex: 1;
+    }
+
+    .info-text p {
+      color: #ffffff99;
+      line-height: 1.8;
+    }
+
+    .map-card {
+      position: relative;
+      min-height: 420px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #d6e3d5 0%, #e8f0e7 100%);
+      color: #006837;
+      border: 16px solid #f7941d;
+      box-shadow: 20px 20px 0 #0d1117, 0 15px 40px rgba(0, 0, 0, 0.3);
+      border-radius: 15px;
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    .map-grid {
+      position: absolute;
+      inset: 0;
+      opacity: 0.4;
+      background: linear-gradient(25deg, transparent 47%, #00683733 48% 50%, transparent 51%),
+        linear-gradient(115deg, transparent 47%, #00683733 48% 50%, transparent 51%),
+        linear-gradient(0deg, transparent 48%, #00683722 49% 51%, transparent 52%);
+      background-size: 120px 100px, 100px 120px, 70px 70px;
+    }
+
+    .map-pin {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #f7941d;
+      z-index: 2;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .map-pin i {
+      font-size: 40px;
+      filter: drop-shadow(2px 4px 4px rgba(0, 104, 55, 0.4));
+    }
+
+    .map-pin span {
+      margin-top: 10px;
+      color: #006837;
+      font: 24px Impact;
+      font-weight: 900;
+    }
+
+    .map-label {
+      position: absolute;
+      bottom: 28px;
+      left: 28px;
+      font: 24px Impact;
+      font-weight: 900;
+      color: #006837;
+    }
+
+    .map-label small {
+      font: 12px 'Outfit';
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      color: #006837;
+    }
+
+    /* Cart */
+    .cart-overlay {
+      position: fixed;
+      z-index: 50;
+      inset: 0;
+      display: flex;
+      justify-content: flex-end;
+      background: rgba(13, 17, 23, 0.7);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      display: none;
+      animation: fadeInUp 0.3s ease-out;
+    }
+
+    .cart-overlay.active {
+      display: flex;
+    }
+
+    .cart-drawer {
+      display: flex;
+      flex-direction: column;
+      width: min(100%, 480px);
+      background: #f8fafc;
+      color: #111827;
+      animation: slide 0.3s ease-out;
+      box-shadow: -10px 0 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .cart-header {
+      border-bottom: 2px solid #11182710;
+      padding: 24px;
+    }
+
+    .cart-items-list {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px;
+      space-y: 16px;
+    }
+
+    .cart-item {
+      display: flex;
+      align-items: start;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid #11182712;
+      transition: all 0.2s ease;
+    }
+
+    .cart-item:hover {
+      padding-left: 8px;
+    }
+
+    .cart-item img {
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 2px solid #00683722;
+    }
+
+    .cart-item strong {
+      color: #006837;
+      font-family: Impact;
+      font-size: 18px;
+      white-space: nowrap;
+    }
+
+    .qty {
+      display: grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      border: 2px solid #11182722;
+      border-radius: 50%;
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 14px;
+      color: #111827;
+    }
+
+    .qty:hover {
+      border-color: #006837;
+      background: #006837;
+      color: #fff;
+      transform: scale(1.15);
+    }
+
+    .checkout-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #006837 0%, #004d29 100%);
+      color: #fff;
+    }
+
+    .checkout-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0, 104, 55, 0.3);
+    }
+
+    .checkout-btn:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(180deg, #0d1117 0%, #1a1f26 100%);
+      border-top: 2px solid #f7941d;
+      position: relative;
+      overflow: hidden;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -50%;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: #f7941d;
+      opacity: 0.05;
+    }
+
+    .footer-content {
+      position: relative;
+      z-index: 1;
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    /* Responsive */
+    @media (min-width: 640px) {
+      .menu-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .gallery {
+        grid-template-columns: 1.2fr .9fr .9fr;
+      }
+
+      .gallery img {
+        height: 350px;
+      }
+
+      .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stats {
+        gap: 50px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .menu-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .gallery img:first-child {
+        height: 450px;
+      }
+
+      .gallery img {
+        height: 450px;
+      }
+
+      .testimonials-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .cart-drawer {
+        width: 450px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 3rem !important;
+      }
+
+      .section-title {
+        font-size: 2.5rem !important;
+      }
+
+      .feature-section,
+      .location-section {
+        padding: 80px 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* Empty Cart */
+    .empty-cart {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+      text-align: center;
+      color: #11182755;
+    }
+
+    .empty-cart i {
+      font-size: 48px;
+      margin-bottom: 16px;
+      opacity: 0.5;
+    }
+
+    /* Scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: float 3s ease-in-out infinite;
+    }
+  </style>
 </head>
-<body class="font-sans">
-  <header class="sticky top-0 z-40 border-b border-emerald-950/10 bg-white/95 backdrop-blur"><div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-3"><a href="#home" class="flex items-center gap-3"><div class="grid h-11 w-11 place-items-center rounded-full bg-brand text-sm font-black leading-3 text-white">7<br>GUYS</div><div><div class="text-xl font-black tracking-tight text-brand">SEVEN GUYS</div><div class="text-[10px] font-bold uppercase tracking-[.25em] text-gold">Pizza & Burger</div></div></a><nav class="hidden items-center gap-7 text-sm font-bold md:flex"><a href="#menu">Menu</a><a href="#deals">Deals</a><a href="#about">About</a><a href="#visit">Visit us</a></nav><button onclick="openCart()" class="rounded-full bg-gold px-4 py-2 text-sm font-black text-ink">Order now <span id="cartCount">(0)</span></button></div></header>
-  <main id="home">
-    <section class="hero-pattern overflow-hidden text-white"><div class="mx-auto grid max-w-7xl items-center gap-10 px-5 py-16 md:grid-cols-2 md:py-24"><div><p class="mb-4 inline-block rounded-full bg-gold px-3 py-1 text-xs font-black uppercase tracking-widest text-ink">Gujranwala's big bite</p><h1 class="max-w-xl text-5xl font-black uppercase leading-[.92] tracking-tight md:text-7xl">Big taste.<br><span class="text-gold">Bigger</span> satisfaction.</h1><p class="mt-6 max-w-lg text-base leading-7 text-white/80">Detroit square pizzas, crispy burgers, loaded fries and wings made fresh for people who do not do boring food.</p><div class="mt-8 flex flex-wrap gap-3"><a href="#menu" class="rounded-full bg-gold px-6 py-3 font-black text-ink">Explore menu</a><a href="https://wa.me/923194800036?text=Hi%20Seven%20Guys%2C%20I%20want%20to%20order" class="rounded-full border border-white/40 px-6 py-3 font-black">WhatsApp order</a></div></div><div class="relative"><img class="mx-auto w-full max-w-md rounded-[2rem] border-8 border-white/10 shadow-2xl" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/641184082_17879021487501926_6898481791982010147_n-J4MwUeYvRXkgZUgEgJqWmxgmhkPddR.jpg" alt="Seven Guys logo"><div class="absolute -bottom-5 -left-2 rounded-2xl bg-gold px-5 py-3 font-black text-ink shadow-xl">Fresh. Loud. Loaded.</div></div></div></section>
-    <section id="menu" class="mx-auto max-w-7xl px-5 py-16"><div class="flex flex-col justify-between gap-4 sm:flex-row sm:items-end"><div><p class="font-black uppercase tracking-[.25em] text-brand">The menu</p><h2 class="mt-2 text-4xl font-black tracking-tight md:text-5xl">Choose your craving.</h2></div><div id="filters" class="flex gap-2 overflow-x-auto pb-1 hide-scrollbar"></div></div><div id="menuGrid" class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4"></div></section>
-    <section id="deals" class="bg-brand py-16 text-white"><div class="mx-auto max-w-7xl px-5"><div class="mb-8 flex items-end justify-between gap-5"><div><p class="font-black uppercase tracking-[.25em] text-gold">More food, less thinking</p><h2 class="mt-2 text-4xl font-black">Deals made for sharing.</h2></div><img class="hidden h-20 w-28 rounded-xl object-cover sm:block" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images%20%281%29.jfif-KCFH9ZRGzdi3zjywgpD5BhOCM3vo0a.jpeg" alt="Seven Guys menu board"></div><div class="grid gap-5 md:grid-cols-4" id="dealGrid"></div></div></section>
-    <section class="mx-auto max-w-7xl px-5 py-16"><div class="grid gap-8 md:grid-cols-2 md:items-center"><img class="w-full rounded-3xl shadow-xl" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images.jfif-NxzXvrPzF9E338kKF2YgLIeu1uzxlt.jpeg" alt="Detroit pizza menu"><div><p class="font-black uppercase tracking-[.25em] text-brand">The signature</p><h2 class="mt-2 text-4xl font-black">Detroit square pizza.</h2><p class="mt-4 leading-7 text-slate-600">Crispy caramelized edges, a cheesy center and toppings that go all the way to the corner. Built for the table, remembered by everyone.</p><button onclick="addItem('Detroit Fajita',1399)" class="mt-6 rounded-full bg-gold px-6 py-3 font-black text-ink">Add signature pizza</button></div></div></section>
-    <section id="about" class="bg-ink py-16 text-white"><div class="mx-auto grid max-w-7xl gap-8 px-5 md:grid-cols-3"><div><p class="text-4xl font-black text-gold">01</p><h3 class="mt-2 text-2xl font-black">Made to order</h3><p class="mt-2 leading-7 text-white/70">Hot food, bold sauces, and no sad shortcuts.</p></div><div><p class="text-4xl font-black text-gold">02</p><h3 class="mt-2 text-2xl font-black">Loaded properly</h3><p class="mt-2 leading-7 text-white/70">Generous portions for serious appetites.</p></div><div id="visit"><p class="text-4xl font-black text-gold">03</p><h3 class="mt-2 text-2xl font-black">Find us hungry</h3><p class="mt-2 leading-7 text-white/70">Sialkot Road, Gujranwala<br>Daily 12 PM — 1 AM<br>0319 4800036</p></div></div></section>
+
+<body>
+  <main class="overflow-hidden bg-[#0d1117] text-white">
+    <!-- Announcement Bar -->
+    <div class="announcement">
+      <span>🎉 OPEN DAILY 2:00 PM – 2:00 AM 🎉</span>
+      <span class="hidden sm:inline">•</span>
+      <span class="hidden sm:inline">📍 SIALKOT ROAD, GUJRANWALA</span>
+      <a href="tel:+923194800036">📞 CALL +92 319 4800036</a>
+    </div>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-40" id="header">
+      <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
+        <a href="#home" class="flex items-center gap-3 group">
+          <img src="./650378223_122162781704900565_455845062440384597_n.jpg" alt="Seven Guys logo"
+            class="h-12 w-12 rounded-full object-cover ring-3 ring-[#f7941d] logo-img" />
+          <span class="font-impact text-2xl tracking-wider">SEVEN <b class="text-[#f7941d] inline-block">GUYS</b></span>
+        </a>
+        <div class="hidden items-center gap-10 text-sm font-bold text-white/70 md:flex">
+          <a href="#menu" class="hover:text-[#f7941d] transition-colors">Menu</a>
+          <a href="#detroit" class="hover:text-[#f7941d] transition-colors">Detroit Pizzas</a>
+          <a href="#testimonials" class="hover:text-[#f7941d] transition-colors">Reviews</a>
+          <a href="#location" class="hover:text-[#f7941d] transition-colors">Location</a>
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="tel:+923194800036"
+            class="hidden rounded-full bg-gradient-to-r from-[#f7941d] to-[#ff6b35] px-5 py-2 text-sm font-bold text-[#0d1117] sm:block hover:shadow-lg transition-all">CALL
+            NOW</a>
+          <button aria-label="Open cart" onclick="toggleCart()"
+            class="relative rounded-full border-2 border-white/20 p-3 hover:border-[#f7941d] transition-all">
+            <i class="fas fa-shopping-bag text-lg"></i>
+            <span class="badge" id="cartBadge" style="display: none;">0</span>
+          </button>
+          <button aria-label="Open menu" onclick="toggleMobileNav()" class="p-2 md:hidden text-xl">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+      <div class="mobile-nav" id="mobileNav">
+        <a href="#menu" onclick="toggleMobileNav()">📋 Menu</a>
+        <a href="#detroit" onclick="toggleMobileNav()">🍕 Detroit Pizzas</a>
+        <a href="#testimonials" onclick="toggleMobileNav()">⭐ Reviews</a>
+        <a href="#location" onclick="toggleMobileNav()">📍 Location</a>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home"
+      class="hero mx-auto flex max-w-7xl flex-col items-center gap-16 px-5 pb-32 pt-24 lg:flex-row lg:px-8 lg:pb-40 lg:pt-32">
+      <div class="hero-content flex-1">
+        <div class="eyebrow"><i class="fas fa-lightning-bolt"></i> GUJRANWALA'S #1 CRAVING</div>
+        <h1 class="font-impact mt-8 text-5xl leading-[0.9] tracking-tight sm:text-7xl lg:text-8xl">
+          BIG TASTE.<br />
+          <span class="gold-text">BIGGER</span><br />
+          SATISFACTION.
+        </h1>
+        <p class="hero-description mt-8 max-w-lg text-lg leading-relaxed text-white/70">
+          Stacked Detroit-style pizzas, loaded burgers, and saucy sides made for the hungry. Your next great meal is
+          just one tap away. Open till 2 AM!
+        </p>
+        <div class="btn-group flex flex-wrap gap-4">
+          <button onclick="document.getElementById('menu').scrollIntoView({ behavior: 'smooth' })" class="primary-btn">
+            EXPLORE MENU <i class="fas fa-arrow-right"></i>
+          </button>
+          <a href="https://wa.me/923194800036" target="_blank" rel="noreferrer" class="secondary-btn">
+            ORDER NOW <i class="fas fa-whatsapp"></i>
+          </a>
+        </div>
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-value">2 AM</div>
+            <div class="stat-label">Open Till</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">100%</div>
+            <div class="stat-label">Fresh Daily</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">5★</div>
+            <div class="stat-label">Rated</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="burst">HOT<br />DROP</div>
+        <div class="hero-ring">
+          <img src="./Gemini_Generated_Image_boa1mzboa1mzboa1.jfif" alt="Premium burger and pizza combo" />
+          <div class="floating-card">
+            <span>Try The</span>
+            <strong>SEVEN GUYS</strong>
+            <small>From RS. 300</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section px-5 py-32 text-[#111827] lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="section-header flex flex-col justify-between gap-10 md:flex-row md:items-end">
+          <div>
+            <div class="section-kicker">🍽️ THE LINEUP</div>
+            <h2 class="section-title">PICK YOUR<br /><span class="green-text">POWER MOVE.</span></h2>
+          </div>
+          <p class="max-w-xs leading-relaxed text-[#111827]/60 text-base">From a quick bite to a full table takeover,
+            every choice hits different. Fresh ingredients, authentic flavors.</p>
+        </div>
+
+        <div class="tabs" role="tablist" id="tabs"></div>
+        <div class="menu-grid stagger" id="menuGrid"></div>
+      </div>
+    </section>
+
+    <!-- Detroit Feature Section -->
+    <section id="detroit" class="feature-section">
+      <div class="mx-auto grid max-w-7xl items-center gap-16 px-5 lg:grid-cols-[.9fr_1.1fr] lg:px-8">
+        <div class="feature-content animate-fade-left">
+          <div class="section-kicker gold">🍕 SQUARE NEVER LOOKED SO GOOD</div>
+          <h2 class="section-title text-white">
+            THE<br />
+            <span class="gold-text">DETROIT</span><br />
+            DROP.
+          </h2>
+          <p class="mt-8 max-w-md text-lg leading-relaxed text-white/80">
+            Thick, crispy edges. Cheese all the way to the corner. Loaded toppings in every bite. This is not your
+            regular pizza night. This is authentic Detroit style.
+          </p>
+          <a href="#menu" class="secondary-btn mt-10 inline-flex">SEE ALL PIZZAS <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="board-frame">
+          <img src="./Gemini_Generated_Image_60jmyo60jmyo60jm.jfif" alt="Detroit style pizza closeup" />
+          <div class="board-stamp">CRISPY<br /><span>EDGES</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section px-5 py-32 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-16 animate-fade-up">
+          <div class="section-kicker">⭐ WHAT PEOPLE SAY</div>
+          <h2 class="section-title text-white">LOVED BY<br /><span class="gold-text">FOODIES.</span></h2>
+        </div>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">"The Detroit pizza is absolutely mind-blowing! Crispy edges with perfectly
+              melted cheese. Best pizza in Gujranwala, hands down!"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">AH</div>
+              <div class="author-info">
+                <div class="author-name">Ahmed Hassan</div>
+                <div class="author-title">Food Blogger</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">"Seven Guys burgers are insane! The Zinger burger is a game-changer. Fresh
+              ingredients and incredible flavors. Definitely coming back!"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">SK</div>
+              <div class="author-info">
+                <div class="author-name">Sarah Khan</div>
+                <div class="author-title">TikTok Creator</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">"Fast service, amazing taste, and such a chill vibe! Seven Guys has become my
+              go-to spot for late-night cravings. Highly recommended!"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">MR</div>
+              <div class="author-info">
+                <div class="author-name">Muhammad Raza</div>
+                <div class="author-title">Regular Customer</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="visit" class="gallery-section px-5 py-32 text-[#111827] lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-16">
+          <div class="section-kicker">📸 PULL UP A CHAIR</div>
+          <h2 class="section-title">YOUR NEW<br /><span class="green-text">HANGOUT.</span></h2>
+          <p class="mt-6 max-w-2xl text-base text-[#111827]/70">Experience the vibrant atmosphere, meet fellow foodies,
+            and create unforgettable memories with amazing food and great company.</p>
+        </div>
+        <div class="gallery">
+          <img src="./650378223_122162781704900565_455845062440384597_n.jpg" alt="Seven Guys brand logo" />
+          <img src="./Gemini_Generated_Image_77pu9z77pu9z77pu.jfif" alt="Luxury burger close-up" />
+          <img src="./Gemini_Generated_Image_cvqaafcvqaafcvqa.jfif" alt="Fresh pizza and restaurant plating" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="location-section">
+      <div class="mx-auto grid max-w-7xl gap-16 px-5 lg:grid-cols-2 lg:px-8">
+        <div class="location-content">
+          <div class="section-kicker gold animate-fade-up">🗺️ FIND THE GUYS</div>
+          <h2 class="section-title text-white animate-fade-up">COME<br /><span class="gold-text">HUNGRY.</span></h2>
+          <div class="mt-12 space-y-6">
+            <div class="info-block">
+              <div class="info-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="info-text">
+                <p><strong>Main Sialkot Road</strong><br />Jaagna Bazar Side, Near Meezan Bank<br />Gujranwala, Pakistan
+                </p>
+              </div>
+            </div>
+            <div class="info-block">
+              <div class="info-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="info-text">
+                <p><strong>Open Daily</strong><br />2:00 PM – 2:00 AM<br />Late night cravings? We got you!</p>
+              </div>
+            </div>
+            <div class="info-block">
+              <div class="info-icon">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div class="info-text">
+                <p><strong>Quick Call</strong><br />+92 319 4800036<br />Fast service, reliable delivery</p>
+              </div>
+            </div>
+            <div class="info-block">
+              <div class="info-icon">
+                <i class="fab fa-whatsapp"></i>
+              </div>
+              <div class="info-text">
+                <p><strong>Order on WhatsApp</strong><br />Fast confirmation & updates<br />Easy & convenient ordering
+                </p>
+              </div>
+            </div>
+          </div>
+          <a href="https://wa.me/923194800036" target="_blank" rel="noreferrer"
+            class="primary-btn mt-12 inline-flex">CHAT ON WHATSAPP <i class="fab fa-whatsapp"></i></a>
+        </div>
+        <div class="map-card">
+          <div class="map-grid"></div>
+          <div class="map-pin">
+            <i class="fas fa-map-pin"></i>
+            <span>SEVEN GUYS</span>
+          </div>
+          <div class="map-label">
+            SIALKOT ROAD<br />
+            <small>JAGNA, GUJRANWALA</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="px-5 py-16 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="footer-content flex flex-col items-center justify-between gap-8 sm:flex-row">
+          <div class="flex items-center gap-3">
+            <span class="font-impact text-2xl text-white">SEVEN <b class="text-[#f7941d]">GUYS</b></span>
+          </div>
+          <span class="text-center text-white/60">🍕 Premium Detroit Pizza & Loaded Burgers 🍔<br />Made for big
+            appetites in Gujranwala</span>
+          <a href="tel:+923194800036" class="text-[#f7941d] font-bold hover:scale-110 transition-transform">📞 +92 319
+            4800036</a>
+        </div>
+        <div class="mt-8 border-t border-white/10 pt-8 text-center text-sm text-white/40">
+          <p>Open Daily 2:00 PM – 2:00 AM | Sialkot Road, Gujranwala © 2024 Seven Guys. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay" onclick="if(event.target === this) toggleCart()">
+      <aside class="cart-drawer" onclick="event.stopPropagation()">
+        <div class="cart-header flex items-center justify-between">
+          <div>
+            <div class="section-kicker">🛒 YOUR ORDER</div>
+            <h2 class="font-impact text-4xl">THE BAG <span class="text-[#f7941d]">(<span id="cartCount">0</span>)</span>
+            </h2>
+          </div>
+          <button aria-label="Close cart" onclick="toggleCart()"
+            class="text-[#111827] text-2xl hover:scale-125 transition-transform">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="cart-items-list" id="cartItems">
+          <div class="empty-cart">
+            <i class="fas fa-shopping-bag"></i>
+            <p>Your bag is waiting.</p>
+          </div>
+        </div>
+        <div class="bg-white p-6 border-t border-[#111827]/10">
+          <div class="mb-5 flex justify-between text-lg items-center">
+            <span class="font-bold">Total</span>
+            <strong class="font-impact text-3xl">RS. <span id="totalPrice">0</span></strong>
+          </div>
+          <button id="checkoutBtn" disabled onclick="checkout()" class="checkout-btn">CHECKOUT VIA WHATSAPP <i
+              class="fab fa-whatsapp"></i></button>
+          <p class="mt-4 flex items-center justify-center gap-2 text-center text-xs text-[#111827]/50">
+            <i class="fas fa-check"></i> We'll confirm your order on WhatsApp
+          </p>
+        </div>
+      </aside>
+    </div>
   </main>
-  <div id="cart" class="fixed inset-y-0 right-0 z-50 flex w-full max-w-md translate-x-full flex-col bg-white shadow-2xl transition-transform"><div class="flex items-center justify-between border-b px-5 py-4"><h2 class="text-2xl font-black">Your order</h2><button onclick="closeCart()" aria-label="Close cart" class="text-2xl">×</button></div><div id="cartItems" class="flex-1 overflow-y-auto p-5"></div><div class="border-t p-5"><div class="flex justify-between text-lg font-black"><span>Total</span><span id="total">Rs. 0</span></div><a id="checkout" target="_blank" class="mt-4 block rounded-full bg-brand px-5 py-3 text-center font-black text-white">Send order on WhatsApp</a></div></div><div id="shade" onclick="closeCart()" class="fixed inset-0 z-40 hidden bg-black/40"></div>
-  <footer class="bg-white px-5 py-8 text-center text-sm text-slate-500">© 2026 Seven Guys Pizza & Burger · Built for big cravings.</footer>
+
   <script>
-    const phone='923194800036';const items=[['Super Zinger Burger','burger',460,'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images%20%281%29.jfif-KCFH9ZRGzdi3zjywgpD5BhOCM3vo0a.jpeg'],['Chicken Chapli Burger','burger',360,'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images%20%281%29.jfif-KCFH9ZRGzdi3zjywgpD5BhOCM3vo0a.jpeg'],['Double Crunch Burger','burger',399,'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images%20%281%29.jfif-KCFH9ZRGzdi3zjywgpD5BhOCM3vo0a.jpeg'],['Fillet Crunch Burger','burger',300,'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images%20%281%29.jfif-KCFH9ZRGzdi3zjywgpD5BhOCM3vo0a.jpeg'],['Detroit Fajita','pizza',1399,'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images.jfif-NxzXvrPzF9E338kKF2YgLIeu1uzxlt.jpeg'],['Double Beast','pizza',1399,'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images.jfif-NxzXvrPzF9E338kKF2YgLIeu1uzxlt.jpeg'],['Loaded Fries','sides',600,'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images%20%282%29.jfif-4HLyoaBrimA6dSZeAjL5U4gFPAuu2H.jpeg'],['Wings Bucket','sides',680,'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images%20%281%29.jfif-KCFH9ZRGzdi3zjywgpD5BhOCM3vo0a.jpeg']];const deals=[['Deal 1','1 Fillet Crunch Burger, 1 drink, fries',470],['Deal 2','2 Fillet Crunch Burgers, 2 drinks, regular fries',850],['Deal 3','1 Zinger Burger, 1 drink, regular fries',580],['Deal 4','2 Zinger Burgers, 2 drinks, 2 regular fries',1050]];let cart=[];let filter='all';function money(n){return'Rs. '+n.toLocaleString()}function render(){document.getElementById('filters').innerHTML=['all','burger','pizza','sides'].map(x=>`<button onclick="setFilter('${x}')" class="rounded-full px-4 py-2 text-sm font-black ${filter===x?'bg-brand text-white':'bg-slate-100'}">${x==='all'?'All':x}</button>`).join('');document.getElementById('menuGrid').innerHTML=items.filter(i=>filter==='all'||i[1]===filter).map(i=>`<article class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm"><img class="h-40 w-full object-cover" src="${i[3]}" alt="${i[0]}"><div class="p-4"><p class="text-xs font-black uppercase tracking-widest text-brand">${i[1]}</p><h3 class="mt-1 text-xl font-black">${i[0]}</h3><div class="mt-4 flex items-center justify-between"><strong>${money(i[2])}</strong><button onclick="addItem('${i[0]}',${i[2]})" class="rounded-full bg-gold px-4 py-2 text-sm font-black">Add</button></div></div></article>`).join('');document.getElementById('dealGrid').innerHTML=deals.map(d=>`<article class="rounded-2xl bg-white p-5 text-ink"><p class="font-black uppercase tracking-widest text-brand">${d[0]}</p><p class="mt-3 min-h-12 text-sm text-slate-600">${d[1]}</p><div class="mt-5 flex items-center justify-between"><strong class="text-xl">${money(d[2])}</strong><button onclick="addItem('${d[0]}',${d[2]})" class="rounded-full bg-gold px-3 py-2 text-sm font-black">Add</button></div></article>`).join('');updateCart()}function setFilter(x){filter=x;render()}function addItem(name,price){const x=cart.find(i=>i.name===name);x?x.qty++:cart.push({name,price,qty:1});updateCart();openCart()}function change(name,n){const x=cart.find(i=>i.name===name);if(x)x.qty+=n;cart=cart.filter(i=>i.qty>0);updateCart()}function updateCart(){const count=cart.reduce((a,x)=>a+x.qty,0),total=cart.reduce((a,x)=>a+x.qty*x.price,0);document.getElementById('cartCount').textContent=`(${count})`;document.getElementById('total').textContent=money(total);document.getElementById('cartItems').innerHTML=cart.length?cart.map(x=>`<div class="flex items-center justify-between border-b py-4"><div><p class="font-black">${x.name}</p><p class="text-sm text-slate-500">${money(x.price)} each</p></div><div class="flex items-center gap-2"><button onclick="change('${x.name}',-1)" class="grid h-8 w-8 place-items-center rounded-full bg-slate-100">−</button><span>${x.qty}</span><button onclick="change('${x.name}',1)" class="grid h-8 w-8 place-items-center rounded-full bg-gold">+</button></div></div>`).join(''):'<div class="py-16 text-center text-slate-500">Your cart is waiting for something delicious.</div>';document.getElementById('checkout').href=`https://wa.me/${phone}?text=${encodeURIComponent('Hi Seven Guys, I want to order: '+cart.map(x=>`${x.qty}x ${x.name}`).join(', ')+' | Total: '+money(total))}`}function openCart(){document.getElementById('cart').classList.remove('translate-x-full');document.getElementById('shade').classList.remove('hidden')}function closeCart(){document.getElementById('cart').classList.add('translate-x-full');document.getElementById('shade').classList.add('hidden')}render();
+    // Menu data
+    const items = [
+      { id: 'super-zinger', name: 'Super Zinger Burger', category: 'Burgers', price: 460, description: 'Crispy double chicken zinger fillet with cheese slice & special sauce.', image: './Gemini_Generated_Image_2sy4nk2sy4nk2sy4.jfif', tag: 'BIG TASTE' },
+      { id: 'double-crunch', name: 'Double Crunch Burger', category: 'Burgers', price: 399, description: 'Double layered crunchy chicken patty topped with creamy sauce.', image: './Gemini_Generated_Image_db32drdb32drdb32.jfif' },
+      { id: 'chapli', name: 'Chicken Chapli Burger', category: 'Burgers', price: 360, description: 'Spiced traditional chicken chapli patty with fresh lettuce & mayo.', image: './Gemini_Generated_Image_rpy29frpy29frpy2.jfif' },
+      { id: 'fillet-crunch', name: 'Fillet Crunch Burger', category: 'Burgers', price: 300, description: 'Single crispy chicken fillet burger with classic sauce.', image: './Gemini_Generated_Image_77pu9z77pu9z77pu.jfif' },
+      { id: 'genz-crown', name: 'GenZ Crown Pizza', category: 'Detroit Pizzas', price: 1650, description: 'Signature loaded crown pizza with special sauce & cheese overload.', image: './Gemini_Generated_Image_60jmyo60jmyo60jm.jfif', tag: 'SIGNATURE' },
+      { id: 'double-beast', name: 'Double Beast', category: 'Detroit Pizzas', price: 650, description: 'Onion, tomato, olives, tikka, kabob, fajita & extra cheese.', image: './Gemini_Generated_Image_boa1mzboa1mzboa1.jfif' },
+      { id: 'detroit-fajita', name: 'Detroit Fajita', category: 'Detroit Pizzas', price: 650, description: 'Chicken fajita, onions, capsicums & green jalapeno sauce.', image: './Gemini_Generated_Image_cvqaafcvqaafcvqa.jfif' },
+      { id: 'malai-boti', name: 'Malai Boti', category: 'Detroit Pizzas', price: 650, description: 'BBQ malai boti chicken, creamy sauce, onion & extra cheese.', image: './Gemini_Generated_Image_2sy4nk2sy4nk2sy4.jfif' },
+      { id: 'tandoori', name: 'Tandoori BBQ', category: 'Detroit Pizzas', price: 650, description: 'Kebab bites, tikka, olives, tomatoes, capsicum & pizza sauce.', image: './Gemini_Generated_Image_db32drdb32drdb32.jfif' },
+      { id: 'peri-peri', name: 'Hot Peri Peri', category: 'Detroit Pizzas', price: 650, description: 'Peri peri chicken, red jalapeno, extra cheese & hot sauce.', image: './Gemini_Generated_Image_60jmyo60jmyo60jm.jfif', tag: 'HOT' },
+      { id: 'detroit-tikka', name: 'Detroit Tikka', category: 'Detroit Pizzas', price: 650, description: 'Chicken tikka, onion, tomatoes, olives & Detroit sauce.', image: './Gemini_Generated_Image_boa1mzboa1mzboa1.jfif' },
+      { id: 'foot-long', name: 'Foot Long Fries', category: 'Sides & Wings', price: 680, description: 'Extra long crispy loaded fries topped with house sauces.', image: './Gemini_Generated_Image_rpy29frpy29frpy2.jfif', tag: 'NEW ARRIVAL' },
+      { id: 'loaded-fries', name: 'Loaded Fries', category: 'Sides & Wings', price: 600, description: 'Golden fries with cheese sauce, jalapenos & chicken bits.', image: './Gemini_Generated_Image_77pu9z77pu9z77pu.jfif' },
+      { id: 'wings', name: 'Oven Baked Wings (6 Pcs)', category: 'Sides & Wings', price: 420, description: 'Choose classic, garlic mayo, or spicy mayo wings.', image: './Gemini_Generated_Image_2sy4nk2sy4nk2sy4.jfif' },
+      { id: 'nuggets', name: 'Chicken Nuggets (6 Pcs)', category: 'Sides & Wings', price: 399, description: 'Crispy bite-sized chicken nuggets.', image: './Gemini_Generated_Image_cvqaafcvqaafcvqa.jfif' },
+      { id: 'deal-1', name: 'Deal 1 — Single Guy', category: 'Deals', price: 470, description: '1 Fillet Crunch Burger + 1 Drink + Regular Fries.', image: './Gemini_Generated_Image_2sy4nk2sy4nk2sy4.jfif', tag: 'BEST VALUE' },
+      { id: 'deal-2', name: 'Deal 2 — 2 Guys', category: 'Deals', price: 850, description: '2 Fillet Crunch Burgers + 2 Drinks + 1 Regular Fries.', image: './Gemini_Generated_Image_db32drdb32drdb32.jfif' },
+      { id: 'deal-3', name: 'Deal 3 — Single Guy', category: 'Deals', price: 580, description: '1 Zinger Burger + 1 Drink + 1 Regular Fries.', image: './Gemini_Generated_Image_77pu9z77pu9z77pu.jfif' },
+      { id: 'deal-4', name: 'Deal 4 — 2 Guys', category: 'Deals', price: 1050, description: '2 Zinger Burgers + 2 Drinks + 1 Regular Fries.', image: './Gemini_Generated_Image_rpy29frpy29frpy2.jfif' },
+      { id: 'drinks', name: 'Drinks & Dips', category: 'Drinks & Dips', price: 80, description: 'NR 345ml, 1.5L drinks, water & signature dips from RS. 70.', image: './Gemini_Generated_Image_cvqaafcvqaafcvqa.jfif' },
+    ]
+
+    let currentCategory = 'All'
+    let cart = {}
+
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('header')
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled')
+      } else {
+        header.classList.remove('scrolled')
+      }
+    })
+
+    function init() {
+      renderTabs()
+      renderMenu()
+    }
+
+    function renderTabs() {
+      const tabs = document.getElementById('tabs')
+      const categories = ['All', 'Burgers', 'Detroit Pizzas', 'Sides & Wings', 'Deals', 'Drinks & Dips']
+
+      tabs.innerHTML = categories.map(cat =>
+        `<button class="tab ${cat === 'All' ? 'active' : ''}" onclick="filterCategory('${cat}', event)">${cat}</button>`
+      ).join('')
+    }
+
+    function filterCategory(category, event) {
+      currentCategory = category
+      document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'))
+      if (event && event.currentTarget) {
+        event.currentTarget.classList.add('active')
+      }
+      renderMenu()
+    }
+
+    function renderMenu() {
+      const filtered = currentCategory === 'All' ? items : items.filter(item => item.category === currentCategory)
+      const menuGrid = document.getElementById('menuGrid')
+
+      menuGrid.innerHTML = filtered.map(item => `
+                <article class="menu-card">
+                    <div class="image-wrap">
+                        <img src="${item.image}" alt="${item.name}"/>
+                        ${item.tag ? `<span class="tag">${item.tag}</span>` : ''}
+                    </div>
+                    <div class="card-content">
+                        <div class="flex items-start justify-between gap-3 mb-2">
+                            <h3 class="card-title">${item.name}</h3>
+                            <span class="price">RS. ${item.price}</span>
+                        </div>
+                        <p class="card-description">${item.description}</p>
+                        <button onclick="addToCart('${item.id}')" class="add-btn">ADD TO BAG <i class="fas fa-plus"></i></button>
+                    </div>
+                </article>
+            `).join('')
+    }
+
+    function addToCart(itemId) {
+      cart[itemId] = (cart[itemId] || 0) + 1
+      updateCart()
+      toggleCart()
+    }
+
+    function removeFromCart(itemId) {
+      if (cart[itemId] > 1) {
+        cart[itemId]--
+      } else {
+        delete cart[itemId]
+      }
+      updateCart()
+    }
+
+    function updateCart() {
+      const count = Object.values(cart).reduce((a, b) => a + b, 0)
+      document.getElementById('cartBadge').textContent = count
+      document.getElementById('cartBadge').style.display = count > 0 ? 'grid' : 'none'
+      document.getElementById('cartCount').textContent = count
+
+      const cartItems = document.getElementById('cartItems')
+
+      if (count === 0) {
+        cartItems.innerHTML = `
+                    <div class="empty-cart">
+                        <i class="fas fa-shopping-bag"></i>
+                        <p>Your bag is waiting.</p>
+                    </div>
+                `
+      } else {
+        cartItems.innerHTML = Object.keys(cart).map(itemId => {
+          const item = items.find(i => i.id === itemId)
+          const qty = cart[itemId]
+          return `
+                        <div class="cart-item">
+                            <img src="${item.image}" alt=""/>
+                            <div class="min-w-0 flex-1">
+                                <h3 class="font-impact text-lg uppercase leading-none">${item.name}</h3>
+                                <p class="mt-1 text-sm text-[#111827]/50">RS. ${item.price}</p>
+                                <div class="mt-3 flex items-center gap-3">
+                                    <button onclick="removeFromCart('${itemId}')" class="qty"><i class="fas fa-minus"></i></button>
+                                    <span class="w-6 text-center font-bold">${qty}</span>
+                                    <button onclick="addToCart('${itemId}')" class="qty"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                            <strong>RS. ${item.price * qty}</strong>
+                        </div>
+                    `
+        }).join('')
+      }
+
+      const total = Object.keys(cart).reduce((sum, itemId) => {
+        const item = items.find(i => i.id === itemId)
+        return sum + item.price * cart[itemId]
+      }, 0)
+
+      document.getElementById('totalPrice').textContent = total
+      document.getElementById('checkoutBtn').disabled = count === 0
+    }
+
+    function toggleCart() {
+      document.getElementById('cartOverlay').classList.toggle('active')
+      document.body.style.overflow = document.getElementById('cartOverlay').classList.contains('active') ? 'hidden' : 'auto'
+    }
+
+    function toggleMobileNav() {
+      document.getElementById('mobileNav').classList.toggle('active')
+    }
+
+    function checkout() {
+      const count = Object.values(cart).reduce((a, b) => a + b, 0)
+      if (count === 0) return
+
+      const cartItems = Object.keys(cart).map(itemId => {
+        const item = items.find(i => i.id === itemId)
+        return `${cart[itemId]}x ${item.name}`
+      }).join(', ')
+
+      const total = Object.keys(cart).reduce((sum, itemId) => {
+        const item = items.find(i => i.id === itemId)
+        return sum + item.price * cart[itemId]
+      }, 0)
+
+      const message = `Assalam o Alaikum Seven Guys! I'd like to order: ${cartItems}. Total: RS. ${total}`
+      window.open(`https://wa.me/923194800036?text=${encodeURIComponent(message)}`, '_blank')
+    }
+
+    // Initialize
+    window.addEventListener('load', init)
   </script>
 </body>
+
 </html>
