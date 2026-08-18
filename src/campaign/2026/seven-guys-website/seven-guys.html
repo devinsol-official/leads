@@ -23,7 +23,7 @@
       --background: #0d1117;
       --foreground: #fff;
       --green: #006837;
-      --gold: #f7941d;
+      --gold: #eda519;
     }
 
     html {
@@ -68,18 +68,6 @@
       from {
         opacity: 0;
         transform: translateY(30px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-30px);
       }
 
       to {
@@ -268,7 +256,7 @@
       justify-content: center;
       gap: 12px;
       flex-wrap: wrap;
-      background: linear-gradient(135deg, #f7941d 0%, #ff6b35 100%);
+      background-color: #eda519;
       color: #0d1117;
       padding: 12px 16px;
       font-size: 11px;
@@ -291,7 +279,7 @@
       backdrop-filter: blur(20px);
       background: #037F40;
       /* exact brand green */
-      border-bottom: 2px solid #f7941d;
+      border-bottom: 2px solid #eda519;
       transition: all 0.3s ease;
       animation: fadeInDown 0.6s ease-out;
     }
@@ -344,6 +332,7 @@
     .hero {
       padding-top: 3rem;
       padding-bottom: 3rem;
+      background-color: #037f40
     }
 
     .menu-section,
@@ -426,7 +415,7 @@
       overflow: hidden;
     }
 
-    .hero::before {
+    /* .hero::before {
       content: '';
       position: absolute;
       width: 500px;
@@ -452,7 +441,7 @@
       filter: blur(80px);
       opacity: 0.3;
       animation: float 8s ease-in-out infinite reverse;
-    }
+    } */
 
     .hero-content {
       position: relative;
@@ -463,7 +452,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      color: #f7941d;
+      color: #eda519;
       font-size: 12px;
       font-weight: 600;
       letter-spacing: 0.2em;
@@ -480,7 +469,7 @@
     }
 
     .gold-text {
-      color: #f7941d;
+      color: #eda519;
     }
 
     .green-text {
@@ -532,14 +521,14 @@
     }
 
     .primary-btn {
-      background: linear-gradient(135deg, #f7941d 0%, #ff6b35 100%);
+      background-color: #eda519;
       color: #0d1117;
-      box-shadow: 0 10px 30px rgba(247, 148, 29, 0.4);
+      /* box-shadow: 0 10px 30px rgba(237, 165, 25, 0.4); */
     }
 
     .primary-btn:hover {
       transform: translateY(-4px) scale(1.05);
-      box-shadow: 0 15px 40px rgba(247, 148, 29, 0.6);
+      /* box-shadow: 0 15px 40px rgba(237, 165, 25, 0.6); */
     }
 
     .primary-btn:active {
@@ -553,10 +542,10 @@
     }
 
     .secondary-btn:hover {
-      background: #f7941d;
+      background: #eda519;
       color: #0d1117;
       transform: translateY(-4px) scale(1.05);
-      box-shadow: 0 10px 30px rgba(247, 148, 29, 0.3);
+      box-shadow: 0 10px 30px rgba(237, 165, 25, 0.3);
     }
 
     .add-btn {
@@ -592,9 +581,9 @@
 
     .hero-main {
       width: min(520px, 48vw);
-      max-width: 520px;
+      /* size: 1200px; */
+      max-width: 720px;
       border-radius: 16px;
-      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.45);
       /* start hidden and slightly offset for reveal animation */
       opacity: 0;
       transform: translateY(40px) scale(0.95) rotate(-8deg);
@@ -627,9 +616,9 @@
       display: grid;
       place-items: center;
       border-radius: 50%;
-      border: 2px solid #f7941d;
+      border: 2px solid #eda519;
       background: radial-gradient(circle, #006837 0 42%, #00683788 43% 56%, transparent 57%);
-      box-shadow: 0 0 60px #f7941d66, inset 0 0 30px #00683733;
+      box-shadow: 0 0 60px #eda51966, inset 0 0 30px #00683733;
       animation: float 4s ease-in-out infinite;
     }
 
@@ -637,7 +626,7 @@
       content: '';
       position: absolute;
       inset: 8%;
-      border: 2px dashed #f7941d;
+      border: 2px dashed #eda519;
       border-radius: 50%;
       animation: spin 30s linear infinite;
     }
@@ -707,7 +696,7 @@
       width: 100px;
       height: 100px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #f7941d 0%, #ff6b35 100%);
+      background: linear-gradient(135deg, #eda519 0%, #ff6b35 100%);
       color: #0d1117;
       text-align: center;
       font: 22px/0.85 'Poppins', Arial, sans-serif;
@@ -773,7 +762,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      color: #f7941d;
+      color: #eda519;
       font-size: 12px;
       font-weight: 600;
       letter-spacing: 0.2em;
@@ -967,7 +956,7 @@
 
     .board-frame {
       position: relative;
-      border: 18px solid #f7941d;
+      border: 18px solid #eda519;
       transform: rotate(3deg);
       box-shadow: 25px 25px 0 #0d1117, 0 15px 40px rgba(0, 0, 0, 0.4);
       border-radius: 10px;
@@ -1003,7 +992,7 @@
       font: 28px/.85 Impact;
       transform: rotate(15deg);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-      border: 3px solid #f7941d;
+      border: 3px solid #eda519;
       animation: float 3s ease-in-out infinite;
       font-weight: 900;
     }
@@ -1516,8 +1505,7 @@
     <header class="sticky top-0 z-40" id="header">
       <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
         <a href="#home" class="flex items-center gap-3 group">
-          <img src="./650378223_122162781704900565_455845062440384597_n.jpg" alt="Seven Guys logo"
-            class="h-16 w-16 object-contain logo-img" />
+          <img src="./seven-guys-website/logo.jpg" alt="Seven Guys logo" class="h-16 w-16 object-contain logo-img" />
           <span class="sr-only">Seven Guys</span>
         </a>
         <div class="hidden items-center gap-10 text-sm font-bold text-white/70 md:flex">
@@ -1550,12 +1538,12 @@
 
     <!-- Hero Section -->
     <section id="home"
-      class="hero mx-auto flex max-w-7xl flex-col items-center gap-16 px-5 pb-20 pt-16 lg:flex-row lg:px-8 lg:pb-28 lg:pt-20">
+      class="hero mx-auto flex max-w-7xl flex-col items-center gap-16 px-5 pb-20 pt-8 lg:flex-row lg:px-8 lg:pb-28 lg:pt-8">
       <div class="hero-content flex-1">
         <div class="eyebrow"><i class="fas fa-lightning-bolt"></i> GUJRANWALA'S #1 CRAVING</div>
-        <h1 class="font-impact mt-6 text-5xl leading-[0.9] tracking-tight sm:text-7xl lg:text-8xl">
+        <h1 class="font-impact mt-6 text-5xl leading-[0.9] tracking-tight sm:text-6xl lg:text-6xl">
           BIG TASTE.<br />
-          <span class="gold-text">BIGGER</span><br />
+          <span class="gold-text">BIGGER</span>
           SATISFACTION.
         </h1>
         <p class="hero-description mt-6 max-w-lg text-lg leading-relaxed text-white/70">
@@ -1587,7 +1575,7 @@
       </div>
       <div class="hero-visual">
         <div class="hero-image">
-          <img class="hero-main" src="./IMG_3347.PNG" alt="Signature burger" />
+          <img class="hero-main" src="./seven-guys-website/hero_burger_image.PNG" alt="Signature burger" />
         </div>
       </div>
     </section>
@@ -1626,7 +1614,7 @@
           <a href="#menu" class="secondary-btn mt-10 inline-flex">SEE ALL PIZZAS <i class="fas fa-arrow-right"></i></a>
         </div>
         <div class="board-frame">
-          <img src="./Gemini_Generated_Image_60jmyo60jmyo60jm.jfif" alt="Detroit style pizza closeup" />
+          <img src="./seven-guys-website/productimage2.jfif" alt="Detroit style pizza closeup" />
           <div class="board-stamp">CRISPY<br /><span>EDGES</span></div>
         </div>
       </div>
@@ -1685,14 +1673,14 @@
       <div class="mx-auto max-w-7xl">
         <div class="mb-16">
           <div class="section-kicker">PULL UP A CHAIR</div>
-          <h2 class="section-title">YOUR NEW<br /><span class="green-text">HANGOUT.</span></h2>
+          <h2 class="section-title">YOUR NEW<br /><span class="green-text">HANGOUT SPOT.</span></h2>
           <p class="mt-6 max-w-2xl text-base text-[#111827]/70">Experience the vibrant atmosphere, meet fellow foodies,
             and create unforgettable memories with amazing food and great company.</p>
         </div>
         <div class="gallery">
-          <img src="./650378223_122162781704900565_455845062440384597_n.jpg" alt="Seven Guys brand logo" />
-          <img src="./Gemini_Generated_Image_77pu9z77pu9z77pu.jfif" alt="Luxury burger close-up" />
-          <img src="./Gemini_Generated_Image_cvqaafcvqaafcvqa.jfif" alt="Fresh pizza and restaurant plating" />
+          <img src="./seven-guys-website/logo.jpg" alt="Seven Guys brand logo" />
+          <img src="./seven-guys-website/productimage4.jfif" alt="Luxury burger close-up" />
+          <img src="./seven-guys-website/productimage2.jfif" alt="Fresh pizza and restaurant plating" />
         </div>
       </div>
     </section>
@@ -1812,26 +1800,26 @@
   <script>
     // Menu data
     const items = [
-      { id: 'super-zinger', name: 'Super Zinger Burger', category: 'Burgers', price: 460, description: 'Crispy double chicken zinger fillet with cheese slice & special sauce.', image: './Gemini_Generated_Image_2sy4nk2sy4nk2sy4.jfif', tag: 'BIG TASTE' },
-      { id: 'double-crunch', name: 'Double Crunch Burger', category: 'Burgers', price: 399, description: 'Double layered crunchy chicken patty topped with creamy sauce.', image: './Gemini_Generated_Image_db32drdb32drdb32.jfif' },
-      { id: 'chapli', name: 'Chicken Chapli Burger', category: 'Burgers', price: 360, description: 'Spiced traditional chicken chapli patty with fresh lettuce & mayo.', image: './Gemini_Generated_Image_rpy29frpy29frpy2.jfif' },
-      { id: 'fillet-crunch', name: 'Fillet Crunch Burger', category: 'Burgers', price: 300, description: 'Single crispy chicken fillet burger with classic sauce.', image: './Gemini_Generated_Image_77pu9z77pu9z77pu.jfif' },
-      { id: 'genz-crown', name: 'GenZ Crown Pizza', category: 'Detroit Pizzas', price: 1650, description: 'Signature loaded crown pizza with special sauce & cheese overload.', image: './Gemini_Generated_Image_60jmyo60jmyo60jm.jfif', tag: 'SIGNATURE' },
-      { id: 'double-beast', name: 'Double Beast', category: 'Detroit Pizzas', price: 650, description: 'Onion, tomato, olives, tikka, kabob, fajita & extra cheese.', image: './Gemini_Generated_Image_boa1mzboa1mzboa1.jfif' },
-      { id: 'detroit-fajita', name: 'Detroit Fajita', category: 'Detroit Pizzas', price: 650, description: 'Chicken fajita, onions, capsicums & green jalapeno sauce.', image: './Gemini_Generated_Image_cvqaafcvqaafcvqa.jfif' },
-      { id: 'malai-boti', name: 'Malai Boti', category: 'Detroit Pizzas', price: 650, description: 'BBQ malai boti chicken, creamy sauce, onion & extra cheese.', image: './Gemini_Generated_Image_2sy4nk2sy4nk2sy4.jfif' },
-      { id: 'tandoori', name: 'Tandoori BBQ', category: 'Detroit Pizzas', price: 650, description: 'Kebab bites, tikka, olives, tomatoes, capsicum & pizza sauce.', image: './Gemini_Generated_Image_db32drdb32drdb32.jfif' },
-      { id: 'peri-peri', name: 'Hot Peri Peri', category: 'Detroit Pizzas', price: 650, description: 'Peri peri chicken, red jalapeno, extra cheese & hot sauce.', image: './Gemini_Generated_Image_60jmyo60jmyo60jm.jfif', tag: 'HOT' },
-      { id: 'detroit-tikka', name: 'Detroit Tikka', category: 'Detroit Pizzas', price: 650, description: 'Chicken tikka, onion, tomatoes, olives & Detroit sauce.', image: './Gemini_Generated_Image_boa1mzboa1mzboa1.jfif' },
-      { id: 'foot-long', name: 'Foot Long Fries', category: 'Sides & Wings', price: 680, description: 'Extra long crispy loaded fries topped with house sauces.', image: './Gemini_Generated_Image_rpy29frpy29frpy2.jfif', tag: 'NEW ARRIVAL' },
-      { id: 'loaded-fries', name: 'Loaded Fries', category: 'Sides & Wings', price: 600, description: 'Golden fries with cheese sauce, jalapenos & chicken bits.', image: './Gemini_Generated_Image_77pu9z77pu9z77pu.jfif' },
-      { id: 'wings', name: 'Oven Baked Wings (6 Pcs)', category: 'Sides & Wings', price: 420, description: 'Choose classic, garlic mayo, or spicy mayo wings.', image: './Gemini_Generated_Image_2sy4nk2sy4nk2sy4.jfif' },
-      { id: 'nuggets', name: 'Chicken Nuggets (6 Pcs)', category: 'Sides & Wings', price: 399, description: 'Crispy bite-sized chicken nuggets.', image: './Gemini_Generated_Image_cvqaafcvqaafcvqa.jfif' },
-      { id: 'deal-1', name: 'Deal 1 — Single Guy', category: 'Deals', price: 470, description: '1 Fillet Crunch Burger + 1 Drink + Regular Fries.', image: './Gemini_Generated_Image_2sy4nk2sy4nk2sy4.jfif', tag: 'BEST VALUE' },
-      { id: 'deal-2', name: 'Deal 2 — 2 Guys', category: 'Deals', price: 850, description: '2 Fillet Crunch Burgers + 2 Drinks + 1 Regular Fries.', image: './Gemini_Generated_Image_db32drdb32drdb32.jfif' },
-      { id: 'deal-3', name: 'Deal 3 — Single Guy', category: 'Deals', price: 580, description: '1 Zinger Burger + 1 Drink + 1 Regular Fries.', image: './Gemini_Generated_Image_77pu9z77pu9z77pu.jfif' },
-      { id: 'deal-4', name: 'Deal 4 — 2 Guys', category: 'Deals', price: 1050, description: '2 Zinger Burgers + 2 Drinks + 1 Regular Fries.', image: './Gemini_Generated_Image_rpy29frpy29frpy2.jfif' },
-      { id: 'drinks', name: 'Drinks & Dips', category: 'Drinks & Dips', price: 80, description: 'NR 345ml, 1.5L drinks, water & signature dips from RS. 70.', image: './Gemini_Generated_Image_cvqaafcvqaafcvqa.jfif' },
+      { id: 'super-zinger', name: 'Super Zinger Burger', category: 'Burgers', price: 460, description: 'Crispy double chicken zinger fillet with cheese slice & special sauce.', image: './seven-guys-website/productimage4.jfif', tag: 'BIG TASTE' },
+      { id: 'double-crunch', name: 'Double Crunch Burger', category: 'Burgers', price: 399, description: 'Double layered crunchy chicken patty topped with creamy sauce.', image: './seven-guys-website/productimage4.jfif' },
+      { id: 'chapli', name: 'Chicken Chapli Burger', category: 'Burgers', price: 360, description: 'Spiced traditional chicken chapli patty with fresh lettuce & mayo.', image: './seven-guys-website/productimage4.jfif' },
+      { id: 'fillet-crunch', name: 'Fillet Crunch Burger', category: 'Burgers', price: 300, description: 'Single crispy chicken fillet burger with classic sauce.', image: './seven-guys-website/productimage4.jfif' },
+      { id: 'genz-crown', name: 'GenZ Crown Pizza', category: 'Detroit Pizzas', price: 1650, description: 'Signature loaded crown pizza with special sauce & cheese overload.', image: './seven-guys-website/productimage2.jfif', tag: 'SIGNATURE' },
+      { id: 'double-beast', name: 'Double Beast', category: 'Detroit Pizzas', price: 650, description: 'Onion, tomato, olives, tikka, kabob, fajita & extra cheese.', image: './seven-guys-website/productimage2.jfif' },
+      { id: 'detroit-fajita', name: 'Detroit Fajita', category: 'Detroit Pizzas', price: 650, description: 'Chicken fajita, onions, capsicums & green jalapeno sauce.', image: './seven-guys-website/productimage2.jfif' },
+      { id: 'malai-boti', name: 'Malai Boti', category: 'Detroit Pizzas', price: 650, description: 'BBQ malai boti chicken, creamy sauce, onion & extra cheese.', image: './seven-guys-website/productimage2.jfif' },
+      { id: 'tandoori', name: 'Tandoori BBQ', category: 'Detroit Pizzas', price: 650, description: 'Kebab bites, tikka, olives, tomatoes, capsicum & pizza sauce.', image: './seven-guys-website/productimage2.jfif' },
+      { id: 'peri-peri', name: 'Hot Peri Peri', category: 'Detroit Pizzas', price: 650, description: 'Peri peri chicken, red jalapeno, extra cheese & hot sauce.', image: './seven-guys-website/productimage2.jfif', tag: 'HOT' },
+      { id: 'detroit-tikka', name: 'Detroit Tikka', category: 'Detroit Pizzas', price: 650, description: 'Chicken tikka, onion, tomatoes, olives & Detroit sauce.', image: './seven-guys-website/productimage2.jfif' },
+      { id: 'foot-long', name: 'Foot Long Fries', category: 'Sides & Wings', price: 680, description: 'Extra long crispy loaded fries topped with house sauces.', image: './seven-guys-website/productimage5.jfif', tag: 'NEW ARRIVAL' },
+      { id: 'loaded-fries', name: 'Loaded Fries', category: 'Sides & Wings', price: 600, description: 'Golden fries with cheese sauce, jalapenos & chicken bits.', image: './seven-guys-website/productimage5.jfif' },
+      { id: 'wings', name: 'Oven Baked Wings (6 Pcs)', category: 'Sides & Wings', price: 420, description: 'Choose classic, garlic mayo, or spicy mayo wings.', image: './seven-guys-website/productimage5.jfif' },
+      { id: 'nuggets', name: 'Chicken Nuggets (6 Pcs)', category: 'Sides & Wings', price: 399, description: 'Crispy bite-sized chicken nuggets.', image: './seven-guys-website/productimage5.jfif' },
+      { id: 'deal-1', name: 'Deal 1 — Single Guy', category: 'Deals', price: 470, description: '1 Fillet Crunch Burger + 1 Drink + Regular Fries.', image: './seven-guys-website/productimage6.jfif', tag: 'BEST VALUE' },
+      { id: 'deal-2', name: 'Deal 2 — 2 Guys', category: 'Deals', price: 850, description: '2 Fillet Crunch Burgers + 2 Drinks + 1 Regular Fries.', image: './seven-guys-website/productimage6.jfif' },
+      { id: 'deal-3', name: 'Deal 3 — Single Guy', category: 'Deals', price: 580, description: '1 Zinger Burger + 1 Drink + 1 Regular Fries.', image: './seven-guys-website/productimage6.jfif' },
+      { id: 'deal-4', name: 'Deal 4 — 2 Guys', category: 'Deals', price: 1050, description: '2 Zinger Burgers + 2 Drinks + 1 Regular Fries.', image: './seven-guys-website/productimage6.jfif' },
+      { id: 'drinks', name: 'Drinks & Dips', category: 'Drinks & Dips', price: 80, description: 'NR 345ml, 1.5L drinks, water & signature dips from RS. 70.', image: './seven-guys-website/productimage1.jfif' },
     ]
 
     let currentCategory = 'All'
