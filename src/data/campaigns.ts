@@ -64,6 +64,24 @@ export const CAMPAIGNS_DATA: CampaignSite[] = [
       views: 0,
       previewCount: 0,
     }
+  },
+  {
+    id: "wingos",
+    title: "Wingo's",
+    slug: "wingos",
+    campaignCode: "2026",
+    category: "Food & Restaurant",
+    tagline: "Gujranwala's Craziest Crunch & Ultimate Flavor",
+    description: "From our legendary House of Wings to the towering Jumbo Zap Burger — built loaded, fired hot, devoured fast in Gujranwala.",
+    thumbnailUrl: "/thumbnails/wingos.png",
+    claimed: false,
+    featured: true,
+    htmlPath: "src/campaign/2026/wingos/index.html",
+    tags: ["Fast Food", "Wings", "Burgers", "Gujranwala"],
+    metrics: {
+      views: 0,
+      previewCount: 0,
+    }
   }
 ];
 

@@ -77,6 +77,18 @@ export default async function CampaignPage({ params }: CampaignPageProps) {
       }
     }
 
+    if (htmlContent) {
+      // Inject base tag so relative paths (images, stylesheets, icons) resolve to /campaign/<campaignCode>/<slug>/
+      const baseTag = `<base href="/campaign/${campaignCode}/${slug}/">`;
+      if (htmlContent.includes("<head>")) {
+        htmlContent = htmlContent.replace("<head>", `<head>\n  ${baseTag}`);
+      } else if (htmlContent.includes("<head ")) {
+        htmlContent = htmlContent.replace(/<head[^>]*>/, `$& \n  ${baseTag}`);
+      } else {
+        htmlContent = `${baseTag}\n${htmlContent}`;
+      }
+    }
+
     if (!htmlContent) {
       // Fallback content if specific HTML file doesn't exist on disk yet
       htmlContent = `
