@@ -52,7 +52,7 @@ export const CAMPAIGNS_DATA: CampaignSite[] = [
     thumbnailUrl: "/thumbnails/a1-mobile-auto.png",
     claimed: false,
     featured: true,
-    htmlPath: "src/campaign/2026/a1-mobile-brake-and-auto-service/index.html",
+    htmlPath: "src/campaign/2026/(us)/a1-mobile-brake-and-auto-service/index.html",
     tags: ["Auto Repair", "Mobile Mechanic", "Houston"],
     metrics: {
       views: 0,
@@ -76,7 +76,7 @@ export const CAMPAIGNS_DATA: CampaignSite[] = [
     thumbnailUrl: "/thumbnails/seven-guys.png",
     claimed: false,
     featured: true,
-    htmlPath: "src/campaign/2026/(pk)/seven-guys-website/seven-guys.html",
+    htmlPath: "src/campaign/2026/(pk)/seven-guys-website/index.html",
     tags: ["Restaurant", "Pizza", "Burgers"],
     metrics: {
       views: 0,
