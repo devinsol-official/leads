@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { X, ShieldCheck, Sparkles, CheckCircle2, ArrowRight, Building2, User, Mail, Phone, FileText, AlertCircle, Bot, RefreshCw } from "lucide-react";
 import { CampaignSite } from "@/data/campaigns";
+import { CountryFlag } from "./CountryFlag";
 import { validateEmail } from "@/utils/emailValidation";
 
 interface ClaimModalProps {
@@ -152,8 +153,15 @@ export function ClaimModal({ site, isOpen, onClose }: ClaimModalProps) {
                 <span className="text-xs font-semibold text-blue-400 uppercase tracking-wider">
                   Devinsol Free Website Offer
                 </span>
-                <h3 className="text-xl font-bold text-white">
-                  Claim "{site.title}" For Free
+                <h3 className="text-xl font-bold text-white flex items-center gap-2 flex-wrap">
+                  <span>Claim "{site.title}" For Free</span>
+                  {site.country && (
+                    <CountryFlag
+                      country={site.country}
+                      className="inline-flex items-center gap-1.5 shrink-0 rounded-md bg-white/10 px-2 py-0.5 text-xs font-medium text-zinc-200 border border-white/10"
+                      flagClassName="h-3.5 w-5 rounded-xs object-cover shadow-xs border border-white/10 shrink-0"
+                    />
+                  )}
                 </h3>
               </div>
             </div>

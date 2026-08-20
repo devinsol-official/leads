@@ -5,6 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Seven Guys - Premium Pizza & Burgers | Gujranwala</title>
+  <meta property="og:title" content="Seven Guys - Premium Pizza & Burgers | Gujranwala">
+  <meta property="og:description"
+    content="Stacked Detroit-style pizzas, loaded burgers, and saucy sides. Open till 2 AM!">
+  <meta property="og:image" content="./seven-guys-website/seven_guys_cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="./seven-guys-website/seven_guys_cover.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -251,71 +257,136 @@
     }
 
     /* Header */
+    /* Header */
+    /* Announcement Topbar */
     .announcement {
       display: flex;
       justify-content: center;
-      gap: 12px;
+      align-items: center;
+      gap: 16px;
       flex-wrap: wrap;
       background-color: #eda519;
       color: #0d1117;
-      padding: 12px 16px;
+      padding: 7px 16px;
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
       animation: fadeInDown 0.5s ease-out;
+      text-align: center;
+      line-height: 1.4;
     }
 
-    .announcement a {
-      color: #006837;
+    .announcement .sep {
+      opacity: 0.45;
       font-weight: 900;
-      transition: all 0.3s ease;
     }
 
-    .announcement a:hover {
-      transform: scale(1.1);
+    .announcement-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    @media (max-width: 768px) {
+      .announcement {
+        padding: 5px 10px;
+        font-size: 10px;
+        gap: 4px 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .announcement {
+        padding: 4px 8px;
+        font-size: 9px;
+        gap: 3px 8px;
+      }
+
+      .announcement .sep {
+        display: inline;
+      }
     }
 
     header {
       backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       background: #037F40;
-      /* exact brand green */
       border-bottom: 2px solid #eda519;
       transition: all 0.3s ease;
       animation: fadeInDown 0.6s ease-out;
     }
 
     header.scrolled {
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
     }
 
-    /* Nav link tweaks: ensure white color, slightly thinner and spaced */
+    /* Fancy font (Luckiest Guy) on Header Nav & Mobile Nav links */
     header nav a,
-    .mobile-nav a,
-    .primary-btn,
-    .secondary-btn,
-    .add-btn,
-    .checkout-btn,
-    .tab,
-    .section-kicker {
-      font-family: 'Poppins', Arial, sans-serif;
-    }
-
-    header nav a {
-      color: #ffffff !important;
-      letter-spacing: 0.06em;
-      font-weight: 500 !important;
-    }
-
-    /* Mobile nav links match desktop styling */
     .mobile-nav a {
-      color: #ffffff !important;
+      font-family: 'Luckiest Guy', 'Arial Black', sans-serif !important;
       letter-spacing: 0.06em;
-      font-weight: 500 !important;
+      font-size: 16px;
+      color: #ffffff !important;
+      transition: all 0.2s ease;
+    }
+
+    header nav a:hover,
+    .mobile-nav a:hover {
+      color: #eda519 !important;
+      transform: translateY(-1px);
+    }
+
+    .header-call-btn {
+      font-family: 'Poppins', sans-serif !important;
+      letter-spacing: 0.02em;
+    }
+
+    .header-call-btn:hover {
+      background: #f7941d;
+      transform: translateY(-1px);
+      color: #0d1117 !important;
     }
 
     /* Hide cart icon visually but keep DOM for JS safety */
     button[aria-label="Open cart"] {
       display: none !important;
+    }
+
+    /* Mobile Nav */
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      gap: 8px;
+      padding: 16px 20px 20px;
+      border-top: 1px solid rgba(237, 165, 25, 0.4);
+      background: #026031;
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+    }
+
+    .mobile-nav.active {
+      display: flex;
+      animation: fadeInDown 0.3s ease-out;
+    }
+
+    .mobile-nav a {
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      border-left: 3px solid transparent;
+      display: flex;
+      align-items: center;
+    }
+
+    .mobile-nav a:hover {
+      border-left-color: #eda519;
+      background: rgba(255, 255, 255, 0.1);
+      padding-left: 18px;
+    }
+
+    .mobile-drawer-cta a {
+      font-family: 'Poppins', sans-serif !important;
+      letter-spacing: normal;
     }
 
     section[id] {
@@ -329,10 +400,463 @@
       background: transparent !important;
     }
 
+    /* Hero Section - Solid Brand Green, No Glow */
     .hero {
-      padding-top: 3rem;
-      padding-bottom: 3rem;
-      background-color: #037f40
+      position: relative;
+      background: #037F40;
+      overflow: hidden;
+      width: 100%;
+      min-height: calc(100vh - 100px);
+      display: flex;
+      align-items: center;
+      padding-top: 1rem;
+      padding-bottom: 1.5rem;
+    }
+
+    .hero-container {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(237, 165, 25, 0.15);
+      border: 1.5px solid #eda519;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      color: #eda519;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      animation: fadeInLeft 0.6s ease-out;
+    }
+
+    .eyebrow i {
+      color: #eda519;
+      font-size: 12px;
+    }
+
+    /* Hero Headline & BIGGER emphasis */
+    .hero-title {
+      font-family: 'Luckiest Guy', 'Arial Black', sans-serif;
+      font-size: clamp(3.2rem, 5.8vw, 5.4rem);
+      line-height: 0.86;
+      letter-spacing: 0.03em;
+      color: #ffffff;
+      margin-top: 0.4rem;
+      margin-bottom: 0.8rem;
+      animation: fadeInUp 0.7s ease-out 0.1s both;
+    }
+
+    .hero-word-bigger {
+      display: inline-block;
+      font-size: 1.14em;
+      color: #eda519;
+      letter-spacing: 0.04em;
+    }
+
+    .gold-text {
+      color: #eda519;
+    }
+
+    .green-text {
+      color: #006837;
+    }
+
+    .hero-description {
+      font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+      line-height: 1.55;
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 520px;
+      margin-bottom: 1.25rem;
+      animation: fadeInUp 0.7s ease-out 0.2s both;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+      animation: fadeInUp 0.7s ease-out 0.3s both;
+    }
+
+    .primary-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 50px;
+      padding: 14px 30px;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background-color: #eda519;
+      color: #0d1117;
+      border: 2px solid #eda519;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+      transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .primary-btn:hover {
+      transform: translateY(-3px) scale(1.02);
+      background-color: #ffb424;
+      color: #000;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+    }
+
+    .secondary-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 50px;
+      padding: 14px 28px;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 2px solid #eda519;
+      color: #ffffff;
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .secondary-btn:hover {
+      background: #eda519;
+      color: #0d1117;
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .add-btn {
+      width: 100%;
+      margin-top: 18px;
+      padding: 12px;
+      background: linear-gradient(135deg, #006837 0%, #004d29 100%);
+      color: #fff;
+    }
+
+    .add-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 104, 55, 0.4);
+    }
+
+    .stats {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      margin-top: 1.5rem;
+      padding-top: 1.1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      animation: fadeInUp 0.7s ease-out 0.4s both;
+    }
+
+    .stat {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .stat-value {
+      font-size: 24px;
+      font-weight: 800;
+      font-family: 'Poppins', Arial, sans-serif;
+      color: #eda519;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .stat-sep {
+      width: 1px;
+      height: 26px;
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Hero Visual & Burger Presentation */
+    .hero-visual {
+      position: relative;
+      z-index: 5;
+      width: 100%;
+      max-width: 640px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: fadeInRight 0.8s ease-out 0.2s both;
+      perspective: 1200px;
+    }
+
+    /* Premium Asymmetrical Yellow Graphic Arch Backdrop */
+    .hero-shape-backdrop {
+      position: absolute;
+      top: -6%;
+      right: -4%;
+      width: 480px;
+      height: 520px;
+      background: #eda519;
+      border-radius: 240px 240px 100px 100px;
+      transform: rotate(8deg);
+      pointer-events: none;
+      z-index: 1;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+      transition: transform 0.35s ease-out;
+    }
+
+    .hero-shape-backdrop::before {
+      content: '';
+      position: absolute;
+      inset: 14px;
+      border: 2px dashed rgba(0, 77, 41, 0.4);
+      border-radius: inherit;
+    }
+
+    .hero-image-wrap {
+      position: relative;
+      z-index: 5;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform-style: preserve-3d;
+    }
+
+    .hero-main {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      /* Clean directional shadows - NO GLOW */
+      filter: drop-shadow(0 16px 26px rgba(0, 0, 0, 0.45)) drop-shadow(0 32px 48px rgba(0, 0, 0, 0.35));
+      opacity: 0;
+      transform: translateY(45px) scale(0.94) rotate(-6deg);
+      transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.7s ease-out;
+      will-change: transform, opacity;
+      cursor: pointer;
+    }
+
+    .hero-main.revealed {
+      opacity: 1;
+      transform: translateY(0) scale(1) rotate(-3deg);
+      animation: heroBurgerFloat 4.5s ease-in-out infinite alternate;
+    }
+
+    .hero-main:hover {
+      animation-play-state: paused;
+    }
+
+    /* Floating Appetizing Food Callouts */
+    .hero-tag-badge {
+      position: absolute;
+      z-index: 10;
+      background: #0d1117;
+      border: 2px solid #eda519;
+      border-radius: 14px;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+      transition: all 0.3s ease;
+      pointer-events: auto;
+    }
+
+    .hero-tag-badge:hover {
+      transform: scale(1.05) translateY(-3px) !important;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-tag-top {
+      top: 4%;
+      left: -4%;
+      transform: rotate(-6deg);
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .hero-tag-bottom {
+      bottom: 6%;
+      right: -2%;
+      transform: rotate(6deg);
+      animation: float 4.8s ease-in-out infinite reverse;
+    }
+
+    .tag-icon-wrap {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: #eda519;
+      display: grid;
+      place-items: center;
+      color: #0d1117;
+      font-size: 15px;
+      flex-shrink: 0;
+      font-weight: 900;
+    }
+
+    .tag-text-wrap strong {
+      display: block;
+      font-family: 'Poppins', Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: 0.05em;
+      line-height: 1.2;
+    }
+
+    .tag-text-wrap small {
+      display: block;
+      font-size: 10px;
+      font-weight: 600;
+      color: #eda519;
+      letter-spacing: 0.02em;
+    }
+
+    @keyframes heroBurgerFloat {
+      0% {
+        transform: translateY(0px) rotate(-3deg) scale(1);
+      }
+
+      50% {
+        transform: translateY(-14px) rotate(-1deg) scale(1.015);
+      }
+
+      100% {
+        transform: translateY(0px) rotate(-3deg) scale(1);
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .hero {
+        min-height: auto;
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+      }
+
+      .hero-title {
+        font-size: clamp(2.8rem, 7vw, 4rem);
+      }
+
+      .hero-visual {
+        max-width: 460px;
+        margin-top: 1.5rem;
+      }
+
+      .hero-shape-backdrop {
+        width: 360px;
+        height: 400px;
+        right: -10px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-container {
+        text-align: center;
+      }
+
+      .eyebrow {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-title {
+        font-size: clamp(2.3rem, 9.5vw, 3.4rem);
+        line-height: 0.92;
+      }
+
+      .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 0.95rem;
+      }
+
+      .btn-group {
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .primary-btn,
+      .secondary-btn {
+        padding: 12px 22px;
+        font-size: 12px;
+      }
+
+      .stats {
+        justify-content: center;
+        gap: 16px;
+      }
+
+      .stat-value {
+        font-size: 20px;
+      }
+
+      .stat-label {
+        font-size: 10px;
+      }
+
+      .hero-visual {
+        max-width: 320px;
+        margin-top: 1.5rem;
+      }
+
+      .hero-shape-backdrop {
+        width: 260px;
+        height: 290px;
+        right: -5px;
+        top: -4%;
+      }
+
+      .hero-main {
+        max-width: 270px;
+      }
+
+      .hero-tag-badge {
+        padding: 6px 10px;
+        border-radius: 12px;
+      }
+
+      .hero-tag-badge strong {
+        font-size: 10px;
+      }
+
+      .hero-tag-badge small {
+        font-size: 9px;
+      }
+
+      .tag-icon-wrap {
+        width: 26px;
+        height: 26px;
+        font-size: 12px;
+        border-radius: 6px;
+      }
+
+      .hero-tag-top {
+        top: 2%;
+        left: -2%;
+      }
+
+      .hero-tag-bottom {
+        bottom: 2%;
+        right: -2%;
+      }
     }
 
     .menu-section,
@@ -355,383 +879,6 @@
 
     .footer-content {
       gap: 1rem;
-    }
-
-    .logo-img:hover {
-      transform: scale(1.05);
-    }
-
-    nav button:hover {
-      transform: translateY(-2px);
-    }
-
-    .badge {
-      position: absolute;
-      top: -8px;
-      right: -8px;
-      display: grid;
-      place-items: center;
-      min-width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #f7941d 0%, #ff6b35 100%);
-      color: #0d1117;
-      font-size: 10px;
-      font-weight: 900;
-      box-shadow: 0 2px 8px rgba(247, 148, 29, 0.4);
-      animation: scaleIn 0.3s ease-out;
-    }
-
-    .mobile-nav {
-      display: none;
-      flex-direction: column;
-      gap: 15px;
-      padding: 20px;
-      border-top: 2px solid #f7941d;
-      color: #fff;
-      font-weight: 700;
-      background: linear-gradient(180deg, #0d1117 0%, #1a1f26 100%);
-      animation: slide 0.3s ease-out;
-    }
-
-    .mobile-nav.active {
-      display: flex;
-    }
-
-    .mobile-nav a {
-      padding: 10px;
-      transition: all 0.3s ease;
-      border-left: 3px solid transparent;
-    }
-
-    .mobile-nav a:hover {
-      border-left-color: #f7941d;
-      padding-left: 15px;
-    }
-
-    /* Hero Section */
-    .hero {
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* .hero::before {
-      content: '';
-      position: absolute;
-      width: 500px;
-      height: 500px;
-      right: -180px;
-      top: 40px;
-      border-radius: 50%;
-      background: #006837;
-      filter: blur(100px);
-      opacity: 0.6;
-      animation: float 6s ease-in-out infinite;
-    }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      left: -80px;
-      bottom: -50px;
-      border-radius: 50%;
-      background: #f7941d;
-      filter: blur(80px);
-      opacity: 0.3;
-      animation: float 8s ease-in-out infinite reverse;
-    } */
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-    }
-
-    .eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: #eda519;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      animation: fadeInLeft 0.6s ease-out;
-    }
-
-    .eyebrow i {
-      animation: pulse 2s ease-in-out infinite;
-    }
-
-    h1 {
-      animation: fadeInUp 0.7s ease-out 0.1s both;
-    }
-
-    .gold-text {
-      color: #eda519;
-    }
-
-    .green-text {
-      color: #006837;
-    }
-
-    .hero-description {
-      animation: fadeInUp 0.7s ease-out 0.2s both;
-    }
-
-    .btn-group {
-      animation: fadeInUp 0.7s ease-out 0.3s both;
-    }
-
-    .primary-btn,
-    .secondary-btn,
-    .add-btn,
-    .checkout-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      border-radius: 50px;
-      padding: 15px 26px;
-      font-weight: 600;
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      border: none;
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .primary-btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.2);
-      transition: all 0.3s ease;
-      z-index: -1;
-    }
-
-    .primary-btn:hover::before {
-      left: 100%;
-    }
-
-    .primary-btn {
-      background-color: #eda519;
-      color: #0d1117;
-      /* box-shadow: 0 10px 30px rgba(237, 165, 25, 0.4); */
-    }
-
-    .primary-btn:hover {
-      transform: translateY(-4px) scale(1.05);
-      /* box-shadow: 0 15px 40px rgba(237, 165, 25, 0.6); */
-    }
-
-    .primary-btn:active {
-      transform: translateY(-2px) scale(1.02);
-    }
-
-    .secondary-btn {
-      border: 2px solid #f7941d;
-      color: #fff;
-      background: transparent;
-    }
-
-    .secondary-btn:hover {
-      background: #eda519;
-      color: #0d1117;
-      transform: translateY(-4px) scale(1.05);
-      box-shadow: 0 10px 30px rgba(237, 165, 25, 0.3);
-    }
-
-    .add-btn {
-      width: 100%;
-      margin-top: 18px;
-      padding: 12px;
-      background: linear-gradient(135deg, #006837 0%, #004d29 100%);
-      color: #fff;
-    }
-
-    .add-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(0, 104, 55, 0.4);
-    }
-
-    /* Hero Visual */
-    .hero-visual {
-      position: relative;
-      z-index: 1;
-      width: min(100%, 530px);
-      animation: fadeInRight 0.7s ease-out 0.2s both;
-    }
-
-    /* Prominent hero burger image (replaces previous ring widget) */
-    .hero-image {
-      position: relative;
-      width: 100%;
-      display: grid;
-      place-items: center;
-      z-index: 3;
-      padding-left: 8px;
-    }
-
-    .hero-main {
-      width: min(520px, 48vw);
-      /* size: 1200px; */
-      max-width: 720px;
-      border-radius: 16px;
-      /* start hidden and slightly offset for reveal animation */
-      opacity: 0;
-      transform: translateY(40px) scale(0.95) rotate(-8deg);
-      transition: transform 900ms cubic-bezier(0.2, 0.9, 0.2, 1), opacity 700ms ease-out;
-      background: transparent;
-      /* removed white panel */
-      display: block;
-      object-fit: contain;
-    }
-
-    .hero-main.revealed {
-      opacity: 1;
-      transform: translateY(0) scale(1) rotate(-4deg);
-    }
-
-    @media (max-width: 768px) {
-      .hero-main {
-        width: min(360px, 70vw);
-        transform: rotate(0deg);
-      }
-
-      .hero-visual {
-        width: min(100%, 420px);
-      }
-    }
-
-    .hero-ring {
-      position: relative;
-      aspect-ratio: 1;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      border: 2px solid #eda519;
-      background: radial-gradient(circle, #006837 0 42%, #00683788 43% 56%, transparent 57%);
-      box-shadow: 0 0 60px #eda51966, inset 0 0 30px #00683733;
-      animation: float 4s ease-in-out infinite;
-    }
-
-    .hero-ring::after {
-      content: '';
-      position: absolute;
-      inset: 8%;
-      border: 2px dashed #eda519;
-      border-radius: 50%;
-      animation: spin 30s linear infinite;
-    }
-
-    .hero-ring img {
-      position: relative;
-      z-index: 1;
-      width: 70%;
-      height: 70%;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 10px solid #f7941d;
-      transform: rotate(-8deg);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-      transition: all 0.3s ease;
-    }
-
-    .hero-ring:hover img {
-      transform: rotate(-8deg) scale(1.05);
-    }
-
-    .floating-card {
-      position: absolute;
-      z-index: 2;
-      right: 4%;
-      bottom: 12%;
-      display: flex;
-      flex-direction: column;
-      padding: 18px 20px;
-      background: linear-gradient(135deg, #f8fafc 0%, #f0f0f0 100%);
-      color: #111827;
-      transform: rotate(8deg);
-      box-shadow: 12px 16px 0 #f7941d, 0 8px 20px rgba(0, 0, 0, 0.3);
-      border-radius: 10px;
-      animation: float 3s ease-in-out infinite;
-      border: 2px solid #f7941d;
-    }
-
-    .floating-card span {
-      font-size: 10px;
-      font-weight: 900;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-    }
-
-    .floating-card strong {
-      font-family: 'Poppins', Arial, sans-serif;
-      font-size: 32px;
-      font-weight: 700;
-      line-height: 1;
-      color: #f7941d;
-      margin-top: 4px;
-    }
-
-    .floating-card small {
-      color: #006837;
-      margin-top: 4px;
-    }
-
-    .burst {
-      position: absolute;
-      z-index: 3;
-      top: 5%;
-      left: 2%;
-      display: grid;
-      place-items: center;
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #eda519 0%, #ff6b35 100%);
-      color: #0d1117;
-      text-align: center;
-      font: 22px/0.85 'Poppins', Arial, sans-serif;
-      transform: rotate(-12deg);
-      box-shadow: 0 0 0 10px #006837, 0 8px 25px rgba(0, 0, 0, 0.3);
-      animation: float 2.5s ease-in-out infinite;
-      font-weight: 700;
-    }
-
-    .stats {
-      display: flex;
-      gap: 30px;
-      margin-top: 40px;
-      animation: fadeInUp 0.7s ease-out 0.4s both;
-    }
-
-    .stat {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
-
-    .stat-value {
-      font-size: 32px;
-      font-weight: 700;
-      font-family: 'Poppins', Arial, sans-serif;
-      color: #f7941d;
-    }
-
-    .stat-label {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #ffffff99;
     }
 
     /* Menu Section */
@@ -823,113 +970,139 @@
     .menu-grid {
       display: grid;
       grid-template-columns: repeat(1, minmax(0, 1fr));
-      gap: 20px;
+      gap: 24px;
       animation: fadeInUp 0.6s ease-out 0.2s both;
     }
 
     .menu-card {
       overflow: hidden;
-      border: 2px solid #11182710;
-      background: #fff;
-      box-shadow: 0 10px 30px rgba(17, 24, 39, 0.08);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      border-radius: 15px;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      background: #ffffff;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+      border-radius: 18px;
       position: relative;
-    }
-
-    .menu-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(247, 148, 29, 0.1), transparent);
-      z-index: 1;
-      transition: left 0.5s ease;
-    }
-
-    .menu-card:hover::before {
-      left: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .menu-card:hover {
-      transform: translateY(-12px) scale(1.02);
-      box-shadow: 0 25px 50px rgba(0, 104, 55, 0.15);
-      border-color: #f7941d;
+      transform: translateY(-8px);
+      box-shadow: 0 18px 40px rgba(0, 104, 55, 0.12);
+      border-color: rgba(237, 165, 25, 0.45);
     }
 
     .image-wrap {
       position: relative;
-      height: 220px;
+      width: 100%;
+      aspect-ratio: 1 / 1;
       overflow: hidden;
-      background: linear-gradient(135deg, #006837 0%, #004d29 100%);
-      border-radius: 15px 15px 0 0;
+      background: #037F40;
+      border-radius: 17px 17px 0 0;
+      padding: 0;
     }
 
     .image-wrap img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: saturate(1.2) brightness(1.1);
-      transition: all 0.4s ease;
+      object-position: center;
+      display: block;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .menu-card:hover .image-wrap img {
-      transform: scale(1.1) rotate(2deg);
-      filter: saturate(1.3) brightness(1.2);
+      transform: scale(1.04);
     }
 
     .tag {
       position: absolute;
-      top: 15px;
-      left: 15px;
-      background: linear-gradient(135deg, #f7941d 0%, #ff6b35 100%);
-      color: #fff;
-      padding: 8px 14px;
-      font-size: 10px;
-      font-weight: 900;
-      letter-spacing: 0.12em;
-      border-radius: 50px;
+      top: 14px;
+      left: 14px;
+      background: #eda519;
+      color: #0d1117;
+      padding: 5px 12px;
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      border-radius: 9999px;
       text-transform: uppercase;
-      box-shadow: 0 4px 15px rgba(247, 148, 29, 0.3);
-      animation: float 3s ease-in-out infinite;
-    }
-
-    .card-content {
-      padding: 22px;
-      position: relative;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
       z-index: 2;
     }
 
+    .card-content {
+      padding: 20px;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+      background: #ffffff;
+    }
+
     .card-title {
-      font-size: 20px;
-      font-weight: 600;
+      font-family: 'Luckiest Guy', 'Arial Black', sans-serif;
+      font-size: 19px;
+      font-weight: 400;
       line-height: 1.2;
       color: #111827;
       text-transform: uppercase;
+      letter-spacing: 0.02em;
     }
 
     .price {
       white-space: nowrap;
-      color: #f7941d;
+      color: #eda519;
       font-family: 'Poppins', Arial, sans-serif;
-      font-size: 24px;
-      font-weight: 700;
+      font-size: 20px;
+      font-weight: 800;
+      line-height: 1.2;
     }
 
     .card-description {
       font-size: 13px;
-      line-height: 1.6;
-      color: #11182788;
-      margin-top: 12px;
-      min-height: 48px;
+      line-height: 1.55;
+      color: #64748b;
+      margin-top: 8px;
+      margin-bottom: 16px;
+      min-height: 40px;
+    }
+
+    .add-btn {
+      width: 100%;
+      padding: 12px;
+      background: #006837;
+      color: #ffffff;
+      font-family: 'Poppins', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 12px rgba(0, 104, 55, 0.2);
+    }
+
+    .add-btn:hover {
+      background: #eda519;
+      color: #0d1117;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(237, 165, 25, 0.35);
     }
 
     /* Feature Section */
     .feature-section {
-      background: linear-gradient(135deg, #006837 0%, #004d29 100%);
-      padding: 140px 0;
+      background: #037F40;
+      padding: 120px 0;
       position: relative;
       overflow: hidden;
     }
@@ -1113,34 +1286,123 @@
     .gallery {
       display: grid;
       grid-template-columns: repeat(1, 1fr);
-      gap: 20px;
+      gap: 24px;
       animation: fadeInUp 0.6s ease-out;
     }
 
-    .gallery img {
+    .gallery-widget {
+      position: relative;
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .gallery-widget:hover {
+      /* transform: translateY(-8px); */
+      /* box-shadow: 0 18px 42px rgba(3, 127, 64, 0.15); */
+      border-color: rgba(237, 165, 25, 0.5);
+    }
+
+    .brand-logo-frame {
+      position: relative;
       width: 100%;
-      height: 300px;
-      object-fit: cover;
-      border: 8px solid #006837;
-      border-radius: 15px;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      padding: 0;
+      background: #037F40;
+      border-radius: 19px 19px 0 0;
     }
 
-    .gallery img:first-child {
+    .brand-logo-img {
+      width: 100%;
+      height: 100%;
       object-fit: contain;
-      background: #006837;
+      object-position: center;
+      display: block;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .gallery img:hover {
-      transform: rotate(-3deg) scale(1.05);
-      box-shadow: 0 20px 50px rgba(0, 104, 55, 0.2);
+    .gallery-widget:hover .brand-logo-img {
+      /* transform: scale(); */
+    }
+
+    .widget-img-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      padding: 0;
+      background: #037F40;
+      border-radius: 19px 19px 0 0;
+    }
+
+    .widget-img-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .gallery-widget:hover .widget-img-frame img {
+      transform: scale(1.04);
+    }
+
+    .widget-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      z-index: 10;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(13, 17, 23, 0.82);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1.5px solid #eda519;
+      color: #eda519;
+      padding: 5px 12px;
+      border-radius: 9999px;
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    }
+
+    .widget-caption {
+      padding: 18px 20px 22px;
+      background: #ffffff;
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
+      z-index: 2;
+    }
+
+    .widget-caption h3 {
+      font-family: 'Luckiest Guy', 'Arial Black', sans-serif;
+      font-size: 19px;
+      color: #111827;
+      letter-spacing: 0.02em;
+      margin-bottom: 5px;
+      line-height: 1.2;
+    }
+
+    .widget-caption p {
+      font-size: 13px;
+      color: #64748b;
+      line-height: 1.5;
     }
 
     /* Location Section */
     .location-section {
-      background: linear-gradient(135deg, #006837 0%, #004d29 100%);
-      padding: 140px 0;
+      background: #037F40;
+      padding: 120px 0;
       position: relative;
       overflow: hidden;
     }
@@ -1398,14 +1660,6 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .gallery {
-        grid-template-columns: 1.2fr .9fr .9fr;
-      }
-
-      .gallery img {
-        height: 350px;
-      }
-
       .testimonials-grid {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -1415,17 +1669,15 @@
       }
     }
 
+    @media (min-width: 768px) {
+      .gallery {
+        grid-template-columns: 1.15fr 1fr 1fr;
+      }
+    }
+
     @media (min-width: 1024px) {
       .menu-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      .gallery img:first-child {
-        height: 450px;
-      }
-
-      .gallery img {
-        height: 450px;
       }
 
       .testimonials-grid {
@@ -1437,18 +1689,33 @@
       }
     }
 
+    @media (min-width: 1280px) {
+      .menu-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .menu-grid {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 340px));
+        justify-content: center;
+      }
+    }
+
     @media (max-width: 768px) {
-      h1 {
-        font-size: 3rem !important;
+
+      h1,
+      .hero-title {
+        font-size: clamp(2.2rem, 9vw, 3.2rem) !important;
       }
 
       .section-title {
-        font-size: 2.5rem !important;
+        font-size: 2.2rem !important;
       }
 
       .feature-section,
       .location-section {
-        padding: 80px 0;
+        padding: 60px 0;
       }
     }
 
@@ -1495,87 +1762,172 @@
   <main class="overflow-hidden bg-[#0d1117] text-white">
     <!-- Announcement Bar -->
     <div class="announcement">
-      <span>OPEN DAILY 2:00 PM – 2:00 AM</span>
-      <span class="hidden sm:inline">•</span>
-      <span class="hidden sm:inline">SIALKOT ROAD, GUJRANWALA</span>
-      <a href="tel:+923194800036">CALL +92 319 4800036</a>
+      <span class="announcement-item"><i class="fas fa-clock text-[#0d1117]/80"></i> OPEN DAILY 2:00 PM – 2:00 AM</span>
+      <span class="sep">•</span>
+      <span class="announcement-item"><i class="fas fa-location-dot text-[#0d1117]/80"></i> SIALKOT ROAD BRANCH</span>
+      <span class="sep">•</span>
+      <span class="announcement-item"><i class="fas fa-location-dot text-[#0d1117]/80"></i> MUMTAZ MARKET BRANCH</span>
     </div>
 
     <!-- Header -->
     <header class="sticky top-0 z-40" id="header">
-      <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
-        <a href="#home" class="flex items-center gap-3 group">
-          <img src="./seven-guys-website/logo.jpg" alt="Seven Guys logo" class="h-16 w-16 object-contain logo-img" />
+      <nav class="mx-auto flex max-w-7xl items-center justify-between px-3.5 py-2 sm:px-6 sm:py-3 lg:px-8">
+        <!-- Logo -->
+        <a href="#home" class="flex items-center gap-2 group shrink-0">
+          <img src="./seven-guys-website/logo.jpg" alt="Seven Guys logo"
+            class="h-10 w-10 sm:h-12 sm:w-12 lg:h-14 lg:w-14 object-contain logo-img" />
           <span class="sr-only">Seven Guys</span>
         </a>
-        <div class="hidden items-center gap-10 text-sm font-bold text-white/70 md:flex">
-          <a href="#menu" class="hover:text-[#f7941d] transition-colors">Menu</a>
-          <a href="#detroit" class="hover:text-[#f7941d] transition-colors">Detroit Pizzas</a>
-          <a href="#testimonials" class="hover:text-[#f7941d] transition-colors">Reviews</a>
-          <a href="#location" class="hover:text-[#f7941d] transition-colors">Location</a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden items-center gap-8 md:flex">
+          <a class="cursor-pointer"
+            onclick="document.getElementById('menu').scrollIntoView({ behavior: 'smooth' })">MENU</a>
+          <a class="cursor-pointer"
+            onclick="document.getElementById('detroit').scrollIntoView({ behavior: 'smooth' })">DETROIT
+            PIZZAS</a>
+          <a class="cursor-pointer"
+            onclick="document.getElementById('testimonials').scrollIntoView({ behavior: 'smooth' })">REVIEWS</a>
+          <a class="cursor-pointer"
+            onclick="document.getElementById('location').scrollIntoView({ behavior: 'smooth' })">LOCATION</a>
         </div>
-        <div class="flex items-center gap-4">
+
+        <!-- Header Actions -->
+        <div class="flex items-center gap-2 sm:gap-3.5">
           <a href="tel:+923194800036"
-            class="rounded-full bg-[#EDA51B] px-4 py-2 text-sm font-semibold text-[#0d1117] hover:shadow-lg transition-all">CALL
-            +92 319 4800036</a>
+            class="header-call-btn inline-flex items-center gap-1.5 rounded-full bg-[#EDA51B] px-3.5 py-1.5 sm:px-5 sm:py-2 text-xs sm:text-sm font-extrabold text-[#0d1117] hover:shadow-lg transition-all font-sans whitespace-nowrap shadow-sm">
+            <i class="fas fa-phone-alt text-[11px] sm:text-xs"></i>
+            <span class="hidden sm:inline">CALL</span>
+            <span>+92 319 4800036</span>
+          </a>
+
+          <!-- Cart button hidden for JS DOM safety -->
           <button aria-label="Open cart" onclick="toggleCart()"
-            class="relative rounded-full border-2 border-white/20 p-3 hover:border-[#f7941d] transition-all">
+            class="relative rounded-full border-2 border-white/20 p-3 hover:border-[#f7941d] transition-all hidden">
             <i class="fas fa-shopping-bag text-lg"></i>
             <span class="badge" id="cartBadge" style="display: none;">0</span>
           </button>
-          <button aria-label="Open menu" onclick="toggleMobileNav()" class="p-2 md:hidden text-xl">
+
+          <!-- Hamburger Toggle -->
+          <button aria-label="Open menu" onclick="toggleMobileNav()"
+            class="hamburger-btn flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 text-white hover:bg-[#EDA51B] hover:text-[#0d1117] transition-all md:hidden text-lg">
             <i class="fas fa-bars"></i>
           </button>
         </div>
       </nav>
+
+      <!-- Mobile Navigation Drawer -->
       <div class="mobile-nav" id="mobileNav">
-        <a href="#menu" onclick="toggleMobileNav()">Menu</a>
-        <a href="#detroit" onclick="toggleMobileNav()">Detroit Pizzas</a>
-        <a href="#testimonials" onclick="toggleMobileNav()">Reviews</a>
-        <a href="#location" onclick="toggleMobileNav()">Location</a>
+        <!-- onclick="document.getElementById('menu').scrollIntoView({ behavior: 'smooth' })" -->
+        <a class="cursor-pointer"
+          onclick="document.getElementById('menu').scrollIntoView({ behavior: 'smooth' }); toggleMobileNav()"><i
+            class="fas fa-utensils mr-2 text-[#EDA51B]"></i> MENU</a>
+        <a class="cursor-pointer"
+          onclick="document.getElementById('detroit').scrollIntoView({ behavior: 'smooth' }); toggleMobileNav()"><i
+            class="fas fa-pizza-slice mr-2 text-[#EDA51B]"></i> DETROIT
+          PIZZAS</a>
+        <a class="cursor-pointer"
+          onclick="document.getElementById('testimonials').scrollIntoView({ behavior: 'smooth' }); toggleMobileNav()"><i
+            class="fas fa-star mr-2 text-[#EDA51B]"></i> REVIEWS</a>
+        <a class="cursor-pointer"
+          onclick="document.getElementById('location').scrollIntoView({ behavior: 'smooth' }); toggleMobileNav()"><i
+            class="fas fa-map-marker-alt mr-2 text-[#EDA51B]"></i>
+          LOCATION</a>
+
+        <div class="mobile-drawer-cta mt-2 pt-3 border-t border-white/10 flex flex-col gap-2">
+          <a href="tel:+923194800036"
+            class="flex items-center justify-center gap-2 rounded-xl bg-[#EDA51B] py-2.5 px-4 text-xs font-bold text-[#0d1117] font-sans">
+            <i class="fas fa-phone-alt"></i>
+            <span>Call Quick Order: +92 319 4800036</span>
+          </a>
+          <a href="https://wa.me/923194800036" target="_blank"
+            class="flex items-center justify-center gap-2 rounded-xl bg-[#25D366] py-2.5 px-4 text-xs font-bold text-white font-sans">
+            <i class="fab fa-whatsapp text-sm"></i>
+            <span>Order on WhatsApp</span>
+          </a>
+        </div>
       </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="home"
-      class="hero mx-auto flex max-w-7xl flex-col items-center gap-16 px-5 pb-20 pt-8 lg:flex-row lg:px-8 lg:pb-28 lg:pt-8">
-      <div class="hero-content flex-1">
-        <div class="eyebrow"><i class="fas fa-lightning-bolt"></i> GUJRANWALA'S #1 CRAVING</div>
-        <h1 class="font-impact mt-6 text-5xl leading-[0.9] tracking-tight sm:text-6xl lg:text-6xl">
-          BIG TASTE.<br />
-          <span class="gold-text">BIGGER</span>
-          SATISFACTION.
-        </h1>
-        <p class="hero-description mt-6 max-w-lg text-lg leading-relaxed text-white/70">
-          Stacked Detroit-style pizzas, loaded burgers, and saucy sides made for the hungry. Your next great meal is
-          just one tap away. Open till 2 AM!
-        </p>
-        <div class="btn-group mt-8 flex flex-wrap gap-4">
-          <button onclick="document.getElementById('menu').scrollIntoView({ behavior: 'smooth' })" class="primary-btn">
-            EXPLORE MENU <i class="fas fa-arrow-right"></i>
-          </button>
-          <a href="https://wa.me/923194800036" target="_blank" rel="noreferrer" class="secondary-btn">
-            ORDER NOW <i class="fas fa-whatsapp"></i>
-          </a>
+    <section id="home" class="hero">
+      <div
+        class="hero-container mx-auto max-w-7xl px-5 lg:px-8 flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
+        <!-- Left Text Content -->
+        <div class="hero-content flex-1 max-w-xl">
+          <div class="eyebrow">
+            <i class="fas fa-bolt"></i>
+            <span>GUJRANWALA'S #1 CRAVING</span>
+          </div>
+          <h1 class="hero-title font-impact">
+            BIG TASTE.<br />
+            <span class="hero-word-bigger gold-text">BIGGER</span><br class="hidden sm:inline" />
+            SATISFACTION.
+          </h1>
+          <p class="hero-description">
+            Stacked Detroit-style pizzas, loaded burgers, and saucy sides made for the hungry. Your next great meal is
+            just one tap away. Open till 2 AM!
+          </p>
+          <div class="btn-group">
+            <button onclick="document.getElementById('menu').scrollIntoView({ behavior: 'smooth' })"
+              class="primary-btn">
+              <span>EXPLORE MENU</span>
+              <i class="fas fa-arrow-right"></i>
+            </button>
+            <a href="https://wa.me/923194800036" target="_blank" rel="noreferrer" class="secondary-btn">
+              <i class="fab fa-whatsapp text-lg"></i>
+              <span>ORDER NOW</span>
+            </a>
+          </div>
+          <div class="stats">
+            <div class="stat">
+              <div class="stat-value">2 AM</div>
+              <div class="stat-label">Open Till</div>
+            </div>
+            <div class="stat-sep"></div>
+            <div class="stat">
+              <div class="stat-value">100%</div>
+              <div class="stat-label">Fresh Daily</div>
+            </div>
+            <div class="stat-sep"></div>
+            <div class="stat">
+              <div class="stat-value">4.9 ★</div>
+              <div class="stat-label">Rated Food</div>
+            </div>
+          </div>
         </div>
-        <div class="stats">
-          <div class="stat">
-            <div class="stat-value">2 AM</div>
-            <div class="stat-label">Open Till</div>
+
+        <!-- Right Hero Visual -->
+        <div class="hero-visual flex-1">
+          <!-- Premium Asymmetrical Yellow Graphic Arch Backdrop (Offset, not a centered framing circle) -->
+          <div class="hero-shape-backdrop"></div>
+
+          <!-- Floating Badges -->
+          <div class="hero-tag-badge hero-tag-top">
+            <div class="tag-icon-wrap">
+              <i class="fas fa-fire"></i>
+            </div>
+            <div class="tag-text-wrap">
+              <strong>EXTRA CRISPY</strong>
+              <small>Loaded Crunch Patty</small>
+            </div>
           </div>
-          <div class="stat">
-            <div class="stat-value">100%</div>
-            <div class="stat-label">Fresh Daily</div>
+
+          <div class="hero-tag-badge hero-tag-bottom">
+            <div class="tag-icon-wrap">
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="tag-text-wrap">
+              <strong>4.9 / 5 RATING</strong>
+              <small>5,000+ Foodies Loved</small>
+            </div>
           </div>
-          <div class="stat">
-            <div class="stat-value">5★</div>
-            <div class="stat-label">Rated</div>
+
+          <!-- Burger Image Wrap -->
+          <div class="hero-image-wrap">
+            <img class="hero-main" src="./seven-guys-website/hero_burger_image.PNG"
+              alt="Seven Guys Signature Loaded Burger" />
           </div>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <div class="hero-image">
-          <img class="hero-main" src="./seven-guys-website/hero_burger_image.PNG" alt="Signature burger" />
         </div>
       </div>
     </section>
@@ -1614,7 +1966,7 @@
           <a href="#menu" class="secondary-btn mt-10 inline-flex">SEE ALL PIZZAS <i class="fas fa-arrow-right"></i></a>
         </div>
         <div class="board-frame">
-          <img src="./seven-guys-website/productimage2.jfif" alt="Detroit style pizza closeup" />
+          <img src="./seven-guys-website/productimage4.jfif" alt="Detroit style pizza closeup" />
           <div class="board-stamp">CRISPY<br /><span>EDGES</span></div>
         </div>
       </div>
@@ -1678,9 +2030,51 @@
             and create unforgettable memories with amazing food and great company.</p>
         </div>
         <div class="gallery">
-          <img src="./seven-guys-website/logo.jpg" alt="Seven Guys brand logo" />
-          <img src="./seven-guys-website/productimage4.jfif" alt="Luxury burger close-up" />
-          <img src="./seven-guys-website/productimage2.jfif" alt="Fresh pizza and restaurant plating" />
+          <!-- Widget 1: Brand Welcome Card -->
+          <div class="gallery-widget bg-[#037F40] brand-widget">
+            <!-- <div class="brand-logo-frame"> -->
+            <!-- <div class="widget-badge"> -->
+            <!-- <i class="fas fa-crown"></i>
+                <span>ORIGINAL GUJRANWALA</span> -->
+            <!-- </div> -->
+            <img src="seven-guys-website/logo.jpg" alt="Seven Guys Signature Loaded Burger & Detroit Pizza"
+              class="brand-logo-img" />
+            <!-- </div> -->
+            <!-- <div class="widget-caption"> -->
+            <!-- <h3>SEVEN GUYS ORIGINAL</h3> -->
+            <!-- <p>Authentic Detroit pizza & crunchy loaded burgers.</p> -->
+            <!-- </div> -->
+          </div>
+
+          <!-- Widget 2: Detroit Pizza Widget -->
+          <div class="gallery-widget food-widget">
+            <div class="widget-img-frame">
+              <div class="widget-badge">
+                <i class="fas fa-pizza-slice"></i>
+                <span>DETROIT STYLE PIZZA</span>
+              </div>
+              <img src="./seven-guys-website/productimage4.jfif" alt="Detroit style square pizza" />
+            </div>
+            <div class="widget-caption">
+              <h3>CRISPY CORNER CRUST</h3>
+              <p>Square cut, cheese to the edge & rich sauce on top.</p>
+            </div>
+          </div>
+
+          <!-- Widget 3: Loaded Burger Widget -->
+          <div class="gallery-widget food-widget">
+            <div class="widget-img-frame">
+              <div class="widget-badge">
+                <i class="fas fa-hamburger"></i>
+                <span>SIGNATURE BURGER</span>
+              </div>
+              <img src="./seven-guys-website/productimage2.jfif" alt="Loaded double crunch burger" />
+            </div>
+            <div class="widget-caption">
+              <h3>LOADED DOUBLE CRUNCH</h3>
+              <p>Golden fried chicken patties with spicy cheese drip.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1800,25 +2194,25 @@
   <script>
     // Menu data
     const items = [
-      { id: 'super-zinger', name: 'Super Zinger Burger', category: 'Burgers', price: 460, description: 'Crispy double chicken zinger fillet with cheese slice & special sauce.', image: './seven-guys-website/productimage4.jfif', tag: 'BIG TASTE' },
-      { id: 'double-crunch', name: 'Double Crunch Burger', category: 'Burgers', price: 399, description: 'Double layered crunchy chicken patty topped with creamy sauce.', image: './seven-guys-website/productimage4.jfif' },
-      { id: 'chapli', name: 'Chicken Chapli Burger', category: 'Burgers', price: 360, description: 'Spiced traditional chicken chapli patty with fresh lettuce & mayo.', image: './seven-guys-website/productimage4.jfif' },
-      { id: 'fillet-crunch', name: 'Fillet Crunch Burger', category: 'Burgers', price: 300, description: 'Single crispy chicken fillet burger with classic sauce.', image: './seven-guys-website/productimage4.jfif' },
-      { id: 'genz-crown', name: 'GenZ Crown Pizza', category: 'Detroit Pizzas', price: 1650, description: 'Signature loaded crown pizza with special sauce & cheese overload.', image: './seven-guys-website/productimage2.jfif', tag: 'SIGNATURE' },
-      { id: 'double-beast', name: 'Double Beast', category: 'Detroit Pizzas', price: 650, description: 'Onion, tomato, olives, tikka, kabob, fajita & extra cheese.', image: './seven-guys-website/productimage2.jfif' },
-      { id: 'detroit-fajita', name: 'Detroit Fajita', category: 'Detroit Pizzas', price: 650, description: 'Chicken fajita, onions, capsicums & green jalapeno sauce.', image: './seven-guys-website/productimage2.jfif' },
-      { id: 'malai-boti', name: 'Malai Boti', category: 'Detroit Pizzas', price: 650, description: 'BBQ malai boti chicken, creamy sauce, onion & extra cheese.', image: './seven-guys-website/productimage2.jfif' },
-      { id: 'tandoori', name: 'Tandoori BBQ', category: 'Detroit Pizzas', price: 650, description: 'Kebab bites, tikka, olives, tomatoes, capsicum & pizza sauce.', image: './seven-guys-website/productimage2.jfif' },
-      { id: 'peri-peri', name: 'Hot Peri Peri', category: 'Detroit Pizzas', price: 650, description: 'Peri peri chicken, red jalapeno, extra cheese & hot sauce.', image: './seven-guys-website/productimage2.jfif', tag: 'HOT' },
-      { id: 'detroit-tikka', name: 'Detroit Tikka', category: 'Detroit Pizzas', price: 650, description: 'Chicken tikka, onion, tomatoes, olives & Detroit sauce.', image: './seven-guys-website/productimage2.jfif' },
+      { id: 'super-zinger', name: 'Super Zinger Burger', category: 'Burgers', price: 460, description: 'Crispy double chicken zinger fillet with cheese slice & special sauce.', image: './seven-guys-website/productimage2.jfif', tag: 'BIG TASTE' },
+      { id: 'double-crunch', name: 'Double Crunch Burger', category: 'Burgers', price: 399, description: 'Double layered crunchy chicken patty topped with creamy sauce.', image: './seven-guys-website/productimage2.jfif' },
+      { id: 'chapli', name: 'Chicken Chapli Burger', category: 'Burgers', price: 360, description: 'Spiced traditional chicken chapli patty with fresh lettuce & mayo.', image: './seven-guys-website/productimage1.jfif' },
+      { id: 'fillet-crunch', name: 'Fillet Crunch Burger', category: 'Burgers', price: 300, description: 'Single crispy chicken fillet burger with classic sauce.', image: './seven-guys-website/productimage2.jfif' },
+      { id: 'genz-crown', name: 'GenZ Crown Pizza', category: 'Detroit Pizzas', price: 1650, description: 'Signature loaded crown pizza with special sauce & cheese overload.', image: './seven-guys-website/productimage4.jfif', tag: 'SIGNATURE' },
+      { id: 'double-beast', name: 'Double Beast', category: 'Detroit Pizzas', price: 650, description: 'Onion, tomato, olives, tikka, kabob, fajita & extra cheese.', image: './seven-guys-website/productimage6.jfif' },
+      { id: 'detroit-fajita', name: 'Detroit Fajita', category: 'Detroit Pizzas', price: 650, description: 'Chicken fajita, onions, capsicums & green jalapeno sauce.', image: './seven-guys-website/productimage4.jfif' },
+      { id: 'malai-boti', name: 'Malai Boti', category: 'Detroit Pizzas', price: 650, description: 'BBQ malai boti chicken, creamy sauce, onion & extra cheese.', image: './seven-guys-website/productimage6.jfif' },
+      { id: 'tandoori', name: 'Tandoori BBQ', category: 'Detroit Pizzas', price: 650, description: 'Kebab bites, tikka, olives, tomatoes, capsicum & pizza sauce.', image: './seven-guys-website/productimage4.jfif' },
+      { id: 'peri-peri', name: 'Hot Peri Peri', category: 'Detroit Pizzas', price: 650, description: 'Peri peri chicken, red jalapeno, extra cheese & hot sauce.', image: './seven-guys-website/productimage6.jfif', tag: 'HOT' },
+      { id: 'detroit-tikka', name: 'Detroit Tikka', category: 'Detroit Pizzas', price: 650, description: 'Chicken tikka, onion, tomatoes, olives & Detroit sauce.', image: './seven-guys-website/productimage4.jfif' },
       { id: 'foot-long', name: 'Foot Long Fries', category: 'Sides & Wings', price: 680, description: 'Extra long crispy loaded fries topped with house sauces.', image: './seven-guys-website/productimage5.jfif', tag: 'NEW ARRIVAL' },
       { id: 'loaded-fries', name: 'Loaded Fries', category: 'Sides & Wings', price: 600, description: 'Golden fries with cheese sauce, jalapenos & chicken bits.', image: './seven-guys-website/productimage5.jfif' },
       { id: 'wings', name: 'Oven Baked Wings (6 Pcs)', category: 'Sides & Wings', price: 420, description: 'Choose classic, garlic mayo, or spicy mayo wings.', image: './seven-guys-website/productimage5.jfif' },
-      { id: 'nuggets', name: 'Chicken Nuggets (6 Pcs)', category: 'Sides & Wings', price: 399, description: 'Crispy bite-sized chicken nuggets.', image: './seven-guys-website/productimage5.jfif' },
-      { id: 'deal-1', name: 'Deal 1 — Single Guy', category: 'Deals', price: 470, description: '1 Fillet Crunch Burger + 1 Drink + Regular Fries.', image: './seven-guys-website/productimage6.jfif', tag: 'BEST VALUE' },
-      { id: 'deal-2', name: 'Deal 2 — 2 Guys', category: 'Deals', price: 850, description: '2 Fillet Crunch Burgers + 2 Drinks + 1 Regular Fries.', image: './seven-guys-website/productimage6.jfif' },
-      { id: 'deal-3', name: 'Deal 3 — Single Guy', category: 'Deals', price: 580, description: '1 Zinger Burger + 1 Drink + 1 Regular Fries.', image: './seven-guys-website/productimage6.jfif' },
-      { id: 'deal-4', name: 'Deal 4 — 2 Guys', category: 'Deals', price: 1050, description: '2 Zinger Burgers + 2 Drinks + 1 Regular Fries.', image: './seven-guys-website/productimage6.jfif' },
+      { id: 'nuggets', name: 'Chicken Nuggets (6 Pcs)', category: 'Sides & Wings', price: 399, description: 'Crispy bite-sized chicken nuggets in a bucket.', image: './seven-guys-website/productimage3.jfif' },
+      { id: 'deal-1', name: 'Deal 1 — Single Guy', category: 'Deals', price: 470, description: '1 Fillet Crunch Burger + 1 Drink + Regular Fries.', image: './seven-guys-website/productimage2.jfif', tag: 'BEST VALUE' },
+      { id: 'deal-2', name: 'Deal 2 — 2 Guys', category: 'Deals', price: 850, description: '2 Fillet Crunch Burgers + 2 Drinks + 1 Regular Fries.', image: './seven-guys-website/productimage2.jfif' },
+      { id: 'deal-3', name: 'Deal 3 — Single Guy', category: 'Deals', price: 580, description: '1 Zinger Burger + 1 Drink + 1 Regular Fries.', image: './seven-guys-website/productimage2.jfif' },
+      { id: 'deal-4', name: 'Deal 4 — 2 Guys', category: 'Deals', price: 1050, description: '2 Zinger Burgers + 2 Drinks + 1 Regular Fries.', image: './seven-guys-website/productimage2.jfif' },
       { id: 'drinks', name: 'Drinks & Dips', category: 'Drinks & Dips', price: 80, description: 'NR 345ml, 1.5L drinks, water & signature dips from RS. 70.', image: './seven-guys-website/productimage1.jfif' },
     ]
 
@@ -1968,50 +2362,78 @@
       window.open(`https://wa.me/923194800036?text=${encodeURIComponent(message)}`, '_blank')
     }
 
-    // Initialize
-    // Make near-white pixels transparent for the hero image so it blends into the layout
-    function makeImageTransparent(imgEl, threshold = 240) {
+    // Initialize & Image Processing
+    // Corner-seeded flood fill to make the outer white background 100% transparent while preserving sesame seeds
+    function makeImageTransparent(imgEl, threshold = 242) {
       if (!imgEl) return
       const tmp = new Image()
       tmp.crossOrigin = 'anonymous'
       tmp.src = imgEl.src
       tmp.onload = () => {
         const canvas = document.createElement('canvas')
-        canvas.width = tmp.naturalWidth
-        canvas.height = tmp.naturalHeight
+        const w = tmp.naturalWidth
+        const h = tmp.naturalHeight
+        canvas.width = w
+        canvas.height = h
         const ctx = canvas.getContext('2d')
         ctx.drawImage(tmp, 0, 0)
         try {
-          const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height)
+          const imgData = ctx.getImageData(0, 0, w, h)
           const data = imgData.data
-          for (let i = 0; i < data.length; i += 4) {
-            const r = data[i], g = data[i + 1], b = data[i + 2]
-            if (r >= threshold && g >= threshold && b >= threshold) {
-              data[i + 3] = 0
+
+          // BFS Flood Fill from the 4 corners to remove surrounding white background safely
+          const visited = new Uint8Array(w * h)
+          const queue = [0, w - 1, (h - 1) * w, (h - 1) * w + (w - 1)]
+
+          function isWhite(idx) {
+            const p = idx * 4
+            return data[p] >= threshold && data[p + 1] >= threshold && data[p + 2] >= threshold
+          }
+
+          let head = 0
+          while (head < queue.length) {
+            const idx = queue[head++]
+            if (visited[idx]) continue
+            visited[idx] = 1
+
+            if (isWhite(idx)) {
+              data[idx * 4 + 3] = 0 // Make transparent
+
+              const x = idx % w
+              const y = Math.floor(idx / w)
+
+              if (x > 0 && !visited[idx - 1] && isWhite(idx - 1)) queue.push(idx - 1)
+              if (x < w - 1 && !visited[idx + 1] && isWhite(idx + 1)) queue.push(idx + 1)
+              if (y > 0 && !visited[idx - w] && isWhite(idx - w)) queue.push(idx - w)
+              if (y < h - 1 && !visited[idx + w] && isWhite(idx + w)) queue.push(idx + w)
             }
           }
+
           ctx.putImageData(imgData, 0, 0)
           imgEl.src = canvas.toDataURL('image/png')
         } catch (e) {
-          // security or other error; fail silently
-          console.warn('Image processing failed:', e)
+          console.warn('Background transparency processing skipped:', e)
         }
       }
     }
 
     window.addEventListener('load', () => {
       init()
-      const hero = document.querySelector('.hero-main')
-      // If the hero image is a PNG (already with alpha), skip canvas background processing
-      if (hero) {
+      const heroBurger = document.querySelector('.hero-main')
+      const heroVisual = document.querySelector('.hero-visual')
+      const shapeBackdrop = document.querySelector('.hero-shape-backdrop')
+      const tagTop = document.querySelector('.hero-tag-top')
+      const tagBottom = document.querySelector('.hero-tag-bottom')
+
+      // Process transparency
+      if (heroBurger) {
         try {
-          const isPng = /\.png$/i.test(hero.src)
-          if (!isPng) makeImageTransparent(hero, 240)
+          makeImageTransparent(heroBurger, 242)
         } catch (e) {
-          // ignore and proceed
+          // ignore
         }
 
-        // Reveal the hero burger on scroll using IntersectionObserver
+        // Reveal the hero burger on scroll / viewport entry
         const io = new IntersectionObserver((entries, observer) => {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -2019,9 +2441,36 @@
               observer.unobserve(entry.target)
             }
           })
-        }, { threshold: 0.35 })
+        }, { threshold: 0.15 })
 
-        io.observe(hero)
+        io.observe(heroBurger)
+      }
+
+      // Interactive 3D Cursor Physics & Alive Motion
+      if (heroVisual && heroBurger) {
+        heroVisual.addEventListener('mousemove', (e) => {
+          const rect = heroVisual.getBoundingClientRect()
+          const x = (e.clientX - rect.left) / rect.width - 0.5
+          const y = (e.clientY - rect.top) / rect.height - 0.5
+
+          heroBurger.style.transform = `perspective(1000px) rotateY(${x * 14}deg) rotateX(${-y * 14}deg) translateY(-6px) scale(1.02)`
+          if (shapeBackdrop) {
+            shapeBackdrop.style.transform = `rotate(8deg) translate(${x * -18}px, ${y * -18}px)`
+          }
+          if (tagTop) {
+            tagTop.style.transform = `translate(${x * -24}px, ${y * -24}px) rotate(-6deg)`
+          }
+          if (tagBottom) {
+            tagBottom.style.transform = `translate(${x * 24}px, ${y * 24}px) rotate(6deg)`
+          }
+        })
+
+        heroVisual.addEventListener('mouseleave', () => {
+          heroBurger.style.transform = ''
+          if (shapeBackdrop) shapeBackdrop.style.transform = ''
+          if (tagTop) tagTop.style.transform = ''
+          if (tagBottom) tagBottom.style.transform = ''
+        })
       }
     })
   </script>

@@ -42,8 +42,9 @@ export default async function CampaignPage({ params }: CampaignPageProps) {
   }
 
   // Read campaign HTML source of truth from filesystem:
-  // First check src/campaign/<campaignCode>/<website-slug>/index.html
-  // Then fallback to src/campaign/<campaignCode>/<website-slug>.html
+  // 1. Check site.htmlPath if defined
+  // 2. Check src/campaign/<campaignCode>/<website-slug>/index.html or .html
+  // 3. Scan country folders like (pk), (us) under src/campaign/<campaignCode>/
   const htmlDirPath = path.join(
     process.cwd(),
     "src",
@@ -62,17 +63,38 @@ export default async function CampaignPage({ params }: CampaignPageProps) {
 
   let htmlContent = "";
   try {
-    if (fs.existsSync(htmlDirPath)) {
+    if (site.htmlPath) {
+      const explicitPath = path.join(/*turbopackIgnore: true*/ process.cwd(), site.htmlPath);
+      if (fs.existsSync(explicitPath)) {
+        htmlContent = fs.readFileSync(explicitPath, "utf-8");
+      }
+    }
+
+    if (!htmlContent && fs.existsSync(htmlDirPath)) {
       htmlContent = fs.readFileSync(htmlDirPath, "utf-8");
-    } else if (fs.existsSync(htmlFilePath)) {
+    } else if (!htmlContent && fs.existsSync(htmlFilePath)) {
       htmlContent = fs.readFileSync(htmlFilePath, "utf-8");
-    } else {
-      // Fallback: scan slug directory for first .html file
-      const slugDir = path.join(process.cwd(), "src", "campaign", campaignCode, slug);
-      if (fs.existsSync(slugDir) && fs.statSync(slugDir).isDirectory()) {
-        const htmlFile = fs.readdirSync(slugDir).find((f) => f.endsWith(".html"));
-        if (htmlFile) {
-          htmlContent = fs.readFileSync(path.join(slugDir, htmlFile), "utf-8");
+    } else if (!htmlContent) {
+      // Check country subdirectories like (pk), (us)
+      const baseCampaignDir = path.join(process.cwd(), "src", "campaign", campaignCode);
+      if (fs.existsSync(baseCampaignDir)) {
+        const entries = fs.readdirSync(baseCampaignDir, { withFileTypes: true });
+        for (const entry of entries) {
+          if (entry.isDirectory()) {
+            const subSlugDir = path.join(baseCampaignDir, entry.name, slug);
+            if (fs.existsSync(subSlugDir) && fs.statSync(subSlugDir).isDirectory()) {
+              const htmlFile = fs.readdirSync(subSlugDir).find((f) => f.endsWith(".html"));
+              if (htmlFile) {
+                htmlContent = fs.readFileSync(path.join(subSlugDir, htmlFile), "utf-8");
+                break;
+              }
+            }
+            const subSlugFile = path.join(baseCampaignDir, entry.name, `${slug}.html`);
+            if (fs.existsSync(subSlugFile)) {
+              htmlContent = fs.readFileSync(subSlugFile, "utf-8");
+              break;
+            }
+          }
         }
       }
     }

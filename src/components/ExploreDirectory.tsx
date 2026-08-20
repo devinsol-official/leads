@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { Search, Compass, Sparkles, ExternalLink, ShieldCheck, Tag, Filter, PlusCircle } from "lucide-react";
 import { CAMPAIGN_CATEGORIES, CAMPAIGNS_DATA } from "@/data/campaigns";
+import { CountryFlag } from "./CountryFlag";
 
 function DirectoryContent() {
   const searchParams = useSearchParams();
@@ -132,8 +133,15 @@ function DirectoryContent() {
           {filteredSites.map((site) => (
             <div
               key={site.id}
-              className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/40 transition-all hover:-translate-y-1 hover:border-blue-500/40 hover:shadow-xl hover:shadow-blue-500/10"
+              className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/40 transition-all hover:-translate-y-1 hover:border-blue-500/40 hover:shadow-xl hover:shadow-blue-500/10 cursor-pointer"
             >
+              {/* Full Card Clickable Link */}
+              <Link
+                href={`/campaign/${site.campaignCode}/${site.slug}`}
+                className="absolute inset-0 z-10"
+                aria-label={`Preview ${site.title}`}
+              />
+
               {/* Card Thumbnail */}
               <div className="relative h-48 w-full overflow-hidden bg-zinc-950">
                 <img
@@ -144,10 +152,13 @@ function DirectoryContent() {
                 <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent" />
 
                 {/* Top Badges */}
-                <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
-                  <span className="rounded-md bg-zinc-950/80 px-2.5 py-1 text-[10px] font-semibold text-blue-300 backdrop-blur-md border border-white/10">
-                    {site.category}
-                  </span>
+                <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none">
+                  <div className="flex items-center gap-1.5">
+                    <span className="rounded-md bg-zinc-950/80 px-2.5 py-1 text-[10px] font-semibold text-blue-300 backdrop-blur-md border border-white/10">
+                      {site.category}
+                    </span>
+                    {site.country && <CountryFlag country={site.country} />}
+                  </div>
                   <span className="flex items-center gap-1 rounded-md bg-emerald-950/80 px-2 py-1 text-[10px] font-semibold text-emerald-400 backdrop-blur-md border border-emerald-500/30">
                     <ShieldCheck className="h-3 w-3" />
                     <span>100% Free Offer</span>
@@ -178,7 +189,7 @@ function DirectoryContent() {
                 </div>
 
                 {/* Card Actions */}
-                <div className="mt-6 flex items-center gap-2 pt-4 border-t border-white/5">
+                <div className="mt-6 flex items-center gap-2 pt-4 border-t border-white/5 relative z-20">
                   <Link
                     href={`/campaign/${site.campaignCode}/${site.slug}`}
                     className="flex flex-1 items-center justify-center gap-1.5 rounded-xl border border-white/10 bg-white/5 py-2.5 text-xs font-semibold text-zinc-200 transition-colors hover:bg-white/10 hover:text-white"
