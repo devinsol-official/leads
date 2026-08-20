@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { OrbitVisual } from "@/components/OrbitVisual";
+import { CountryFlag } from "@/components/CountryFlag";
 import { CAMPAIGNS_DATA } from "@/data/campaigns";
 import {
   Compass,
@@ -300,8 +301,15 @@ export default function Home() {
               {featuredSites.map((site) => (
                 <div
                   key={site.id}
-                  className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/50 transition-all hover:-translate-y-1.5 hover:border-blue-500/40 hover:shadow-xl hover:shadow-blue-500/10"
+                  className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-zinc-900/50 transition-all hover:-translate-y-1.5 hover:border-blue-500/40 hover:shadow-xl hover:shadow-blue-500/10 cursor-pointer"
                 >
+                  {/* Full Card Clickable Link */}
+                  <Link
+                    href={`/campaign/${site.campaignCode}/${site.slug}`}
+                    className="absolute inset-0 z-10"
+                    aria-label={`Preview ${site.title}`}
+                  />
+
                   <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-zinc-950">
                     <img
                       src={site.thumbnailUrl}
@@ -309,9 +317,12 @@ export default function Home() {
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent" />
-                    <span className="absolute top-3 left-3 rounded-md bg-zinc-950/80 px-2.5 py-1 text-[10px] font-semibold text-blue-300 backdrop-blur-md border border-white/10">
-                      {site.category}
-                    </span>
+                    <div className="absolute top-3 left-3 flex items-center gap-1.5 pointer-events-none">
+                      <span className="rounded-md bg-zinc-950/80 px-2.5 py-1 text-[10px] font-semibold text-blue-300 backdrop-blur-md border border-white/10">
+                        {site.category}
+                      </span>
+                      {site.country && <CountryFlag country={site.country} />}
+                    </div>
                   </div>
 
                   <div className="flex flex-1 flex-col p-5 sm:p-6">
@@ -322,7 +333,7 @@ export default function Home() {
                       {site.tagline}
                     </p>
 
-                    <div className="mt-6 flex items-center justify-between pt-4 border-t border-white/5 text-xs">
+                    <div className="mt-6 flex items-center justify-between pt-4 border-t border-white/5 text-xs relative z-20">
                       <Link
                         href={`/campaign/${site.campaignCode}/${site.slug}`}
                         className="inline-flex items-center gap-1 font-semibold text-zinc-300 hover:text-white"

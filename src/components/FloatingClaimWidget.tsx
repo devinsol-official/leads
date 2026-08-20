@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ChevronDown, ChevronUp, Info, PhoneCall } from "lucide-react";
 import { CampaignSite } from "@/data/campaigns";
+import { CountryFlag } from "./CountryFlag";
 
 interface FloatingClaimWidgetProps {
   site: CampaignSite;
@@ -90,9 +91,17 @@ export function FloatingClaimWidget({ site, onClaimClick }: FloatingClaimWidgetP
             <div className="flex items-start justify-between text-xs">
               <div>
                 <span className="text-zinc-400">Is this your business?</span>
-                <p className="font-bold text-white text-xs sm:text-sm truncate max-w-[180px] sm:max-w-[220px]">
-                  {site.title}
-                </p>
+                <div className="flex items-center gap-2 mt-0.5">
+                  <p className="font-bold text-white text-xs sm:text-sm truncate max-w-[160px] sm:max-w-[200px]">
+                    {site.title}
+                  </p>
+                  {site.country && (
+                    <CountryFlag
+                      country={site.country}
+                      className="inline-flex items-center gap-1 shrink-0 rounded-md bg-white/10 px-1.5 py-0.5 text-[10px] font-medium text-zinc-200 border border-white/10"
+                    />
+                  )}
+                </div>
               </div>
               <span className="rounded-full bg-emerald-500/10 px-2 py-0.5 text-[9px] sm:text-[10px] font-semibold text-emerald-400 border border-emerald-500/20">
                 100% Free
