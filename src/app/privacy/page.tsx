@@ -82,8 +82,22 @@ export default function PrivacyPage() {
 
             {/* Section 4 */}
             <section className="rounded-2xl border border-white/10 bg-zinc-900/50 p-6 sm:p-8">
+              <h2 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                <CheckCircle2 className="h-5 w-5 text-blue-400" />
+                <span>4. Third-Party Hosting Providers & Referral Links</span>
+              </h2>
+              <p className="mb-3">
+                When you deploy your website with third-party web hosting providers (such as Hostinger via our official referral links or an alternative provider selected with your representative), transactions and hosting accounts are managed directly between you and the respective provider.
+              </p>
+              <p>
+                Devinsol does not store your external hosting payment details. Any interaction with third-party hosting platforms is governed by their respective privacy policies and terms of service.
+              </p>
+            </section>
+
+            {/* Section 5 */}
+            <section className="rounded-2xl border border-white/10 bg-zinc-900/50 p-6 sm:p-8">
               <h2 className="text-xl font-bold text-white mb-3">
-                4. Data Security & Cookies
+                5. Data Security & Cookies
               </h2>
               <p>
                 We implement industry-standard technical measures to protect submitted contact information. Devinsol Explore uses minimal functional cookies strictly necessary to maintain platform routing, search state, and user sessions.

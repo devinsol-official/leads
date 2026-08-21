@@ -19,6 +19,8 @@ import {
   Clock,
   Layout,
   PlusCircle,
+  Building2,
+  TrendingUp,
 } from "lucide-react";
 
 export default function Home() {
@@ -32,7 +34,7 @@ export default function Home() {
 
       <main className="flex-1">
         {/* HERO SECTION */}
-        <section className="relative overflow-hidden pt-8 pb-16 sm:pt-16 sm:pb-24 lg:pt-20 lg:pb-32">
+        <section className="relative overflow-hidden pt-8 pb-16 sm:pt-16 sm:pb-24 lg:pt-20 lg:pb-28">
           {/* Background Ambient Glows */}
           <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 h-[350px] sm:h-[500px] w-[95%] sm:w-[800px] bg-gradient-to-b from-blue-600/15 via-cyan-500/10 to-transparent blur-3xl" />
 
@@ -99,6 +101,73 @@ export default function Home() {
               {/* Hero Orbit Protection Animation */}
               <div className="lg:col-span-5 flex justify-center mt-2 lg:mt-0">
                 <OrbitVisual />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* PROVEN IMPACT & TRUST STATS SECTION */}
+        <section className="relative z-20 -mt-6 sm:-mt-10 lg:-mt-14 mb-10 sm:mb-16">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-zinc-900/85 p-5 sm:p-7 lg:p-8 backdrop-blur-xl shadow-2xl shadow-blue-500/5">
+              {/* Subtle ambient gradient highlights */}
+              <div className="pointer-events-none absolute -right-20 -top-20 h-60 w-60 rounded-full bg-blue-500/10 blur-3xl" />
+              <div className="pointer-events-none absolute -left-20 -bottom-20 h-60 w-60 rounded-full bg-indigo-500/10 blur-3xl" />
+
+              <div className="relative grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+                {/* Stat 1: 25+ Businesses */}
+                <div className="flex items-start gap-3.5 sm:gap-4 rounded-2xl border border-white/5 bg-white/[0.02] p-5 transition-all hover:border-blue-500/30 hover:bg-blue-500/[0.04]">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-blue-500/10 border border-blue-500/30 text-blue-400">
+                    <Building2 className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <div className="flex items-baseline gap-1">
+                      <span className="text-3xl sm:text-4xl font-black tracking-tight bg-gradient-to-r from-white via-zinc-100 to-blue-300 bg-clip-text text-transparent">
+                        25+
+                      </span>
+                    </div>
+                    <h3 className="mt-1 text-sm font-bold text-white">Businesses Empowered</h3>
+                    <p className="mt-0.5 text-xs text-zinc-400 leading-relaxed">
+                      Successfully availed & launched through our free campaign.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Stat 2: 150+ Leads */}
+                <div className="flex items-start gap-3.5 sm:gap-4 rounded-2xl border border-white/5 bg-white/[0.02] p-5 transition-all hover:border-indigo-500/30 hover:bg-indigo-500/[0.04]">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-indigo-500/10 border border-indigo-500/30 text-indigo-400">
+                    <TrendingUp className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <div className="flex items-baseline gap-1">
+                      <span className="text-3xl sm:text-4xl font-black tracking-tight bg-gradient-to-r from-white via-zinc-100 to-indigo-300 bg-clip-text text-transparent">
+                        150+
+                      </span>
+                    </div>
+                    <h3 className="mt-1 text-sm font-bold text-white">Total Leads Generated</h3>
+                    <p className="mt-0.5 text-xs text-zinc-400 leading-relaxed">
+                      High-intent customer inquiries & direct orders driven by our team.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Stat 3: 98% Satisfaction */}
+                <div className="flex items-start gap-3.5 sm:gap-4 rounded-2xl border border-white/5 bg-white/[0.02] p-5 transition-all hover:border-emerald-500/30 hover:bg-emerald-500/[0.04]">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
+                    <Sparkles className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <div className="flex items-baseline gap-1">
+                      <span className="text-3xl sm:text-4xl font-black tracking-tight bg-gradient-to-r from-white via-zinc-100 to-emerald-300 bg-clip-text text-transparent">
+                        98%
+                      </span>
+                    </div>
+                    <h3 className="mt-1 text-sm font-bold text-white">Client Satisfaction</h3>
+                    <p className="mt-0.5 text-xs text-zinc-400 leading-relaxed">
+                      Verified positive ratings & feedback from business founders.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

@@ -85,23 +85,51 @@ export default function TermsPage() {
             <section className="rounded-2xl border border-white/10 bg-zinc-900/50 p-6 sm:p-8">
               <h2 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
                 <CheckCircle2 className="h-5 w-5 text-blue-400" />
-                <span>3. Free Website Offer & Representative Consultation</span>
+                <span>3. Free Website Design & Hosting Setup</span>
               </h2>
               <p className="mb-3">
-                The initial custom website design, layout setup, and consultation provided by Devinsol are <strong>100% free of charge</strong>.
+                The initial custom website design, code development, and consultation provided by Devinsol are <strong>100% free of charge</strong> with no hidden agency design fees.
               </p>
-              <ul className="list-disc pl-6 space-y-1.5 text-zinc-400">
-                <li>No credit card, deposit, or financial commitment is required to request or claim a website.</li>
-                <li>When a business owner contacts Devinsol to claim a website, a dedicated Devinsol representative will get in touch to assist with logo, copy, and contact customization.</li>
-                <li>Final website publishing and domain connection are executed only upon verification and agreement with the authorized business representative.</li>
+              <ul className="list-disc pl-6 space-y-2 text-zinc-400">
+                <li>
+                  <strong className="text-white">Hosting & Server Infrastructure:</strong> While design and setup are complimentary, live deployment on your custom domain requires standard web hosting. You can acquire hosting directly from <strong>Hostinger using our official referral link</strong>, or select an alternative hosting configuration based on mutual agreement during discussions with your assigned Devinsol representative.
+                </li>
+                <li>
+                  <strong className="text-white">Account Ownership:</strong> You maintain 100% ownership and control of your hosting account, credentials, and domain name at all times.
+                </li>
+                <li>
+                  <strong className="text-white">Representative Consultation:</strong> When claiming or requesting a site, a dedicated Devinsol representative will coordinate with you to customize your branding, menu/services, contact numbers, and assist with live deployment.
+                </li>
               </ul>
             </section>
 
-            {/* Section 4 */}
+            {/* Section 4: Technology Partner Attribution & Copyright */}
+            <section className="rounded-2xl border border-white/10 bg-zinc-900/50 p-6 sm:p-8">
+              <h2 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                <ShieldCheck className="h-5 w-5 text-blue-400" />
+                <span>4. Technology Partner Attribution & Intellectual Property</span>
+              </h2>
+              <p className="mb-3">
+                To reflect our ongoing technical support, development backing, and design quality, deployed websites may include a discrete footer attribution:
+              </p>
+              <ul className="list-disc pl-6 space-y-2 text-zinc-400">
+                <li>
+                  <strong className="text-white">Footer Attribution:</strong> We will include a footer reference stating <em>"Designed and Managed by Devinsol"</em> (or designating Devinsol as your official technology partner).
+                </li>
+                <li>
+                  <strong className="text-white">Full Copyright Retained by Owner:</strong> We explicitly declare <em>"Copyright &copy; All rights reserved by [Business / Startup Owner]"</em>. All company branding, trademarks, logos, content, and proprietary assets remain 100% owned exclusively by the startup or business owner.
+                </li>
+                <li>
+                  <strong className="text-white">Mutual Value:</strong> Showcasing Devinsol as your technology partner provides credibility for your digital storefront, demonstrates active technical maintenance, and enables ongoing advisory support from our team.
+                </li>
+              </ul>
+            </section>
+
+            {/* Section 5 */}
             <section className="rounded-2xl border border-white/10 bg-zinc-900/50 p-6 sm:p-8">
               <h2 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
                 <Mail className="h-5 w-5 text-blue-400" />
-                <span>4. Business Owner Rights & Listing Removal</span>
+                <span>5. Business Owner Rights & Listing Removal</span>
               </h2>
               <p className="mb-3">
                 Devinsol respects the privacy and brand identity of all business owners. If you are the authorized owner or representative of a business listed in Devinsol Explore, you have the following rights:
@@ -119,10 +147,10 @@ export default function TermsPage() {
               </p>
             </section>
 
-            {/* Section 5 */}
+            {/* Section 6 */}
             <section className="rounded-2xl border border-white/10 bg-zinc-900/50 p-6 sm:p-8">
               <h2 className="text-xl font-bold text-white mb-3">
-                5. Limitation of Liability
+                6. Limitation of Liability
               </h2>
               <p>
                 Devinsol provides promotional webpage previews "as is" for demonstration purposes. Devinsol shall not be liable for any indirect, incidental, or consequential damages resulting from public viewing of demonstration listings prior to official owner verification.
