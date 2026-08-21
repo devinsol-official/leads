@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -10,7 +9,7 @@ import { CAMPAIGNS_DATA } from "@/data/campaigns";
 import {
   Compass,
   Sparkles,
-  Play,
+
   ArrowRight,
   CheckCircle2,
   ExternalLink,
@@ -24,7 +23,6 @@ import {
 } from "lucide-react";
 
 export default function Home() {
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const featuredSites = CAMPAIGNS_DATA.filter((s) => s.featured);
 
   return (
@@ -244,42 +242,16 @@ export default function Home() {
               {/* Video Player */}
               <div className="lg:col-span-6">
                 <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-zinc-950 p-2 shadow-2xl shadow-blue-500/10">
-                  <div className="relative h-[280px] sm:h-[380px] w-full overflow-hidden rounded-2xl bg-gradient-to-br from-zinc-900 via-zinc-950 to-blue-950 flex items-center justify-center">
-                    {!isVideoPlaying ? (
-                      <div className="relative flex flex-col items-center text-center p-6 z-10">
-                        <button
-                          onClick={() => setIsVideoPlaying(true)}
-                          className="group relative flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-full border border-blue-400/50 bg-blue-500/25 text-white backdrop-blur-md transition-all hover:scale-110 hover:bg-blue-500/40 mb-4"
-                        >
-                          <Play className="h-7 w-7 sm:h-8 sm:w-8 fill-white ml-1" />
-                          <span className="absolute -inset-2 rounded-full border border-blue-400/40 animate-ping" />
-                        </button>
-                        <h3 className="text-lg sm:text-xl font-bold text-white mb-1">
-                          Watch How Free Websites Work
-                        </h3>
-                        <p className="text-xs text-zinc-400 max-w-xs">
-                          See how business owners request, review, and launch their free websites with Devinsol.
-                        </p>
-                      </div>
-                    ) : (
-                      <div className="h-full w-full flex flex-col items-center justify-center p-6 sm:p-8 bg-zinc-900 text-center">
-                        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-500/20 border border-blue-500/40 mb-3">
-                          <Play className="h-6 w-6 text-blue-400" />
-                        </div>
-                        <h4 className="text-base sm:text-lg font-bold text-white mb-2">
-                          Playing Offer Walkthrough
-                        </h4>
-                        <p className="text-xs text-zinc-400 max-w-sm mb-4">
-                          [Video Walkthrough - Demonstrating Website Requests, Directory Previews, & Representative Consultation]
-                        </p>
-                        <button
-                          onClick={() => setIsVideoPlaying(false)}
-                          className="rounded-xl bg-white/10 px-4 py-2 text-xs font-semibold text-zinc-300 hover:bg-white/20"
-                        >
-                          Close Preview
-                        </button>
-                      </div>
-                    )}
+                  <div className="relative aspect-video w-full overflow-hidden rounded-2xl bg-gradient-to-br from-zinc-900 via-zinc-950 to-blue-950">
+                    <iframe
+                      className="absolute inset-0 h-full w-full"
+                      src="https://www.youtube.com/embed/4xtDBhSO6ZQ?si=wiQvs5IuMkvgfUwz"
+                      title="YouTube video player"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                    />
                   </div>
                 </div>
               </div>
