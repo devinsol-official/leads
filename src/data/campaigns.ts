@@ -88,6 +88,12 @@ export const CAMPAIGNS_DATA: CampaignSite[] = [
     title: "Wingo's",
     slug: "wingos",
     campaignCode: "2026",
+    country: {
+      code: "PK",
+      name: "Pakistan",
+      flag: "🇵🇰",
+      flagUrl: "https://flagcdn.com/w40/pk.png",
+    },
     category: "Food & Restaurant",
     tagline: "Gujranwala's Craziest Crunch & Ultimate Flavor",
     description: "From our legendary House of Wings to the towering Jumbo Zap Burger — built loaded, fired hot, devoured fast in Gujranwala.",

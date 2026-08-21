@@ -1,0 +1,1662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wingo's — Gujranwala's Craziest Crunch</title>
+  <link rel="icon" type="image/png" href="wingos-logo.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css">
+
+  <style>
+    :root {
+      --bg: #120E0C;
+      --bg-soft: #1A1512;
+      --charcoal: #221B17;
+      --cream: #F6ECDD;
+      --spicy-red: #E8362B;
+      --neon-orange: #FF7A1A;
+      --gold: #FFC24B;
+      --smoke: #6B5C51;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--cream);
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* film-grain texture overlay for warmth */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 60;
+      pointer-events: none;
+      opacity: .045;
+      mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    .font-display {
+      font-family: 'Anton', sans-serif;
+      letter-spacing: .01em;
+    }
+
+    .font-tag {
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: .14em;
+    }
+
+    .text-gradient-fire {
+      background: linear-gradient(100deg, var(--gold) 0%, var(--neon-orange) 45%, var(--spicy-red) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .grid-noise-bg {
+      background-image:
+        radial-gradient(circle at 15% 20%, rgba(232, 54, 43, .16), transparent 45%),
+        radial-gradient(circle at 85% 15%, rgba(255, 194, 75, .10), transparent 40%),
+        radial-gradient(circle at 50% 100%, rgba(255, 122, 26, .10), transparent 50%);
+    }
+
+    /* nav */
+    #navbar {
+      transition: background .4s ease, padding .4s ease, backdrop-filter .4s ease, box-shadow .4s ease;
+    }
+
+    #navbar.solid {
+      background: rgba(18, 14, 12, .92);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 6px 30px -12px rgba(0, 0, 0, .7);
+    }
+
+    .nav-link {
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      height: 2px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--gold), var(--spicy-red));
+      transition: width .3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .btn-order {
+      animation: pulse-glow 2.4s ease-in-out infinite;
+    }
+
+    @keyframes pulse-glow {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(232, 54, 43, .55);
+      }
+
+      50% {
+        box-shadow: 0 0 0 12px rgba(232, 54, 43, 0);
+      }
+    }
+
+    /* hero */
+    .float-y {
+      animation: floaty 5s ease-in-out infinite;
+    }
+
+    @keyframes floaty {
+
+      0%,
+      100% {
+        transform: translateY(0px) rotate(-1.5deg);
+      }
+
+      50% {
+        transform: translateY(-18px) rotate(1.5deg);
+      }
+    }
+
+    .rotate-slow {
+      animation: spin-slow 22s linear infinite;
+    }
+
+    .rotate-slow-reverse {
+      animation: spin-slow-rev 28s linear infinite;
+    }
+
+    @keyframes spin-slow {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spin-slow-rev {
+      to {
+        transform: rotate(-360deg);
+      }
+    }
+
+    .float-badge-1 {
+      animation: floaty 4s ease-in-out infinite alternate;
+    }
+
+    .float-badge-2 {
+      animation: floaty 6s ease-in-out infinite alternate-reverse;
+    }
+
+    .hero-glow-pulse {
+      animation: glow-pulse 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow-pulse {
+      0% {
+        transform: scale(0.9);
+        opacity: 0.35;
+      }
+
+      100% {
+        transform: scale(1.15);
+        opacity: 0.65;
+      }
+    }
+
+    .ember {
+      position: absolute;
+      border-radius: 999px;
+      pointer-events: none;
+      background: radial-gradient(circle, var(--gold), transparent 70%);
+      filter: blur(1px);
+      animation: rise linear infinite;
+      opacity: .8;
+    }
+
+    @keyframes rise {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: .9;
+      }
+
+      100% {
+        transform: translateY(-620px) scale(.2);
+        opacity: 0;
+      }
+    }
+
+    .hero-badge-ring {
+      animation: spin-slow 14s linear infinite;
+    }
+
+    @keyframes spin-slow {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* marquee ticker */
+    .marquee-track {
+      animation: scroll-left 26s linear infinite;
+    }
+
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* menu cards */
+    .menu-card {
+      background: linear-gradient(160deg, var(--charcoal), var(--bg-soft));
+      border: 1px solid rgba(255, 255, 255, .06);
+      transition: transform .45s cubic-bezier(.2, .8, .2, 1), border-color .45s ease, box-shadow .45s ease;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-10px) scale(1.015);
+      border-color: rgba(255, 122, 26, .55);
+      box-shadow: 0 26px 50px -20px rgba(232, 54, 43, .35), 0 0 0 1px rgba(255, 194, 75, .08) inset;
+    }
+
+    .menu-card .img-wrap img {
+      transition: transform .6s ease, filter .6s ease;
+    }
+
+    .menu-card:hover .img-wrap img {
+      transform: scale(1.08);
+      filter: saturate(1.15) contrast(1.05);
+    }
+
+    .add-cart-btn {
+      transition: transform .3s ease, background .3s ease, box-shadow .3s ease;
+    }
+
+    .add-cart-btn:hover {
+      transform: scale(1.12);
+      box-shadow: 0 0 18px rgba(255, 122, 26, .7);
+    }
+
+    .add-cart-btn:active {
+      transform: scale(0.92);
+    }
+
+    .heat-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+    }
+
+    /* deal tickets */
+    .ticket {
+      position: relative;
+      background: linear-gradient(155deg, #241A16, #17110E);
+      border: 1px solid rgba(255, 194, 75, .18);
+    }
+
+    .ticket::before,
+    .ticket::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 26px;
+      height: 26px;
+      background: var(--bg);
+      border-radius: 999px;
+      transform: translateY(-50%);
+    }
+
+    .ticket::before {
+      left: -13px;
+    }
+
+    .ticket::after {
+      right: -13px;
+    }
+
+    .ticket .perf {
+      border-left: 2px dashed rgba(246, 236, 221, .22);
+    }
+
+    .ribbon {
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: .08em;
+    }
+
+    .glow-border {
+      box-shadow: 0 0 0 1px rgba(255, 194, 75, .25), 0 20px 60px -25px rgba(255, 122, 26, .5);
+    }
+
+    /* section labels */
+    .eyebrow {
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: .3em;
+    }
+
+    /* Cart Drawer and Modal Custom */
+    .cart-drawer {
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .cart-backdrop {
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .badge-pop {
+      animation: badge-pop-anim 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    @keyframes badge-pop-anim {
+      0% {
+        transform: scale(0.6);
+      }
+
+      60% {
+        transform: scale(1.35);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(var(--spicy-red), var(--gold));
+      border-radius: 8px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .001ms !important;
+      }
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+    }
+  </style>
+</head>
+
+<body class="antialiased">
+
+  <!-- ================= NAVBAR ================= -->
+  <nav id="navbar" class="fixed top-0 left-0 w-full z-50 py-2.5 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#home" class="flex items-center group py-1" aria-label="Wingo's Home">
+        <img src="wingos-logo.png" alt="Wingo's Logo"
+          class="h-16 sm:h-20 w-auto object-contain transition-all duration-300 group-hover:scale-105 drop-shadow-[0_8px_24px_rgba(255,122,26,0.45)]">
+      </a>
+
+      <!-- Links -->
+      <div class="hidden md:flex items-center gap-10 font-tag text-sm text-[var(--cream)]/85">
+        <a href="#home" class="nav-link hover:text-[var(--gold)]">HOME</a>
+        <a href="#menu" class="nav-link hover:text-[var(--gold)]">MENU</a>
+        <a href="#deals" class="nav-link hover:text-[var(--gold)]">DEALS</a>
+        <a href="#locations" class="nav-link hover:text-[var(--gold)]">LOCATIONS</a>
+      </div>
+
+      <!-- Actions (Cart + CTA) -->
+      <div class="flex items-center gap-3 sm:gap-4">
+        <!-- Cart Icon Trigger -->
+        <button id="open-cart-btn"
+          class="relative p-2.5 sm:px-4 sm:py-2.5 rounded-full border border-white/15 bg-[var(--charcoal)]/80 hover:border-[var(--gold)] hover:text-[var(--gold)] transition-all flex items-center gap-2 group"
+          title="View Cart">
+          <i
+            class="fa-solid fa-bag-shopping text-base text-[var(--gold)] group-hover:scale-110 transition-transform"></i>
+          <span
+            class="hidden sm:inline font-tag text-sm tracking-wider text-[var(--cream)] group-hover:text-[var(--gold)]">CART</span>
+          <span id="cart-count-badge"
+            class="bg-gradient-to-r from-[var(--gold)] to-[var(--spicy-red)] text-[#1A1210] font-display text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold shadow-md">0</span>
+        </button>
+
+        <!-- CTA -->
+        <button id="nav-order-now-btn"
+          class="btn-order font-tag text-sm px-5 sm:px-6 py-2.5 rounded-full text-[#1A1210] font-bold"
+          style="background: linear-gradient(100deg,var(--gold),var(--neon-orange));">
+          ORDER NOW
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= HERO ================= -->
+  <section id="home" class="relative min-h-screen flex items-center pt-28 pb-16 grid-noise-bg overflow-hidden">
+    <!-- embers -->
+    <span class="ember w-2 h-2" style="left:12%; bottom:0; animation-duration:6s; animation-delay:.2s;"></span>
+    <span class="ember w-1.5 h-1.5" style="left:24%; bottom:0; animation-duration:8s; animation-delay:1.4s;"></span>
+    <span class="ember w-2.5 h-2.5" style="left:70%; bottom:0; animation-duration:7s; animation-delay:.6s;"></span>
+    <span class="ember w-1.5 h-1.5" style="left:85%; bottom:0; animation-duration:9s; animation-delay:2s;"></span>
+    <span class="ember w-2 h-2" style="left:55%; bottom:0; animation-duration:6.5s; animation-delay:1s;"></span>
+
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center relative z-10">
+      <!-- copy -->
+      <div data-aos="fade-right" data-aos-duration="900">
+        <span
+          class="eyebrow inline-block text-xs text-[var(--gold)] mb-5 border border-[var(--gold)]/30 rounded-full px-4 py-1.5">GUJRANWALA'S
+          #1 FAST FOOD</span>
+        <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl leading-[0.98] mb-6">
+          GUJRANWALA'S<br>
+          <span class="text-gradient-fire">CRAZIEST CRUNCH.</span><br>
+          THE ULTIMATE FLAVOR.
+        </h1>
+        <p class="text-[var(--cream)]/70 text-lg max-w-md mb-9 leading-relaxed">
+          From our legendary House of Wings to the towering Jumbo Zap Burger —
+          built loaded, fired hot, devoured fast.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#menu"
+            class="group font-tag text-base tracking-widest px-8 py-4 rounded-full text-[#1A1210] flex items-center gap-2 transition-transform hover:scale-105 font-bold"
+            style="background: linear-gradient(100deg,var(--gold),var(--spicy-red));">
+            EXPLORE MENU <i class="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+          </a>
+          <a href="#deals"
+            class="font-tag text-base tracking-widest px-8 py-4 rounded-full border border-[var(--cream)]/25 hover:border-[var(--gold)] hover:text-[var(--gold)] transition-colors">
+            CLAIM DEALS
+          </a>
+        </div>
+
+        <div class="flex items-center gap-8 mt-12 text-sm">
+          <div>
+            <p class="font-display text-2xl text-[var(--gold)]">15+</p>
+            <p class="text-[var(--cream)]/50">Years Sizzling</p>
+          </div>
+          <div class="w-px h-10 bg-[var(--cream)]/15"></div>
+          <div>
+            <p class="font-display text-2xl text-[var(--gold)]">2</p>
+            <p class="text-[var(--cream)]/50">Branches in GT</p>
+          </div>
+          <div class="w-px h-10 bg-[var(--cream)]/15"></div>
+          <div>
+            <p class="font-display text-2xl text-[var(--gold)]">50K+</p>
+            <p class="text-[var(--cream)]/50">Wings Fired Weekly</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- floating hero image with moving background aesthetics -->
+      <div class="relative flex justify-center items-center lg:justify-end" data-aos="fade-left"
+        data-aos-duration="900">
+
+        <!-- Aesthetic Animated Glowing Backdrops & Rotating Orbit Rings -->
+        <div class="absolute w-[440px] h-[440px] rounded-full blur-3xl hero-glow-pulse pointer-events-none"
+          style="background: radial-gradient(circle, rgba(232,54,43,0.7) 0%, rgba(255,122,26,0.35) 45%, transparent 70%);">
+        </div>
+
+        <!-- Outer Rotating Dashed Ring -->
+        <div
+          class="absolute w-[360px] sm:w-[460px] h-[360px] sm:h-[460px] rounded-full border border-dashed border-[var(--gold)]/30 rotate-slow pointer-events-none flex items-center justify-center">
+          <!-- Floating Orbiting Dot -->
+          <span class="absolute -top-2 w-4 h-4 rounded-full bg-[var(--gold)] shadow-[0_0_12px_var(--gold)]"></span>
+        </div>
+
+        <!-- Inner Counter-Rotating Orbit Ring -->
+        <div
+          class="absolute w-[280px] sm:w-[360px] h-[280px] sm:h-[360px] rounded-full border border-[var(--spicy-red)]/40 rotate-slow-reverse pointer-events-none flex items-center justify-center">
+          <span
+            class="absolute -bottom-2 w-3 h-3 rounded-full bg-[var(--spicy-red)] shadow-[0_0_12px_var(--spicy-red)]"></span>
+        </div>
+
+        <!-- Center Radial Fire Aura -->
+        <div
+          class="absolute w-72 h-72 rounded-full bg-gradient-to-tr from-[var(--gold)]/20 to-[var(--spicy-red)]/20 blur-xl">
+        </div>
+
+        <!-- Transparent Hero Burger (PNG) -->
+        <img src="/campaign/2026/wingos/hero-burger.png" alt="Sizzling Gourmet Fast Food Burger"
+          class="float-y relative z-10 w-[300px] sm:w-[410px] object-contain select-none"
+          style="filter: drop-shadow(0 25px 35px rgba(0,0,0,0.85)) drop-shadow(0 0 25px rgba(255,122,26,0.35));">
+
+        <!-- Floating Badge 1: Fresh Crunch -->
+        <div
+          class="absolute z-20 bottom-4 -left-4 sm:left-4 bg-[var(--bg-soft)]/95 backdrop-blur-md border border-[var(--gold)]/30 rounded-2xl px-4 py-2.5 flex items-center gap-3 float-badge-1 shadow-2xl">
+          <div
+            class="w-8 h-8 rounded-xl bg-[var(--spicy-red)]/20 border border-[var(--spicy-red)]/40 flex items-center justify-center text-[var(--spicy-red)]">
+            <i class="fa-solid fa-fire text-base"></i>
+          </div>
+          <div>
+            <p class="font-tag text-xs tracking-wider text-[var(--gold)]">CRISPY CRUNCH</p>
+            <p class="text-[10px] text-[var(--cream)]/60">Fired fresh every order</p>
+          </div>
+        </div>
+
+        <!-- Floating Badge 2: 100% Mozzarella & Sauces -->
+        <div
+          class="absolute z-20 -top-2 right-2 sm:right-6 bg-[var(--bg-soft)]/95 backdrop-blur-md border border-[var(--gold)]/30 rounded-2xl px-4 py-2.5 flex items-center gap-3 float-badge-2 shadow-2xl">
+          <div
+            class="w-8 h-8 rounded-xl bg-[var(--gold)]/20 border border-[var(--gold)]/40 flex items-center justify-center text-[var(--gold)]">
+            <i class="fa-solid fa-crown text-sm"></i>
+          </div>
+          <div>
+            <p class="font-tag text-xs tracking-wider text-[var(--gold)]">GUJRANWALA SPECIAL</p>
+            <p class="text-[10px] text-[var(--cream)]/60">Secret Glaze & Loaded Melt</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MARQUEE TICKER ================= -->
+  <div class="py-4 overflow-hidden border-y border-white/5"
+    style="background: linear-gradient(90deg, var(--spicy-red), var(--neon-orange));">
+    <div class="marquee-track flex whitespace-nowrap w-max">
+      <div class="flex items-center gap-6 pr-6 font-tag text-[#1A1210] text-lg tracking-widest font-bold">
+        <span>ZAP BURGER</span><span>•</span><span>THAI CHILLI WINGS</span><span>•</span><span>MALAI BOTI
+          PIZZA</span><span>•</span><span>JUMBO ZAP</span><span>•</span><span>TANGY HOT
+          WINGS</span><span>•</span><span>CROWN CRUST PIZZA</span><span>•</span>
+      </div>
+      <div class="flex items-center gap-6 pr-6 font-tag text-[#1A1210] text-lg tracking-widest font-bold">
+        <span>ZAP BURGER</span><span>•</span><span>THAI CHILLI WINGS</span><span>•</span><span>MALAI BOTI
+          PIZZA</span><span>•</span><span>JUMBO ZAP</span><span>•</span><span>TANGY HOT
+          WINGS</span><span>•</span><span>CROWN CRUST PIZZA</span><span>•</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MENU ================= -->
+  <section id="menu" class="py-28 grid-noise-bg">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+        <span class="eyebrow text-xs text-[var(--gold)]">THE MENU</span>
+        <h2 class="font-display text-4xl sm:text-5xl mt-3">BUILT LOADED. <span class="text-gradient-fire">FIRED
+            HOT.</span></h2>
+        <p class="text-[var(--cream)]/60 mt-4">Every item, made fresh to order — click plus to add to your crunch
+          bucket.</p>
+      </div>
+
+      <!-- Burgers -->
+      <h3 class="font-tag text-2xl tracking-widest text-[var(--gold)] mb-6" data-aos="fade-up">🍔 BURGERS</h3>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7 mb-16">
+
+        <!-- Zap Burger -->
+        <div class="menu-card rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="0">
+          <div class="img-wrap overflow-hidden h-52 bg-[#0E0B09]"><img src="/campaign/2026/wingos/zap-burger.jpg"
+              class="w-full h-full object-cover" alt="Zap Burger"></div>
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-2">
+              <h4 class="font-display text-xl">ZAP BURGER</h4>
+              <span class="font-tag text-lg text-[var(--gold)]">Rs. 400</span>
+            </div>
+            <p class="text-sm text-[var(--cream)]/55 mb-4">Crispy zinger patty, house sauce, fresh crunch, toasted bun.
+            </p>
+            <div class="flex justify-between items-center">
+              <div class="flex gap-1"><span class="heat-dot bg-[var(--spicy-red)]"></span><span
+                  class="heat-dot bg-white/15"></span><span class="heat-dot bg-white/15"></span></div>
+              <button class="add-to-cart-btn add-cart-btn w-10 h-10 rounded-full grid place-items-center text-[#1A1210]"
+                data-id="zap-burger" data-name="Zap Burger" data-price="400"
+                data-img="/campaign/2026/wingos/zap-burger.jpg" title="Add Zap Burger to cart"
+                style="background: linear-gradient(100deg,var(--gold),var(--neon-orange));">
+                <i class="fa-solid fa-plus pointer-events-none"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Jumbo Zap Burger -->
+        <div class="menu-card rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+          <div class="img-wrap overflow-hidden h-52 bg-[#0E0B09]"><img src="/campaign/2026/wingos/jumbo-zap.jpg"
+              class="w-full h-full object-cover" alt="Jumbo Zap Burger"></div>
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-2">
+              <h4 class="font-display text-xl">JUMBO ZAP BURGER</h4>
+              <span class="font-tag text-lg text-[var(--gold)]">Rs. 540</span>
+            </div>
+            <p class="text-sm text-[var(--cream)]/55 mb-4">Double the patty, double the cheese — for the seriously
+              hungry.</p>
+            <div class="flex justify-between items-center">
+              <div class="flex gap-1"><span class="heat-dot bg-[var(--spicy-red)]"></span><span
+                  class="heat-dot bg-[var(--spicy-red)]"></span><span class="heat-dot bg-white/15"></span></div>
+              <button class="add-to-cart-btn add-cart-btn w-10 h-10 rounded-full grid place-items-center text-[#1A1210]"
+                data-id="jumbo-zap-burger" data-name="Jumbo Zap Burger" data-price="540"
+                data-img="/campaign/2026/wingos/jumbo-zap.jpg" title="Add Jumbo Zap Burger to cart"
+                style="background: linear-gradient(100deg,var(--gold),var(--neon-orange));">
+                <i class="fa-solid fa-plus pointer-events-none"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mexican Crunchy -->
+        <div class="menu-card rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+          <div class="img-wrap overflow-hidden h-52 bg-[#0E0B09]"><img src="/campaign/2026/wingos/mexican-crunchy.jpg"
+              class="w-full h-full object-cover" alt="Mexican Crunchy Burger"></div>
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-2">
+              <h4 class="font-display text-xl">MEXICAN CRUNCHY</h4>
+              <span class="font-tag text-lg text-[var(--gold)]">Rs. 410</span>
+            </div>
+            <p class="text-sm text-[var(--cream)]/55 mb-4">Jalapeño-spiked crunch layer with smoky chipotle mayo.</p>
+            <div class="flex justify-between items-center">
+              <div class="flex gap-1"><span class="heat-dot bg-[var(--spicy-red)]"></span><span
+                  class="heat-dot bg-[var(--spicy-red)]"></span><span class="heat-dot bg-[var(--spicy-red)]"></span>
+              </div>
+              <button class="add-to-cart-btn add-cart-btn w-10 h-10 rounded-full grid place-items-center text-[#1A1210]"
+                data-id="mexican-crunchy" data-name="Mexican Crunchy Burger" data-price="410"
+                data-img="/campaign/2026/wingos/mexican-crunchy.jpg" title="Add Mexican Crunchy to cart"
+                style="background: linear-gradient(100deg,var(--gold),var(--neon-orange));">
+                <i class="fa-solid fa-plus pointer-events-none"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wings -->
+      <h3 class="font-tag text-2xl tracking-widest text-[var(--gold)] mb-6" data-aos="fade-up">🍗 HOUSE OF WINGS</h3>
+      <div class="grid sm:grid-cols-2 gap-7 mb-16">
+
+        <!-- Thai Chilli Wings -->
+        <div class="menu-card rounded-2xl overflow-hidden sm:flex" data-aos="fade-up" data-aos-delay="0">
+          <div class="img-wrap overflow-hidden h-52 sm:h-auto sm:w-2/5 bg-[#0E0B09]"><img
+              src="/campaign/2026/wingos/thai-wings.jpg" class="w-full h-full object-cover" alt="Thai Chilli Wings">
+          </div>
+          <div class="p-6 sm:w-3/5 flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-start mb-2">
+                <h4 class="font-display text-xl">THAI CHILLI WINGS</h4>
+                <span class="font-tag text-lg text-[var(--gold)]">Rs. 600</span>
+              </div>
+              <p class="text-sm text-[var(--cream)]/55 mb-4">Sweet-hot Thai glaze, sesame crunch, fresh scallion.</p>
+            </div>
+            <div class="flex justify-between items-center">
+              <div class="flex gap-1"><span class="heat-dot bg-[var(--spicy-red)]"></span><span
+                  class="heat-dot bg-[var(--spicy-red)]"></span><span class="heat-dot bg-white/15"></span></div>
+              <button class="add-to-cart-btn add-cart-btn w-10 h-10 rounded-full grid place-items-center text-[#1A1210]"
+                data-id="thai-chilli-wings" data-name="Thai Chilli Wings (6 pcs)" data-price="600"
+                data-img="/campaign/2026/wingos/thai-wings.jpg" title="Add Thai Chilli Wings to cart"
+                style="background: linear-gradient(100deg,var(--gold),var(--neon-orange));">
+                <i class="fa-solid fa-plus pointer-events-none"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tangy Hot Wings -->
+        <div class="menu-card rounded-2xl overflow-hidden sm:flex" data-aos="fade-up" data-aos-delay="150">
+          <div class="img-wrap overflow-hidden h-52 sm:h-auto sm:w-2/5 bg-[#0E0B09]"><img
+              src="/campaign/2026/wingos/tangy-wings.jpg" class="w-full h-full object-cover" alt="Tangy Hot Wings">
+          </div>
+          <div class="p-6 sm:w-3/5 flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-start mb-2">
+                <h4 class="font-display text-xl">TANGY HOT WINGS</h4>
+                <span class="font-tag text-lg text-[var(--gold)]">Rs. 600</span>
+              </div>
+              <p class="text-sm text-[var(--cream)]/55 mb-4">Our signature fiery tang sauce, tossed hand-hot.</p>
+            </div>
+            <div class="flex justify-between items-center">
+              <div class="flex gap-1"><span class="heat-dot bg-[var(--spicy-red)]"></span><span
+                  class="heat-dot bg-[var(--spicy-red)]"></span><span class="heat-dot bg-[var(--spicy-red)]"></span>
+              </div>
+              <button class="add-to-cart-btn add-cart-btn w-10 h-10 rounded-full grid place-items-center text-[#1A1210]"
+                data-id="tangy-hot-wings" data-name="Tangy Hot Wings (6 pcs)" data-price="600"
+                data-img="/campaign/2026/wingos/tangy-wings.jpg" title="Add Tangy Hot Wings to cart"
+                style="background: linear-gradient(100deg,var(--gold),var(--neon-orange));">
+                <i class="fa-solid fa-plus pointer-events-none"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pizza -->
+      <h3 class="font-tag text-2xl tracking-widest text-[var(--gold)] mb-6" data-aos="fade-up">🍕 PIZZA</h3>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
+
+        <!-- Malai Boti Pizza -->
+        <div class="menu-card rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="0">
+          <div class="img-wrap overflow-hidden h-52 bg-[#0E0B09]"><img src="/campaign/2026/wingos/malai-pizza.jpg"
+              class="w-full h-full object-cover" alt="Malai Boti Pizza"></div>
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-2">
+              <h4 class="font-display text-xl">MALAI BOTI PIZZA</h4>
+              <span class="font-tag text-lg text-[var(--gold)]">Rs. 1150</span>
+            </div>
+            <p class="text-sm text-[var(--cream)]/55 mb-4">Creamy grilled chicken boti, mozzarella, mild spice.</p>
+            <div class="flex justify-between items-center">
+              <div class="flex gap-1"><span class="heat-dot bg-[var(--spicy-red)]"></span><span
+                  class="heat-dot bg-white/15"></span><span class="heat-dot bg-white/15"></span></div>
+              <button class="add-to-cart-btn add-cart-btn w-10 h-10 rounded-full grid place-items-center text-[#1A1210]"
+                data-id="malai-boti-pizza" data-name="Malai Boti Pizza (Medium)" data-price="1150"
+                data-img="/campaign/2026/wingos/malai-pizza.jpg" title="Add Malai Boti Pizza to cart"
+                style="background: linear-gradient(100deg,var(--gold),var(--neon-orange));">
+                <i class="fa-solid fa-plus pointer-events-none"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Afghani Chicken -->
+        <div class="menu-card rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="150">
+          <div class="img-wrap overflow-hidden h-52 bg-[#0E0B09]"><img src="/campaign/2026/wingos/afghani-pizza.jpg"
+              class="w-full h-full object-cover" alt="Afghani Chicken Pizza"></div>
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-2">
+              <h4 class="font-display text-xl">AFGHANI CHICKEN</h4>
+              <span class="font-tag text-lg text-[var(--gold)]">Rs. 1250</span>
+            </div>
+            <p class="text-sm text-[var(--cream)]/55 mb-4">Char-grilled chicken, garlic cream base, herb finish.</p>
+            <div class="flex justify-between items-center">
+              <div class="flex gap-1"><span class="heat-dot bg-[var(--spicy-red)]"></span><span
+                  class="heat-dot bg-white/15"></span><span class="heat-dot bg-white/15"></span></div>
+              <button class="add-to-cart-btn add-cart-btn w-10 h-10 rounded-full grid place-items-center text-[#1A1210]"
+                data-id="afghani-chicken-pizza" data-name="Afghani Chicken Pizza (Medium)" data-price="1250"
+                data-img="/campaign/2026/wingos/afghani-pizza.jpg" title="Add Afghani Chicken Pizza to cart"
+                style="background: linear-gradient(100deg,var(--gold),var(--neon-orange));">
+                <i class="fa-solid fa-plus pointer-events-none"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Crown Crust -->
+        <div class="menu-card rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+          <div class="img-wrap overflow-hidden h-52 bg-[#0E0B09]"><img src="/campaign/2026/wingos/crown-crust.jpg"
+              class="w-full h-full object-cover" alt="Crown Crust Pizza"></div>
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-2">
+              <h4 class="font-display text-xl">CROWN CRUST</h4>
+              <span class="font-tag text-lg text-[var(--gold)]">Rs. 1450</span>
+            </div>
+            <p class="text-sm text-[var(--cream)]/55 mb-4">Cheese-stuffed golden crown crust, loaded toppings.</p>
+            <div class="flex justify-between items-center">
+              <div class="flex gap-1"><span class="heat-dot bg-[var(--spicy-red)]"></span><span
+                  class="heat-dot bg-white/15"></span><span class="heat-dot bg-white/15"></span></div>
+              <button class="add-to-cart-btn add-cart-btn w-10 h-10 rounded-full grid place-items-center text-[#1A1210]"
+                data-id="crown-crust-pizza" data-name="Crown Crust Pizza (Special)" data-price="1450"
+                data-img="/campaign/2026/wingos/crown-crust.jpg" title="Add Crown Crust Pizza to cart"
+                style="background: linear-gradient(100deg,var(--gold),var(--neon-orange));">
+                <i class="fa-solid fa-plus pointer-events-none"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DEALS ================= -->
+  <section id="deals" class="py-28 relative" style="background: linear-gradient(180deg, var(--bg) 0%, #1A100C 100%);">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+        <span class="eyebrow text-xs text-[var(--gold)]">EXCLUSIVE DEALS</span>
+        <h2 class="font-display text-4xl sm:text-5xl mt-3">MORE FLAVOR. <span class="text-gradient-fire">LESS
+            PRICE.</span></h2>
+        <p class="text-[var(--cream)]/60 mt-4">Torn straight from the till — deals worth queuing for.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-10">
+
+        <!-- Zap Deal -->
+        <div class="ticket glow-border rounded-3xl overflow-hidden flex flex-col justify-between" data-aos="zoom-in">
+          <div class="relative h-64 overflow-hidden bg-[#0E0B09]">
+            <img src="/campaign/2026/wingos/zap-deal.jpg" alt="Zap Deal Feast"
+              class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+            <span
+              class="ribbon absolute top-4 left-6 text-xs px-4 py-1.5 rounded-full text-[#1A1210] font-bold shadow-lg"
+              style="background: linear-gradient(100deg,var(--gold),var(--spicy-red));">HOT SQUAD DEAL</span>
+          </div>
+          <div class="p-8">
+            <div class="flex justify-between items-start mb-3">
+              <div>
+                <h3 class="font-display text-3xl">ZAP DEAL</h3>
+                <p class="text-xs text-[var(--gold)] font-tag tracking-wider mt-0.5">FEEDS 3-4 PERSONS</p>
+              </div>
+              <i class="fa-solid fa-burger text-3xl text-[var(--gold)]"></i>
+            </div>
+            <p class="text-[var(--cream)]/65 mb-6 text-sm">4 Zap Burgers + 1.5L Drink + Fries, freshly fried zinger
+              crunch made for a squad that means business.</p>
+            <div class="perf pl-6 flex items-center justify-between">
+              <span class="font-display text-4xl text-gradient-fire">Rs. 1650</span>
+              <button
+                class="add-to-cart-btn font-tag tracking-widest px-7 py-3 rounded-full text-[#1A1210] font-bold hover:scale-105 transition-transform flex items-center gap-2 shadow-lg"
+                data-id="deal-zap" data-name="Zap Deal (4 Burgers + 1.5L Drink + Fries)" data-price="1650"
+                data-img="/campaign/2026/wingos/zap-deal.jpg"
+                style="background: linear-gradient(100deg,var(--gold),var(--neon-orange));">
+                <i class="fa-solid fa-bag-shopping"></i> GRAB IT
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sasti Deal -->
+        <div class="ticket glow-border rounded-3xl overflow-hidden flex flex-col justify-between" data-aos="zoom-in"
+          data-aos-delay="150">
+          <div class="relative h-64 overflow-hidden bg-[#0E0B09]">
+            <img src="/campaign/2026/wingos/sasti-deal.jpg" alt="Sasti Deal Feast"
+              class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+            <span
+              class="ribbon absolute top-4 left-6 text-xs px-4 py-1.5 rounded-full text-[#1A1210] font-bold shadow-lg"
+              style="background: linear-gradient(100deg,var(--gold),var(--spicy-red));">BEST VALUE COMBO</span>
+          </div>
+          <div class="p-8">
+            <div class="flex justify-between items-start mb-3">
+              <div>
+                <h3 class="font-display text-3xl">SASTI DEAL</h3>
+                <p class="text-xs text-[var(--gold)] font-tag tracking-wider mt-0.5">FAMILY SIZED FEAST</p>
+              </div>
+              <i class="fa-solid fa-pizza-slice text-3xl text-[var(--gold)]"></i>
+            </div>
+            <p class="text-[var(--cream)]/65 mb-6 text-sm">1 Large Pizza + 10 pcs Wings + 1.5L Drink + Fries — piping
+              hot cheesy crust with glazed wings.</p>
+            <div class="perf pl-6 flex items-center justify-between">
+              <span class="font-display text-4xl text-gradient-fire">Rs. 2050</span>
+              <button
+                class="add-to-cart-btn font-tag tracking-widest px-7 py-3 rounded-full text-[#1A1210] font-bold hover:scale-105 transition-transform flex items-center gap-2 shadow-lg"
+                data-id="deal-sasti" data-name="Sasti Deal (Large Pizza + 10 Wings + Drink)" data-price="2050"
+                data-img="/campaign/2026/wingos/sasti-deal.jpg"
+                style="background: linear-gradient(100deg,var(--gold),var(--neon-orange));">
+                <i class="fa-solid fa-bag-shopping"></i> GRAB IT
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CRUNCH GALLERY & LOCATIONS ================= -->
+  <section class="py-24 grid-noise-bg border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+        <span class="eyebrow text-xs text-[var(--gold)]">FRESH FROM THE KITCHEN</span>
+        <h2 class="font-display text-4xl sm:text-5xl mt-3">FEEL THE <span class="text-gradient-fire">CRUNCH.</span></h2>
+        <p class="text-[var(--cream)]/60 mt-4">Made with 100% fresh chicken, house-blended fiery glazes, and molten
+          mozzarella.</p>
+      </div>
+
+      <!-- 4-Grid Showcase -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-20">
+        <div class="relative group rounded-2xl overflow-hidden aspect-square border border-white/10" data-aos="fade-up"
+          data-aos-delay="0">
+          <img src="https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=600&q=80"
+            alt="Fiery Wings"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-4 flex flex-col justify-end">
+            <span class="font-display text-sm text-[var(--gold)]">FIERY GLAZE</span>
+            <span class="text-[11px] text-[var(--cream)]/70">Hand-Tossed</span>
+          </div>
+        </div>
+
+        <div class="relative group rounded-2xl overflow-hidden aspect-square border border-white/10" data-aos="fade-up"
+          data-aos-delay="100">
+          <img src="https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=600&q=80"
+            alt="Crispy Chicken"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-4 flex flex-col justify-end">
+            <span class="font-display text-sm text-[var(--gold)]">GOLDEN CRUNCH</span>
+            <span class="text-[11px] text-[var(--cream)]/70">Double Fried</span>
+          </div>
+        </div>
+
+        <div class="relative group rounded-2xl overflow-hidden aspect-square border border-white/10" data-aos="fade-up"
+          data-aos-delay="200">
+          <img src="https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?auto=format&fit=crop&w=600&q=80"
+            alt="Cheese Pull Pizza"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-4 flex flex-col justify-end">
+            <span class="font-display text-sm text-[var(--gold)]">MOLTEN CHEESE</span>
+            <span class="text-[11px] text-[var(--cream)]/70">Real Mozzarella</span>
+          </div>
+        </div>
+
+        <div class="relative group rounded-2xl overflow-hidden aspect-square border border-white/10" data-aos="fade-up"
+          data-aos-delay="300">
+          <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=600&q=80"
+            alt="Loaded Burger"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-4 flex flex-col justify-end">
+            <span class="font-display text-sm text-[var(--gold)]">JUMBO STACKS</span>
+            <span class="text-[11px] text-[var(--cream)]/70">Built Loaded</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Branch Location Cards with Photos -->
+      <div class="text-center max-w-2xl mx-auto mb-10" data-aos="fade-up">
+        <span class="eyebrow text-xs text-[var(--gold)]">VISIT US IN GUJRANWALA</span>
+        <h3 class="font-display text-3xl mt-2">TWO SIZZLING BRANCHES</h3>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div
+          class="bg-[#1C1613] rounded-3xl overflow-hidden border border-white/10 flex flex-col sm:flex-row hover:border-[var(--gold)]/40 transition-all"
+          data-aos="fade-right">
+          <div class="sm:w-1/2 h-48 sm:h-auto overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80"
+              alt="Mumtaz Market Branch" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6 sm:w-1/2 flex flex-col justify-between">
+            <div>
+              <span class="font-tag text-xs tracking-wider text-[var(--gold)]">MAIN BRANCH</span>
+              <h4 class="font-display text-xl mt-1 mb-2">MUMTAZ MARKET</h4>
+              <p class="text-xs text-[var(--cream)]/60 mb-2"><i
+                  class="fa-solid fa-location-dot text-[var(--spicy-red)] mr-1.5"></i>Opposite Chase Up, GT Road,
+                Gujranwala</p>
+              <p class="text-xs text-emerald-400 mb-2"><i class="fa-solid fa-clock mr-1.5"></i>Open: 12:00 PM – 2:00 AM
+              </p>
+              <p class="text-xs text-[var(--cream)]/80"><i class="fa-solid fa-phone text-[var(--gold)] mr-1.5"></i><a
+                  href="tel:0553843777" class="hover:text-[var(--gold)] underline">055-3843777</a> / <a
+                  href="tel:03226774401" class="hover:text-[var(--gold)] underline">0322-6774401</a></p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs">
+              <span class="text-[var(--cream)]/50">Dine-in • Takeaway • Delivery</span>
+              <a href="tel:03226774401" class="text-[var(--gold)] font-bold hover:underline">CALL NOW <i
+                  class="fa-solid fa-phone-flip text-[10px]"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-[#1C1613] rounded-3xl overflow-hidden border border-white/10 flex flex-col sm:flex-row hover:border-[var(--gold)]/40 transition-all"
+          data-aos="fade-left">
+          <div class="sm:w-1/2 h-48 sm:h-auto overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80"
+              alt="Peoples Colony Branch" class="w-full h-full object-cover">
+          </div>
+          <div class="p-6 sm:w-1/2 flex flex-col justify-between">
+            <div>
+              <span class="font-tag text-xs tracking-wider text-[var(--gold)]">BRANCH 2</span>
+              <h4 class="font-display text-xl mt-1 mb-2">PEOPLES COLONY</h4>
+              <p class="text-xs text-[var(--cream)]/60 mb-2"><i
+                  class="fa-solid fa-location-dot text-[var(--spicy-red)] mr-1.5"></i>Pipliwala Chowk, Master City
+                Bypass, Gujranwala</p>
+              <p class="text-xs text-emerald-400 mb-2"><i class="fa-solid fa-clock mr-1.5"></i>Open: 1:00 PM – 3:00 AM
+              </p>
+              <p class="text-xs text-[var(--cream)]/80"><i class="fa-solid fa-phone text-[var(--gold)] mr-1.5"></i><a
+                  href="tel:03041112127" class="hover:text-[var(--gold)] underline">0304-1112127</a></p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs">
+              <span class="text-[var(--cream)]/50">Dine-in • Takeaway • Delivery</span>
+              <a href="tel:03041112127" class="text-[var(--gold)] font-bold hover:underline">CALL NOW <i
+                  class="fa-solid fa-phone-flip text-[10px]"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer id="locations" class="pt-20 pb-8 border-t border-white/5" style="background: var(--charcoal);">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12 mb-14">
+
+      <div data-aos="fade-up">
+        <div class="mb-5">
+          <img src="wingos-logo.png" alt="Wingo's Logo"
+            class="h-16 w-auto object-contain drop-shadow-[0_6px_20px_rgba(255,122,26,0.3)]">
+        </div>
+        <p class="text-[var(--cream)]/50 text-sm leading-relaxed max-w-xs">Gujranwala's home of legendary wings, jumbo
+          burgers and crown-crust pizza — fired fresh, every single order.</p>
+      </div>
+
+      <div data-aos="fade-up" data-aos-delay="100">
+        <h4 class="font-tag text-lg tracking-widest text-[var(--gold)] mb-5">FIND US</h4>
+        <div class="space-y-3 text-sm text-[var(--cream)]/70">
+          <div class="flex gap-3">
+            <i class="fa-solid fa-location-dot text-[var(--spicy-red)] mt-1"></i>
+            <span><strong>Mumtaz Market:</strong> GT Road (Opp. Chase Up), Gujranwala<br><a href="tel:0553843777"
+                class="text-xs text-[var(--gold)] hover:underline">055-3843777</a> / <a href="tel:03226774401"
+                class="text-xs text-[var(--gold)] hover:underline">0322-6774401</a></span>
+          </div>
+          <div class="flex gap-3">
+            <i class="fa-solid fa-location-dot text-[var(--spicy-red)] mt-1"></i>
+            <span><strong>Peoples Colony:</strong> Pipliwala Chowk, Gujranwala<br><a href="tel:03041112127"
+                class="text-xs text-[var(--gold)] hover:underline">0304-1112127</a></span>
+          </div>
+        </div>
+      </div>
+
+      <div data-aos="fade-up" data-aos-delay="200">
+        <h4 class="font-tag text-lg tracking-widest text-[var(--gold)] mb-5">FOLLOW THE CRUNCH</h4>
+        <p class="text-xs text-[var(--cream)]/50 mb-4">Join 50K+ food lovers on our official social channels:</p>
+        <div class="flex gap-3">
+          <a href="https://www.facebook.com/WingosPakistan" target="_blank" rel="noopener noreferrer"
+            class="w-11 h-11 rounded-full border border-white/10 grid place-items-center hover:border-[var(--gold)] hover:text-[var(--gold)] hover:scale-110 transition-all bg-white/5"
+            title="Official Facebook (@WingosPakistan)"><i class="fa-brands fa-facebook-f text-base"></i></a>
+          <a href="https://www.instagram.com/WingosPakistanofficial/" target="_blank" rel="noopener noreferrer"
+            class="w-11 h-11 rounded-full border border-white/10 grid place-items-center hover:border-[var(--gold)] hover:text-[var(--gold)] hover:scale-110 transition-all bg-white/5"
+            title="Official Instagram (@WingosPakistanofficial)"><i class="fa-brands fa-instagram text-base"></i></a>
+          <a href="https://www.tiktok.com/@wingospakistan" target="_blank" rel="noopener noreferrer"
+            class="w-11 h-11 rounded-full border border-white/10 grid place-items-center hover:border-[var(--gold)] hover:text-[var(--gold)] hover:scale-110 transition-all bg-white/5"
+            title="Official TikTok (@wingospakistan)"><i class="fa-brands fa-tiktok text-base"></i></a>
+          <a href="https://wa.me/923226774401" target="_blank" rel="noopener noreferrer"
+            class="w-11 h-11 rounded-full border border-white/10 grid place-items-center hover:border-emerald-400 hover:text-emerald-400 hover:scale-110 transition-all bg-white/5"
+            title="Chat on WhatsApp"><i class="fa-brands fa-whatsapp text-lg"></i></a>
+          <a href="tel:0553843777"
+            class="w-11 h-11 rounded-full border border-white/10 grid place-items-center hover:border-[var(--gold)] hover:text-[var(--gold)] hover:scale-110 transition-all bg-white/5"
+            title="Direct Phone Order"><i class="fa-solid fa-phone text-sm"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center text-xs text-[var(--cream)]/35 border-t border-white/5 pt-6">
+      &copy; <span id="year"></span> Wingo's. All rights reserved. Made with heat in Gujranwala.
+    </div>
+  </footer>
+
+  <!-- ================= SLIDE-OVER CART DRAWER ================= -->
+  <div id="cart-backdrop"
+    class="cart-backdrop fixed inset-0 bg-black/75 backdrop-blur-sm z-[70] opacity-0 pointer-events-none"></div>
+
+  <aside id="cart-drawer"
+    class="cart-drawer fixed top-0 right-0 h-full w-full max-w-md bg-[#16120F] border-l border-white/10 shadow-2xl z-[80] transform translate-x-full flex flex-col">
+    <!-- Drawer Header -->
+    <div class="p-6 border-b border-white/10 flex items-center justify-between bg-[#1F1814]">
+      <div class="flex items-center gap-3">
+        <div
+          class="w-10 h-10 rounded-xl bg-[var(--spicy-red)]/20 border border-[var(--spicy-red)]/40 flex items-center justify-center text-[var(--gold)]">
+          <i class="fa-solid fa-bag-shopping text-lg"></i>
+        </div>
+        <div>
+          <h3 class="font-display text-xl tracking-wide">YOUR CRUNCH BUCKET</h3>
+          <p id="drawer-items-count" class="text-xs text-[var(--cream)]/50">0 items in your order</p>
+        </div>
+      </div>
+      <button id="close-cart-btn"
+        class="w-9 h-9 rounded-full bg-white/5 border border-white/10 hover:border-[var(--gold)] hover:text-[var(--gold)] transition-colors flex items-center justify-center text-sm"
+        aria-label="Close cart">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Cart Items List Container -->
+    <div id="cart-items-container" class="flex-1 overflow-y-auto p-6 space-y-4">
+      <!-- Populated dynamically via JS -->
+    </div>
+
+    <!-- Empty State (Hidden when items > 0) -->
+    <div id="cart-empty-state" class="hidden flex-1 flex flex-col items-center justify-center p-8 text-center">
+      <div
+        class="w-20 h-20 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-3xl text-[var(--gold)]/60 mb-4">
+        <i class="fa-solid fa-fire-burner"></i>
+      </div>
+      <h4 class="font-display text-2xl mb-2">YOUR BUCKET IS EMPTY</h4>
+      <p class="text-sm text-[var(--cream)]/50 max-w-xs mb-6">Fire up your taste buds! Add some crispy wings, juicy
+        burgers, or exclusive deals from the menu.</p>
+      <a href="#menu" id="empty-explore-btn"
+        class="font-tag text-sm tracking-wider px-6 py-3 rounded-full text-[#1A1210] font-bold"
+        style="background: linear-gradient(100deg,var(--gold),var(--neon-orange));">
+        EXPLORE MENU
+      </a>
+    </div>
+
+    <!-- Drawer Footer (Subtotal + Checkout) -->
+    <div id="cart-footer" class="p-6 border-t border-white/10 bg-[#1A1410] space-y-4">
+      <div class="space-y-2 text-sm">
+        <div class="flex justify-between text-[var(--cream)]/60">
+          <span>Subtotal</span>
+          <span id="cart-subtotal" class="font-medium text-[var(--cream)]">Rs. 0</span>
+        </div>
+        <div class="flex justify-between text-[var(--cream)]/60">
+          <span>Delivery (Gujranwala)</span>
+          <span id="cart-delivery" class="text-emerald-400 font-medium">Free</span>
+        </div>
+        <div class="pt-2 border-t border-white/10 flex justify-between items-baseline">
+          <span class="font-display text-lg">TOTAL</span>
+          <span id="cart-total-price" class="font-display text-2xl text-gradient-fire">Rs. 0</span>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="space-y-2.5">
+        <button id="checkout-drawer-btn"
+          class="w-full py-3.5 rounded-full font-tag tracking-wider text-base text-[#1A1210] font-bold flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform shadow-lg shadow-[var(--spicy-red)]/20"
+          style="background: linear-gradient(100deg,var(--gold),var(--spicy-red));">
+          PROCEED TO CHECKOUT <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+        <button id="whatsapp-order-btn"
+          class="w-full py-3 rounded-full font-tag tracking-wider text-sm bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-600/30 flex items-center justify-center gap-2 transition-colors">
+          <i class="fa-brands fa-whatsapp text-lg"></i> ORDER VIA WHATSAPP
+        </button>
+
+        <div class="flex justify-between items-center pt-1 px-1">
+          <button id="clear-cart-btn"
+            class="text-xs text-[var(--cream)]/40 hover:text-red-400 transition-colors flex items-center gap-1">
+            <i class="fa-solid fa-trash-can text-[10px]"></i> Clear Bucket
+          </button>
+          <span class="text-xs text-[var(--cream)]/40">🔥 Fired Fresh on Order</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ================= CHECKOUT MODAL ================= -->
+  <div id="checkout-backdrop"
+    class="fixed inset-0 bg-black/80 backdrop-blur-md z-[90] opacity-0 pointer-events-none transition-all duration-300 flex items-center justify-center p-4">
+    <div id="checkout-card"
+      class="bg-[#1C1613] border border-[var(--gold)]/30 rounded-3xl w-full max-w-lg overflow-hidden shadow-2xl transform scale-95 transition-all duration-300">
+
+      <!-- Modal Header -->
+      <div class="p-6 border-b border-white/10 bg-[#241C17] flex justify-between items-center">
+        <div class="flex items-center gap-3">
+          <div
+            class="w-10 h-10 rounded-2xl bg-[var(--gold)]/20 border border-[var(--gold)]/40 flex items-center justify-center text-[var(--gold)]">
+            <i class="fa-solid fa-receipt text-lg"></i>
+          </div>
+          <div>
+            <h3 class="font-display text-2xl tracking-wide">COMPLETE YOUR ORDER</h3>
+            <p class="text-xs text-[var(--cream)]/60">Fast delivery across Gujranwala</p>
+          </div>
+        </div>
+        <button id="close-checkout-modal"
+          class="w-8 h-8 rounded-full bg-white/5 border border-white/10 hover:text-[var(--gold)] flex items-center justify-center text-sm"
+          aria-label="Close checkout">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Modal Form -->
+      <form id="order-form" class="p-6 space-y-4 max-h-[75vh] overflow-y-auto">
+        <div>
+          <label class="block font-tag text-xs tracking-wider text-[var(--gold)] mb-1">FULL NAME *</label>
+          <input type="text" id="cust-name" required placeholder="e.g. Hamza Butt"
+            class="w-full bg-[#120E0C] border border-white/15 rounded-xl px-4 py-2.5 text-sm text-[var(--cream)] focus:border-[var(--gold)] outline-none">
+        </div>
+
+        <div>
+          <label class="block font-tag text-xs tracking-wider text-[var(--gold)] mb-1">WHATSAPP / PHONE NUMBER *</label>
+          <input type="tel" id="cust-phone" required placeholder="0300-1234567"
+            class="w-full bg-[#120E0C] border border-white/15 rounded-xl px-4 py-2.5 text-sm text-[var(--cream)] focus:border-[var(--gold)] outline-none">
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-tag text-xs tracking-wider text-[var(--gold)] mb-1">ORDER TYPE</label>
+            <select id="order-type"
+              class="w-full bg-[#120E0C] border border-white/15 rounded-xl px-3 py-2.5 text-sm text-[var(--cream)] focus:border-[var(--gold)] outline-none">
+              <option value="Home Delivery">🛵 Home Delivery</option>
+              <option value="Takeaway / Pickup">🛍️ Takeaway / Pickup</option>
+              <option value="Dine-in">🍽️ Dine-in</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-tag text-xs tracking-wider text-[var(--gold)] mb-1">BRANCH</label>
+            <select id="order-branch"
+              class="w-full bg-[#120E0C] border border-white/15 rounded-xl px-3 py-2.5 text-sm text-[var(--cream)] focus:border-[var(--gold)] outline-none">
+              <option value="Mumtaz Market, GT Road">Mumtaz Market, GT Road</option>
+              <option value="Peoples Colony, Pipliwala">Peoples Colony, Pipliwala</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-tag text-xs tracking-wider text-[var(--gold)] mb-1">DELIVERY ADDRESS / INSTRUCTIONS
+            *</label>
+          <textarea id="cust-address" required rows="2" placeholder="House #, Street, Area / Landmark in Gujranwala"
+            class="w-full bg-[#120E0C] border border-white/15 rounded-xl px-4 py-2 text-sm text-[var(--cream)] focus:border-[var(--gold)] outline-none"></textarea>
+        </div>
+
+        <div>
+          <label class="block font-tag text-xs tracking-wider text-[var(--gold)] mb-1">SPECIAL NOTES (OPTIONAL)</label>
+          <input type="text" id="cust-notes" placeholder="Extra spicy, extra garlic dip, no onions..."
+            class="w-full bg-[#120E0C] border border-white/15 rounded-xl px-4 py-2 text-sm text-[var(--cream)] focus:border-[var(--gold)] outline-none">
+        </div>
+
+        <!-- Payment Method -->
+        <div>
+          <label class="block font-tag text-xs tracking-wider text-[var(--gold)] mb-1">PAYMENT METHOD</label>
+          <div class="grid grid-cols-2 gap-2 text-xs">
+            <label
+              class="flex items-center gap-2 p-2.5 rounded-xl border border-[var(--gold)]/40 bg-[var(--gold)]/10 cursor-pointer">
+              <input type="radio" name="payment-method" value="Cash on Delivery" checked class="accent-[var(--gold)]">
+              <span>Cash on Delivery (COD)</span>
+            </label>
+            <label class="flex items-center gap-2 p-2.5 rounded-xl border border-white/10 bg-white/5 cursor-pointer">
+              <input type="radio" name="payment-method" value="JazzCash / Easypaisa" class="accent-[var(--gold)]">
+              <span>JazzCash / Easypaisa</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Total Preview in Modal -->
+        <div class="bg-[#120E0C] p-4 rounded-2xl border border-white/10 flex justify-between items-center">
+          <div>
+            <p class="text-xs text-[var(--cream)]/60">Amount Payable</p>
+            <p id="modal-total-price" class="font-display text-2xl text-gradient-fire">Rs. 0</p>
+          </div>
+          <span
+            class="text-xs px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">Free
+            Delivery</span>
+        </div>
+
+        <button type="submit"
+          class="w-full py-3.5 rounded-full font-tag tracking-wider text-base text-[#1A1210] font-bold flex items-center justify-center gap-2 shadow-lg shadow-[var(--spicy-red)]/30 hover:scale-[1.02] transition-transform"
+          style="background: linear-gradient(100deg,var(--gold),var(--spicy-red));">
+          CONFIRM & PLACE ORDER 🔥
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= ORDER SUCCESS MODAL ================= -->
+  <div id="success-modal"
+    class="fixed inset-0 bg-black/85 backdrop-blur-md z-[100] opacity-0 pointer-events-none transition-all duration-300 flex items-center justify-center p-4">
+    <div
+      class="bg-[#1C1613] border border-emerald-500/40 rounded-3xl w-full max-w-md p-8 text-center shadow-2xl transform scale-95 transition-all duration-300">
+      <div
+        class="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 text-3xl flex items-center justify-center mx-auto mb-4 animate-bounce">
+        <i class="fa-solid fa-check"></i>
+      </div>
+      <span class="eyebrow text-xs text-[var(--gold)]">ORDER RECEIVED!</span>
+      <h3 class="font-display text-3xl my-2">THE CRUNCH IS ON ITS WAY</h3>
+      <p class="text-xs text-[var(--cream)]/60 mb-5">Order ID: <strong id="success-order-id"
+          class="text-[var(--gold)] font-mono">#WNG-9821</strong> • Estimated Time: <strong>25-35 mins</strong></p>
+
+      <div id="success-summary-box"
+        class="bg-[#120E0C] p-4 rounded-2xl border border-white/10 text-left text-xs text-[var(--cream)]/70 space-y-1.5 mb-6 max-h-36 overflow-y-auto">
+        <!-- Injected summary -->
+      </div>
+
+      <div class="space-y-2">
+        <a id="success-whatsapp-link" href="#" target="_blank"
+          class="w-full py-3 rounded-full font-tag tracking-wider text-sm bg-emerald-600 text-white font-bold flex items-center justify-center gap-2 hover:bg-emerald-500 transition-colors shadow-lg">
+          <i class="fa-brands fa-whatsapp text-lg"></i> TRACK ORDER ON WHATSAPP
+        </a>
+        <button id="close-success-btn"
+          class="w-full py-2.5 rounded-full font-tag tracking-wider text-sm border border-white/15 text-[var(--cream)] hover:border-[var(--gold)] transition-colors">
+          BACK TO MENU
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= FLOATING CART PILL (MOBILE & DESKTOP) ================= -->
+  <button id="floating-cart-pill"
+    class="fixed bottom-6 right-6 z-40 bg-gradient-to-r from-[var(--gold)] via-[var(--neon-orange)] to-[var(--spicy-red)] text-[#1A1210] px-5 py-3 rounded-full shadow-2xl flex items-center gap-3 font-tag tracking-wider text-sm font-bold transform translate-y-24 opacity-0 transition-all duration-300 hover:scale-105">
+    <div class="flex items-center gap-1.5">
+      <i class="fa-solid fa-bag-shopping text-base"></i>
+      <span id="floating-cart-count">0</span>
+    </div>
+    <span class="opacity-50">|</span>
+    <span id="floating-cart-total">Rs. 0</span>
+    <i class="fa-solid fa-arrow-right text-xs"></i>
+  </button>
+
+  <!-- ================= TOAST NOTIFICATION CONTAINER ================= -->
+  <div id="toast-container" class="fixed top-20 right-6 z-[110] space-y-3 pointer-events-none"></div>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+  <script>
+    // Initialize Year and AOS
+    document.getElementById('year').textContent = new Date().getFullYear();
+    AOS.init({ duration: 800, once: true, offset: 60 });
+
+    // Navbar background on scroll
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('solid', window.scrollY > 40);
+    });
+
+    // ================= CART STATE & MANAGEMENT =================
+    const CART_KEY = 'wingos_user_cart';
+    let cart = [];
+
+    function loadCart() {
+      try {
+        const stored = localStorage.getItem(CART_KEY);
+        cart = stored ? JSON.parse(stored) : [];
+      } catch (e) {
+        cart = [];
+      }
+    }
+
+    function saveCart() {
+      localStorage.setItem(CART_KEY, JSON.stringify(cart));
+      updateCartUI();
+    }
+
+    function addToCart(item) {
+      const existing = cart.find(i => i.id === item.id);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ ...item, qty: 1 });
+      }
+      saveCart();
+      showToast(`Added ${item.name}`, `Rs. ${item.price} • Crunch Bucket updated!`);
+      animateBadge();
+    }
+
+    function updateQty(id, delta) {
+      const item = cart.find(i => i.id === id);
+      if (!item) return;
+      item.qty += delta;
+      if (item.qty <= 0) {
+        cart = cart.filter(i => i.id !== id);
+      }
+      saveCart();
+    }
+
+    function removeItem(id) {
+      const item = cart.find(i => i.id === id);
+      cart = cart.filter(i => i.id !== id);
+      saveCart();
+      if (item) {
+        showToast('Item Removed', `${item.name} removed from your bucket.`);
+      }
+    }
+
+    function clearCart() {
+      cart = [];
+      saveCart();
+      showToast('Bucket Cleared', 'Your crunch bucket is now empty.');
+    }
+
+    function getCartTotals() {
+      const count = cart.reduce((sum, item) => sum + item.qty, 0);
+      const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+      const delivery = 0; // Free delivery in Gujranwala
+      const total = subtotal + delivery;
+      return { count, subtotal, delivery, total };
+    }
+
+    // ================= UI RENDERING =================
+    function updateCartUI() {
+      const { count, subtotal, total } = getCartTotals();
+
+      // Badges & Counters
+      const countBadge = document.getElementById('cart-count-badge');
+      const drawerCount = document.getElementById('drawer-items-count');
+      const floatingCount = document.getElementById('floating-cart-count');
+      const floatingTotal = document.getElementById('floating-cart-total');
+      const floatingPill = document.getElementById('floating-cart-pill');
+
+      countBadge.textContent = count;
+      drawerCount.textContent = `${count} ${count === 1 ? 'item' : 'items'} in your order`;
+      floatingCount.textContent = `${count} ${count === 1 ? 'Item' : 'Items'}`;
+      floatingTotal.textContent = `Rs. ${subtotal.toLocaleString()}`;
+
+      // Floating pill visibility
+      if (count > 0) {
+        floatingPill.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+      } else {
+        floatingPill.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+      }
+
+      // Price summaries
+      document.getElementById('cart-subtotal').textContent = `Rs. ${subtotal.toLocaleString()}`;
+      document.getElementById('cart-total-price').textContent = `Rs. ${total.toLocaleString()}`;
+      document.getElementById('modal-total-price').textContent = `Rs. ${total.toLocaleString()}`;
+
+      // Render items list inside drawer
+      const container = document.getElementById('cart-items-container');
+      const emptyState = document.getElementById('cart-empty-state');
+      const cartFooter = document.getElementById('cart-footer');
+
+      if (cart.length === 0) {
+        container.innerHTML = '';
+        emptyState.classList.remove('hidden');
+        cartFooter.classList.add('opacity-50', 'pointer-events-none');
+      } else {
+        emptyState.classList.add('hidden');
+        cartFooter.classList.remove('opacity-50', 'pointer-events-none');
+
+        container.innerHTML = cart.map(item => `
+        <div class="flex items-center gap-3 bg-[#1F1814] p-3 rounded-2xl border border-white/5 hover:border-[var(--gold)]/30 transition-all">
+          <img src="${item.img}" alt="${item.name}" class="w-16 h-16 rounded-xl object-cover border border-white/10 flex-shrink-0">
+          
+          <div class="flex-1 min-w-0">
+            <h4 class="font-display text-sm truncate">${item.name}</h4>
+            <p class="text-xs text-[var(--gold)] font-tag tracking-wider">Rs. ${item.price} each</p>
+            
+            <div class="flex items-center gap-2 mt-2">
+              <button onclick="updateQty('${item.id}', -1)" class="w-6 h-6 rounded-md bg-white/5 border border-white/10 hover:border-[var(--gold)] text-xs flex items-center justify-center text-[var(--cream)]" aria-label="Decrease quantity">
+                <i class="fa-solid fa-minus text-[10px]"></i>
+              </button>
+              <span class="font-display text-sm w-5 text-center">${item.qty}</span>
+              <button onclick="updateQty('${item.id}', 1)" class="w-6 h-6 rounded-md bg-white/5 border border-white/10 hover:border-[var(--gold)] text-xs flex items-center justify-center text-[var(--cream)]" aria-label="Increase quantity">
+                <i class="fa-solid fa-plus text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="text-right flex flex-col justify-between items-end h-16 py-0.5">
+            <button onclick="removeItem('${item.id}')" class="text-xs text-[var(--cream)]/30 hover:text-red-400 transition-colors" title="Remove item">
+              <i class="fa-solid fa-trash-can"></i>
+            </button>
+            <span class="font-display text-base text-gradient-fire">Rs. ${(item.price * item.qty).toLocaleString()}</span>
+          </div>
+        </div>
+      `).join('');
+      }
+    }
+
+    function animateBadge() {
+      const badge = document.getElementById('cart-count-badge');
+      badge.classList.remove('badge-pop');
+      void badge.offsetWidth; // trigger reflow
+      badge.classList.add('badge-pop');
+    }
+
+    // ================= TOAST NOTIFICATIONS =================
+    function showToast(title, subtitle) {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      toast.className = "pointer-events-auto bg-[#221B17] border border-[var(--gold)]/40 shadow-2xl rounded-2xl p-4 flex items-center gap-3 text-sm transform translate-x-12 opacity-0 transition-all duration-300 min-w-[280px]";
+      toast.innerHTML = `
+      <div class="w-8 h-8 rounded-full bg-[var(--spicy-red)]/20 border border-[var(--spicy-red)]/40 flex items-center justify-center text-[var(--gold)] flex-shrink-0">
+        <i class="fa-solid fa-fire text-sm"></i>
+      </div>
+      <div class="flex-1">
+        <p class="font-display text-xs tracking-wider">${title}</p>
+        <p class="text-[11px] text-[var(--cream)]/60">${subtitle}</p>
+      </div>
+    `;
+      container.appendChild(toast);
+
+      // animate in
+      requestAnimationFrame(() => {
+        toast.classList.remove('translate-x-12', 'opacity-0');
+      });
+
+      // auto dismiss
+      setTimeout(() => {
+        toast.classList.add('translate-x-12', 'opacity-0');
+        setTimeout(() => toast.remove(), 350);
+      }, 2800);
+    }
+
+    // ================= DRAWER & MODAL CONTROLS =================
+    const cartDrawer = document.getElementById('cart-drawer');
+    const cartBackdrop = document.getElementById('cart-backdrop');
+    const openCartBtn = document.getElementById('open-cart-btn');
+    const closeCartBtn = document.getElementById('close-cart-btn');
+    const emptyExploreBtn = document.getElementById('empty-explore-btn');
+    const navOrderNowBtn = document.getElementById('nav-order-now-btn');
+    const floatingCartPill = document.getElementById('floating-cart-pill');
+
+    function openCart() {
+      cartDrawer.classList.remove('translate-x-full');
+      cartBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function closeCart() {
+      cartDrawer.classList.add('translate-x-full');
+      cartBackdrop.classList.add('opacity-0', 'pointer-events-none');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    openCartBtn.addEventListener('click', openCart);
+    closeCartBtn.addEventListener('click', closeCart);
+    cartBackdrop.addEventListener('click', closeCart);
+    floatingCartPill.addEventListener('click', openCart);
+    if (emptyExploreBtn) emptyExploreBtn.addEventListener('click', closeCart);
+
+    navOrderNowBtn.addEventListener('click', () => {
+      if (cart.length > 0) {
+        openCart();
+      } else {
+        document.getElementById('menu').scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+
+    document.getElementById('clear-cart-btn').addEventListener('click', clearCart);
+
+    // ================= CHECKOUT MODAL LOGIC =================
+    const checkoutModalBackdrop = document.getElementById('checkout-backdrop');
+    const checkoutCard = document.getElementById('checkout-card');
+    const checkoutDrawerBtn = document.getElementById('checkout-drawer-btn');
+    const closeCheckoutBtn = document.getElementById('close-checkout-modal');
+    const orderForm = document.getElementById('order-form');
+
+    function openCheckout() {
+      if (cart.length === 0) {
+        showToast('Bucket is Empty', 'Add items to your cart before checkout.');
+        return;
+      }
+      closeCart();
+      checkoutModalBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+      checkoutCard.classList.remove('scale-95');
+      checkoutCard.classList.add('scale-100');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function closeCheckout() {
+      checkoutModalBackdrop.classList.add('opacity-0', 'pointer-events-none');
+      checkoutCard.classList.remove('scale-100');
+      checkoutCard.classList.add('scale-95');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    checkoutDrawerBtn.addEventListener('click', openCheckout);
+    closeCheckoutBtn.addEventListener('click', closeCheckout);
+    checkoutModalBackdrop.addEventListener('click', (e) => {
+      if (e.target === checkoutModalBackdrop) closeCheckout();
+    });
+
+    // ================= WHATSAPP ORDER FORMATTING =================
+    const WINGOS_WHATSAPP = '923226774401'; // Official Wingo's Gujranwala Order Line
+
+    function generateWhatsAppMessage(customer = null) {
+      const { total } = getCartTotals();
+      let msg = `🔥 *NEW ORDER - WINGO'S GUJRANWALA* 🔥\n\n`;
+      msg += `*Items Ordered:*\n`;
+      cart.forEach((item, i) => {
+        msg += `${i + 1}. ${item.name} x${item.qty} — Rs. ${item.price * item.qty}\n`;
+      });
+      msg += `\n*Total Amount:* Rs. ${total.toLocaleString()} (Free Delivery)\n`;
+
+      if (customer) {
+        msg += `\n*Customer Details:*\n`;
+        msg += `👤 Name: ${customer.name}\n`;
+        msg += `📞 Phone: ${customer.phone}\n`;
+        msg += `🛵 Order Type: ${customer.type}\n`;
+        msg += `📍 Branch: ${customer.branch}\n`;
+        msg += `🏠 Address: ${customer.address}\n`;
+        if (customer.notes) msg += `📝 Notes: ${customer.notes}\n`;
+        msg += `💳 Payment: ${customer.payment}\n`;
+      }
+
+      return encodeURIComponent(msg);
+    }
+
+    document.getElementById('whatsapp-order-btn').addEventListener('click', () => {
+      if (cart.length === 0) {
+        showToast('Bucket is Empty', 'Add items before ordering on WhatsApp.');
+        return;
+      }
+      const url = `https://wa.me/${WINGOS_WHATSAPP}?text=${generateWhatsAppMessage()}`;
+      window.open(url, '_blank');
+    });
+
+    // Handle Order Submit
+    const successModal = document.getElementById('success-modal');
+    const closeSuccessBtn = document.getElementById('close-success-btn');
+
+    orderForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const customer = {
+        name: document.getElementById('cust-name').value.trim(),
+        phone: document.getElementById('cust-phone').value.trim(),
+        type: document.getElementById('order-type').value,
+        branch: document.getElementById('order-branch').value,
+        address: document.getElementById('cust-address').value.trim(),
+        notes: document.getElementById('cust-notes').value.trim(),
+        payment: document.querySelector('input[name="payment-method"]:checked')?.value || 'Cash on Delivery'
+      };
+
+      const orderId = '#WNG-' + Math.floor(1000 + Math.random() * 9000);
+      const { total } = getCartTotals();
+
+      // Set Summary Box
+      document.getElementById('success-order-id').textContent = orderId;
+      const summaryBox = document.getElementById('success-summary-box');
+      summaryBox.innerHTML = `
+      <p class="font-bold text-[var(--cream)] mb-1">Customer: ${customer.name} (${customer.phone})</p>
+      <p class="text-[var(--cream)]/60">Type: ${customer.type} • ${customer.branch}</p>
+      <p class="text-[var(--cream)]/60">Address: ${customer.address}</p>
+      <div class="border-t border-white/10 my-1 pt-1">
+        ${cart.map(i => `<div class="flex justify-between"><span>${i.name} x${i.qty}</span><span>Rs. ${i.price * i.qty}</span></div>`).join('')}
+        <div class="flex justify-between font-bold text-[var(--gold)] mt-1"><span>Total Payable</span><span>Rs. ${total.toLocaleString()}</span></div>
+      </div>
+    `;
+
+      // WhatsApp Tracking Link
+      const waUrl = `https://wa.me/${WINGOS_WHATSAPP}?text=${generateWhatsAppMessage(customer)}`;
+      document.getElementById('success-whatsapp-link').href = waUrl;
+
+      // Reset and Show Success
+      closeCheckout();
+      orderForm.reset();
+      cart = [];
+      saveCart();
+
+      successModal.classList.remove('opacity-0', 'pointer-events-none');
+    });
+
+    closeSuccessBtn.addEventListener('click', () => {
+      successModal.classList.add('opacity-0', 'pointer-events-none');
+    });
+
+    // ================= ATTACH ADD-TO-CART BUTTON LISTENERS =================
+    document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = btn;
+        const item = {
+          id: target.getAttribute('data-id'),
+          name: target.getAttribute('data-name'),
+          price: parseInt(target.getAttribute('data-price'), 10) || 0,
+          img: target.getAttribute('data-img')
+        };
+
+        // Button click feedback
+        const originalIcon = target.innerHTML;
+        target.innerHTML = '<i class="fa-solid fa-check text-xs"></i>';
+        setTimeout(() => {
+          target.innerHTML = originalIcon;
+        }, 700);
+
+        addToCart(item);
+      });
+    });
+
+    // Initialize Cart on Load
+    loadCart();
+    updateCartUI();
+  </script>
+
+</body>
+
+</html>
