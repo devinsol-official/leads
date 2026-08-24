@@ -1,0 +1,2975 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Royal Furniture &amp; Interiors | Luxury Furniture &amp; Interior Design</title>
+  <meta name="description"
+    content="Designs Beyond Imagination. Handcrafted luxury furniture and bespoke interior design in Gujranwala. A well planned home always needs well designed furniture.">
+
+  <!-- Favicon / Browser Tab Icon -->
+  <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="favicon.png">
+
+  <!-- Google Fonts: Editorial Luxury Trio (Cormorant Garamond, Italiana, Outfit) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Italiana&family=Outfit:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    /* ==========================================================================
+       CSS VARIABLES & RESET
+       ========================================================================== */
+    :root {
+      --bg-dark: #08080a;
+      --bg-surface: #0f1015;
+      --bg-surface-2: #16171f;
+      --bg-surface-card: rgba(22, 23, 31, 0.7);
+
+      --gold-100: #fff4d1;
+      --gold-200: #fae49d;
+      --gold-300: #eecf6d;
+      --gold-400: #d4af37;
+      --gold-500: #b88d22;
+      --gold-600: #8c6712;
+      --gold-gradient: linear-gradient(135deg, #fae49d 0%, #d4af37 50%, #8c6712 100%);
+      --gold-gradient-soft: linear-gradient(135deg, rgba(250, 228, 157, 0.2) 0%, rgba(212, 175, 55, 0.05) 100%);
+      --gold-glow: rgba(212, 175, 55, 0.25);
+
+      --text-white: #ffffff;
+      --text-main: #f0f1f5;
+      --text-muted: #9499ad;
+      --text-dim: #5c6075;
+
+      --border-subtle: rgba(255, 255, 255, 0.07);
+      --border-gold: rgba(212, 175, 55, 0.35);
+
+      --font-display: 'Italiana', serif;
+      --font-serif: 'Cormorant Garamond', serif;
+      --font-modern: 'Outfit', sans-serif;
+      --font-body: 'Outfit', sans-serif;
+
+      --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: auto;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      overflow-x: hidden;
+      selection-background-color: var(--gold-400);
+      selection-color: #000;
+    }
+
+    ::selection {
+      background: var(--gold-400);
+      color: #08080a;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      background-image:
+        radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 35%),
+        radial-gradient(circle at 90% 70%, rgba(140, 103, 18, 0.07) 0%, transparent 35%);
+      background-attachment: fixed;
+      color: var(--text-main);
+      line-height: 1.7;
+      font-weight: 400;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Global Container */
+    .container {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2.5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Typography & Utilities */
+    .gold-gradient-text {
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+
+    .sub-heading {
+      font-family: var(--font-modern);
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--gold-300);
+      margin-bottom: 1.2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .sub-heading::before {
+      content: '';
+      display: inline-block;
+      width: 32px;
+      height: 1px;
+      background: var(--gold-400);
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+      font-weight: 400;
+      line-height: 1.12;
+      letter-spacing: 0.02em;
+      margin-bottom: 1.5rem;
+      color: var(--text-white);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.85rem;
+      padding: 1.1rem 2.6rem;
+      font-family: var(--font-modern);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      text-decoration: none;
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      transition: all 0.5s var(--ease-out-expo);
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    .btn-gold {
+      background: var(--gold-gradient);
+      color: #0a0a0d;
+      border: 1px solid transparent;
+      box-shadow: 0 10px 30px var(--gold-glow);
+    }
+
+    .btn-gold::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: #ffffff;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: -1;
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+      color: #000000;
+    }
+
+    .btn-gold:hover::before {
+      opacity: 0.2;
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text-white);
+      border: 1px solid var(--border-gold);
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-outline::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--gold-gradient);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: -1;
+    }
+
+    .btn-outline:hover {
+      color: #08080a;
+      border-color: transparent;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px var(--gold-glow);
+    }
+
+    .btn-outline:hover::before {
+      opacity: 1;
+    }
+
+    /* ==========================================================================
+       AWWWARDS FLOATING LUXURY CAPSULE HEADER
+       ========================================================================== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 1.2rem 0;
+      transition: all 0.4s var(--ease-out-expo);
+      background: transparent;
+      pointer-events: none;
+    }
+
+    header.scrolled {
+      padding: 0.75rem 0;
+    }
+
+    .nav-container {
+      pointer-events: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(14, 15, 20, 0.82);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      border-radius: 60px;
+      padding: 0.5rem 0.8rem 0.5rem 1.6rem;
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(212, 175, 55, 0.08);
+      transition: all 0.35s ease;
+    }
+
+    header.scrolled .nav-container {
+      background: rgba(10, 11, 15, 0.95);
+      border-color: rgba(212, 175, 55, 0.4);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.85), 0 0 35px rgba(212, 175, 55, 0.15);
+    }
+
+    .logo-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      transition: transform 0.3s var(--ease-out-expo);
+    }
+
+    .brand-logo-img {
+      height: 44px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.45));
+      transition: transform 0.3s var(--ease-out-expo);
+    }
+
+    .logo-link:hover .brand-logo-img {
+      transform: scale(1.06);
+    }
+
+    .footer-brand .logo-link {
+      background: transparent;
+      padding: 0;
+      border: none;
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-logo-img {
+      height: 60px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+      filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.4));
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.2rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      color: rgba(245, 245, 250, 0.85);
+      text-decoration: none;
+      font-family: var(--font-modern);
+      font-size: 0.82rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      position: relative;
+      padding: 0.4rem 0.2rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0%;
+      height: 2px;
+      background: var(--gold-gradient);
+      border-radius: 2px;
+      transition: width 0.3s var(--ease-out-expo);
+      box-shadow: 0 0 8px var(--gold-glow);
+    }
+
+    .nav-link:hover {
+      color: var(--gold-200);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .phone-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      color: var(--gold-200);
+      text-decoration: none;
+      font-family: var(--font-modern);
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.55rem 1.15rem;
+      background: rgba(212, 175, 55, 0.08);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 50px;
+      transition: all 0.3s ease;
+    }
+
+    .phone-badge i {
+      color: var(--gold-400);
+    }
+
+    .phone-badge:hover {
+      background: var(--gold-400);
+      color: #08080a;
+      border-color: var(--gold-400);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px var(--gold-glow);
+    }
+
+    .phone-badge:hover i {
+      color: #08080a;
+    }
+
+    .header-cta-btn {
+      padding: 0.55rem 1.45rem;
+      font-size: 0.78rem;
+      border-radius: 50px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      background: var(--gold-gradient);
+      color: #08080a;
+      border: 1px solid transparent;
+      box-shadow: 0 4px 18px rgba(212, 175, 55, 0.35);
+      transition: all 0.3s ease;
+    }
+
+    .header-cta-btn:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 8px 25px var(--gold-glow);
+      color: #000;
+    }
+
+    /* Mobile Menu Toggle */
+    .mobile-menu-btn {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .mobile-menu-btn span {
+      display: block;
+      width: 26px;
+      height: 2px;
+      background: var(--gold-300);
+      transition: all 0.3s ease;
+    }
+
+    /* ==========================================================================
+       ELEVATED HERO SECTION (AWWWARDS LUXURY SPLIT)
+       ========================================================================== */
+    .hero {
+      height: 100vh;
+      min-height: 680px;
+      max-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding-top: 90px;
+      padding-bottom: 1.5rem;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    .hero-bg-media {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      overflow: hidden;
+      opacity: 0.28;
+    }
+
+    .hero-bg-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: saturate(1.1) brightness(0.6);
+      transform: scale(1.05);
+    }
+
+    .hero-split-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.95fr;
+      gap: 3.5rem;
+      align-items: center;
+      position: relative;
+      z-index: 3;
+      width: 100%;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 680px;
+    }
+
+    .hero-pre-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.35rem 0.9rem;
+      background: rgba(212, 175, 55, 0.08);
+      border: 1px solid var(--border-gold);
+      border-radius: 50px;
+      margin-bottom: 1rem;
+    }
+
+    .hero-pre-badge .gold-star {
+      color: #ffc107;
+      font-size: 0.75rem;
+    }
+
+    .hero-pre-badge span {
+      font-family: var(--font-modern);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--gold-200);
+      font-weight: 600;
+    }
+
+    .hero-headline {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 5.2vw, 4.6rem);
+      font-weight: 400;
+      line-height: 1.06;
+      letter-spacing: 0.02em;
+      margin-bottom: 1rem;
+      color: var(--text-white);
+    }
+
+    .hero-headline .line-wrap {
+      overflow: hidden;
+      display: block;
+    }
+
+    .hero-headline .char-anim {
+      display: inline-block;
+      transform: translateY(110%);
+    }
+
+    .hero-tagline {
+      font-family: var(--font-serif);
+      font-size: clamp(1.05rem, 1.45vw, 1.28rem);
+      font-style: italic;
+      color: var(--gold-200);
+      margin-bottom: 0.8rem;
+      line-height: 1.4;
+    }
+
+    .hero-description {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      max-width: 540px;
+      margin-bottom: 1.4rem;
+      line-height: 1.6;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-quick-stats {
+      display: flex;
+      gap: 2.2rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--text-white);
+      line-height: 1;
+      margin-bottom: 0.2rem;
+    }
+
+    .stat-label {
+      font-family: var(--font-modern);
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-muted);
+    }
+
+    /* Hero Right Visual Showcase Card & Interactive Slider */
+    .hero-visual-card {
+      position: relative;
+      border-radius: 16px;
+      padding: 6px;
+      background: linear-gradient(145deg, rgba(212, 175, 55, 0.45), rgba(255, 255, 255, 0.08), rgba(8, 8, 10, 0.95));
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(212, 175, 55, 0.2);
+    }
+
+    .hero-slider-container {
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      height: 380px;
+    }
+
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      visibility: hidden;
+      transform: scale(1.08) translateX(30px);
+      transition: all 0.7s var(--ease-out-expo);
+      z-index: 1;
+    }
+
+    .hero-slide.active {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1) translateX(0px);
+      z-index: 2;
+    }
+
+    .hero-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(1.15) brightness(0.85);
+    }
+
+    .hero-visual-glass-overlay {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      right: 1rem;
+      padding: 0.9rem 1.2rem;
+      background: rgba(12, 13, 18, 0.82);
+      border: 1px solid var(--border-gold);
+      backdrop-filter: blur(16px);
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 5;
+    }
+
+    .hero-glass-text h4 {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      color: #ffffff;
+      margin-bottom: 2px;
+    }
+
+    .hero-glass-text p {
+      font-size: 0.72rem;
+      color: var(--gold-300);
+      font-family: var(--font-modern);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .hero-slider-nav {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .hero-nav-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 0.75rem;
+      transition: all 0.3s ease;
+    }
+
+    .hero-nav-btn:hover {
+      background: var(--gold-400);
+      color: #000;
+      border-color: var(--gold-400);
+      transform: scale(1.1);
+    }
+
+    .hero-slider-dots {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      display: flex;
+      gap: 0.4rem;
+      z-index: 5;
+    }
+
+    .hero-dot {
+      width: 20px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.4s ease;
+    }
+
+    .hero-dot.active {
+      width: 32px;
+      background: var(--gold-400);
+      box-shadow: 0 0 10px var(--gold-glow);
+    }
+
+    .hero-floating-pill {
+      position: absolute;
+      top: -14px;
+      right: 20px;
+      background: var(--gold-gradient);
+      color: #000;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-family: var(--font-modern);
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+      z-index: 10;
+    }
+
+    /* Scroll Down Indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 0.8rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.35rem;
+      text-decoration: none;
+      color: var(--text-dim);
+      transition: color 0.3s ease;
+    }
+
+    .scroll-indicator:hover {
+      color: var(--gold-300);
+    }
+
+    .scroll-indicator span {
+      font-family: var(--font-modern);
+      font-size: 0.62rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+    }
+
+    .scroll-indicator-mouse {
+      width: 18px;
+      height: 28px;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      border-radius: 20px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .scroll-indicator-dot {
+      width: 3px;
+      height: 5px;
+      background: var(--gold-300);
+      border-radius: 2px;
+      position: absolute;
+      top: 4px;
+      animation: scrollAnim 2s infinite ease-in-out;
+    }
+
+    @keyframes scrollAnim {
+      0% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      100% {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+    }
+
+    /* ==========================================================================
+       MARQUEE TICKER
+       ========================================================================== */
+    .marquee-section {
+      padding: 1.5rem 0;
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      overflow: hidden;
+      position: relative;
+      z-index: 2;
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      gap: 3rem;
+      will-change: transform;
+    }
+
+    .marquee-item {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.4);
+      white-space: nowrap;
+    }
+
+    .marquee-star {
+      color: var(--gold-400);
+      font-size: 0.8rem;
+    }
+
+    /* ==========================================================================
+       ABOUT & CONCEPT (PINNED SCROLL SCRUBBING)
+       ========================================================================== */
+    .concept-section {
+      padding: 140px 0;
+      position: relative;
+      background: radial-gradient(circle at 80% 50%, rgba(22, 23, 31, 0.6) 0%, transparent 60%);
+    }
+
+    .concept-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .concept-visual {
+      position: relative;
+    }
+
+    .concept-frame-main {
+      width: 100%;
+      height: 580px;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid var(--border-gold);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
+    }
+
+    .concept-frame-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s var(--ease-out-expo);
+    }
+
+    .concept-frame-floating {
+      position: absolute;
+      bottom: -40px;
+      right: -30px;
+      width: 260px;
+      height: 320px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 2px solid var(--gold-400);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+      z-index: 3;
+    }
+
+    .concept-frame-floating img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .experience-badge {
+      position: absolute;
+      top: -25px;
+      left: -25px;
+      background: var(--gold-gradient);
+      color: #000;
+      padding: 1.5rem;
+      border-radius: 8px;
+      z-index: 4;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+      text-align: center;
+    }
+
+    .experience-badge .num {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .experience-badge .lbl {
+      font-family: var(--font-modern);
+      font-size: 0.65rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 4px;
+    }
+
+    .concept-content {
+      padding-left: 1rem;
+    }
+
+    .quote-box {
+      border-left: 2px solid var(--gold-400);
+      padding-left: 1.8rem;
+      margin: 2.2rem 0;
+    }
+
+    .quote-box p {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-style: italic;
+      color: var(--gold-100);
+      line-height: 1.5;
+    }
+
+    .concept-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem;
+      margin-top: 2.5rem;
+    }
+
+    .c-feature {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .c-feature-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid var(--border-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-300);
+      flex-shrink: 0;
+    }
+
+    .c-feature-text h4 {
+      font-family: var(--font-modern);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-white);
+      margin-bottom: 0.3rem;
+    }
+
+    .c-feature-text p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       PRODUCT & SHOWCASE (STAGGERED PARALLAX GALLERY)
+       ========================================================================== */
+    /* ==========================================================================
+       INTERACTIVE PRODUCT CATALOGUE & GALLERY
+       ========================================================================== */
+    .showcase-section {
+      padding: 140px 0;
+      background-color: var(--bg-surface);
+      position: relative;
+    }
+
+    .showcase-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .showcase-intro {
+      max-width: 600px;
+    }
+
+    /* Filter Category Bar */
+    .catalog-filter-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+      padding: 0.5rem;
+      background: rgba(14, 15, 20, 0.75);
+      border: 1px solid var(--border-subtle);
+      border-radius: 50px;
+      width: fit-content;
+      backdrop-filter: blur(16px);
+    }
+
+    .filter-btn {
+      padding: 0.6rem 1.4rem;
+      border-radius: 50px;
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-family: var(--font-modern);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .filter-btn:hover {
+      color: var(--text-white);
+    }
+
+    .filter-btn.active {
+      background: var(--gold-gradient);
+      color: #08080a;
+      font-weight: 700;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.35);
+    }
+
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 2rem;
+    }
+
+    .showcase-card {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      background: var(--bg-surface-2);
+      border: 1px solid var(--border-subtle);
+      transition: all 0.5s var(--ease-out-expo);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .showcase-card.card-large {
+      grid-column: span 7;
+      height: 520px;
+    }
+
+    .showcase-card.card-medium {
+      grid-column: span 5;
+      height: 520px;
+    }
+
+    .showcase-card.card-half-1,
+    .showcase-card.card-half-2,
+    .showcase-card.card-half {
+      grid-column: span 6;
+      height: 480px;
+    }
+
+    .showcase-card.card-third {
+      grid-column: span 4;
+      height: 440px;
+    }
+
+    .showcase-card:hover {
+      border-color: rgba(212, 175, 55, 0.5);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), 0 0 25px rgba(212, 175, 55, 0.15);
+    }
+
+    .showcase-card-img-wrap {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .showcase-card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s var(--ease-out-expo), filter 0.8s ease;
+      filter: brightness(0.88);
+    }
+
+    .showcase-card:hover .showcase-card-img-wrap img {
+      transform: scale(1.08);
+      filter: brightness(0.98);
+    }
+
+    .showcase-tag-pill {
+      position: absolute;
+      top: 1.25rem;
+      left: 1.25rem;
+      background: rgba(10, 11, 15, 0.82);
+      border: 1px solid var(--border-gold);
+      backdrop-filter: blur(10px);
+      padding: 0.35rem 0.9rem;
+      border-radius: 50px;
+      font-size: 0.68rem;
+      font-family: var(--font-modern);
+      font-weight: 700;
+      color: var(--gold-300);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      z-index: 3;
+    }
+
+    .showcase-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(8, 8, 10, 0.95) 0%, rgba(8, 8, 10, 0.4) 50%, transparent 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 2.2rem;
+      z-index: 2;
+      transition: background 0.4s ease;
+    }
+
+    .showcase-cat {
+      font-family: var(--font-modern);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--gold-300);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .showcase-name {
+      font-family: var(--font-display);
+      font-size: 1.65rem;
+      color: #ffffff;
+      margin-bottom: 0.6rem;
+      line-height: 1.2;
+    }
+
+    .showcase-desc {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      max-width: 500px;
+      margin-bottom: 1.2rem;
+    }
+
+    .showcase-action-row {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .showcase-action-row .btn {
+      padding: 0.45rem 1rem;
+      font-size: 0.72rem;
+    }
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: 440px;
+      opacity: 0.85;
+    }
+
+    /* ==========================================================================
+       SERVICES & CRAFTSMANSHIP
+       ========================================================================== */
+    .services-section {
+      padding: 140px 0;
+      position: relative;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.2rem;
+      margin-top: 4rem;
+    }
+
+    .service-box {
+      background: var(--bg-surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 3.2rem 2.2rem;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(16px);
+      transition: all 0.4s var(--ease-out-expo);
+    }
+
+    .service-box::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--gold-gradient);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .service-box:hover {
+      transform: translateY(-8px);
+      border-color: var(--border-gold);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+    }
+
+    .service-box:hover::after {
+      opacity: 1;
+    }
+
+    .service-index {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 800;
+      color: rgba(255, 255, 255, 0.06);
+      line-height: 1;
+      margin-bottom: 1.8rem;
+      transition: color 0.4s ease;
+    }
+
+    .service-box:hover .service-index {
+      color: rgba(212, 175, 55, 0.25);
+    }
+
+    .service-title {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--text-white);
+      margin-bottom: 1.1rem;
+    }
+
+    .service-details {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 1.8rem;
+    }
+
+    .service-list {
+      list-style: none;
+    }
+
+    .service-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.85rem;
+      color: var(--text-main);
+      margin-bottom: 0.6rem;
+    }
+
+    .service-list li i {
+      color: var(--gold-400);
+      font-size: 0.75rem;
+    }
+
+    /* ==========================================================================
+       LOCATION, TIMINGS & REPUTATION SECTION (GOOGlE BUSINESS INTEGRATION)
+       ========================================================================== */
+    .business-section {
+      padding: 140px 0;
+      background: var(--bg-surface);
+      position: relative;
+    }
+
+    .business-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4.5rem;
+      align-items: center;
+    }
+
+    .location-info-card {
+      background: var(--bg-surface-2);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 3rem;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .info-group {
+      display: flex;
+      gap: 1.4rem;
+      margin-bottom: 2.2rem;
+    }
+
+    .info-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid var(--border-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-300);
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .info-content h4 {
+      font-family: var(--font-modern);
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gold-200);
+      margin-bottom: 0.4rem;
+    }
+
+    .info-content p {
+      font-size: 0.95rem;
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    .timing-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.9rem;
+      background: rgba(34, 197, 94, 0.12);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      color: #4ade80;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-top: 0.5rem;
+    }
+
+    .busy-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.9rem;
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      color: var(--gold-200);
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-top: 0.5rem;
+    }
+
+    /* Google Reviews Widget Visual */
+    .reputation-card {
+      background: linear-gradient(145deg, #181924, #101118);
+      border: 1px solid var(--border-gold);
+      border-radius: 16px;
+      padding: 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .reputation-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .rating-big {
+      font-family: var(--font-display);
+      font-size: 4.8rem;
+      font-weight: 900;
+      line-height: 1;
+      color: var(--text-white);
+      margin-bottom: 0.8rem;
+    }
+
+    .stars-cluster {
+      display: flex;
+      justify-content: center;
+      gap: 0.4rem;
+      color: #ffb703;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .review-count {
+      font-family: var(--font-modern);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 2rem;
+    }
+
+    .social-proof-badges {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .proof-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.82rem;
+      color: var(--text-main);
+    }
+
+    .proof-badge i {
+      color: #1877f2;
+      font-size: 1.1rem;
+    }
+
+    /* ==========================================================================
+       CONTACT & INQUIRY (LEAD GENERATION FORM)
+       ========================================================================== */
+    .contact-section {
+      padding: 140px 0;
+      position: relative;
+    }
+
+    .contact-box {
+      background: var(--bg-surface-card);
+      border: 1px solid var(--border-gold);
+      border-radius: 20px;
+      padding: 4.5rem;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 35px 80px rgba(0, 0, 0, 0.7);
+      position: relative;
+    }
+
+    .contact-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .form-group.full-width {
+      grid-column: span 2;
+    }
+
+    .form-label {
+      font-family: var(--font-modern);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--gold-200);
+      font-weight: 600;
+    }
+
+    .form-input,
+    .form-textarea,
+    .form-select {
+      background: rgba(10, 10, 14, 0.8);
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      padding: 1.1rem 1.4rem;
+      color: var(--text-white);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+    }
+
+    .form-input:focus,
+    .form-textarea:focus,
+    .form-select:focus {
+      outline: none;
+      border-color: var(--gold-400);
+      box-shadow: 0 0 15px var(--gold-glow);
+      background: rgba(15, 16, 22, 0.95);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 130px;
+    }
+
+    /* ==========================================================================
+       FOOTER
+       ========================================================================== */
+    footer {
+      background: #040405;
+      padding: 90px 0 40px;
+      border-top: 1px solid var(--border-subtle);
+      position: relative;
+      z-index: 2;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 4rem;
+      margin-bottom: 4.5rem;
+    }
+
+    .footer-brand p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-top: 1.2rem;
+      max-width: 320px;
+      line-height: 1.7;
+    }
+
+    .footer-col-title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-white);
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: color 0.3s ease;
+      display: inline-block;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold-300);
+      transform: translateX(4px);
+    }
+
+    .social-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--bg-surface-2);
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-main);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 1.1rem;
+    }
+
+    .social-btn:hover {
+      background: var(--gold-gradient);
+      color: #000;
+      border-color: transparent;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px var(--gold-glow);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 2.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      color: var(--text-dim);
+      font-size: 0.82rem;
+    }
+
+    /* WhatsApp Floating Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 2.2rem;
+      right: 2.2rem;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #25d366;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+      z-index: 999;
+      text-decoration: none;
+      transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1) rotate(6deg);
+      box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);
+    }
+
+    /* ==========================================================================
+       MOBILE NAVIGATION DRAWER
+       ========================================================================== */
+    .mobile-nav-drawer {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 85%;
+      max-width: 380px;
+      height: 100vh;
+      background: rgba(12, 13, 18, 0.98);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      border-left: 1px solid var(--border-gold);
+      z-index: 1001;
+      padding: 5rem 2rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: right 0.4s var(--ease-out-expo);
+      box-shadow: -15px 0 40px rgba(0, 0, 0, 0.8);
+    }
+
+    .mobile-nav-drawer.active {
+      right: 0;
+    }
+
+    .mobile-nav-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(5px);
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .mobile-nav-backdrop.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .mobile-drawer-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: transparent;
+      border: 1px solid var(--border-subtle);
+      color: var(--text-white);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .mobile-drawer-close:hover {
+      background: var(--gold-400);
+      color: #000;
+      border-color: var(--gold-400);
+    }
+
+    .mobile-drawer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .mobile-drawer-link {
+      color: var(--text-white);
+      text-decoration: none;
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      letter-spacing: 0.04em;
+      transition: all 0.3s ease;
+      display: block;
+    }
+
+    .mobile-drawer-link:hover {
+      color: var(--gold-300);
+      transform: translateX(8px);
+    }
+
+    .mobile-drawer-footer {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    /* ==========================================================================
+       RESPONSIVE BREAKPOINTS
+       ========================================================================== */
+    @media (max-width: 1080px) {
+      .hero {
+        height: auto;
+        min-height: 100vh;
+        max-height: none;
+        padding-top: 110px;
+        padding-bottom: 4rem;
+      }
+
+      .hero-split-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .concept-grid,
+      .business-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .showcase-card.card-large,
+      .showcase-card.card-medium,
+      .showcase-card.card-half-1,
+      .showcase-card.card-half-2 {
+        grid-column: span 12;
+        height: 380px;
+      }
+
+      .hero-bg-media {
+        width: 100%;
+        opacity: 0.35;
+      }
+
+      .contact-box {
+        padding: 2.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links,
+      .header-actions {
+        display: none;
+      }
+
+      .mobile-menu-btn {
+        display: flex;
+      }
+
+      .hero-visual-card {
+        margin-top: 1rem;
+      }
+
+      .hero-slider-container {
+        height: 320px;
+      }
+
+      .contact-form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-group.full-width {
+        grid-column: span 1;
+      }
+
+      .hero-quick-stats {
+        flex-wrap: wrap;
+        gap: 1.5rem;
+      }
+
+      .container {
+        padding: 0 1.25rem;
+      }
+
+      .concept-frame-main {
+        height: 350px;
+      }
+
+      .concept-frame-floating {
+        display: none;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-headline {
+        font-size: 2.3rem;
+      }
+
+      .section-title {
+        font-size: 2rem !important;
+      }
+
+      .hero-slider-container {
+        height: 260px;
+      }
+
+      .hero-cta-group {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .hero-cta-group .btn {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+      }
+
+      .brand-logo-img {
+        height: 36px;
+      }
+
+      .nav-container {
+        padding: 0.4rem 0.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ==========================================================================
+       STICKY HEADER / NAVIGATION
+       ========================================================================== -->
+  <header id="main-header">
+    <div class="container nav-container">
+      <a href="#" class="logo-link">
+        <img src="logo-gold.png" alt="Royal Furniture &amp; Interior" class="brand-logo-img">
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link">Concept</a></li>
+        <li><a href="#showcase" class="nav-link">Creations</a></li>
+        <li><a href="#services" class="nav-link">Expertise</a></li>
+        <li><a href="#location" class="nav-link">Showroom</a></li>
+        <li><a href="#contact" class="nav-link">Consultation</a></li>
+      </ul>
+
+      <div class="header-actions">
+        <a href="tel:+923214567007" class="phone-badge">
+          <i class="fa-solid fa-phone"></i>
+          <span>0321 4567007</span>
+        </a>
+        <a href="#contact" class="btn btn-gold header-cta-btn">
+          Inquire Now
+        </a>
+      </div>
+
+      <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-backdrop" id="mobile-backdrop"></div>
+  <div class="mobile-nav-drawer" id="mobile-drawer">
+    <button class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Close Menu">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    
+    <div style="margin-bottom: 2rem;">
+      <img src="logo-gold.png" alt="Royal Furniture &amp; Interior" style="height: 44px; width: auto;">
+    </div>
+
+    <ul class="mobile-drawer-links">
+      <li><a href="#about" class="mobile-drawer-link">Concept</a></li>
+      <li><a href="#showcase" class="mobile-drawer-link">Creations</a></li>
+      <li><a href="#services" class="mobile-drawer-link">Expertise</a></li>
+      <li><a href="#location" class="mobile-drawer-link">Showroom</a></li>
+      <li><a href="#contact" class="mobile-drawer-link">Consultation</a></li>
+    </ul>
+
+    <div class="mobile-drawer-footer">
+      <a href="tel:+923214567007" class="phone-badge" style="justify-content: center; width: 100%;">
+        <i class="fa-solid fa-phone"></i>
+        <span>0321 4567007</span>
+      </a>
+      <a href="#contact" class="btn btn-gold" style="width: 100%; text-align: center; justify-content: center;">
+        Inquire Now
+      </a>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       HERO SECTION (SCROLL TRIGGER PARALLAX & REVEALS)
+       ========================================================================== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-media">
+      <img id="hero-img"
+        src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1600&q=80"
+        alt="Royal Furniture Luxury Interior">
+    </div>
+
+    <div class="container">
+      <div class="hero-split-grid">
+
+        <!-- Left Content -->
+        <div class="hero-content">
+          <div class="hero-pre-badge hero-fade">
+            <i class="fa-solid fa-crown gold-star"></i>
+            <span>Gujranwala's Premier Atelier</span>
+          </div>
+
+          <h1 class="hero-headline">
+            <span class="line-wrap"><span class="char-anim">DESIGNS</span></span>
+            <span class="line-wrap"><span class="char-anim"><span class="gold-gradient-text">BEYOND</span></span></span>
+            <span class="line-wrap"><span class="char-anim">IMAGINATION.</span></span>
+          </h1>
+
+          <p class="hero-tagline hero-fade">
+            "A well planned home always needs well designed furniture. Royal Furniture is the best choice for your
+            home."
+          </p>
+
+
+
+          <div class="hero-cta-group hero-fade">
+            <a href="#showcase" class="btn btn-gold">
+              Explore Portfolio <i class="fa-solid fa-arrow-right-long"></i>
+            </a>
+            <a href="https://wa.me/923214567007?text=Hello%20Royal%20Furniture%20%26%20Interiors,%20I%20would%20like%20to%20inquire%20about%20your%20luxury%20furnishings."
+              target="_blank" class="btn btn-outline">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp Direct
+            </a>
+          </div>
+
+          <div class="hero-quick-stats hero-fade">
+            <div class="stat-item">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Solid Wood Handcrafted</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">5.0 ★</span>
+              <span class="stat-label">Facebook Rating</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">3.7 ★</span>
+              <span class="stat-label">Google Verified</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Visual Showcase Card with Interactive Slider -->
+        <div class="hero-visual-card hero-fade">
+          <div class="hero-floating-pill">
+            <i class="fa-solid fa-gem" style="margin-right: 4px;"></i> 2026 Collection
+          </div>
+
+          <div class="hero-slider-container">
+            <!-- Progress Dots -->
+            <div class="hero-slider-dots">
+              <div class="hero-dot active" onclick="goToHeroSlide(0)"></div>
+              <div class="hero-dot" onclick="goToHeroSlide(1)"></div>
+              <div class="hero-dot" onclick="goToHeroSlide(2)"></div>
+            </div>
+
+            <!-- Slide 1: Client Aura Fluted Bed -->
+            <div class="hero-slide active" data-title="Aura Fluted Velvet Bedstead"
+              data-desc="Solid Wood &bull; Brass Gold Trims">
+              <img src="images/bed-modern-fluted.jpg"
+                alt="Aura Fluted Velvet Bedstead">
+            </div>
+
+            <!-- Slide 2: Client Aero Curved Fluted Sofa -->
+            <div class="hero-slide" data-title="Aero Curved Fluted Sofa" data-desc="Italian Leather &bull; Gold Perimeter Base">
+              <img src="images/sofa-curved-fluted-leather.jpg"
+                alt="Aero Curved Fluted Luxury Sofa">
+            </div>
+
+            <!-- Slide 3: Client Crimson Wingback Bed -->
+            <div class="hero-slide" data-title="Crimson Wingback Suite"
+              data-desc="Deep Burgundy Velvet &bull; Haute Couture">
+              <img src="images/bed-burgundy-fluted-wingback.jpg"
+                alt="Crimson Wingback Velvet Bed">
+            </div>
+
+            <!-- Glass Overlay Info & Controls -->
+            <div class="hero-visual-glass-overlay">
+              <div class="hero-glass-text">
+                <h4 id="hero-slide-title">Aura Fluted Velvet Bedstead</h4>
+                <p id="hero-slide-desc">Solid Wood &bull; Brass Gold Trims</p>
+              </div>
+              <div class="hero-slider-nav">
+                <button class="hero-nav-btn" onclick="prevHeroSlide()" aria-label="Previous Slide">
+                  <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button class="hero-nav-btn" onclick="nextHeroSlide()" aria-label="Next Slide">
+                  <i class="fa-solid fa-chevron-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-indicator">
+      <div class="scroll-indicator-mouse">
+        <div class="scroll-indicator-dot"></div>
+      </div>
+      <span>Scroll</span>
+    </a>
+  </section>
+
+  <!-- ==========================================================================
+       MARQUEE TICKER STRIP
+       ========================================================================== -->
+  <section class="marquee-section">
+    <div class="marquee-track" id="marquee">
+      <div class="marquee-item">
+        <span>Bespoke Living Spaces</span>
+        <i class="fa-solid fa-crown marquee-star"></i>
+        <span>Solid Teak &amp; Walnut</span>
+        <i class="fa-solid fa-crown marquee-star"></i>
+        <span>Architectural Interiors</span>
+        <i class="fa-solid fa-crown marquee-star"></i>
+        <span>Haute Couture Upholstery</span>
+        <i class="fa-solid fa-crown marquee-star"></i>
+        <span>Gujranwala Flagship Store</span>
+        <i class="fa-solid fa-crown marquee-star"></i>
+      </div>
+      <div class="marquee-item">
+        <span>Bespoke Living Spaces</span>
+        <i class="fa-solid fa-crown marquee-star"></i>
+        <span>Solid Teak &amp; Walnut</span>
+        <i class="fa-solid fa-crown marquee-star"></i>
+        <span>Architectural Interiors</span>
+        <i class="fa-solid fa-crown marquee-star"></i>
+        <span>Haute Couture Upholstery</span>
+        <i class="fa-solid fa-crown marquee-star"></i>
+        <span>Gujranwala Flagship Store</span>
+        <i class="fa-solid fa-crown marquee-star"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       ABOUT & CONCEPT (PARALLAX & TEXT SCRUBBING)
+       ========================================================================== -->
+  <section class="concept-section" id="about">
+    <div class="container">
+      <div class="concept-grid">
+        <div class="concept-visual">
+          <div class="experience-badge">
+            <div class="num">ROYAL</div>
+            <div class="lbl">Aesthetic Excellence</div>
+          </div>
+          <div class="concept-frame-main parallax-img-wrap">
+            <img class="parallax-target"
+              src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=80"
+              alt="Royal Furniture Modern Interior">
+          </div>
+          <div class="concept-frame-floating parallax-floating">
+            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80"
+              alt="Custom Armchair Detail">
+          </div>
+        </div>
+
+        <div class="concept-content reveal-group">
+          <div class="sub-heading">The Philosophy</div>
+          <h2 class="section-title">The Art of <span class="gold-gradient-text">Refined Living</span></h2>
+
+          <div class="quote-box">
+            <p>"A well planned home always needs well designed furniture. Royal Furniture is the best choice for your
+              home."</p>
+          </div>
+
+          <p style="color: var(--text-muted); font-size: 1rem; margin-bottom: 1.5rem; line-height: 1.8;">
+            At Royal Furniture &amp; Interiors, we believe luxury is found in precision, harmony, and individuality.
+            Located at Ghordor Road near Sukhchain Town, our showroom is home to visionary furniture designers and
+            master woodworkers who translate architectural blueprints into living masterpieces.
+          </p>
+
+          <div class="concept-features">
+            <div class="c-feature">
+              <div class="c-feature-icon"><i class="fa-solid fa-compass-drafting"></i></div>
+              <div class="c-feature-text">
+                <h4>Spatial Planning</h4>
+                <p>Curated proportioning for sprawling villas and executive suites.</p>
+              </div>
+            </div>
+            <div class="c-feature">
+              <div class="c-feature-icon"><i class="fa-solid fa-gem"></i></div>
+              <div class="c-feature-text">
+                <h4>Heirloom Quality</h4>
+                <p>Selected hardwoods, brass inlays, and durable rich finishes.</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top: 3rem;">
+            <a href="#location" class="btn btn-outline">Visit Our Showroom</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       PRODUCT & SHOWCASE CATALOGUE (INTERACTIVE FILTERABLE PORTFOLIO)
+       ========================================================================== -->
+  <section class="showcase-section" id="showcase">
+    <div class="container">
+      <div class="showcase-header">
+        <div class="showcase-intro reveal-group">
+          <div class="sub-heading">Curated Catalogue</div>
+          <h2 class="section-title">Royal <span class="gold-gradient-text">Creations</span></h2>
+          <p style="color: var(--text-muted);">Explore our signature collection of bespoke beds, luxury occasional chairs, opulent vanity sets, and complete turnkey suites handcrafted in Gujranwala.</p>
+        </div>
+        <div class="showcase-controls reveal-group">
+          <a href="https://wa.me/923214567007?text=Hello%20Royal%20Furniture%20%26%20Interiors,%20please%20send%20me%20your%20complete%202026%20PDF%20catalogue." target="_blank" class="btn btn-gold">
+            <i class="fa-solid fa-file-arrow-down"></i> Request PDF Catalogue
+          </a>
+        </div>
+      </div>
+
+      <!-- Filter Categories -->
+      <div class="catalog-filter-bar reveal-group">
+        <button class="filter-btn active" onclick="filterCatalog('all', this)">All Collections</button>
+        <button class="filter-btn" onclick="filterCatalog('beds', this)">Luxury Beds</button>
+        <button class="filter-btn" onclick="filterCatalog('sofas', this)">Sofas &amp; Lounges</button>
+        <button class="filter-btn" onclick="filterCatalog('wardrobes', this)">Wardrobes &amp; Vanities</button>
+        <button class="filter-btn" onclick="filterCatalog('chairs', this)">Chairs</button>
+      </div>
+
+      <!-- Catalog Grid -->
+      <div class="showcase-grid" id="catalog-grid">
+        
+        <!-- 1: Aura Fluted Haute Bed (Client Image) -->
+        <div class="showcase-card card-large scroll-card" data-category="beds">
+          <span class="showcase-tag-pill"><i class="fa-solid fa-crown gold-star"></i> Flagship Bed</span>
+          <div class="showcase-card-img-wrap">
+            <img src="images/bed-modern-fluted.jpg" alt="Aura Fluted Velvet Bedstead">
+          </div>
+          <div class="showcase-overlay">
+            <span class="showcase-cat">Master Bedroom &bull; Bespoke Fluted</span>
+            <h3 class="showcase-name">Aura Fluted Velvet Bedstead</h3>
+            <p class="showcase-desc">Vertical fluted upholstered headboard with brass gold metallic inlays, integrated gold plinth base, and matching marble-top side dressers.</p>
+            <div class="showcase-action-row">
+              <a href="https://wa.me/923214567007?text=Hi%20Royal%20Furniture,%20I%20am%20interested%20in%20the%20Aura%20Fluted%20Velvet%20Bedstead." target="_blank" class="btn btn-gold">
+                <i class="fa-brands fa-whatsapp"></i> Inquire Price
+              </a>
+              <a href="#contact" class="btn btn-outline">Customize Size</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2: Burgundy Wingback Bed (Client Image) -->
+        <div class="showcase-card card-medium scroll-card" data-category="beds">
+          <span class="showcase-tag-pill">Haute Velvet</span>
+          <div class="showcase-card-img-wrap">
+            <img src="images/bed-burgundy-fluted-wingback.jpg" alt="Regal Burgundy Wingback Bed">
+          </div>
+          <div class="showcase-overlay">
+            <span class="showcase-cat">Haute Upholstery</span>
+            <h3 class="showcase-name">Crimson Wingback Bed Suite</h3>
+            <p class="showcase-desc">Opulent curved wingback headboard in deep royal burgundy velvet with matching fluted bed-end bench and lacquered nightstands.</p>
+            <div class="showcase-action-row">
+              <a href="https://wa.me/923214567007?text=Hi%20Royal%20Furniture,%20I%20am%20interested%20in%20the%20Crimson%20Wingback%20Bed%20Suite." target="_blank" class="btn btn-gold">
+                <i class="fa-brands fa-whatsapp"></i> Inquire
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3: Curved Fluted Cream Leather Sofa (Client Image) -->
+        <div class="showcase-card card-half scroll-card" data-category="sofas">
+          <span class="showcase-tag-pill">2026 Modernist</span>
+          <div class="showcase-card-img-wrap">
+            <img src="images/sofa-curved-fluted-leather.jpg" alt="Modern Curved Fluted Cream Sofa">
+          </div>
+          <div class="showcase-overlay">
+            <span class="showcase-cat">Living Room &bull; Architectural</span>
+            <h3 class="showcase-name">Aero Curved Fluted Sofa</h3>
+            <p class="showcase-desc">Sculptural curved lounge sofa in ivory Italian leather with vertical channels, brushed gold perimeter base, and matching fluted marble tables.</p>
+            <div class="showcase-action-row">
+              <a href="https://wa.me/923214567007?text=Hi%20Royal%20Furniture,%20I%20am%20interested%20in%20the%20Aero%20Curved%20Fluted%20Sofa." target="_blank" class="btn btn-gold">
+                <i class="fa-brands fa-whatsapp"></i> Inquire Price
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4: French Provençal Hand-Carved Sofa (Client Image) -->
+        <div class="showcase-card card-half scroll-card" data-category="sofas">
+          <span class="showcase-tag-pill">Hand-Carved Teak</span>
+          <div class="showcase-card-img-wrap">
+            <img src="images/sofa-french-provencal-carved.jpg" alt="French Provincial Hand-Carved Sofa">
+          </div>
+          <div class="showcase-overlay">
+            <span class="showcase-cat">Heritage Classical</span>
+            <h3 class="showcase-name">Versailles Provincial Settee</h3>
+            <p class="showcase-desc">Classic French curved woodwork frame sculpted in seasoned natural teak with linen upholstery, bolster cushions, and cabriole legs.</p>
+            <div class="showcase-action-row">
+              <a href="https://wa.me/923214567007?text=Hi%20Royal%20Furniture,%20I%20am%20interested%20in%20the%20Versailles%20Provincial%20Settee." target="_blank" class="btn btn-gold">
+                <i class="fa-brands fa-whatsapp"></i> Order Sofa
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5: Luxury Mirrored & Fluted Wardrobe (Client Image) -->
+        <div class="showcase-card card-large scroll-card" data-category="wardrobes">
+          <span class="showcase-tag-pill">Architectural Wardrobe</span>
+          <div class="showcase-card-img-wrap">
+            <img src="images/wardrobe-luxury-fluted-mirrored.jpg" alt="Luxury Architectural Wardrobe">
+          </div>
+          <div class="showcase-overlay">
+            <span class="showcase-cat">Master Closet &bull; Custom Joinery</span>
+            <h3 class="showcase-name">Grand Palais Mirrored Wardrobe</h3>
+            <p class="showcase-desc">6-door luxury wardrobe with bronze mirror center panels, geometric lattice handles, fluted lower cabinetry, and 24K gold accents.</p>
+            <div class="showcase-action-row">
+              <a href="https://wa.me/923214567007?text=Hi%20Royal%20Furniture,%20I%20am%20interested%20in%20the%20Grand%20Palais%20Mirrored%20Wardrobe." target="_blank" class="btn btn-gold">
+                <i class="fa-brands fa-whatsapp"></i> Inquire Custom Dimensions
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6: Nordic Teal & Terracotta Bed (Client Image) -->
+        <div class="showcase-card card-medium scroll-card" data-category="beds">
+          <span class="showcase-tag-pill">Modern Sanctuary</span>
+          <div class="showcase-card-img-wrap">
+            <img src="images/bed-nordic-teal-minimal.jpg" alt="Nordic Teal Modern Bed">
+          </div>
+          <div class="showcase-overlay">
+            <span class="showcase-cat">Modern Suite</span>
+            <h3 class="showcase-name">Nordic Twilight Bedstead</h3>
+            <p class="showcase-desc">Minimalist upholstered low-profile bedstead in marine blue velvet with terracotta draping, gold trims, and floating marble nightstands.</p>
+            <div class="showcase-action-row">
+              <a href="https://wa.me/923214567007?text=Hi%20Royal%20Furniture,%20I%20am%20interested%20in%20the%20Nordic%20Twilight%20Bedstead." target="_blank" class="btn btn-gold">
+                <i class="fa-brands fa-whatsapp"></i> Inquire
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7: Royal Emerald Baroque Bed (Client Image) -->
+        <div class="showcase-card card-half scroll-card" data-category="beds">
+          <span class="showcase-tag-pill">24K Antique Gold</span>
+          <div class="showcase-card-img-wrap">
+            <img src="images/bed-royal-emerald.jpg" alt="Classic Royal Baroque Carved Bed">
+          </div>
+          <div class="showcase-overlay">
+            <span class="showcase-cat">Heritage &amp; Bridal</span>
+            <h3 class="showcase-name">Sultana Baroque Bridal Suite</h3>
+            <p class="showcase-desc">Magnificent hand-carved baroque crest in 24K antique gold finish with emerald green lacquered nightstands and tufted leather cushioning.</p>
+            <div class="showcase-action-row">
+              <a href="https://wa.me/923214567007?text=Hi%20Royal%20Furniture,%20I%20am%20interested%20in%20the%20Sultana%20Baroque%20Bridal%20Suite." target="_blank" class="btn btn-gold">
+                <i class="fa-brands fa-whatsapp"></i> Inquire Bridal Set
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8: Modern Velvet Suite with Geometric Mirrors (Client Image) -->
+        <div class="showcase-card card-half scroll-card" data-category="beds">
+          <span class="showcase-tag-pill">Turnkey Architecture</span>
+          <div class="showcase-card-img-wrap">
+            <img src="images/bed-luxury-velvet-suite.jpg" alt="Contemporary Master Velvet Suite">
+          </div>
+          <div class="showcase-overlay">
+            <span class="showcase-cat">Turnkey Bedroom</span>
+            <h3 class="showcase-name">Vanguard Executive Suite</h3>
+            <p class="showcase-desc">Complete bedroom interior architecture featuring suede wall paneling, geometric diamond bronze mirrors, and curved-edge platform bed.</p>
+            <div class="showcase-action-row">
+              <a href="https://wa.me/923214567007?text=Hi%20Royal%20Furniture,%20I%20am%20interested%20in%20the%20Vanguard%20Executive%20Suite." target="_blank" class="btn btn-gold">
+                <i class="fa-brands fa-whatsapp"></i> Inquire Package
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9: Lotus Petal Velvet Chairs (Client Image) -->
+        <div class="showcase-card card-third scroll-card" data-category="chairs">
+          <span class="showcase-tag-pill">8 Velvet Shades</span>
+          <div class="showcase-card-img-wrap">
+            <img src="images/chairs-lotus-velvet.jpg" alt="Lotus Petal Occasional Chairs">
+          </div>
+          <div class="showcase-overlay">
+            <span class="showcase-cat">Occasional Seating</span>
+            <h3 class="showcase-name">Lotus Petal Armchairs</h3>
+            <p class="showcase-desc">Scallop-back occasional armchairs in emerald, sapphire, mustard, blush, and charcoal with tapered brass legs.</p>
+            <div class="showcase-action-row">
+              <a href="https://wa.me/923214567007?text=Hi%20Royal%20Furniture,%20I%20am%20interested%20in%20the%20Lotus%20Petal%20Armchairs." target="_blank" class="btn btn-gold">
+                <i class="fa-brands fa-whatsapp"></i> Order Chairs
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10: Octagonal Vanity & Fluted Dresser (Client Image) -->
+        <div class="showcase-card card-third scroll-card" data-category="wardrobes">
+          <span class="showcase-tag-pill">Dressing Console</span>
+          <div class="showcase-card-img-wrap">
+            <img src="images/vanity-dresser-octagonal.jpg" alt="Octagonal Vanity and Fluted Dresser">
+          </div>
+          <div class="showcase-overlay">
+            <span class="showcase-cat">Dressing &amp; Vanity</span>
+            <h3 class="showcase-name">Octa Fluted Vanity Set</h3>
+            <p class="showcase-desc">Bespoke fluted dressing console, geometric octagonal wall mirror, and tufted velvet ottoman.</p>
+            <div class="showcase-action-row">
+              <a href="https://wa.me/923214567007?text=Hi%20Royal%20Furniture,%20I%20am%20interested%20in%20the%20Octa%20Fluted%20Vanity%20Set." target="_blank" class="btn btn-gold">
+                <i class="fa-brands fa-whatsapp"></i> Inquire
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 11: Sovereign Dining Suite -->
+        <div class="showcase-card card-third scroll-card" data-category="sofas">
+          <span class="showcase-tag-pill">Dining Suite</span>
+          <div class="showcase-card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=1000&q=80" alt="Sovereign Dining Room">
+          </div>
+          <div class="showcase-overlay">
+            <span class="showcase-cat">Dining &amp; Banquet</span>
+            <h3 class="showcase-name">Sovereign 10-Seater Table</h3>
+            <p class="showcase-desc">Italian marble top resting on polished architectural timber pedestals.</p>
+            <div class="showcase-action-row">
+              <a href="https://wa.me/923214567007?text=Hi%20Royal%20Furniture,%20I%20am%20interested%20in%20the%20Sovereign%2010-Seater%20Table." target="_blank" class="btn btn-gold">
+                <i class="fa-brands fa-whatsapp"></i> Inquire
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SERVICES & EXPERTISE SECTION
+       ========================================================================== -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <div style="text-align: center; max-width: 700px; margin: 0 auto 4rem;" class="reveal-group">
+        <div class="sub-heading" style="justify-content: center;">Bespoke Services</div>
+        <h2 class="section-title">Designed For <span class="gold-gradient-text">Perfection</span></h2>
+        <p style="color: var(--text-muted);">From individual heirloom furniture pieces to turnkey interior design across
+          residential villas, corporate offices, and luxury bridal suites.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-box service-anim">
+          <div class="service-index">01</div>
+          <h3 class="service-title">Custom Furniture Manufacturing</h3>
+          <p class="service-details">Meticulous in-house carpentry and upholstery crafted using seasoned hardwoods,
+            precision joinery, and durable imported fabrics.</p>
+          <ul class="service-list">
+            <li><i class="fa-solid fa-circle-check"></i> Bespoke Sofas &amp; Sectionals</li>
+            <li><i class="fa-solid fa-circle-check"></i> King &amp; Queen Luxury Beds</li>
+            <li><i class="fa-solid fa-circle-check"></i> Marble &amp; Wood Dining Tables</li>
+          </ul>
+        </div>
+
+        <div class="service-box service-anim">
+          <div class="service-index">02</div>
+          <h3 class="service-title">Turnkey Interior Design</h3>
+          <p class="service-details">Comprehensive interior design service covering 3D visual concepts, false ceiling
+            design, ambient lighting schemes, and custom media walls.</p>
+          <ul class="service-list">
+            <li><i class="fa-solid fa-circle-check"></i> Space Planning &amp; Layouts</li>
+            <li><i class="fa-solid fa-circle-check"></i> Decorative Wall &amp; Wood Paneling</li>
+            <li><i class="fa-solid fa-circle-check"></i> Mood Boarding &amp; Material Selection</li>
+          </ul>
+        </div>
+
+        <div class="service-box service-anim">
+          <div class="service-index">03</div>
+          <h3 class="service-title">Bridal &amp; Luxury Packages</h3>
+          <p class="service-details">Exclusive turnkey packages designed for newly constructed homes and weddings,
+            offering cohesive styling across every room.</p>
+          <ul class="service-list">
+            <li><i class="fa-solid fa-circle-check"></i> Full House Furnishing Sets</li>
+            <li><i class="fa-solid fa-circle-check"></i> Personalized Consultations</li>
+            <li><i class="fa-solid fa-circle-check"></i> Direct On-Site Delivery &amp; Setup</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       LOCATION, TIMINGS & GOOGLE BUSINESS REPUTATION
+       ========================================================================== -->
+  <section class="business-section" id="location">
+    <div class="container">
+      <div class="business-grid">
+
+        <!-- Left: Address & Timings -->
+        <div class="location-info-card reveal-group">
+          <div class="sub-heading">Showroom &amp; Experience Center</div>
+          <h2 class="section-title" style="font-size: 2.4rem;">Visit <span class="gold-gradient-text">Our Store</span>
+          </h2>
+          <p style="color: var(--text-muted); margin-bottom: 2.5rem;">
+            Step into our Gujranwala showroom to feel our materials, test our seating ergonomics, and meet our principal
+            interior designers.
+          </p>
+
+          <!-- Address -->
+          <div class="info-group">
+            <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="info-content">
+              <h4>Flagship Address</h4>
+              <p>Ghordor Rd, near Sukhchain Town, Wahdat Colony,<br>Gujranwala, Punjab 52250</p>
+            </div>
+          </div>
+
+          <!-- Phone -->
+          <div class="info-group">
+            <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+            <div class="info-content">
+              <h4>Direct Inquiries &amp; WhatsApp</h4>
+              <p><a href="tel:+923214567007"
+                  style="color: var(--text-white); text-decoration: none; font-weight: 600;">+92 321 4567007</a> / <a
+                  href="tel:03214567007" style="color: var(--text-white); text-decoration: none;">0321 4567007</a></p>
+            </div>
+          </div>
+
+          <!-- Hours & Popular Times -->
+          <div class="info-group">
+            <div class="info-icon"><i class="fa-solid fa-clock"></i></div>
+            <div class="info-content">
+              <h4>Operating Hours</h4>
+              <p>Opens Daily at <strong>10:30 AM</strong></p>
+              <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem;">
+                <span class="busy-badge"><i class="fa-solid fa-fire"></i> Peak Hours: ~5:00 PM</span>
+                <span class="timing-badge"><i class="fa-solid fa-check"></i> Walk-ins Welcome</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top: 2rem;">
+            <a href="https://maps.google.com/?q=Royal+Furniture+Interiors+Ghordor+Rd+Gujranwala" target="_blank"
+              class="btn btn-outline" style="width: 100%;">
+              <i class="fa-solid fa-diamond-turn-right"></i> Get Driving Directions
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Google Business Reputation -->
+        <div class="reputation-card reveal-group">
+          <div class="sub-heading" style="justify-content: center;">Customer Feedback</div>
+          <div class="rating-big">3.7<span style="font-size: 2rem; color: var(--gold-400);">/5</span></div>
+          <div class="stars-cluster">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half-stroke"></i>
+            <i class="fa-regular fa-star"></i>
+          </div>
+          <div class="review-count">Based on 27+ Google Reviews</div>
+
+          <div class="quote-box"
+            style="margin: 2rem 0; text-align: left; background: rgba(0,0,0,0.3); padding: 1.2rem; border-radius: 8px;">
+            <p style="font-size: 1.05rem; color: #fff;">
+              "Royal Furniture is the best choice for your home. Timeless elegance and dependable craftsmanship in every
+              room."
+            </p>
+          </div>
+
+          <div class="social-proof-badges">
+            <div class="proof-badge">
+              <i class="fa-brands fa-facebook"></i>
+              <span><strong>5.0 / 5</strong> on Facebook (2 votes)</span>
+            </div>
+            <div class="proof-badge">
+              <i class="fa-brands fa-instagram" style="color: #e1306c;"></i>
+              <span>@royal_furniture_official</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CONTACT & INQUIRY FORM
+       ========================================================================== -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="contact-box reveal-group">
+        <div style="text-align: center; max-width: 650px; margin: 0 auto;">
+          <div class="sub-heading" style="justify-content: center;">Let's Create Together</div>
+          <h2 class="section-title">Schedule A <span class="gold-gradient-text">Design Consultation</span></h2>
+          <p style="color: var(--text-muted);">Share your floorplan dimensions or custom furniture requirements. Our
+            team will get back to you within 24 hours.</p>
+        </div>
+
+        <form class="contact-form-grid"
+          onsubmit="event.preventDefault(); alert('Thank you for contacting Royal Furniture & Interiors. We will reach out to you shortly!');">
+          <div class="form-group">
+            <label class="form-label" for="full-name">Your Full Name</label>
+            <input type="text" id="full-name" class="form-input" placeholder="e.g. Tariq Mehmood" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="phone-number">Phone / WhatsApp</label>
+            <input type="tel" id="phone-number" class="form-input" placeholder="+92 3XX XXXXXXX" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="project-type">Project Requirement</label>
+            <select id="project-type" class="form-select">
+              <option value="luxury-furniture">Custom Luxury Furniture</option>
+              <option value="complete-interior">Full House Interior Design</option>
+              <option value="bedroom-suite">Master Bedroom Package</option>
+              <option value="dining-living">Living &amp; Dining Room Sets</option>
+              <option value="bridal-package">Bridal Home Package</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="city-location">City / Area</label>
+            <input type="text" id="city-location" class="form-input" placeholder="e.g. Gujranwala / Lahore / Islamabad">
+          </div>
+
+          <div class="form-group full-width">
+            <label class="form-label" for="message">Tell Us About Your Vision</label>
+            <textarea id="message" class="form-textarea"
+              placeholder="Provide dimensions, preferred style (Modern/Classic), or custom requests..."></textarea>
+          </div>
+
+          <div class="form-group full-width" style="text-align: center; margin-top: 1rem;">
+            <button type="submit" class="btn btn-gold" style="width: 100%; max-width: 380px; margin: 0 auto;">
+              Submit Inquiry <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo-link">
+            <img src="logo-gold.png" alt="Royal Furniture &amp; Interior" class="footer-logo-img">
+          </a>
+          <p>"A well planned home always needs well designed furniture. Royal Furniture is the best choice for your
+            home."</p>
+          <div class="social-buttons">
+            <a href="https://facebook.com/itsroyalfurniture" target="_blank" class="social-btn" aria-label="Facebook"><i
+                class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://instagram.com/royal_furniture_official" target="_blank" class="social-btn"
+              aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/923214567007" target="_blank" class="social-btn" aria-label="WhatsApp"><i
+                class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#about">The Concept</a></li>
+            <li><a href="#showcase">Portfolio</a></li>
+            <li><a href="#services">Our Services</a></li>
+            <li><a href="#location">Showroom Location</a></li>
+            <li><a href="#contact">Consultation</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Collections</h4>
+          <ul class="footer-links">
+            <li><a href="#showcase">Royal Bedroom Suites</a></li>
+            <li><a href="#showcase">Majestic Living Sets</a></li>
+            <li><a href="#showcase">Bespoke Dining Tables</a></li>
+            <li><a href="#showcase">Architectural Paneling</a></li>
+            <li><a href="#showcase">Turnkey Bridal Sets</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Connect</h4>
+          <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.7; margin-bottom: 1rem;">
+            Ghordor Rd, near Sukhchain Town, Wahdat Colony, Gujranwala, 52250
+          </p>
+          <p style="color: var(--gold-300); font-size: 0.95rem; font-weight: 600;">
+            <i class="fa-solid fa-phone" style="font-size: 0.8rem; margin-right: 6px;"></i> +92 321 4567007
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Royal Furniture &amp; Interiors. All rights reserved.</div>
+        <div>Designed with luxury aesthetics &amp; precision craftsmanship.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Action Button -->
+  <a href="https://wa.me/923214567007?text=Hello%20Royal%20Furniture%20%26%20Interiors,%20I%20am%20interested%20in%20your%20furniture%20collection."
+    target="_blank" class="whatsapp-float" aria-label="WhatsApp Contact">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- ==========================================================================
+       GSAP & SCROLLTRIGGER SCRIPTS
+       ========================================================================== -->
+  <!-- Lenis Smooth Scroll Engine + GSAP ScrollTrigger -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Initialize Lenis Buttery Smooth Scroll Engine
+      const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        orientation: 'vertical',
+        gestureOrientation: 'vertical',
+        smoothWheel: true,
+        wheelMultiplier: 1.05,
+      });
+
+      // Synchronize Lenis with GSAP ScrollTrigger
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add((time) => {
+        lenis.raf(time * 1000);
+      });
+      gsap.ticker.lagSmoothing(0);
+
+      // Register ScrollTrigger Plugin
+      gsap.registerPlugin(ScrollTrigger);
+
+      /* --------------------------------------------------
+         2. Sticky Navigation Elevation
+         -------------------------------------------------- */
+      const header = document.getElementById('main-header');
+      lenis.on('scroll', (e) => {
+        if (e.scroll > 40) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+
+      /* --------------------------------------------------
+         3. Hero Dramatic Opening Animation
+         -------------------------------------------------- */
+      const heroTl = gsap.timeline({ defaults: { ease: 'power4.out', duration: 1.2 } });
+
+      heroTl
+        .to('.hero-headline .char-anim', {
+          y: '0%',
+          stagger: 0.14,
+          duration: 1.2
+        })
+        .fromTo('.hero-fade', {
+          opacity: 0,
+          y: 30
+        }, {
+          opacity: 1,
+          y: 0,
+          stagger: 0.12,
+          duration: 0.9
+        }, '-=0.7')
+        .fromTo('.hero-visual-card', {
+          opacity: 0,
+          scale: 0.92,
+          x: 40
+        }, {
+          opacity: 1,
+          scale: 1,
+          x: 0,
+          duration: 1.2,
+          ease: 'power3.out'
+        }, '-=0.9');
+
+      // Hero Scroll-linked Parallax Zoom
+      gsap.to('#hero-img', {
+        yPercent: 20,
+        scale: 1.2,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '#hero',
+          start: 'top top',
+          end: 'bottom top',
+          scrub: 1
+        }
+      });
+
+      /* --------------------------------------------------
+         4. Infinite Marquee Animation
+         -------------------------------------------------- */
+      gsap.to('#marquee', {
+        xPercent: -50,
+        repeat: -1,
+        duration: 22,
+        ease: 'linear'
+      });
+
+      /* --------------------------------------------------
+         5. Concept & About Parallax Visuals
+         -------------------------------------------------- */
+      gsap.to('.parallax-target', {
+        yPercent: 18,
+        scale: 1.08,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.concept-visual',
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: 1.2
+        }
+      });
+
+      gsap.to('.parallax-floating', {
+        yPercent: -28,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.concept-visual',
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: 1.4
+        }
+      });
+
+      /* --------------------------------------------------
+         6. Section Titles & Staggered Elements Reveal
+         -------------------------------------------------- */
+      gsap.utils.toArray('.section-title').forEach(title => {
+        gsap.fromTo(title, {
+          opacity: 0,
+          y: 40
+        }, {
+          opacity: 1,
+          y: 0,
+          duration: 1.1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: title,
+            start: 'top 85%',
+            toggleActions: 'play none none reverse'
+          }
+        });
+      });
+
+      gsap.utils.toArray('.reveal-group').forEach(el => {
+        gsap.fromTo(el, {
+          opacity: 0,
+          y: 45
+        }, {
+          opacity: 1,
+          y: 0,
+          duration: 1.1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 85%',
+            toggleActions: 'play none none reverse'
+          }
+        });
+      });
+
+      /* --------------------------------------------------
+         7. Showcase Gallery Parallax Image Scrubbing
+         -------------------------------------------------- */
+      gsap.utils.toArray('.showcase-card').forEach((card) => {
+        gsap.fromTo(card, {
+          opacity: 0,
+          y: 60,
+          scale: 0.96
+        }, {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 85%',
+            toggleActions: 'play none none reverse'
+          }
+        });
+
+        const img = card.querySelector('img');
+        if (img) {
+          gsap.to(img, {
+            yPercent: -15,
+            scale: 1.12,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: card,
+              start: 'top bottom',
+              end: 'bottom top',
+              scrub: 1.2
+            }
+          });
+        }
+      });
+
+      /* --------------------------------------------------
+         8. Services Staggered 3D Fly-In
+         -------------------------------------------------- */
+      gsap.fromTo('.service-box', {
+        opacity: 0,
+        y: 60
+      }, {
+        opacity: 1,
+        y: 0,
+        stagger: 0.18,
+        duration: 1,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '.services-grid',
+          start: 'top 82%',
+          toggleActions: 'play none none reverse'
+        }
+      });
+
+      /* --------------------------------------------------
+         9. Interactive Hero Showcase Slider
+         -------------------------------------------------- */
+      let currentHeroIndex = 0;
+      const heroSlides = document.querySelectorAll('.hero-slide');
+      const heroDots = document.querySelectorAll('.hero-dot');
+      const slideTitle = document.getElementById('hero-slide-title');
+      const slideDesc = document.getElementById('hero-slide-desc');
+      let autoSlideTimer = null;
+
+      function showHeroSlide(index) {
+        if (!heroSlides.length) return;
+        currentHeroIndex = (index + heroSlides.length) % heroSlides.length;
+
+        heroSlides.forEach((slide, i) => {
+          if (i === currentHeroIndex) {
+            slide.classList.add('active');
+            gsap.fromTo(slide.querySelector('img'), {
+              scale: 1.15,
+              opacity: 0.7
+            }, {
+              scale: 1,
+              opacity: 1,
+              duration: 0.8,
+              ease: 'power2.out'
+            });
+          } else {
+            slide.classList.remove('active');
+          }
+        });
+
+        heroDots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === currentHeroIndex);
+        });
+
+        const targetSlide = heroSlides[currentHeroIndex];
+        if (targetSlide && slideTitle && slideDesc) {
+          gsap.fromTo([slideTitle, slideDesc], {
+            y: 8,
+            opacity: 0
+          }, {
+            y: 0,
+            opacity: 1,
+            duration: 0.4,
+            stagger: 0.08,
+            ease: 'power2.out',
+            onStart: () => {
+              slideTitle.textContent = targetSlide.getAttribute('data-title');
+              slideDesc.innerHTML = targetSlide.getAttribute('data-desc');
+            }
+          });
+        }
+      }
+
+      window.goToHeroSlide = function (index) {
+        showHeroSlide(index);
+        resetAutoSlide();
+      };
+
+      window.nextHeroSlide = function () {
+        showHeroSlide(currentHeroIndex + 1);
+        resetAutoSlide();
+      };
+
+      window.prevHeroSlide = function () {
+        showHeroSlide(currentHeroIndex - 1);
+        resetAutoSlide();
+      };
+
+      function resetAutoSlide() {
+        if (autoSlideTimer) clearInterval(autoSlideTimer);
+        autoSlideTimer = setInterval(() => {
+          showHeroSlide(currentHeroIndex + 1);
+        }, 5000);
+      }
+
+      resetAutoSlide();
+
+      /* --------------------------------------------------
+         10. Mobile Menu Drawer Toggle & Smooth Link Clicks
+         -------------------------------------------------- */
+      const mobileToggle = document.getElementById('mobile-menu-toggle');
+      const mobileDrawer = document.getElementById('mobile-drawer');
+      const mobileBackdrop = document.getElementById('mobile-backdrop');
+      const mobileClose = document.getElementById('mobile-drawer-close');
+      const mobileLinks = document.querySelectorAll('.mobile-drawer-link');
+
+      function openMobileMenu() {
+        mobileDrawer.classList.add('active');
+        mobileBackdrop.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMobileMenu() {
+        mobileDrawer.classList.remove('active');
+        mobileBackdrop.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      if (mobileToggle) mobileToggle.addEventListener('click', openMobileMenu);
+      if (mobileClose) mobileClose.addEventListener('click', closeMobileMenu);
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          closeMobileMenu();
+          const targetId = link.getAttribute('href');
+          if (targetId.startsWith('#')) {
+            const targetEl = document.querySelector(targetId);
+            if (targetEl) {
+              lenis.scrollTo(targetEl, { offset: -60 });
+            }
+          }
+        });
+      });
+
+      /* --------------------------------------------------
+         11. Product Catalogue Category Filter
+         -------------------------------------------------- */
+      window.filterCatalog = function(category, btnElement) {
+        // Toggle active button state
+        document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+        if (btnElement) btnElement.classList.add('active');
+
+        const cards = document.querySelectorAll('#catalog-grid .showcase-card');
+        cards.forEach(card => {
+          const cardCat = card.getAttribute('data-category');
+          if (category === 'all' || cardCat === category) {
+            card.style.display = 'flex';
+            gsap.fromTo(card, {
+              opacity: 0,
+              scale: 0.92,
+              y: 20
+            }, {
+              opacity: 1,
+              scale: 1,
+              y: 0,
+              duration: 0.5,
+              ease: 'power2.out'
+            });
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        // Refresh ScrollTrigger after layout change
+        ScrollTrigger.refresh();
+      };
+    });
+  </script>
+</body>
+
+</html>

@@ -106,6 +106,30 @@ export const CAMPAIGNS_DATA: CampaignSite[] = [
       views: 0,
       previewCount: 0,
     }
+  },
+  {
+    id: "royal-furniture-interiors",
+    title: "Royal Furniture & Interiors",
+    slug: "royal-furniture-interiors",
+    campaignCode: "2026",
+    country: {
+      code: "PK",
+      name: "Pakistan",
+      flag: "🇵🇰",
+      flagUrl: "https://flagcdn.com/w40/pk.png",
+    },
+    category: "Design & Creative",
+    tagline: "Designs Beyond Imagination! Luxury Handcrafted Furniture",
+    description: "A well planned home always needs well designed furniture. Handcrafted luxury solid teak and walnut beds, bespoke fluted sofas, and turnkey interior design in Gujranwala.",
+    thumbnailUrl: "/thumbnails/royal-furniture-interiors.png",
+    claimed: false,
+    featured: true,
+    htmlPath: "src/campaign/2026/royal-furniture-interiors/index.html",
+    tags: ["Luxury Furniture", "Interior Design", "Bespoke Beds", "Gujranwala"],
+    metrics: {
+      views: 0,
+      previewCount: 0,
+    }
   }
 ];
 
