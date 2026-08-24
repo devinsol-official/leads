@@ -1688,39 +1688,54 @@
     }
 
     /* ==========================================================================
-       RESPONSIVE BREAKPOINTS
+       RESPONSIVE BREAKPOINTS & MOBILE REFINEMENT
        ========================================================================== */
+    @media (max-width: 1200px) {
+      .showcase-card.card-large {
+        grid-column: span 12;
+        height: 480px;
+      }
+      .showcase-card.card-medium {
+        grid-column: span 12;
+        height: 440px;
+      }
+      .showcase-card.card-half {
+        grid-column: span 6;
+        height: 440px;
+      }
+      .showcase-card.card-third {
+        grid-column: span 6;
+        height: 420px;
+      }
+    }
+
     @media (max-width: 1080px) {
       .hero {
         height: auto;
         min-height: 100vh;
         max-height: none;
-        padding-top: 110px;
-        padding-bottom: 4rem;
+        padding-top: 100px;
+        padding-bottom: 3.5rem;
       }
 
       .hero-split-grid {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 2.5rem;
       }
 
       .concept-grid,
       .business-grid,
       .footer-grid {
         grid-template-columns: 1fr;
-        gap: 3.5rem;
+        gap: 3rem;
+      }
+
+      .concept-content {
+        padding-left: 0;
       }
 
       .services-grid {
         grid-template-columns: 1fr;
-      }
-
-      .showcase-card.card-large,
-      .showcase-card.card-medium,
-      .showcase-card.card-half-1,
-      .showcase-card.card-half-2 {
-        grid-column: span 12;
-        height: 380px;
       }
 
       .hero-bg-media {
@@ -1729,7 +1744,7 @@
       }
 
       .contact-box {
-        padding: 2.5rem;
+        padding: 2.2rem;
       }
     }
 
@@ -1743,16 +1758,84 @@
         display: flex;
       }
 
+      .nav-container {
+        padding: 0.4rem 0.6rem 0.4rem 1rem;
+      }
+
       .hero-visual-card {
-        margin-top: 1rem;
+        margin-top: 0.5rem;
       }
 
       .hero-slider-container {
+        height: 300px;
+      }
+
+      .catalog-filter-bar {
+        width: 100%;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding: 0.4rem;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+
+      .catalog-filter-bar::-webkit-scrollbar {
+        display: none;
+      }
+
+      .filter-btn {
+        white-space: nowrap;
+        padding: 0.5rem 1.1rem;
+        font-size: 0.75rem;
+        flex-shrink: 0;
+      }
+
+      .showcase-grid {
+        gap: 1.5rem;
+      }
+
+      .showcase-card.card-large,
+      .showcase-card.card-medium,
+      .showcase-card.card-half,
+      .showcase-card.card-third {
+        grid-column: span 12;
+        height: 420px;
+      }
+
+      .showcase-overlay {
+        padding: 1.5rem;
+      }
+
+      .showcase-name {
+        font-size: 1.4rem;
+      }
+
+      .concept-features {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+
+      .concept-frame-main {
         height: 320px;
+      }
+
+      .concept-frame-floating {
+        display: none;
+      }
+
+      .experience-badge {
+        top: -15px;
+        left: -10px;
+        padding: 1rem;
+      }
+
+      .experience-badge .num {
+        font-size: 1.5rem;
       }
 
       .contact-form-grid {
         grid-template-columns: 1fr;
+        gap: 1.2rem;
       }
 
       .form-group.full-width {
@@ -1760,20 +1843,21 @@
       }
 
       .hero-quick-stats {
-        flex-wrap: wrap;
-        gap: 1.5rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+      }
+
+      .stat-number {
+        font-size: 1.3rem;
+      }
+
+      .stat-label {
+        font-size: 0.62rem;
       }
 
       .container {
         padding: 0 1.25rem;
-      }
-
-      .concept-frame-main {
-        height: 350px;
-      }
-
-      .concept-frame-floating {
-        display: none;
       }
 
       .footer-bottom {
@@ -1781,38 +1865,76 @@
         gap: 1rem;
         text-align: center;
       }
+
+      .whatsapp-float {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 52px;
+        height: 52px;
+        font-size: 1.5rem;
+      }
     }
 
     @media (max-width: 480px) {
       .hero-headline {
-        font-size: 2.3rem;
+        font-size: 2.1rem;
+        line-height: 1.1;
       }
 
       .section-title {
-        font-size: 2rem !important;
+        font-size: 1.85rem !important;
+      }
+
+      .hero-tagline {
+        font-size: 0.95rem;
       }
 
       .hero-slider-container {
-        height: 260px;
+        height: 240px;
       }
 
       .hero-cta-group {
         flex-direction: column;
         width: 100%;
+        gap: 0.75rem;
       }
 
       .hero-cta-group .btn {
         width: 100%;
         text-align: center;
         justify-content: center;
+        padding: 0.85rem 1.5rem;
+      }
+
+      .showcase-action-row {
+        flex-wrap: wrap;
+      }
+
+      .showcase-action-row .btn {
+        flex: 1;
+        min-width: 130px;
+        text-align: center;
+        justify-content: center;
+      }
+
+      .hero-quick-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-quick-stats .stat-item:last-child {
+        grid-column: span 2;
       }
 
       .brand-logo-img {
-        height: 36px;
+        height: 34px;
       }
 
       .nav-container {
-        padding: 0.4rem 0.8rem;
+        padding: 0.35rem 0.6rem;
+      }
+
+      .contact-box {
+        padding: 1.6rem;
       }
     }
   </style>
