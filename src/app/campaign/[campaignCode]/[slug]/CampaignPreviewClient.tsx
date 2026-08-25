@@ -39,6 +39,8 @@ export function CampaignPreviewClient({
       {/* Main Campaign Site Surface (HTML preview iframe) */}
       <div className="h-screen w-full overflow-hidden pt-0">
         <iframe
+          key={`${site.campaignCode}-${site.slug}`}
+          src={`/campaign/${site.campaignCode}/${site.slug}/index.html`}
           srcDoc={htmlContent}
           title={site.title}
           className="h-full w-full border-0 bg-white"
