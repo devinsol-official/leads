@@ -23,9 +23,38 @@ export async function generateMetadata({ params }: CampaignPageProps) {
     };
   }
 
+  const pageUrl = `https://leads.devinsol.com/campaign/${campaignCode}/${slug}`;
+  const thumbnail = site.thumbnailUrl.startsWith("http")
+    ? site.thumbnailUrl
+    : `https://leads.devinsol.com${site.thumbnailUrl}`;
+
   return {
-    title: `${site.title} - Promotional Preview | Devinsol`,
-    description: site.description,
+    title: `${site.title} - Free Custom Website Preview`,
+    description: site.description || site.tagline,
+    keywords: site.tags || [site.title, site.category, "Custom Website", "Devinsol"],
+    alternates: {
+      canonical: `/campaign/${campaignCode}/${slug}`,
+    },
+    openGraph: {
+      type: "website",
+      url: pageUrl,
+      title: `${site.title} | 100% Free Custom Website Preview`,
+      description: site.description || site.tagline,
+      images: [
+        {
+          url: thumbnail,
+          width: 1200,
+          height: 630,
+          alt: `${site.title} Website Preview`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${site.title} | Free Custom Website Preview`,
+      description: site.description || site.tagline,
+      images: [thumbnail],
+    },
   };
 }
 

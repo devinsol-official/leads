@@ -6,6 +6,14 @@ import { ShieldCheck, FileText, CheckCircle2, AlertCircle, Mail, Gavel } from "l
 export const metadata: Metadata = {
   title: "Terms of Service & Promotional Disclaimer - Devinsol",
   description: "Terms of Service, promotional campaign disclaimers, no-contract guarantees, and service discretion policies for Devinsol.",
+  alternates: {
+    canonical: "/terms",
+  },
+  openGraph: {
+    title: "Terms of Service & Promotional Disclaimer | Devinsol",
+    description: "Terms of Service and campaign disclaimers for Devinsol free business website initiatives.",
+    url: "https://leads.devinsol.com/terms",
+  },
 };
 
 export default function TermsPage() {

@@ -105,8 +105,67 @@ const brandFont = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Devinsol Leads & Explore",
-  description: "100% Free promotional websites for businesses on Google Maps.",
+  metadataBase: new URL("https://leads.devinsol.com"),
+  title: {
+    default: "Devinsol Leads & Explore - 100% Free Websites for Businesses",
+    template: "%s | Devinsol",
+  },
+  description: "Devinsol builds high-performance custom websites for businesses completely free. Explore our verified Google Maps business directory or claim your free website today.",
+  keywords: [
+    "free business website",
+    "custom web design",
+    "google maps businesses",
+    "promotional websites",
+    "Devinsol explore",
+    "startup website design",
+    "claim free website",
+  ],
+  authors: [{ name: "Devinsol", url: "https://devinsol.com" }],
+  creator: "Devinsol",
+  publisher: "Devinsol",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://leads.devinsol.com",
+    siteName: "Devinsol Leads & Explore",
+    title: "Devinsol Leads & Explore - 100% Free Websites for Businesses",
+    description: "Search and preview custom websites created by Devinsol for Google Maps businesses, and claim yours for free.",
+    images: [
+      {
+        url: "/og-image.svg",
+        width: 1200,
+        height: 630,
+        alt: "Devinsol Leads & Explore - Free Websites for Businesses",
+        type: "image/svg+xml",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Devinsol Leads & Explore - 100% Free Websites for Businesses",
+    description: "100% Free promotional custom websites for businesses on Google Maps. Preview and claim yours now.",
+    images: ["/og-image.svg"],
+    creator: "@devinsol",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   appleWebApp: {
     title: "Devinsol",
     capable: true,

@@ -100,7 +100,7 @@ export const CAMPAIGNS_DATA: CampaignSite[] = [
     thumbnailUrl: "/thumbnails/wingos.png",
     claimed: false,
     featured: true,
-    htmlPath: "src/campaign/2026/wingos/index.html",
+    htmlPath: "src/campaign/2026/(pk)/wingos/index.html",
     tags: ["Fast Food", "Wings", "Burgers", "Gujranwala"],
     metrics: {
       views: 0,
@@ -124,7 +124,7 @@ export const CAMPAIGNS_DATA: CampaignSite[] = [
     thumbnailUrl: "/thumbnails/royal-furniture-interiors.png",
     claimed: false,
     featured: true,
-    htmlPath: "src/campaign/2026/royal-furniture-interiors/index.html",
+    htmlPath: "src/campaign/2026/(pk)/royal-furniture-interiors/index.html",
     tags: ["Luxury Furniture", "Interior Design", "Bespoke Beds", "Gujranwala"],
     metrics: {
       views: 0,

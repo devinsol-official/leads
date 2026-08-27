@@ -6,6 +6,14 @@ import { ShieldCheck, Lock, Mail, CheckCircle2 } from "lucide-react";
 export const metadata: Metadata = {
   title: "Privacy Policy - Devinsol Leads & Explore",
   description: "Privacy Policy and data practices for Devinsol free webpage campaign and directory.",
+  alternates: {
+    canonical: "/privacy",
+  },
+  openGraph: {
+    title: "Privacy Policy | Devinsol Leads & Explore",
+    description: "Privacy Policy and data practices for Devinsol free webpage campaign and directory.",
+    url: "https://leads.devinsol.com/privacy",
+  },
 };
 
 export default function PrivacyPage() {

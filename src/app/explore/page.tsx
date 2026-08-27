@@ -7,6 +7,28 @@ import { Compass, MapPin } from "lucide-react";
 export const metadata: Metadata = {
   title: "Search Businesses & Free Webpages - Devinsol Directory",
   description: "Search for your business, preview custom websites created by Devinsol for Google Maps businesses, and claim yours for free.",
+  alternates: {
+    canonical: "/explore",
+  },
+  openGraph: {
+    title: "Search Businesses & Free Webpages | Devinsol Directory",
+    description: "Search for your business, preview custom websites created by Devinsol for Google Maps businesses, and claim yours for free.",
+    url: "https://leads.devinsol.com/explore",
+    images: [
+      {
+        url: "/og-image.svg",
+        width: 1200,
+        height: 630,
+        alt: "Devinsol Business Directory",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Search Businesses & Free Webpages | Devinsol Directory",
+    description: "Explore custom websites designed for Google Maps businesses.",
+    images: ["/og-image.svg"],
+  },
 };
 
 export default function ExplorePage() {

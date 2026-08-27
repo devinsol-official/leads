@@ -121,9 +121,27 @@ src/campaign/<campaignCode>/<website-slug>.html
 
 ---
 
+## SEO, Robots.txt & Sitemap Rules
+
+1. **Robots.txt (`src/app/robots.ts`)**:
+   - Keep public crawlable surfaces indexed: `/`, `/explore`, `/campaign/`, `/terms`, `/privacy`.
+   - Protect private submission states & APIs: `/api/`, `/claim`, `/request`.
+   - Always reference `https://leads.devinsol.com/sitemap.xml`.
+
+2. **Sitemap.xml (`src/app/sitemap.ts`)**:
+   - Always dynamically map static marketing pages (`/`, `/explore`, `/terms`, `/privacy`) and all registered campaign website pages from `src/data/campaigns.ts`.
+   - Keep `priority` and `changeFrequency` aligned with page activity.
+
+3. **Metadata & OpenGraph (OG) Standards**:
+   - **Root Layout (`src/app/layout.tsx`)**: Define `metadataBase: new URL("https://leads.devinsol.com")`, title template, description, keywords, canonical URLs, and full OpenGraph + Twitter card configurations pointing to `/og-image.svg`.
+   - **Campaign Pages (`src/app/campaign/[campaignCode]/[slug]/page.tsx`)**: Use dynamic `generateMetadata` to populate custom title, description, keywords, canonical URL, and business thumbnail as `og:image`.
+
+---
+
 ## Do not
 
 - Host brand fonts from third-party CDNs.
 - Publish campaign pages without the claim widget.
 - Put campaign microsites inside the main marketing layout (they are standalone HTML experiences + widget).
 - Treat promotional site content as verified client-owned production data without the disclaimer.
+- Omit `robots.txt`, `sitemap.xml`, or canonical URLs on public routes.
