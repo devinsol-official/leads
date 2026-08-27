@@ -66,6 +66,27 @@ Do not ship a campaign page without this widget.
 - Widget is **overlay / floating**, not part of the HTML author’s layout chrome.
 - Do not strip or bypass the widget for “special” campaigns unless product explicitly changes this rule.
 
+### Campaign Image Assets & URL Standard (Mandatory)
+
+Whenever a new campaign website HTML folder/file is introduced or updated:
+
+1. **Asset Organization**:
+   - **Root logos & icons**: Keep brand logos (`logo.png`, `logo-gold.png`, etc.) and favicons (`favicon.ico`, `favicon.png`, `apple-touch-icon`) directly in the root of the campaign slug folder:
+     `src/campaign/<campaignCode>/<website-slug>/`
+   - **Page & section images**: Place all gallery, showcase, hero, and content images inside an `images/` subfolder:
+     `src/campaign/<campaignCode>/<website-slug>/images/`
+2. **Absolute URL Template**:
+   - **Every** image, logo, and icon link in the HTML file **must** use the absolute campaign production URL pattern:
+     ```text
+     https://leads.devinsol.com/campaign/2026/<website-slug>/<image-name>
+     ```
+     - For root logos/favicons:
+       `https://leads.devinsol.com/campaign/2026/<website-slug>/logo-gold.png`
+     - For images in subfolders:
+       `https://leads.devinsol.com/campaign/2026/<website-slug>/images/<image-name>.jpg`
+3. **Autonomous Execution**:
+   - Never leave relative image paths (`images/foo.jpg`, `logo.png`, `./...`) in campaign HTML files. Automatically gather, place, and rewrite all image links to the full URL template without requiring explicit user reminders.
+
 ---
 
 ## When updating the floating claim widget
