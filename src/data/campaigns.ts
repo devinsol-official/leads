@@ -130,6 +130,30 @@ export const CAMPAIGNS_DATA: CampaignSite[] = [
       views: 0,
       previewCount: 0,
     }
+  },
+  {
+    id: "ramen-district",
+    title: "Ramen District",
+    slug: "ramen-district",
+    campaignCode: "2026",
+    country: {
+      code: "PK",
+      name: "Pakistan",
+      flag: "🇵🇰",
+      flagUrl: "https://flagcdn.com/w40/pk.png",
+    },
+    category: "Food & Restaurant",
+    tagline: "Cook Your Own Korean Ramen in Bahria Town Karachi",
+    description: "Pick your favourite ramen, choose your spice level, add your toppings, and enjoy a Korean food experience made your way in Bahria Town Karachi.",
+    thumbnailUrl: "/thumbnails/ramen-district.png",
+    claimed: false,
+    featured: true,
+    htmlPath: "src/campaign/2026/(pk)/ramen-district/index.html",
+    tags: ["Korean Ramen", "DIY Noodles", "Bahria Town Karachi", "Spicy Food"],
+    metrics: {
+      views: 0,
+      previewCount: 0,
+    }
   }
 ];
 

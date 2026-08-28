@@ -71,10 +71,10 @@ Do not ship a campaign page without this widget.
 Whenever a new campaign website HTML folder/file is introduced or updated:
 
 1. **Asset Organization**:
-   - **Root logos & icons**: Keep brand logos (`logo.png`, `logo-gold.png`, etc.) and favicons (`favicon.ico`, `favicon.png`, `apple-touch-icon`) directly in the root of the campaign slug folder:
-     `src/campaign/<campaignCode>/<website-slug>/`
-   - **Page & section images**: Place all gallery, showcase, hero, and content images inside an `images/` subfolder:
-     `src/campaign/<campaignCode>/<website-slug>/images/`
+   - **Strict Location**: Photos, logos, and media must **NEVER** be placed inside the `src/campaign/` folder. The `src/campaign/` folder must contain **only the website HTML file** (`index.html`).
+   - **Public Directory Storage**: All image assets must always reside directly in `public/campaign/<campaignCode>/<website-slug>/`:
+     - **Root logos & icons**: `public/campaign/<campaignCode>/<website-slug>/logo.png`, `favicon.ico`, `favicon.png`, `apple-touch-icon`
+     - **Page & section images**: `public/campaign/<campaignCode>/<website-slug>/images/<image-name>.jpg`
 2. **Absolute URL Template**:
    - **Every** image, logo, and icon link in the HTML file **must** use the absolute campaign production URL pattern:
      ```text
