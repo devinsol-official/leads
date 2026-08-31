@@ -86,14 +86,24 @@
     </script>
 
     <style>
-        /* Custom Styling & Scrollbar */
+        /* Custom Styling & Mobile Scroll Constraints */
+        html, body {
+            overflow-x: hidden !important;
+            max-width: 100vw;
+            width: 100%;
+        }
+
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 90px;
+            scroll-padding-top: 80px;
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         ::-webkit-scrollbar {
-            width: 8px;
+            width: 6px;
         }
 
         ::-webkit-scrollbar-track {
@@ -334,34 +344,34 @@
        HERO SECTION (KOREAN STREET RAMEN BAR VIBE)
        ========================================================================== -->
     <section id="hero"
-        class="relative min-h-[calc(100vh-80px)] pt-24 pb-12 flex items-center justify-center overflow-visible z-10">
+        class="relative min-h-[calc(100vh-80px)] pt-24 pb-12 flex items-center justify-center z-10 w-full overflow-hidden">
         
         <!-- Ambient Hero Spotlights -->
-        <div class="absolute -top-10 left-1/3 w-96 h-96 bg-brand-red/20 rounded-full blur-[140px] pointer-events-none"></div>
-        <div class="absolute bottom-10 right-1/4 w-80 h-80 bg-brand-yellow/15 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute -top-10 left-1/3 w-72 sm:w-96 h-72 sm:h-96 bg-brand-red/20 rounded-full blur-[100px] sm:blur-[140px] pointer-events-none"></div>
+        <div class="absolute bottom-10 right-1/4 w-60 sm:w-80 h-60 sm:h-80 bg-brand-yellow/15 rounded-full blur-[90px] sm:blur-[120px] pointer-events-none"></div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-6">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-4 sm:py-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
 
                 <!-- Hero Left Column -->
                 <div class="lg:col-span-7 space-y-4 sm:space-y-5 text-center lg:text-left">
 
                     <!-- Launch & Location Pill Badge -->
                     <div
-                        class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-surface/90 border border-brand-red/40 shadow-lg shadow-brand-red/10">
-                        <span class="flex h-2 w-2 relative">
+                        class="inline-flex max-w-full flex-wrap items-center justify-center gap-1.5 sm:gap-2 px-3 py-1.5 rounded-full bg-brand-surface/90 border border-brand-red/40 shadow-lg shadow-brand-red/10">
+                        <span class="flex h-2 w-2 relative shrink-0">
                             <span
                                 class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-red opacity-75"></span>
                             <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-neon"></span>
                         </span>
-                        <span class="text-[11px] font-black uppercase tracking-wider text-brand-yellow">Now Open in Bahria Town Karachi</span>
-                        <span class="text-zinc-500">•</span>
-                        <span class="text-[11px] font-semibold text-zinc-300">Precinct 10A</span>
+                        <span class="text-[10px] sm:text-[11px] font-black uppercase tracking-wider text-brand-yellow">Now Open in Bahria Town Karachi</span>
+                        <span class="text-zinc-500 hidden xs:inline">•</span>
+                        <span class="text-[10px] sm:text-[11px] font-semibold text-zinc-300">Precinct 10A</span>
                     </div>
 
                     <!-- Main Hero Headline -->
                     <h1
-                        class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.08] font-display">
+                        class="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] font-display break-words">
                         Your Ramen. <br>
                         <span
                             class="text-transparent bg-clip-text bg-gradient-to-r from-brand-red via-brand-neon to-brand-yellow neon-text-red">
@@ -372,7 +382,7 @@
 
                     <!-- Taglines & Subtitle -->
                     <div class="space-y-2">
-                        <p class="text-base sm:text-lg font-extrabold text-white tracking-wide">
+                        <p class="text-sm sm:text-base md:text-lg font-extrabold text-white tracking-wide">
                             Cook Your Own Korean Ramen in Bahria Town Karachi
                         </p>
                         <p class="text-xs sm:text-sm text-brand-muted max-w-lg mx-auto lg:mx-0 leading-relaxed font-medium">
@@ -381,22 +391,22 @@
                     </div>
 
                     <!-- Hero CTA Buttons -->
-                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-1">
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 sm:gap-3 pt-1">
                         <a href="#how-it-works"
-                            class="px-6 py-3 rounded-xl bg-gradient-to-r from-brand-red to-brand-crimson hover:from-brand-crimson hover:to-brand-gold text-white font-extrabold text-xs uppercase tracking-wider shadow-xl shadow-brand-red/30 hover:-translate-y-0.5 transition-all flex items-center gap-2">
+                            class="w-full xs:w-auto px-5 sm:px-6 py-3 rounded-xl bg-gradient-to-r from-brand-red to-brand-crimson hover:from-brand-crimson hover:to-brand-gold text-white font-extrabold text-xs uppercase tracking-wider shadow-xl shadow-brand-red/30 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2">
                             <span>View the Experience</span>
-                            <i class="fa-solid fa-arrow-down"></i>
+                            <i class="fa-solid fa-arrow-down text-xs"></i>
                         </a>
 
                         <a href="#visit"
-                            class="px-5 py-3 rounded-xl bg-brand-surface hover:bg-brand-card border border-brand-border hover:border-brand-yellow/50 text-white font-bold text-xs tracking-wide transition-all flex items-center gap-2 shadow-md">
-                            <i class="fa-solid fa-location-dot text-brand-yellow"></i>
+                            class="w-full xs:w-auto px-4 sm:px-5 py-3 rounded-xl bg-brand-surface hover:bg-brand-card border border-brand-border hover:border-brand-yellow/50 text-white font-bold text-xs tracking-wide transition-all flex items-center justify-center gap-2 shadow-md">
+                            <i class="fa-solid fa-location-dot text-brand-yellow text-xs"></i>
                             <span>Find Us</span>
                         </a>
 
                         <a href="https://wa.me/923322058995?text=Hi%20Ramen%20District!%20Tell%20me%20more%20about%20the%20DIY%20Ramen%20Bar."
                             target="_blank" rel="noopener"
-                            class="px-5 py-3 rounded-xl bg-emerald-600/20 hover:bg-emerald-600/30 border border-emerald-500/40 text-emerald-300 font-bold text-xs transition-all flex items-center gap-2 shadow-md">
+                            class="w-full xs:w-auto px-4 sm:px-5 py-3 rounded-xl bg-emerald-600/20 hover:bg-emerald-600/30 border border-emerald-500/40 text-emerald-300 font-bold text-xs transition-all flex items-center justify-center gap-2 shadow-md">
                             <i class="fa-brands fa-whatsapp text-emerald-400"></i>
                             <span>WhatsApp Us</span>
                         </a>
@@ -405,10 +415,10 @@
                 </div>
 
                 <!-- Hero Right Column (Showcase Interactive Visual Card) -->
-                <div class="lg:col-span-5 relative">
+                <div class="lg:col-span-5 relative w-full">
 
                     <!-- Decorative Frame Container -->
-                    <div class="relative mx-auto max-w-sm lg:max-w-none">
+                    <div class="relative mx-auto max-w-sm lg:max-w-none w-full">
 
                         <!-- Glow Behind -->
                         <div
@@ -416,7 +426,7 @@
                         </div>
 
                         <div
-                            class="relative glass-card rounded-3xl p-4 sm:p-5 overflow-hidden border border-brand-border/80 shadow-2xl">
+                            class="relative glass-card rounded-3xl p-3.5 sm:p-5 overflow-hidden border border-brand-border/80 shadow-2xl">
 
                             <!-- Card Header Pill -->
                             <div class="flex items-center justify-between mb-3">
@@ -446,11 +456,11 @@
                                 <!-- Floating Badges on Image -->
                                 <div class="absolute bottom-2.5 left-2.5 right-2.5 flex items-end justify-between gap-2">
                                     <div
-                                        class="bg-brand-dark/95 backdrop-blur-md p-2.5 rounded-xl border border-white/15 shadow-xl">
-                                        <div class="text-[9px] text-brand-muted uppercase font-extrabold tracking-wider">Top Pick</div>
-                                        <div class="text-xs font-bold text-white flex items-center gap-1">
-                                            <span>Buldak Carbonara + Egg</span>
-                                            <i class="fa-solid fa-fire text-[10px] text-brand-red"></i>
+                                        class="bg-brand-dark/95 backdrop-blur-md p-2 sm:p-2.5 rounded-xl border border-white/15 shadow-xl min-w-0">
+                                        <div class="text-[9px] text-brand-muted uppercase font-extrabold tracking-wider truncate">Top Pick</div>
+                                        <div class="text-[11px] sm:text-xs font-bold text-white flex items-center gap-1 truncate">
+                                            <span class="truncate">Buldak Carbonara + Egg</span>
+                                            <i class="fa-solid fa-fire text-[10px] text-brand-red shrink-0"></i>
                                         </div>
                                     </div>
                                     <div
@@ -461,22 +471,22 @@
                             </div>
 
                             <!-- Interactive DIY Steps Preview Bar -->
-                            <div class="mt-3 grid grid-cols-4 gap-1.5 text-center text-[10px]">
-                                <div class="p-2 rounded-xl bg-brand-surface border border-brand-border/80">
+                            <div class="mt-3 grid grid-cols-4 gap-1 sm:gap-1.5 text-center text-[9px] sm:text-[10px]">
+                                <div class="p-1.5 sm:p-2 rounded-xl bg-brand-surface border border-brand-border/80">
                                     <div class="text-brand-yellow font-black">01</div>
-                                    <div class="text-zinc-300 font-semibold">Pick Pack</div>
+                                    <div class="text-zinc-300 font-semibold truncate">Pick Pack</div>
                                 </div>
-                                <div class="p-2 rounded-xl bg-brand-surface border border-brand-border/80">
+                                <div class="p-1.5 sm:p-2 rounded-xl bg-brand-surface border border-brand-border/80">
                                     <div class="text-brand-red font-black">02</div>
-                                    <div class="text-zinc-300 font-semibold">Set Heat</div>
+                                    <div class="text-zinc-300 font-semibold truncate">Set Heat</div>
                                 </div>
-                                <div class="p-2 rounded-xl bg-brand-surface border border-brand-border/80">
+                                <div class="p-1.5 sm:p-2 rounded-xl bg-brand-surface border border-brand-border/80">
                                     <div class="text-brand-yellow font-black">03</div>
-                                    <div class="text-zinc-300 font-semibold">Add Tops</div>
+                                    <div class="text-zinc-300 font-semibold truncate">Add Tops</div>
                                 </div>
-                                <div class="p-2 rounded-xl bg-brand-surface border border-brand-border/80">
+                                <div class="p-1.5 sm:p-2 rounded-xl bg-brand-surface border border-brand-border/80">
                                     <div class="text-emerald-400 font-black">04</div>
-                                    <div class="text-zinc-300 font-semibold">Cook &amp; Eat</div>
+                                    <div class="text-zinc-300 font-semibold truncate">Cook &amp; Eat</div>
                                 </div>
                             </div>
 
@@ -484,7 +494,7 @@
 
                         <!-- Floating Sticker Accent -->
                         <div
-                            class="absolute -top-3 -right-3 bg-brand-yellow text-brand-dark font-display font-black text-[11px] px-3 py-1 rounded-full rotate-6 shadow-xl border-2 border-brand-dark animate-float-slow">
+                            class="absolute -top-3 -right-2 sm:-right-3 bg-brand-yellow text-brand-dark font-display font-black text-[10px] sm:text-[11px] px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full rotate-6 shadow-xl border-2 border-brand-dark animate-float-slow">
                             BAHRIA TOWN
                         </div>
 
@@ -1785,36 +1795,7 @@
                 });
             });
 
-            // Natural Precision Easing Scroll Animation Function (easeInOutQuart)
-            function smoothScrollTo(targetY, duration = 650) {
-                const startY = window.pageYOffset;
-                const difference = targetY - startY;
-                let startTime = null;
-
-                // Adjust duration based on distance so close jumps are fast and long scrolls are silky
-                const dynamicDuration = Math.min(Math.max(Math.abs(difference) * 0.5, 450), 750);
-
-                function step(currentTime) {
-                    if (!startTime) startTime = currentTime;
-                    const elapsed = currentTime - startTime;
-                    const progress = Math.min(elapsed / dynamicDuration, 1);
-                    
-                    // EaseInOutQuart equation for rapid initial launch & soft velvety landing
-                    const ease = progress < 0.5 
-                        ? 8 * progress * progress * progress * progress 
-                        : 1 - Math.pow(-2 * progress + 2, 4) / 2;
-
-                    window.scrollTo(0, startY + difference * ease);
-
-                    if (progress < 1) {
-                        window.requestAnimationFrame(step);
-                    }
-                }
-
-                window.requestAnimationFrame(step);
-            }
-
-            // Smooth Scroll Handler for all internal anchor links (#hero, #menu, #experience, etc.)
+            // Instant responsive smooth scroll on navigation click
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     const targetId = this.getAttribute('href');
@@ -1826,9 +1807,11 @@
                             const elementPosition = targetElem.getBoundingClientRect().top;
                             const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-                            smoothScrollTo(offsetPosition);
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
 
-                            // Update browser URL hash without jump
                             if (history.pushState) {
                                 history.pushState(null, null, targetId);
                             }
