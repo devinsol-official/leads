@@ -32,6 +32,7 @@ export const CAMPAIGN_CATEGORIES = [
   "Design & Creative",
   "CleanTech",
   "Food & Restaurant",
+  "Real Estate",
 ] as const;
 
 export const CAMPAIGNS_DATA: CampaignSite[] = [
@@ -174,6 +175,30 @@ export const CAMPAIGNS_DATA: CampaignSite[] = [
     featured: true,
     htmlPath: "src/campaign/2026/(pk)/peekaboo/index.html",
     tags: ["Bakery", "Desserts", "Cafe", "Gujranwala", "Cakes & Croissants"],
+    metrics: {
+      views: 0,
+      previewCount: 0,
+    }
+  },
+  {
+    id: "uk-real-estate",
+    title: "UK Real Estate",
+    slug: "uk-real-estate",
+    campaignCode: "2026",
+    country: {
+      code: "PK",
+      name: "Pakistan",
+      flag: "🇵🇰",
+      flagUrl: "https://flagcdn.com/w40/pk.png",
+    },
+    category: "Real Estate",
+    tagline: "Building Trust. Creating Value.",
+    description: "UK Real Estate, founded by Usama Kashif, provides real estate, construction and investment solutions in Gujranwala, including property buying, selling, investment guidance and construction services.",
+    thumbnailUrl: "/thumbnails/uk-real-estate.png",
+    claimed: false,
+    featured: true,
+    htmlPath: "src/campaign/2026/(pk)/uk-real-estate/index.html",
+    tags: ["Real Estate", "Construction", "Property Investment", "Gujranwala"],
     metrics: {
       views: 0,
       previewCount: 0,

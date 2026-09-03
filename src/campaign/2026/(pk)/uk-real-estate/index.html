@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UK Real Estate | Real Estate, Construction &amp; Investment in Gujranwala</title>
+<meta name="description" content="UK Real Estate, founded by Usama Kashif, provides real estate, construction and investment solutions in Gujranwala, including property buying, selling, investment guidance and construction services.">
+<meta name="theme-color" content="#111111">
+
+<!-- Open Graph -->
+<meta property="og:title" content="UK Real Estate | Building Trust. Creating Value.">
+<meta property="og:description" content="Real estate, construction and investment solutions in Gujranwala — led by Usama Kashif, Founder &amp; CEO.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_PK">
+
+<!-- Favicon: gold "UK" monogram on obsidian, inline data URI (no extra request) -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23111111'/%3E%3Ctext x='32' y='41' font-family='Georgia,serif' font-size='24' fill='%23C8A046' text-anchor='middle'%3EUK%3C/text%3E%3C/svg%3E">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Cinzel:wght@500;600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Tailwind (CDN) -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brandBlack:  '#111111',
+          brandBlack2: '#0B0B0B',
+          brandGold:   '#C8A046',
+          brandGoldSoft: '#DEC989',
+          brandIvory:  '#F5F5F5',
+          brandStone:  '#6E6A63'
+        },
+        fontFamily: {
+          display: ['"Cormorant Garamond"', 'serif'],
+          eyebrow: ['Cinzel', 'serif'],
+          sans:    ['Poppins', 'sans-serif']
+        }
+      }
+    }
+  }
+</script>
+
+<!-- Structured data: only facts supplied in the brief -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  "name": "UK Real Estate",
+  "description": "Real estate, construction and property investment services in Gujranwala, Pakistan.",
+  "url": "https://www.ukrealestate.example",
+  "telephone": "+92-320-5451200",
+  "email": "usamakashif421@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Office #35, Phase 3, Garden Town",
+    "addressLocality": "Gujranwala",
+    "addressRegion": "Punjab",
+    "addressCountry": "PK"
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "Usama Kashif",
+    "jobTitle": "Founder & CEO"
+  },
+  "areaServed": ["Garden Town, Gujranwala", "DHA Gujranwala", "DC Colony, Gujranwala", "Wapda City, Gujranwala"],
+  "sameAs": ["https://instagram.com/ukreal_estate"]
+}
+</script>
+
+<style>
+  /* ---------- Base type & motion (things Tailwind utilities can't express cleanly) ---------- */
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Poppins', sans-serif; background:#0d0d0d; }
+  h1,h2,h3,h4,.font-display { font-family: 'Cormorant Garamond', serif; }
+  .font-eyebrow { font-family: 'Cinzel', serif; }
+  section, header, footer { scroll-margin-top: 5.25rem; }
+
+  .h-hero   { font-size: clamp(2.6rem, 4.6vw + 1rem, 5.6rem); line-height: 1.04; }
+  .h-section{ font-size: clamp(2rem, 2.4vw + 1.1rem, 3.4rem); line-height: 1.08; }
+
+  /* Reveal-on-scroll */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s ease, transform .8s ease; }
+  .reveal.in-view { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1.in-view { transition-delay: .12s; }
+  .reveal-delay-2.in-view { transition-delay: .24s; }
+  .reveal-delay-3.in-view { transition-delay: .36s; }
+  .reveal-delay-4.in-view { transition-delay: .48s; }
+
+  /* Architectural gold line-draw */
+  .line-draw { stroke-dasharray: 1400; stroke-dashoffset: 1400; transition: stroke-dashoffset 1.8s cubic-bezier(.2,.7,.2,1); }
+  .in-view .line-draw { stroke-dashoffset: 0; }
+
+  /* Underline link */
+  .link-line { position: relative; }
+  .link-line::after {
+    content:''; position:absolute; left:0; bottom:-2px; width:100%; height:1px;
+    background: currentColor; transform: scaleX(0); transform-origin: right; transition: transform .35s ease;
+  }
+  .link-line:hover::after, .link-line:focus-visible::after { transform: scaleX(1); transform-origin: left; }
+
+  /* Blueprint texture */
+  .blueprint-grid {
+    background-image:
+      linear-gradient(rgba(200,160,70,0.14) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200,160,70,0.14) 1px, transparent 1px);
+    background-size: 34px 34px;
+  }
+
+  /* Buttons */
+  .btn-gold {
+    display:inline-flex; align-items:center; gap:.6rem; padding:.9rem 1.9rem;
+    font-family:'Poppins',sans-serif; font-size:.82rem; letter-spacing:.08em; text-transform:uppercase;
+    border:1px solid #C8A046; color:#C8A046; background:transparent; transition: all .35s ease;
+  }
+  .btn-gold:hover, .btn-gold:focus-visible { background:#C8A046; color:#111111; }
+  .btn-solid {
+    display:inline-flex; align-items:center; gap:.6rem; padding:.9rem 1.9rem;
+    font-family:'Poppins',sans-serif; font-size:.82rem; letter-spacing:.08em; text-transform:uppercase;
+    background:#C8A046; color:#111111; border:1px solid #C8A046; transition: all .35s ease;
+  }
+  .btn-solid:hover, .btn-solid:focus-visible { background:transparent; color:#C8A046; }
+  .btn-ghost-dark {
+    display:inline-flex; align-items:center; gap:.6rem; padding:.9rem 1.9rem;
+    font-family:'Poppins',sans-serif; font-size:.82rem; letter-spacing:.08em; text-transform:uppercase;
+    border:1px solid rgba(17,17,17,.35); color:#111111; background:transparent; transition: all .35s ease;
+  }
+  .btn-ghost-dark:hover, .btn-ghost-dark:focus-visible { background:#111111; color:#C8A046; border-color:#111111; }
+
+  /* Focus visibility everywhere */
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+    outline: 2px solid #C8A046; outline-offset: 3px;
+  }
+
+  /* Mobile menu */
+  #mobileMenu { transition: opacity .35s ease, visibility .35s ease; }
+  #mobileMenu.closed { opacity:0; visibility:hidden; pointer-events:none; }
+
+  /* Nav shrink */
+  #siteNav { transition: padding .35s ease, background-color .35s ease, box-shadow .35s ease, border-color .35s ease; }
+
+  /* Menu items slide-down entrance animation */
+  @keyframes navItemSlideDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-16px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .nav-item-slide {
+    animation: navItemSlideDown 0.65s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+  }
+  .nav-item-slide:nth-child(1) { animation-delay: 0.08s; }
+  .nav-item-slide:nth-child(2) { animation-delay: 0.16s; }
+  .nav-item-slide:nth-child(3) { animation-delay: 0.24s; }
+  .nav-item-slide:nth-child(4) { animation-delay: 0.32s; }
+  .nav-item-slide:nth-child(5) { animation-delay: 0.40s; }
+  .nav-item-slide:nth-child(6) { animation-delay: 0.48s; }
+
+  /* Mobile menu items cascading slide-down */
+  #mobileMenu:not(.closed) .mobile-link {
+    animation: navItemSlideDown 0.5s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+  }
+  #mobileMenu:not(.closed) .mobile-link:nth-child(1) { animation-delay: 0.06s; }
+  #mobileMenu:not(.closed) .mobile-link:nth-child(2) { animation-delay: 0.12s; }
+  #mobileMenu:not(.closed) .mobile-link:nth-child(3) { animation-delay: 0.18s; }
+  #mobileMenu:not(.closed) .mobile-link:nth-child(4) { animation-delay: 0.24s; }
+  #mobileMenu:not(.closed) .mobile-link:nth-child(5) { animation-delay: 0.30s; }
+  #mobileMenu:not(.closed) .mobile-link:nth-child(6) { animation-delay: 0.36s; }
+  #mobileMenu:not(.closed) .mobile-link:nth-child(7) { animation-delay: 0.42s; }
+
+  /* Active nav link styling with animated golden underline */
+  .nav-link {
+    position: relative;
+    transition: color 0.35s ease, transform 0.25s ease;
+  }
+  .nav-link.active-nav {
+    color: #C8A046 !important;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 1.5px;
+    background: linear-gradient(90deg, #C8A046, #DEC989);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .nav-link.active-nav::after,
+  .nav-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  ::selection { background:#C8A046; color:#111111; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior:auto; }
+    .reveal, .line-draw, #mobileMenu, #siteNav, .btn-gold, .btn-solid, .btn-ghost-dark, .link-line::after, .nav-item-slide, .nav-link::after {
+      transition:none !important; animation:none !important;
+    }
+    .reveal { opacity:1; transform:none; }
+    .line-draw { stroke-dashoffset:0; }
+  }
+</style>
+</head>
+
+<body class="bg-brandBlack text-white antialiased">
+
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-brandGold focus:text-brandBlack focus:px-4 focus:py-2 focus:text-sm font-sans">Skip to content</a>
+
+<!-- ============================================================ -->
+<!-- Reusable SVG symbols (architectural line-art, referenced via <use>) -->
+<!-- ============================================================ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- Minimal gable house elevation -->
+    <symbol id="arch-house" viewBox="0 0 240 200">
+      <polyline points="10,110 120,20 230,110" fill="none" stroke="currentColor" stroke-width="1.2"/>
+      <rect x="30" y="110" width="180" height="80" fill="none" stroke="currentColor" stroke-width="1.2"/>
+      <rect x="100" y="140" width="34" height="50" fill="none" stroke="currentColor" stroke-width="1"/>
+      <rect x="52" y="130" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1"/>
+      <rect x="162" y="130" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1"/>
+      <line x1="120" y1="20" x2="120" y2="55" stroke="currentColor" stroke-width="1"/>
+      <line x1="0" y1="190" x2="240" y2="190" stroke="currentColor" stroke-width="1"/>
+    </symbol>
+    <!-- Floor-plan fragment -->
+    <symbol id="arch-plan" viewBox="0 0 240 200">
+      <rect x="14" y="14" width="212" height="172" fill="none" stroke="currentColor" stroke-width="1"/>
+      <line x1="14" y1="90" x2="140" y2="90" stroke="currentColor" stroke-width="1"/>
+      <line x1="140" y1="14" x2="140" y2="186" stroke="currentColor" stroke-width="1"/>
+      <line x1="140" y1="130" x2="226" y2="130" stroke="currentColor" stroke-width="1"/>
+      <path d="M75,90 A15,15 0 0 1 90,105" fill="none" stroke="currentColor" stroke-width="1"/>
+      <path d="M140,55 A15,15 0 0 0 155,40" fill="none" stroke="currentColor" stroke-width="1"/>
+    </symbol>
+    <!-- Location pin -->
+    <symbol id="icon-pin" viewBox="0 0 24 24">
+      <path d="M12 22s7-7.2 7-12.5A7 7 0 0 0 5 9.5C5 14.8 12 22 12 22Z" fill="none" stroke="currentColor" stroke-width="1.4"/>
+      <circle cx="12" cy="9.4" r="2.4" fill="none" stroke="currentColor" stroke-width="1.4"/>
+    </symbol>
+    <!-- Compass / drafting mark -->
+    <symbol id="arch-compass" viewBox="0 0 200 200">
+      <circle cx="100" cy="100" r="70" fill="none" stroke="currentColor" stroke-width="1"/>
+      <line x1="100" y1="10" x2="100" y2="190" stroke="currentColor" stroke-width="0.7"/>
+      <line x1="10" y1="100" x2="190" y2="100" stroke="currentColor" stroke-width="0.7"/>
+      <path d="M100,40 L118,100 L100,160 L82,100 Z" fill="none" stroke="currentColor" stroke-width="1"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ============================================================ -->
+<!-- Navigation -->
+<!-- ============================================================ -->
+<header id="siteNav" class="fixed top-0 left-0 right-0 z-50 bg-brandBlack/80 backdrop-blur-md border-b border-white/5">
+  <div class="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12 flex items-center justify-between h-20">
+    <a href="#hero" class="font-eyebrow text-sm sm:text-base tracking-[0.28em] text-white">UK <span class="text-brandGold">REAL ESTATE</span></a>
+
+    <nav class="hidden lg:flex items-center gap-10 font-sans text-[0.82rem] tracking-[0.05em] uppercase text-white/80" aria-label="Primary">
+      <a href="#about" class="nav-link nav-item-slide hover:text-brandGold">About</a>
+      <a href="#services" class="nav-link nav-item-slide hover:text-brandGold">Services</a>
+      <a href="#areas" class="nav-link nav-item-slide hover:text-brandGold">Areas</a>
+      <a href="#real-estate" class="nav-link nav-item-slide hover:text-brandGold">Real Estate</a>
+      <a href="#construction" class="nav-link nav-item-slide hover:text-brandGold">Construction</a>
+      <a href="#contact" class="nav-link nav-item-slide hover:text-brandGold">Contact</a>
+    </nav>
+
+    <a href="#contact" class="hidden lg:inline-flex btn-gold nav-item-slide">Let's Talk</a>
+
+    <button id="menuBtn" aria-controls="mobileMenu" aria-expanded="false" aria-label="Open menu" class="lg:hidden w-11 h-11 flex flex-col items-center justify-center gap-1.5">
+      <span class="block w-6 h-px bg-white"></span>
+      <span class="block w-6 h-px bg-white"></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile full-screen menu -->
+<div id="mobileMenu" class="closed fixed inset-0 z-[60] bg-brandBlack lg:hidden" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+  <div class="flex items-center justify-between px-5 h-20 border-b border-white/5">
+    <span class="font-eyebrow text-sm tracking-[0.28em]">UK <span class="text-brandGold">REAL ESTATE</span></span>
+    <button id="menuCloseBtn" aria-label="Close menu" class="w-11 h-11 flex items-center justify-center text-2xl text-white/80">&times;</button>
+  </div>
+  <nav class="flex flex-col px-8 pt-10 gap-7 font-display text-3xl" aria-label="Mobile">
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#services" class="mobile-link">Services</a>
+    <a href="#areas" class="mobile-link">Areas</a>
+    <a href="#real-estate" class="mobile-link">Real Estate</a>
+    <a href="#construction" class="mobile-link">Construction</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+    <a href="#contact" class="btn-solid w-fit mt-4 !text-base">Let's Talk</a>
+  </nav>
+</div>
+
+<main id="main">
+
+<!-- ============================================================ -->
+<!-- Hero -->
+<!-- ============================================================ -->
+<section id="hero" class="relative bg-brandBlack overflow-hidden pt-20">
+  <div class="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12 grid lg:grid-cols-[1.05fr_0.95fr] gap-10 items-center min-h-[calc(100svh-5rem)] py-16 lg:py-0">
+
+    <div class="reveal relative z-10">
+      <p class="font-eyebrow text-brandGold text-xs sm:text-sm tracking-[0.35em] uppercase mb-6">UK Real Estate — Gujranwala, Pakistan</p>
+      <h1 class="font-display h-hero font-medium text-white mb-6">
+        Building Trust.<br><span class="text-brandGold italic">Creating Value.</span>
+      </h1>
+      <p class="text-white/65 text-base sm:text-lg max-w-md leading-relaxed mb-10 font-light">
+        Real estate, construction &amp; investment solutions built around local knowledge, transparent guidance, and long‑term relationships.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="#services" class="btn-solid">Explore Our Services</a>
+        <a href="#contact" class="btn-gold">Talk to Us</a>
+      </div>
+
+      <div class="mt-14 flex items-center gap-3 text-white/50 text-sm">
+        <svg class="w-4 h-4 text-brandGold" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-pin"/></svg>
+        Gujranwala, Pakistan
+      </div>
+    </div>
+
+    <div class="reveal reveal-delay-2 relative">
+      <div class="relative aspect-[4/5] sm:aspect-[5/4] lg:aspect-[4/5] w-full overflow-hidden">
+        <!-- Representative property photography (placeholder — swap for real project photography) -->
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+             onerror="imgFallback(this)"
+             alt="Modern residential property exterior representative of UK Real Estate's portfolio"
+             class="w-full h-full object-cover" loading="eager">
+        <div class="absolute inset-0 bg-gradient-to-t from-brandBlack/50 via-transparent to-transparent"></div>
+      </div>
+      <!-- Architectural line-art extending beyond the photo frame -->
+      <svg viewBox="0 0 240 200" class="line-draw pointer-events-none absolute -bottom-10 -left-10 w-40 sm:w-56 text-brandGold opacity-80" aria-hidden="true">
+        <use href="#arch-house"/>
+      </svg>
+      <svg viewBox="0 0 200 200" class="line-draw pointer-events-none absolute -top-8 -right-8 w-24 sm:w-32 text-brandGold/60" aria-hidden="true">
+        <use href="#arch-compass"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="hidden sm:block absolute bottom-6 left-1/2 -translate-x-1/2 text-white/30 text-[0.65rem] tracking-[0.35em] uppercase">Scroll</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- About -->
+<!-- ============================================================ -->
+<section id="about" class="bg-brandIvory text-brandBlack py-24 sm:py-32">
+  <div class="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12 grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+
+    <div class="reveal order-2 lg:order-1 relative">
+      <div class="relative aspect-[4/5] max-w-md mx-auto lg:mx-0 overflow-hidden bg-brandBlack">
+        <!-- Founder portrait placeholder: replace with Usama Kashif's actual photograph -->
+        <div class="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-brandBlack2 to-brandBlack">
+          <span class="font-display text-brandGold text-7xl mb-2">UK</span>
+          <span class="font-eyebrow text-white/40 text-[0.65rem] tracking-[0.3em] uppercase">Usama Kashif — Portrait</span>
+        </div>
+      </div>
+      <svg viewBox="0 0 240 200" class="line-draw pointer-events-none absolute -top-10 -right-10 w-28 sm:w-36 text-brandGold opacity-70 hidden sm:block" aria-hidden="true">
+        <use href="#arch-plan"/>
+      </svg>
+    </div>
+
+    <div class="reveal reveal-delay-1 order-1 lg:order-2">
+      <p class="font-eyebrow text-brandGold text-xs tracking-[0.35em] uppercase mb-5">Get to Know Us</p>
+      <h2 class="font-display h-section font-medium mb-7">More Than Property.<br>We Build Relationships.</h2>
+      <p class="text-brandStone leading-relaxed mb-5 max-w-lg">
+        I am Usama Kashif, Founder &amp; CEO of UK Real Estate, committed to delivering trusted real estate and construction solutions in Gujranwala.
+      </p>
+      <p class="text-brandStone leading-relaxed max-w-lg">
+        Our approach is built around transparency, market knowledge, and long‑term relationships. Whether you're purchasing your first home, selling a property, investing in land, or planning construction, we aim to provide clear guidance and dependable service from start to finish.
+      </p>
+      <div class="mt-9 flex items-center gap-4">
+        <span class="w-10 h-px bg-brandGold"></span>
+        <span class="font-eyebrow text-xs tracking-[0.25em] uppercase text-brandBlack/60">Founder &amp; CEO, UK Real Estate</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- Services -->
+<!-- ============================================================ -->
+<section id="services" class="bg-white text-brandBlack py-24 sm:py-32">
+  <div class="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12">
+
+    <div class="reveal max-w-xl mb-16">
+      <p class="font-eyebrow text-brandGold text-xs tracking-[0.35em] uppercase mb-5">What We Do</p>
+      <h2 class="font-display h-section font-medium">From finding the right property to bringing a construction project to life.</h2>
+      <p class="text-brandStone mt-5 leading-relaxed">We provide practical solutions tailored to your goals — across real estate and construction.</p>
+    </div>
+
+    <!-- Real Estate services -->
+    <div class="reveal mb-4 flex items-center gap-4">
+      <h3 class="font-display text-2xl">Real Estate</h3>
+      <span class="flex-1 h-px bg-brandBlack/10"></span>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-brandBlack/10 mb-16">
+      <!-- service card template -->
+      <div class="reveal bg-white p-8 group hover:bg-brandBlack transition-colors duration-500">
+        <svg class="w-7 h-7 text-brandGold mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 2 3 8v13h6v-7h6v7h6V8z"/></svg>
+        <h4 class="font-sans font-medium mb-2 group-hover:text-white transition-colors">Residential Buying</h4>
+        <p class="text-sm text-brandStone group-hover:text-white/60 transition-colors">Guided support in finding and securing the right home.</p>
+      </div>
+      <div class="reveal reveal-delay-1 bg-white p-8 group hover:bg-brandBlack transition-colors duration-500">
+        <svg class="w-7 h-7 text-brandGold mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 12h18M9 6l-6 6 6 6M15 6l6 6-6 6" transform="scale(0.8) translate(3,3)"/><path d="M4 17h16v3H4zM4 4h9v10H4zM17 4h3v10h-3z"/></svg>
+        <h4 class="font-sans font-medium mb-2 group-hover:text-white transition-colors">Residential Selling</h4>
+        <p class="text-sm text-brandStone group-hover:text-white/60 transition-colors">Clear positioning and negotiation to sell with confidence.</p>
+      </div>
+      <div class="reveal reveal-delay-2 bg-white p-8 group hover:bg-brandBlack transition-colors duration-500">
+        <svg class="w-7 h-7 text-brandGold mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/></svg>
+        <h4 class="font-sans font-medium mb-2 group-hover:text-white transition-colors">Commercial Properties</h4>
+        <p class="text-sm text-brandStone group-hover:text-white/60 transition-colors">Guidance for commercial plots and property decisions.</p>
+      </div>
+      <div class="reveal bg-white p-8 group hover:bg-brandBlack transition-colors duration-500">
+        <svg class="w-7 h-7 text-brandGold mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 17 9 11l4 4 8-8M21 7v6M21 7h-6"/></svg>
+        <h4 class="font-sans font-medium mb-2 group-hover:text-white transition-colors">Property Investment</h4>
+        <p class="text-sm text-brandStone group-hover:text-white/60 transition-colors">Practical support when evaluating property opportunities.</p>
+      </div>
+      <div class="reveal reveal-delay-1 bg-white p-8 group hover:bg-brandBlack transition-colors duration-500">
+        <svg class="w-7 h-7 text-brandGold mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M20 12a8 8 0 1 1-3-6.2M20 4v5h-5"/></svg>
+        <h4 class="font-sans font-medium mb-2 group-hover:text-white transition-colors">Property Consultation</h4>
+        <p class="text-sm text-brandStone group-hover:text-white/60 transition-colors">Honest, one‑to‑one advice shaped around your goals.</p>
+      </div>
+      <div class="reveal reveal-delay-2 bg-white p-8 group hover:bg-brandBlack transition-colors duration-500">
+        <svg class="w-7 h-7 text-brandGold mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M6 2h9l5 5v15H6zM15 2v5h5M9 13h6M9 17h6"/></svg>
+        <h4 class="font-sans font-medium mb-2 group-hover:text-white transition-colors">Documentation Assistance</h4>
+        <p class="text-sm text-brandStone group-hover:text-white/60 transition-colors">Support navigating the paperwork behind every transaction.</p>
+      </div>
+    </div>
+
+    <!-- Construction services -->
+    <div class="reveal mb-4 flex items-center gap-4">
+      <h3 class="font-display text-2xl">Construction</h3>
+      <span class="flex-1 h-px bg-brandBlack/10"></span>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-brandBlack/10">
+      <div class="reveal bg-white p-8 group hover:bg-brandBlack transition-colors duration-500">
+        <svg class="w-7 h-7 text-brandGold mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 21h18M5 21V10l7-6 7 6v11M9 21v-7h6v7"/></svg>
+        <h4 class="font-sans font-medium mb-2 group-hover:text-white transition-colors">Grey Structure</h4>
+        <p class="text-sm text-brandStone group-hover:text-white/60 transition-colors">Solid structural foundations built to last.</p>
+      </div>
+      <div class="reveal reveal-delay-1 bg-white p-8 group hover:bg-brandBlack transition-colors duration-500">
+        <svg class="w-7 h-7 text-brandGold mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 2 3 8v13h18V8zM3 8l9 5 9-5"/></svg>
+        <h4 class="font-sans font-medium mb-2 group-hover:text-white transition-colors">Turnkey Construction</h4>
+        <p class="text-sm text-brandStone group-hover:text-white/60 transition-colors">End‑to‑end project delivery, planning to handover.</p>
+      </div>
+      <div class="reveal reveal-delay-2 bg-white p-8 group hover:bg-brandBlack transition-colors duration-500">
+        <svg class="w-7 h-7 text-brandGold mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 4v16M4 4h13l-2 4 2 4H4"/></svg>
+        <h4 class="font-sans font-medium mb-2 group-hover:text-white transition-colors">House Renovation</h4>
+        <p class="text-sm text-brandStone group-hover:text-white/60 transition-colors">Thoughtful upgrades that respect the existing structure.</p>
+      </div>
+      <div class="reveal bg-white p-8 group hover:bg-brandBlack transition-colors duration-500">
+        <svg class="w-7 h-7 text-brandGold mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 21V8l8-5 8 5v13M9 21v-5h6v5"/></svg>
+        <h4 class="font-sans font-medium mb-2 group-hover:text-white transition-colors">Interior Finishing</h4>
+        <p class="text-sm text-brandStone group-hover:text-white/60 transition-colors">Detailed finishing work that completes the space.</p>
+      </div>
+      <div class="reveal reveal-delay-1 bg-white p-8 group hover:bg-brandBlack transition-colors duration-500">
+        <svg class="w-7 h-7 text-brandGold mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M12 3a5 5 0 0 1 5 5c0 3-5 9-5 9s-5-6-5-9a5 5 0 0 1 5-5ZM4 21h16"/></svg>
+        <h4 class="font-sans font-medium mb-2 group-hover:text-white transition-colors">Site Supervision</h4>
+        <p class="text-sm text-brandStone group-hover:text-white/60 transition-colors">Hands‑on oversight to keep quality and timelines on track.</p>
+      </div>
+      <div class="reveal reveal-delay-2 bg-white p-8 group hover:bg-brandBlack transition-colors duration-500">
+        <svg class="w-7 h-7 text-brandGold mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="1"/><line x1="8" y1="7" x2="16" y2="7"/><line x1="8" y1="11" x2="10" y2="11"/><line x1="8" y1="15" x2="10" y2="15"/></svg>
+        <h4 class="font-sans font-medium mb-2 group-hover:text-white transition-colors">Cost Estimation</h4>
+        <p class="text-sm text-brandStone group-hover:text-white/60 transition-colors">Clear, realistic budgeting before ground is broken.</p>
+      </div>
+      <div class="reveal bg-white p-8 group hover:bg-brandBlack transition-colors duration-500 sm:col-span-2 lg:col-span-1">
+        <svg class="w-7 h-7 text-brandGold mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/></svg>
+        <h4 class="font-sans font-medium mb-2 group-hover:text-white transition-colors">House Planning</h4>
+        <p class="text-sm text-brandStone group-hover:text-white/60 transition-colors">Thoughtful layouts designed around how you'll live.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- Expertise / Process -->
+<!-- ============================================================ -->
+<section id="expertise" class="bg-brandBlack py-24 sm:py-32 relative overflow-hidden">
+  <div class="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12">
+    <div class="reveal max-w-xl mb-20">
+      <p class="font-eyebrow text-brandGold text-xs tracking-[0.35em] uppercase mb-5">How We Help</p>
+      <h2 class="font-display h-section font-medium text-white">From Decision to Delivery</h2>
+    </div>
+
+    <div class="relative grid md:grid-cols-4 gap-12 md:gap-6">
+      <!-- connecting line: desktop horizontal, mobile vertical -->
+      <div class="hidden md:block absolute top-6 left-[12.5%] right-[12.5%] h-px bg-brandGold/25"></div>
+      <div class="md:hidden absolute top-0 bottom-0 left-6 w-px bg-brandGold/25"></div>
+
+      <div class="reveal relative pl-14 md:pl-0">
+        <div class="md:mb-8 absolute md:static -left-0 top-0 w-12 h-12 rounded-full border border-brandGold text-brandGold flex items-center justify-center font-display text-lg">01</div>
+        <h3 class="font-display text-2xl text-white mb-2 mt-0 md:mt-0">Discover</h3>
+        <p class="text-white/55 text-sm leading-relaxed">Understand your requirements, goals and budget.</p>
+      </div>
+      <div class="reveal reveal-delay-1 relative pl-14 md:pl-0">
+        <div class="md:mb-8 absolute md:static -left-0 top-0 w-12 h-12 rounded-full border border-brandGold text-brandGold flex items-center justify-center font-display text-lg">02</div>
+        <h3 class="font-display text-2xl text-white mb-2">Evaluate</h3>
+        <p class="text-white/55 text-sm leading-relaxed">Assess suitable properties, opportunities or project requirements.</p>
+      </div>
+      <div class="reveal reveal-delay-2 relative pl-14 md:pl-0">
+        <div class="md:mb-8 absolute md:static -left-0 top-0 w-12 h-12 rounded-full border border-brandGold text-brandGold flex items-center justify-center font-display text-lg">03</div>
+        <h3 class="font-display text-2xl text-white mb-2">Build</h3>
+        <p class="text-white/55 text-sm leading-relaxed">Execute construction and project requirements with professional oversight.</p>
+      </div>
+      <div class="reveal reveal-delay-3 relative pl-14 md:pl-0">
+        <div class="md:mb-8 absolute md:static -left-0 top-0 w-12 h-12 rounded-full border border-brandGold text-brandGold flex items-center justify-center font-display text-lg">04</div>
+        <h3 class="font-display text-2xl text-white mb-2">Deliver</h3>
+        <p class="text-white/55 text-sm leading-relaxed">Complete the process with attention to quality, clarity and client satisfaction.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- Areas We Serve -->
+<!-- ============================================================ -->
+<section id="areas" class="bg-brandIvory text-brandBlack py-24 sm:py-32">
+  <div class="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12 grid lg:grid-cols-[0.9fr_1.1fr] gap-14 items-center">
+
+    <div class="reveal">
+      <p class="font-eyebrow text-brandGold text-xs tracking-[0.35em] uppercase mb-5">Areas We Serve</p>
+      <h2 class="font-display h-section font-medium mb-6">Local Knowledge.<br>Better Decisions.</h2>
+      <p class="text-brandStone leading-relaxed max-w-md mb-8">Serving clients across key property locations in Gujranwala.</p>
+      <ul class="space-y-4">
+        <li class="flex items-center gap-3 border-b border-brandBlack/10 pb-4"><svg class="w-4 h-4 text-brandGold shrink-0" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-pin"/></svg><span class="font-display text-xl">Garden Town</span></li>
+        <li class="flex items-center gap-3 border-b border-brandBlack/10 pb-4"><svg class="w-4 h-4 text-brandGold shrink-0" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-pin"/></svg><span class="font-display text-xl">DHA Gujranwala</span></li>
+        <li class="flex items-center gap-3 border-b border-brandBlack/10 pb-4"><svg class="w-4 h-4 text-brandGold shrink-0" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-pin"/></svg><span class="font-display text-xl">DC Colony</span></li>
+        <li class="flex items-center gap-3 pb-1"><svg class="w-4 h-4 text-brandGold shrink-0" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-pin"/></svg><span class="font-display text-xl">Wapda City</span></li>
+      </ul>
+    </div>
+
+    <div class="reveal reveal-delay-2 relative aspect-[4/3] bg-brandBlack overflow-hidden">
+      <div class="absolute inset-0 blueprint-grid opacity-40"></div>
+      <svg viewBox="0 0 400 300" class="absolute inset-0 w-full h-full">
+        <path d="M20,240 C110,180 150,220 200,150 S300,90 380,60" fill="none" stroke="#C8A046" stroke-width="1" opacity="0.7" class="line-draw"/>
+        <path d="M60,40 C120,110 180,90 220,180 S320,240 370,220" fill="none" stroke="#C8A046" stroke-width="1" opacity="0.4" class="line-draw"/>
+        <g class="text-brandGold" fill="#C8A046">
+          <circle cx="120" cy="185" r="4"/>
+          <circle cx="205" cy="120" r="4"/>
+          <circle cx="280" cy="165" r="4"/>
+          <circle cx="335" cy="90" r="4"/>
+        </g>
+        <g font-family="Poppins, sans-serif" font-size="10" fill="#F5F5F5" letter-spacing="0.5">
+          <text x="128" y="188">Garden Town</text>
+          <text x="213" y="112">DHA Gujranwala</text>
+          <text x="288" y="182">DC Colony</text>
+          <text x="290" y="82">Wapda City</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- Real Estate -->
+<!-- ============================================================ -->
+<section id="real-estate" class="bg-white text-brandBlack py-24 sm:py-32">
+  <div class="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12 grid lg:grid-cols-2 gap-14 items-center">
+    <div class="reveal relative order-1">
+      <div class="relative aspect-[4/3] overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1200&q=80"
+             onerror="imgFallback(this)"
+             alt="Modern residential house representative of the properties UK Real Estate helps clients find"
+             class="w-full h-full object-cover" loading="lazy">
+      </div>
+      <svg viewBox="0 0 240 200" class="line-draw pointer-events-none absolute -bottom-8 -right-8 w-28 sm:w-40 text-brandGold hidden sm:block" aria-hidden="true"><use href="#arch-house"/></svg>
+    </div>
+    <div class="reveal reveal-delay-1 order-2">
+      <p class="font-eyebrow text-brandGold text-xs tracking-[0.35em] uppercase mb-5">Real Estate</p>
+      <h2 class="font-display h-section font-medium mb-6">Find a Property Worth Calling Home.</h2>
+      <p class="text-brandStone leading-relaxed max-w-md mb-8">Whether you're buying, selling, or investing, we help clients make informed decisions backed by local market knowledge.</p>
+      <div class="grid grid-cols-2 gap-4 max-w-md">
+        <div class="border-l border-brandGold pl-4 py-1"><span class="font-display text-lg">Houses</span></div>
+        <div class="border-l border-brandGold pl-4 py-1"><span class="font-display text-lg">Residential Plots</span></div>
+        <div class="border-l border-brandGold pl-4 py-1"><span class="font-display text-lg">Commercial Plots</span></div>
+        <div class="border-l border-brandGold pl-4 py-1"><span class="font-display text-lg">Investment Opportunities</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- Construction -->
+<!-- ============================================================ -->
+<section id="construction" class="bg-brandBlack py-24 sm:py-32 relative">
+  <div class="absolute inset-0 blueprint-grid opacity-[0.08]"></div>
+  <div class="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12 relative grid lg:grid-cols-2 gap-14 items-center">
+    <div class="reveal order-2 lg:order-1">
+      <p class="font-eyebrow text-brandGold text-xs tracking-[0.35em] uppercase mb-5">Construction</p>
+      <h2 class="font-display h-section font-medium text-white mb-6">From Foundation to Finish.</h2>
+      <p class="text-white/60 leading-relaxed max-w-md mb-8">We provide complete construction solutions for residential and commercial projects, from planning and structure to finishing and supervision.</p>
+      <ul class="grid grid-cols-2 gap-y-3 gap-x-6 text-white/75 text-sm max-w-md">
+        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-brandGold rounded-full"></span>Grey Structure</li>
+        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-brandGold rounded-full"></span>Turnkey Construction</li>
+        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-brandGold rounded-full"></span>House Renovation</li>
+        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-brandGold rounded-full"></span>Interior Finishing</li>
+        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-brandGold rounded-full"></span>Site Supervision</li>
+        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-brandGold rounded-full"></span>Cost Estimation</li>
+      </ul>
+    </div>
+    <div class="reveal reveal-delay-2 order-1 lg:order-2 relative">
+      <div class="relative aspect-[4/3] overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80"
+             onerror="imgFallback(this)"
+             alt="Construction site representative of UK Real Estate's project execution"
+             class="w-full h-full object-cover" loading="lazy">
+      </div>
+      <svg viewBox="0 0 240 200" class="line-draw pointer-events-none absolute -top-8 -left-8 w-24 sm:w-32 text-brandGold" aria-hidden="true"><use href="#arch-plan"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- Why Choose Us -->
+<!-- ============================================================ -->
+<section id="why-us" class="bg-brandIvory text-brandBlack py-24 sm:py-32">
+  <div class="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12">
+    <div class="reveal max-w-xl mb-16">
+      <p class="font-eyebrow text-brandGold text-xs tracking-[0.35em] uppercase mb-5">Why UK Real Estate</p>
+      <h2 class="font-display h-section font-medium">Built on Trust. Driven by Results.</h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
+      <div class="reveal group">
+        <span class="font-eyebrow text-brandGold/50 text-sm">01</span>
+        <h3 class="font-display text-2xl mt-3 mb-2 relative w-fit">Verified Properties
+          <span class="absolute -bottom-2 left-0 h-px bg-brandGold w-0 group-hover:w-full transition-all duration-500"></span>
+        </h3>
+        <p class="text-brandStone text-sm leading-relaxed">Focus on helping clients make informed property decisions.</p>
+      </div>
+      <div class="reveal reveal-delay-1 group">
+        <span class="font-eyebrow text-brandGold/50 text-sm">02</span>
+        <h3 class="font-display text-2xl mt-3 mb-2 relative w-fit">Honest Advice
+          <span class="absolute -bottom-2 left-0 h-px bg-brandGold w-0 group-hover:w-full transition-all duration-500"></span>
+        </h3>
+        <p class="text-brandStone text-sm leading-relaxed">Clear guidance without unnecessary complexity.</p>
+      </div>
+      <div class="reveal reveal-delay-2 group">
+        <span class="font-eyebrow text-brandGold/50 text-sm">03</span>
+        <h3 class="font-display text-2xl mt-3 mb-2 relative w-fit">Strong Negotiation
+          <span class="absolute -bottom-2 left-0 h-px bg-brandGold w-0 group-hover:w-full transition-all duration-500"></span>
+        </h3>
+        <p class="text-brandStone text-sm leading-relaxed">Professional representation throughout property discussions.</p>
+      </div>
+      <div class="reveal reveal-delay-3 group">
+        <span class="font-eyebrow text-brandGold/50 text-sm">04</span>
+        <h3 class="font-display text-2xl mt-3 mb-2 relative w-fit">Investment Guidance
+          <span class="absolute -bottom-2 left-0 h-px bg-brandGold w-0 group-hover:w-full transition-all duration-500"></span>
+        </h3>
+        <p class="text-brandStone text-sm leading-relaxed">Practical support when evaluating property opportunities.</p>
+      </div>
+    </div>
+
+    <div class="reveal border-t border-brandBlack/10 pt-10 flex flex-wrap gap-x-10 gap-y-4">
+      <span class="font-sans text-sm text-brandStone flex items-center gap-2"><span class="w-1.5 h-1.5 bg-brandGold rounded-full"></span>Quality Workmanship</span>
+      <span class="font-sans text-sm text-brandStone flex items-center gap-2"><span class="w-1.5 h-1.5 bg-brandGold rounded-full"></span>Project Management</span>
+      <span class="font-sans text-sm text-brandStone flex items-center gap-2"><span class="w-1.5 h-1.5 bg-brandGold rounded-full"></span>Timely Completion</span>
+      <span class="font-sans text-sm text-brandStone flex items-center gap-2"><span class="w-1.5 h-1.5 bg-brandGold rounded-full"></span>Customer Satisfaction</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- Founder -->
+<!-- ============================================================ -->
+<section id="founder" class="bg-brandBlack py-24 sm:py-32">
+  <div class="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12 grid lg:grid-cols-2 gap-14 items-center">
+    <div class="reveal order-1 relative">
+      <div class="relative aspect-[4/5] max-w-md overflow-hidden bg-gradient-to-br from-brandBlack2 to-brandBlack border border-brandGold/20">
+        <!-- Founder portrait placeholder: replace with Usama Kashif's actual photograph, background removed/blurred per brand -->
+        <div class="w-full h-full flex flex-col items-center justify-center">
+          <span class="font-display text-brandGold text-8xl mb-3">UK</span>
+          <span class="font-eyebrow text-white/40 text-[0.65rem] tracking-[0.3em] uppercase text-center px-6">Usama Kashif<br>Founder &amp; CEO</span>
+        </div>
+      </div>
+    </div>
+    <div class="reveal reveal-delay-1 order-2">
+      <p class="font-eyebrow text-brandGold text-xs tracking-[0.35em] uppercase mb-5">Founder</p>
+      <h2 class="font-display h-section font-medium text-white mb-3">A Name You Can Deal With.</h2>
+      <p class="font-eyebrow text-white/40 text-xs tracking-[0.2em] uppercase mb-7">Usama Kashif — Founder &amp; CEO, UK Real Estate</p>
+      <blockquote class="font-display text-2xl sm:text-3xl italic text-white/85 leading-snug border-l border-brandGold pl-6 max-w-lg">
+        "Our goal is not simply to complete a transaction. We strive to build lasting relationships based on trust, professionalism, and results."
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- Final CTA -->
+<!-- ============================================================ -->
+<section id="cta" class="relative bg-brandBlack py-28 sm:py-36 overflow-hidden">
+  <svg viewBox="0 0 240 200" class="line-draw pointer-events-none absolute top-1/2 -translate-y-1/2 -right-16 w-64 sm:w-96 text-brandGold/25" aria-hidden="true"><use href="#arch-house"/></svg>
+  <div class="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12 relative text-center max-w-3xl mx-auto">
+    <div class="reveal">
+      <p class="font-eyebrow text-brandGold text-xs tracking-[0.35em] uppercase mb-6">Get Started</p>
+      <h2 class="font-display h-section font-medium text-white mb-6">Let's Build Your Future Together.</h2>
+      <p class="text-white/60 leading-relaxed max-w-xl mx-auto mb-10">Whether you're buying, selling, investing, or planning your next construction project, let's start with a conversation.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="#contact" class="btn-solid">Start a Conversation</a>
+        <a href="#services" class="btn-gold">View Our Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- Contact -->
+<!-- ============================================================ -->
+<section id="contact" class="bg-brandBlack2 py-24 sm:py-32 border-t border-white/5">
+  <div class="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12 grid lg:grid-cols-2 gap-16">
+
+    <div class="reveal">
+      <p class="font-eyebrow text-brandGold text-xs tracking-[0.35em] uppercase mb-5">Contact</p>
+      <h2 class="font-display h-section font-medium text-white mb-8">Let's Talk About Your Next Move.</h2>
+
+      <div class="space-y-6 font-sans text-white/75">
+        <div>
+          <p class="font-eyebrow text-white text-sm tracking-[0.15em] uppercase">UK Real Estate</p>
+          <p class="text-sm mt-1">Usama Kashif — Founder &amp; CEO</p>
+        </div>
+        <a href="tel:+923205451200" class="flex items-center gap-3 link-line w-fit hover:text-brandGold">
+          <svg class="w-4 h-4 text-brandGold shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2Z"/></svg>
+          +92 320 5451200
+        </a>
+        <a href="mailto:usamakashif421@gmail.com" class="flex items-center gap-3 link-line w-fit hover:text-brandGold">
+          <svg class="w-4 h-4 text-brandGold shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="1"/><path d="m2 7 10 6 10-6"/></svg>
+          usamakashif421@gmail.com
+        </a>
+        <div class="flex items-start gap-3">
+          <svg class="w-4 h-4 text-brandGold shrink-0 mt-1" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-pin"/></svg>
+          <div>
+            <p>Office #35, Phase 3, Garden Town, Gujranwala</p>
+            <a href="https://share.google/uqrcPJeWWD0Vkxc5x" target="_blank" rel="noopener noreferrer" class="text-sm text-brandGold link-line w-fit inline-block mt-1">View on Google Maps</a>
+          </div>
+        </div>
+        <a href="https://instagram.com/ukreal_estate" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 link-line w-fit hover:text-brandGold">
+          <svg class="w-4 h-4 text-brandGold shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="0.6" fill="currentColor"/></svg>
+          @ukreal_estate
+        </a>
+        <a href="https://wa.me/923205451200" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 link-line w-fit hover:text-brandGold">
+          <svg class="w-4 h-4 text-brandGold shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 20l1.1-5.5A8.4 8.4 0 1 1 21 11.5Z"/><path d="M8.5 9.5c.3 2.6 2.4 4.7 5 5"/></svg>
+          Message on WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <div class="reveal reveal-delay-1">
+      <form id="contactForm" class="space-y-5" novalidate>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label for="cf-name" class="block text-xs tracking-[0.1em] uppercase text-white/50 mb-2">Name</label>
+            <input id="cf-name" name="name" type="text" required class="w-full bg-transparent border-b border-white/25 py-2.5 text-white placeholder-white/30 focus:border-brandGold outline-none">
+          </div>
+          <div>
+            <label for="cf-phone" class="block text-xs tracking-[0.1em] uppercase text-white/50 mb-2">Phone</label>
+            <input id="cf-phone" name="phone" type="tel" required class="w-full bg-transparent border-b border-white/25 py-2.5 text-white placeholder-white/30 focus:border-brandGold outline-none">
+          </div>
+        </div>
+        <div>
+          <label for="cf-email" class="block text-xs tracking-[0.1em] uppercase text-white/50 mb-2">Email</label>
+          <input id="cf-email" name="email" type="email" required class="w-full bg-transparent border-b border-white/25 py-2.5 text-white placeholder-white/30 focus:border-brandGold outline-none">
+        </div>
+        <div>
+          <label for="cf-service" class="block text-xs tracking-[0.1em] uppercase text-white/50 mb-2">Service Interested In</label>
+          <select id="cf-service" name="service" required class="w-full bg-brandBlack2 border-b border-white/25 py-2.5 text-white focus:border-brandGold outline-none">
+            <option value="" class="bg-brandBlack">Select a service</option>
+            <option value="Buying Property" class="bg-brandBlack">Buying Property</option>
+            <option value="Selling Property" class="bg-brandBlack">Selling Property</option>
+            <option value="Property Investment" class="bg-brandBlack">Property Investment</option>
+            <option value="Construction" class="bg-brandBlack">Construction</option>
+            <option value="Renovation" class="bg-brandBlack">Renovation</option>
+            <option value="Consultation" class="bg-brandBlack">Consultation</option>
+            <option value="Other" class="bg-brandBlack">Other</option>
+          </select>
+        </div>
+        <div>
+          <label for="cf-message" class="block text-xs tracking-[0.1em] uppercase text-white/50 mb-2">Message</label>
+          <textarea id="cf-message" name="message" rows="4" required class="w-full bg-transparent border-b border-white/25 py-2.5 text-white placeholder-white/30 focus:border-brandGold outline-none resize-none"></textarea>
+        </div>
+        <button type="submit" class="btn-solid mt-2">Send Inquiry</button>
+        <p id="cf-status" class="text-sm text-brandGold hidden" role="status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================================================ -->
+<!-- Footer -->
+<!-- ============================================================ -->
+<footer class="bg-brandBlack border-t border-white/5 pt-16 pb-28 sm:pb-16">
+  <div class="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div>
+      <p class="font-eyebrow text-sm tracking-[0.28em] mb-3">UK <span class="text-brandGold">REAL ESTATE</span></p>
+      <p class="text-white/40 text-sm">Real Estate &bull; Construction &bull; Investment</p>
+      <p class="text-white/40 text-sm mt-1">Gujranwala, Pakistan</p>
+    </div>
+    <div>
+      <p class="text-xs tracking-[0.15em] uppercase text-white/40 mb-4">Navigate</p>
+      <ul class="space-y-2 text-sm text-white/70">
+        <li><a href="#about" class="link-line hover:text-brandGold">About</a></li>
+        <li><a href="#services" class="link-line hover:text-brandGold">Services</a></li>
+        <li><a href="#areas" class="link-line hover:text-brandGold">Areas</a></li>
+        <li><a href="#real-estate" class="link-line hover:text-brandGold">Real Estate</a></li>
+        <li><a href="#construction" class="link-line hover:text-brandGold">Construction</a></li>
+        <li><a href="#contact" class="link-line hover:text-brandGold">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="text-xs tracking-[0.15em] uppercase text-white/40 mb-4">Connect</p>
+      <ul class="space-y-2 text-sm text-white/70">
+        <li><a href="https://instagram.com/ukreal_estate" target="_blank" rel="noopener noreferrer" class="link-line hover:text-brandGold">Instagram</a></li>
+        <li><a href="https://wa.me/923205451200" target="_blank" rel="noopener noreferrer" class="link-line hover:text-brandGold">WhatsApp</a></li>
+        <li><a href="tel:+923205451200" class="link-line hover:text-brandGold">+92 320 5451200</a></li>
+        <li><a href="https://share.google/uqrcPJeWWD0Vkxc5x" target="_blank" rel="noopener noreferrer" class="link-line hover:text-brandGold">Google Maps</a></li>
+        <li><a href="mailto:usamakashif421@gmail.com" class="link-line hover:text-brandGold">Email</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="text-xs tracking-[0.15em] uppercase text-white/40 mb-4">Office</p>
+      <p class="text-sm text-white/70 leading-relaxed">Office #35, Phase 3,<br>Garden Town, Gujranwala</p>
+    </div>
+  </div>
+  <div class="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12 mt-14 pt-6 border-t border-white/5 flex flex-col sm:flex-row justify-between gap-3 text-xs text-white/35">
+    <p>&copy; <span id="year"></span> UK Real Estate. All rights reserved.</p>
+    <p class="font-eyebrow tracking-[0.2em] uppercase text-brandGold/70">Building Trust. Creating Value.</p>
+  </div>
+</footer>
+
+<!-- Mobile sticky bottom CTA -->
+<div class="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-brandBlack border-t border-white/10 grid grid-cols-2" style="padding-bottom:env(safe-area-inset-bottom)">
+  <a href="https://wa.me/923205451200" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 py-4 text-xs tracking-[0.1em] uppercase text-white border-r border-white/10">
+    <svg class="w-4 h-4 text-brandGold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 20l1.1-5.5A8.4 8.4 0 1 1 21 11.5Z"/></svg>
+    WhatsApp
+  </a>
+  <a href="tel:+923205451200" class="flex items-center justify-center gap-2 py-4 text-xs tracking-[0.1em] uppercase text-brandBlack bg-brandGold">
+    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2Z"/></svg>
+    Call
+  </a>
+</div>
+
+<!-- ============================================================ -->
+<!-- JavaScript -->
+<!-- ============================================================ -->
+<script>
+  // ---- Image fallback (elegant placeholder if a remote image fails) ----
+  var PLACEHOLDER_IMG = 'data:image/svg+xml,' + encodeURIComponent(
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">' +
+    '<rect width="400" height="300" fill="#111111"/>' +
+    '<polyline points="60,190 200,90 340,190" fill="none" stroke="#C8A046" stroke-width="1.5"/>' +
+    '<rect x="90" y="190" width="220" height="70" fill="none" stroke="#C8A046" stroke-width="1.5"/>' +
+    '</svg>'
+  );
+  function imgFallback(img){
+    img.onerror = null;
+    img.src = PLACEHOLDER_IMG;
+    img.classList.add('object-contain','p-10');
+  }
+
+  // ---- Year ----
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // ---- Smooth Animated Scrolling Down for Menu Items ----
+  function smoothScrollDownTo(targetPosition, duration) {
+    duration = duration || 850;
+    var startPosition = window.pageYOffset || document.documentElement.scrollTop;
+    var distance = targetPosition - startPosition;
+    if (Math.abs(distance) < 2) return;
+    var startTime = null;
+
+    function animationLoop(currentTime) {
+      if (!startTime) startTime = currentTime;
+      var timeElapsed = currentTime - startTime;
+      var progress = Math.min(timeElapsed / duration, 1);
+      
+      // Luxurious ease-in-out cubic curve
+      var ease = progress < 0.5
+        ? 4 * progress * progress * progress
+        : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+
+      window.scrollTo(0, startPosition + (distance * ease));
+
+      if (timeElapsed < duration) {
+        window.requestAnimationFrame(animationLoop);
+      }
+    }
+    window.requestAnimationFrame(animationLoop);
+  }
+
+  // Intercept clicks on menu items and anchor links for fluid animated scrolling down
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+      var targetId = this.getAttribute('href');
+      if (!targetId || targetId === '#') return;
+      var targetEl = document.querySelector(targetId);
+      if (targetEl) {
+        e.preventDefault();
+        var menuEl = document.getElementById('mobileMenu');
+        if (menuEl && !menuEl.classList.contains('closed')) {
+          closeMenu();
+        }
+        var navEl = document.getElementById('siteNav');
+        var navHeight = navEl ? navEl.offsetHeight : 70;
+        var elementPosition = targetEl.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop);
+        var targetPosition = Math.max(0, elementPosition - (navHeight - 8));
+
+        smoothScrollDownTo(targetPosition, 850);
+
+        if (history.pushState) {
+          history.pushState(null, null, targetId);
+        }
+      }
+    });
+  });
+
+  // ---- Sticky nav shrink & shadow on scroll down ----
+  var nav = document.getElementById('siteNav');
+  function onScroll(){
+    if (window.scrollY > 40) {
+      nav.classList.add('bg-brandBlack', 'shadow-xl', 'shadow-black/60', 'border-brandGold/20');
+      nav.querySelector('div').classList.remove('h-20');
+      nav.querySelector('div').classList.add('h-16');
+    } else {
+      nav.classList.remove('shadow-xl', 'shadow-black/60', 'border-brandGold/20');
+      nav.querySelector('div').classList.remove('h-16');
+      nav.querySelector('div').classList.add('h-20');
+    }
+  }
+  document.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // ---- Mobile menu ----
+  var menuBtn = document.getElementById('menuBtn');
+  var closeBtn = document.getElementById('menuCloseBtn');
+  var menu = document.getElementById('mobileMenu');
+  function openMenu(){
+    menu.classList.remove('closed');
+    menuBtn.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+  function closeMenu(){
+    menu.classList.add('closed');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+    menuBtn.focus();
+  }
+  menuBtn.addEventListener('click', openMenu);
+  closeBtn.addEventListener('click', closeMenu);
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && !menu.classList.contains('closed')) closeMenu();
+  });
+  document.querySelectorAll('.mobile-link').forEach(function(a){
+    a.addEventListener('click', closeMenu);
+  });
+
+  // ---- Scroll reveal ----
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('in-view'); });
+  }
+
+  // ---- Active nav link on scroll down ----
+  var sections = document.querySelectorAll('main section[id], section[id]');
+  var navLinks = document.querySelectorAll('#siteNav nav a[href^="#"]');
+  if ('IntersectionObserver' in window) {
+    var navIo = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          var id = entry.target.id;
+          navLinks.forEach(function(link){
+            if (link.getAttribute('href') === '#' + id) {
+              link.classList.add('active-nav');
+            } else {
+              link.classList.remove('active-nav');
+            }
+          });
+        }
+      });
+    }, { rootMargin: '-25% 0px -55% 0px' });
+    sections.forEach(function(s){ navIo.observe(s); });
+  }
+
+  // ---- Contact form (no backend — opens a pre-filled email as a client-side fallback) ----
+  var form = document.getElementById('contactForm');
+  var status = document.getElementById('cf-status');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    var data = Object.fromEntries(new FormData(form).entries());
+    var subject = 'Inquiry: ' + data.service;
+    var body = 'Name: ' + data.name + '%0D%0APhone: ' + data.phone + '%0D%0AEmail: ' + data.email +
+               '%0D%0AService: ' + data.service + '%0D%0A%0D%0A' + data.message;
+    status.textContent = "Thanks — your inquiry is ready to be sent. Opening your email app now.";
+    status.classList.remove('hidden');
+    window.location.href = 'mailto:usamakashif421@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + body;
+    form.reset();
+  });
+</script>
+
+</body>
+</html>
