@@ -154,6 +154,31 @@ export const CAMPAIGNS_DATA: CampaignSite[] = [
       views: 0,
       previewCount: 0,
     }
+  },
+  {
+    id: "peekaboo",
+    title: "Peekaboo",
+    slug: "peekaboo",
+    campaignCode: "2026",
+    country: {
+      code: "PK",
+      name: "Pakistan",
+      flag: "🇵🇰",
+      flagUrl: "https://flagcdn.com/w40/pk.png",
+    },
+    category: "Food & Restaurant",
+    tagline: "Gujranwala's Sweetest Secret — Bakery, Desserts & Cafe",
+    description: "Tucked in the heart of Gujranwala, Peekaboo is where cravings meet creativity — fresh-out-the-oven croissants, sizzling pastas, creamy cheesecakes, and legendary molten lava.",
+    thumbnailUrl: "/thumbnails/peekaboo.png",
+    claimed: false,
+    featured: true,
+    htmlPath: "src/campaign/2026/(pk)/peekaboo/index.html",
+    tags: ["Bakery", "Desserts", "Cafe", "Gujranwala", "Cakes & Croissants"],
+    metrics: {
+      views: 0,
+      previewCount: 0,
+    }
   }
 ];
+
 

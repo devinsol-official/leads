@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Prevent aggressive filesystem lock issues on Windows
+  distDir: ".next",
   async headers() {
     return [
       {

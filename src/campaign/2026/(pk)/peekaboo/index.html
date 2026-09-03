@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Peekaboo — Gujranwala's Sweetest Secret | Cafe & Baked Shop</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%2309BBBE'/%3E%3Ctext x='50' y='65' font-size='44' font-weight='bold' font-family='Arial, sans-serif' fill='%23FFFFFF' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=League+Spartan:wght@400;500;600;700;800;900&family=Quicksand:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<!-- Lenis Smooth Scroll Library -->
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+<style>
+  :root {
+    --brand-teal: #09BBBE;
+    --brand-pink: #F7D9E8;
+    
+    --bg-main: #F7D9E8;
+    --bg-cream: #F7D9E8;
+    --text-body: #2c4d4e;
+    --text-muted: #4d7071;
+    
+    --radius-full: 9999px;
+    --radius-xl: 28px;
+    --radius-lg: 20px;
+    --radius-md: 14px;
+    
+    --shadow-soft: 0 10px 25px -8px rgba(9, 187, 190, 0.2);
+    --shadow-card: 0 16px 36px -12px rgba(9, 187, 190, 0.15);
+    --shadow-card-hover: 0 24px 50px -12px rgba(9, 187, 190, 0.32);
+    --shadow-button: 0 12px 28px -8px rgba(9, 187, 190, 0.4);
+    
+    --maxw: 1240px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+    background: #F7D9E8;
+  }
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+  .lenis.lenis-smooth iframe {
+    pointer-events: none;
+  }
+  body {
+    background: #F7D9E8;
+    color: var(--text-body);
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* Floating Sparkles Canvas */
+  #particles-bg {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.55;
+  }
+
+  h1, h2, h3, h4, .font-heading {
+    font-family: 'League Spartan', sans-serif;
+    letter-spacing: -0.01em;
+    font-weight: 800;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  img, svg { display: block; max-width: 100%; }
+  button { font-family: inherit; border: none; background: none; cursor: pointer; color: inherit; }
+  ul { list-style: none; }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 32px; position: relative; z-index: 2; }
+  :focus-visible { outline: 3px solid #09BBBE; outline-offset: 3px; }
+
+  /* ---------- Keyframe Animations ---------- */
+  @keyframes floatSlow {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(1.5deg); }
+  }
+  @keyframes floatGentle {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+  }
+  @keyframes pulseGlow {
+    0%, 100% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(9, 187, 190, 0.3)); }
+    50% { transform: scale(1.04); filter: drop-shadow(0 0 22px rgba(9, 187, 190, 0.6)); }
+  }
+  @keyframes marqueeScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  @keyframes badgeBob {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-5px) scale(1.08); }
+  }
+  @keyframes shimmerSweep {
+    0% { transform: translateX(-150%) skewX(-20deg); }
+    100% { transform: translateX(250%) skewX(-20deg); }
+  }
+  @keyframes subtleWiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-3deg); }
+    75% { transform: rotate(3deg); }
+  }
+
+  /* ---------- Symmetrical Layout & Container Cards ---------- */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1.5px solid #F7D9E8;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-card);
+  }
+
+  /* ---------- Buttons ---------- */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    padding: 15px 36px;
+    border-radius: var(--radius-full);
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 800;
+    font-size: 1.05rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1;
+    cursor: pointer;
+  }
+  .btn::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(247, 217, 232, 0.4), transparent);
+    transform: translateX(-100%) skewX(-20deg);
+    transition: transform 0.6s ease;
+    z-index: -1;
+  }
+  .btn:hover::before {
+    transform: translateX(100%) skewX(-20deg);
+  }
+  .btn-primary {
+    background: #09BBBE;
+    color: #ffffff;
+    border: 2px solid #09BBBE;
+    box-shadow: var(--shadow-button);
+  }
+  .btn-primary:hover {
+    background: #ffffff;
+    color: #09BBBE;
+    border-color: #09BBBE;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 16px 36px -8px rgba(9, 187, 190, 0.5);
+  }
+  .btn-outline {
+    background: #F7D9E8;
+    color: #09BBBE;
+    border: 2px solid #09BBBE;
+  }
+  .btn-outline:hover {
+    background: #09BBBE;
+    color: #F7D9E8;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px -8px rgba(9, 187, 190, 0.4);
+  }
+  .btn-pink {
+    background: #F7D9E8;
+    color: #09BBBE;
+    border: 2px solid #09BBBE;
+    box-shadow: 0 10px 24px -6px rgba(9, 187, 190, 0.25);
+  }
+  .btn-pink:hover {
+    background: #09BBBE;
+    color: #ffffff;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 16px 36px -8px rgba(9, 187, 190, 0.4);
+  }
+
+  /* ---------- Top Symmetrical Contact Strip ---------- */
+  .contact-bar {
+    background: #F7D9E8;
+    border-bottom: 2px solid rgba(9, 187, 190, 0.25);
+    padding: 12px 0;
+    position: relative;
+    z-index: 10;
+  }
+  .contact-bar-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: transform 0.25s ease;
+  }
+  .contact-item:hover {
+    transform: translateY(-2px);
+  }
+  .contact-icon-circle {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 2px solid #09BBBE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #09BBBE;
+    font-size: 1.05rem;
+    flex-shrink: 0;
+    background: #ffffff;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 12px rgba(9, 187, 190, 0.15);
+  }
+  .contact-item:hover .contact-icon-circle {
+    background: #09BBBE;
+    color: #F7D9E8;
+    transform: scale(1.1) rotate(6deg);
+    box-shadow: 0 8px 18px rgba(9, 187, 190, 0.3);
+  }
+  .contact-text {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #09BBBE;
+  }
+  .contact-text a:hover {
+    text-decoration: underline;
+  }
+
+  /* ---------- Exact Brand Logo ---------- */
+  .brand-logo-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1;
+    position: relative;
+  }
+
+  /* ---------- Navigation Bar ---------- */
+  .site-nav {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: #F7D9E8;
+    border-bottom: 2px solid rgba(9, 187, 190, 0.3);
+    transition: all 0.35s ease;
+  }
+  .site-nav.scrolled {
+    box-shadow: 0 12px 32px rgba(9, 187, 190, 0.15);
+    background: #F7D9E8;
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 32px;
+    max-width: var(--maxw);
+    margin: 0 auto;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+  }
+  .nav-links a {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #09BBBE;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    position: relative;
+    padding: 6px 0;
+    transition: color 0.25s ease;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    border-radius: 3px;
+    background: #09BBBE;
+    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+  .nav-cta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .nav-toggle {
+    display: none;
+    width: 30px;
+    height: 22px;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .nav-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: #09BBBE;
+    border-radius: 3px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  .nav-mobile {
+    display: none;
+    flex-direction: column;
+    background: #F7D9E8;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    border-bottom: 2px solid rgba(9, 187, 190, 0.3);
+  }
+  .nav-mobile.open { max-height: 360px; }
+  .nav-mobile a {
+    padding: 16px 32px;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #09BBBE;
+    border-top: 1px solid rgba(9, 187, 190, 0.2);
+  }
+
+  /* ---------- Treat Marquee Banner ---------- */
+  .treat-ticker {
+    background: #09BBBE;
+    color: #ffffff;
+    padding: 11px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    box-shadow: inset 0 2px 6px rgba(0,0,0,0.1);
+  }
+  .treat-ticker-track {
+    display: inline-flex;
+    gap: 36px;
+    animation: marqueeScroll 26s linear infinite;
+  }
+  .treat-ticker-track:hover {
+    animation-play-state: paused;
+  }
+  .ticker-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 800;
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .ticker-item i {
+    color: #F7D9E8;
+  }
+
+  /* ---------- Hero Section ---------- */
+  .hero {
+    position: relative;
+    padding: 75px 0 115px;
+    background: #F7D9E8;
+    overflow: hidden;
+  }
+  .hero-banner-strip {
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-title-main {
+    font-size: clamp(2.6rem, 6.2vw, 4.6rem);
+    color: #09BBBE;
+    line-height: 1.05;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: -0.01em;
+    text-shadow: 0 4px 20px rgba(9, 187, 190, 0.15);
+  }
+  .hero-subtitle-main {
+    font-size: clamp(1.3rem, 2.6vw, 2rem);
+    color: #09BBBE;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 800;
+    margin-top: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .hero-subtitle-main span.heart {
+    color: #09BBBE;
+    display: inline-block;
+    animation: badgeBob 2s ease-in-out infinite;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 20px;
+    background: #F7D9E8;
+    border: 2px solid #09BBBE;
+    color: #09BBBE;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 800;
+    font-size: 0.92rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: var(--radius-full);
+    width: fit-content;
+  }
+  .hero-lede {
+    font-size: 1.15rem;
+    color: var(--text-body);
+    line-height: 1.75;
+    font-weight: 500;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 6px;
+  }
+
+  /* Hero 3D Card */
+  .hero-card-showcase {
+    position: relative;
+    border-radius: var(--radius-xl);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 26px;
+    box-shadow: 0 28px 65px -15px rgba(9, 187, 190, 0.22);
+    border: 2px solid #09BBBE;
+    backdrop-filter: blur(14px);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  .hero-card-showcase:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 34px 75px -12px rgba(9, 187, 190, 0.35);
+  }
+  .hero-img-wrap {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    position: relative;
+    background: radial-gradient(circle at center, #ffffff 30%, #F7D9E8 100%);
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 0 24px rgba(9, 187, 190, 0.1);
+  }
+  .hero-img-wrap svg {
+    width: 88%;
+    height: auto;
+    filter: drop-shadow(0 12px 24px rgba(9, 187, 190, 0.2));
+  }
+
+  /* Floating Badges */
+  .floating-badge {
+    position: absolute;
+    background: #ffffff;
+    border: 2px solid #09BBBE;
+    padding: 10px 22px;
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-soft);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 800;
+    color: #09BBBE;
+    font-size: 0.92rem;
+    z-index: 4;
+  }
+  .badge-croissant {
+    top: -14px; right: -12px;
+    background: #F7D9E8;
+    animation: floatSlow 6s ease-in-out infinite;
+  }
+  .badge-macaron {
+    bottom: -16px; left: 50%;
+    transform: translateX(-50%);
+    background: #ffffff;
+    animation: floatGentle 4.5s ease-in-out infinite 0.8s;
+  }
+  .brand-logo-img:hover {
+    transform: scale(1.06) rotate(-1.5deg);
+    filter: drop-shadow(0 6px 16px rgba(9,187,190,0.4));
+  }
+
+  /* ---------- Section Headers ---------- */
+  section { padding: 95px 0; position: relative; }
+  .section-head {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 58px;
+    position: relative;
+    z-index: 2;
+  }
+  .section-title {
+    font-size: clamp(2.2rem, 4.2vw, 3.2rem);
+    color: #09BBBE;
+    text-transform: uppercase;
+    font-weight: 900;
+    line-height: 1.1;
+  }
+  .section-subtitle {
+    font-size: 1.35rem;
+    color: #09BBBE;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 800;
+    margin-top: 8px;
+  }
+  .section-desc {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    margin-top: 12px;
+    line-height: 1.6;
+  }
+
+  /* ---------- Products Grid ---------- */
+  .products-section {
+    background: #F7D9E8;
+    position: relative;
+  }
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+    position: relative;
+    z-index: 2;
+  }
+  .product-card {
+    background: #F7D9E8;
+    border-radius: var(--radius-xl);
+    padding: 20px 20px 24px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    border: 2px solid #09BBBE;
+    box-shadow: 0 10px 25px rgba(9, 187, 190, 0.12);
+    transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+    opacity: 0;
+    transform: translateY(36px);
+    position: relative;
+    overflow: hidden;
+    min-height: 440px;
+    will-change: transform, opacity;
+  }
+  .product-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 5px;
+    background: #09BBBE;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .product-card.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .story-card-box, .visit-info-card, .visit-map-card {
+    opacity: 0;
+    transform: translateY(36px);
+    transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+    will-change: transform, opacity;
+  }
+  .story-card-box.in-view, .visit-info-card.in-view, .visit-map-card.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 36px rgba(9, 187, 190, 0.25);
+    border-color: #09BBBE;
+  }
+  .product-card:hover::before {
+    opacity: 1;
+  }
+  .product-img-wrap {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    position: relative;
+    border: 2px solid #09BBBE;
+    background: #ffffff;
+    box-shadow: 0 6px 18px rgba(9, 187, 190, 0.15);
+    margin-bottom: 6px;
+  }
+  .product-img-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(105deg, transparent 20%, rgba(255, 255, 255, 0.45) 50%, transparent 80%);
+    transform: translateX(-150%) skewX(-20deg);
+    pointer-events: none;
+    transition: transform 0.85s ease;
+  }
+  .product-card:hover .product-img-wrap::after {
+    transform: translateX(180%) skewX(-20deg);
+  }
+  .product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+  }
+  .product-card:hover .product-img {
+    transform: scale(1.08) rotate(1deg);
+    filter: brightness(1.03);
+  }
+  .product-title {
+    font-size: 1.35rem;
+    color: #09BBBE;
+    font-weight: 800;
+    line-height: 1.25;
+  }
+  .product-desc {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+    flex-grow: 1;
+  }
+
+  /* Price Flap */
+  .price-peek {
+    position: relative;
+    width: 100%;
+    height: 48px;
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    background: #ffffff;
+    border: 2px solid #09BBBE;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+    margin-top: auto;
+  }
+  .price-peek .price-value {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 800;
+    font-size: 1.25rem;
+    color: #09BBBE;
+  }
+  .price-flap {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #09BBBE;
+    color: #ffffff;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    width: 100%;
+    height: 100%;
+  }
+  .product-card:hover .price-flap,
+  .price-peek.peek .price-flap {
+    transform: translateY(-100%);
+  }
+
+  .products-cta {
+    text-align: center;
+    margin-top: 56px;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ---------- Story Section ---------- */
+  .story-section {
+    background: #F7D9E8;
+    position: relative;
+  }
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+  }
+  .story-text {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .story-badge {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 800;
+    color: #09BBBE;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+  }
+  .story-quote-list {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .story-quote-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 800;
+    font-size: 1.25rem;
+    color: #09BBBE;
+    background: #F7D9E8;
+    padding: 14px 20px;
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 16px rgba(9, 187, 190, 0.1);
+    border: 2px solid #09BBBE;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+  }
+  .story-quote-item:hover {
+    transform: translateX(6px);
+    border-color: #09BBBE;
+    background: #09BBBE;
+    color: #ffffff;
+  }
+  .story-quote-item i {
+    color: #09BBBE;
+    font-size: 1.2rem;
+  }
+  .story-quote-item:hover i {
+    color: #ffffff;
+  }
+
+  .story-card-box {
+    background: #F7D9E8;
+    border-radius: var(--radius-xl);
+    padding: 36px;
+    border: 2px solid #09BBBE;
+    box-shadow: 0 20px 45px -15px rgba(9, 187, 190, 0.2);
+  }
+  .story-illustration {
+    aspect-ratio: 1/1;
+    border-radius: var(--radius-lg);
+    background: #F7D9E8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px dashed #09BBBE;
+    padding: 24px;
+    box-shadow: inset 0 0 24px rgba(9, 187, 190, 0.08);
+  }
+
+  /* ---------- Visit / Contact Section ---------- */
+  .visit-section {
+    background: #F7D9E8;
+  }
+  .visit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+    align-items: stretch;
+  }
+  .visit-info-card {
+    background: #F7D9E8;
+    border-radius: var(--radius-xl);
+    padding: 44px;
+    box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+    border: 2px solid #09BBBE;
+  }
+  .visit-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+  }
+  .visit-icon-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid #09BBBE;
+    background: #ffffff;
+    color: #09BBBE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    box-shadow: 0 4px 14px rgba(9, 187, 190, 0.15);
+  }
+  .visit-label {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.88rem;
+    color: #09BBBE;
+    letter-spacing: 0.06em;
+    margin-bottom: 2px;
+  }
+  .visit-value {
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: #09BBBE;
+  }
+  .visit-value a:hover {
+    text-decoration: underline;
+  }
+
+  .visit-map-card {
+    background: #F7D9E8;
+    border-radius: var(--radius-xl);
+    padding: 44px;
+    box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    border: 2px solid #09BBBE;
+    position: relative;
+  }
+  .visit-map-card h3 {
+    font-size: 1.95rem;
+    color: #09BBBE;
+    text-transform: uppercase;
+    font-weight: 900;
+  }
+  .visit-map-card p {
+    color: var(--text-body);
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    background: #F7D9E8;
+    color: #09BBBE;
+    border-top: 2px solid #09BBBE;
+    padding: 70px 0 35px;
+    position: relative;
+    z-index: 10;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(9, 187, 190, 0.3);
+  }
+  .footer-tag {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    max-width: 320px;
+    line-height: 1.75;
+    margin-top: 14px;
+  }
+  .footer-col h4 {
+    color: #09BBBE;
+    font-size: 1.15rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 0.05em;
+  }
+  .footer-col ul li {
+    margin-bottom: 12px;
+  }
+  .footer-col a {
+    color: #09BBBE;
+    font-weight: 700;
+    transition: all 0.2s ease;
+  }
+  .footer-col a:hover {
+    color: #09BBBE;
+    text-decoration: underline;
+    padding-left: 4px;
+  }
+  .footer-bottom {
+    padding-top: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 0.92rem;
+    color: #09BBBE;
+  }
+  .back-top-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #09BBBE;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    box-shadow: 0 6px 18px rgba(9, 187, 190, 0.3);
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+  .back-top-btn:hover {
+    transform: translateY(-4px);
+    background: #09BBBE;
+  }
+
+  /* ---------- Responsive System ---------- */
+  @media (max-width: 1080px) {
+    .product-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .story-grid { grid-template-columns: 1fr; gap: 40px; }
+    .visit-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 640px) {
+    .wrap { padding: 0 20px; }
+    .contact-bar-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .nav-links, .nav-cta { display: none; }
+    .nav-toggle { display: flex; }
+    .nav-mobile { display: flex; }
+    .product-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Ambient Floating Particles Canvas -->
+<canvas id="particles-bg"></canvas>
+
+<!-- Top Symmetrical Contact Strip -->
+<div class="contact-bar">
+  <div class="wrap">
+    <div class="contact-bar-inner">
+      <div class="contact-item">
+        <div class="contact-icon-circle">
+          <i class="fa-regular fa-envelope"></i>
+        </div>
+        <div class="contact-text">
+          <a href="mailto:Info@mypeekaboo.pk">Info@mypeekaboo.pk</a>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-icon-circle">
+          <i class="fa-solid fa-phone"></i>
+        </div>
+        <div class="contact-text">
+          <a href="tel:+923008443868">+92 300 8443868</a>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <a href="https://maps.app.goo.gl/E5K47J5UCfnwaeUM7" target="_blank" rel="noopener" style="display:flex; align-items:center; gap:12px;">
+          <div class="contact-icon-circle">
+            <i class="fa-solid fa-location-arrow"></i>
+          </div>
+          <div class="contact-text">
+            11/D Dastghir Road Satellite Town Gujranwala
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Header / Navigation Bar -->
+<header class="site-nav" id="siteNav">
+  <div class="nav-inner">
+    <a href="#home" class="brand-logo-wrap" aria-label="Peekaboo Cafe & Baked Shop">
+      <img src="logo.png" alt="Peekaboo Cafe & Baked Shop" class="brand-logo-img"
+        style="height: 52px; width: auto; object-fit: contain; filter: drop-shadow(0 4px 12px rgba(9,187,190,0.25)); transition: transform 0.3s ease;">
+    </a>
+
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#products">Our Treats</a>
+      <a href="#about">Story</a>
+      <a href="#visit">Visit</a>
+    </nav>
+
+    <div class="nav-cta">
+      <a href="#visit" class="btn btn-primary" style="padding: 10px 24px; font-size: 0.95rem;">
+        <i class="fa-solid fa-mug-hot"></i> Visit Us
+      </a>
+    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="nav-mobile" id="navMobile">
+    <a href="#home">Home</a>
+    <a href="#products">Our Treats</a>
+    <a href="#about">Story</a>
+    <a href="#visit">Visit</a>
+  </div>
+</header>
+
+<!-- Treat Ticker Banner -->
+<div class="treat-ticker" aria-hidden="true">
+  <div class="treat-ticker-track">
+    <span class="ticker-item"><i class="fa-solid fa-sparkles"></i> Fresh Butter Croissants</span>
+    <span class="ticker-item"><i class="fa-solid fa-sparkles"></i> Molten Lava Chocolate</span>
+    <span class="ticker-item"><i class="fa-solid fa-sparkles"></i> Artisan Sourdough Loaf</span>
+    <span class="ticker-item"><i class="fa-solid fa-sparkles"></i> French Macarons</span>
+    <span class="ticker-item"><i class="fa-solid fa-sparkles"></i> Belgian Strawberry Cake</span>
+    <span class="ticker-item"><i class="fa-solid fa-sparkles"></i> Specialty Espresso &amp; Lattes</span>
+    <span class="ticker-item"><i class="fa-solid fa-sparkles"></i> Fresh Butter Croissants</span>
+    <span class="ticker-item"><i class="fa-solid fa-sparkles"></i> Molten Lava Chocolate</span>
+    <span class="ticker-item"><i class="fa-solid fa-sparkles"></i> Artisan Sourdough Loaf</span>
+    <span class="ticker-item"><i class="fa-solid fa-sparkles"></i> French Macarons</span>
+    <span class="ticker-item"><i class="fa-solid fa-sparkles"></i> Belgian Strawberry Cake</span>
+    <span class="ticker-item"><i class="fa-solid fa-sparkles"></i> Specialty Espresso &amp; Lattes</span>
+  </div>
+</div>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+  <div class="wrap">
+    
+    <div class="hero-banner-strip">
+      <h1 class="hero-title-main">Delicious Treats For You!</h1>
+      <p class="hero-subtitle-main">
+        Handcrafted Daily with Love <span class="heart"><i class="fa-solid fa-heart"></i></span>
+      </p>
+    </div>
+
+    <div class="hero-grid">
+      <div class="hero-text">
+        <span class="hero-badge">
+          <i class="fa-solid fa-cookie-bite"></i> Gujranwala's Sweetest Secret
+        </span>
+        <h2 style="font-size: clamp(1.85rem, 3.4vw, 2.6rem); color: #09BBBE; text-transform: uppercase;">
+          Freshly Baked, Perfectly Brewed, Made to Make You Smile.
+        </h2>
+        <p class="hero-lede">
+          Tucked in the heart of Satellite Town, Peekaboo is where cravings meet creativity — fresh-out-the-oven flaky croissants, creamy Belgian cheesecakes, artisanal sourdough loaves, and warm espresso beverages.
+        </p>
+        <div class="hero-actions">
+          <a href="#products" class="btn btn-primary">
+            Explore Menu <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="#visit" class="btn btn-outline">
+            <i class="fa-solid fa-compass"></i> Find Cafe
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-card-showcase" id="heroCard">
+        <div class="floating-badge badge-croissant">
+          <i class="fa-solid fa-bread-slice" style="color: #09BBBE;"></i> 32-Layer Butter Flake
+        </div>
+
+        <div class="hero-img-wrap">
+          <svg viewBox="0 0 400 300" fill="none">
+            <rect width="400" height="300" rx="16" fill="#F7D9E8" opacity="0.4"/>
+            <!-- Wooden Tray Base with Depth -->
+            <rect x="30" y="190" width="340" height="30" rx="8" fill="#F7D9E8" stroke="#09BBBE" stroke-width="2"/>
+            <rect x="25" y="212" width="350" height="12" rx="4" fill="#09BBBE"/>
+            <!-- Glow Shadow -->
+            <ellipse cx="200" cy="225" rx="140" ry="12" fill="rgba(9,187,190,0.15)"/>
+            <!-- Golden Croissant -->
+            <path d="M70 185 Q115 120 160 165 Q130 185 70 185 Z" fill="#09BBBE"/>
+            <path d="M90 170 Q115 140 140 168" stroke="#F7D9E8" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+            <!-- Macarons -->
+            <circle cx="210" cy="180" r="22" fill="#09BBBE"/>
+            <circle cx="210" cy="172" r="20" fill="#F7D9E8"/>
+            <circle cx="260" cy="175" r="24" fill="#09BBBE"/>
+            <circle cx="260" cy="166" r="22" fill="#F7D9E8"/>
+            <circle cx="310" cy="182" r="20" fill="#F7D9E8" stroke="#09BBBE" stroke-width="2"/>
+            <circle cx="310" cy="174" r="18" fill="#ffffff"/>
+            <!-- Coffee Beans -->
+            <ellipse cx="160" cy="200" rx="6" ry="4" fill="#09BBBE"/>
+            <ellipse cx="175" cy="202" rx="5" ry="3.5" fill="#09BBBE"/>
+            <ellipse cx="190" cy="199" rx="6" ry="4" fill="#09BBBE"/>
+          </svg>
+        </div>
+
+        <div class="floating-badge badge-macaron">
+          <i class="fa-solid fa-sparkles" style="color: #09BBBE;"></i> 100% Handcrafted Daily in Satellite Town
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Products Section -->
+<section class="products-section" id="products">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="section-title">Delicious Treats For You!</h2>
+      <p class="section-subtitle">Handcrafted Daily with Love</p>
+      <p class="section-desc">Tap or hover over any price tag to take a quick peek at the menu price.</p>
+    </div>
+
+    <div class="product-grid">
+
+      <!-- Product 1: Classic Butter Croissant -->
+      <article class="product-card">
+        <div class="product-img-wrap">
+          <img src="croissant.jpg" alt="Classic Butter Croissant" class="product-img" loading="lazy">
+        </div>
+        <h3 class="product-title">Classic Butter Croissant</h3>
+        <p class="product-desc">Flaky, 32-layer butter pastry baked fresh every morning.</p>
+        <button class="price-peek" type="button" data-peek aria-label="Peek price for Classic Butter Croissant">
+          <span class="price-value">230 Rs.</span>
+          <span class="price-flap"><i class="fa-solid fa-eye"></i> Peek for price</span>
+        </button>
+      </article>
+
+      <!-- Product 2: Belgian Molten Lava Cake -->
+      <article class="product-card">
+        <div class="product-img-wrap">
+          <img src="molten-lava.jpg" alt="Belgian Molten Lava Cake" class="product-img" loading="lazy">
+        </div>
+        <h3 class="product-title">Molten Lava Chocolate</h3>
+        <p class="product-desc">Warm Belgian chocolate core paired with vanilla bean gelato.</p>
+        <button class="price-peek" type="button" data-peek aria-label="Peek price for Molten Lava Chocolate">
+          <span class="price-value">690 Rs.</span>
+          <span class="price-flap"><i class="fa-solid fa-eye"></i> Peek for price</span>
+        </button>
+      </article>
+
+      <!-- Product 3: Fresh Strawberry Sponge Cake -->
+      <article class="product-card">
+        <div class="product-img-wrap">
+          <img src="strawberry-cake.jpg" alt="Fresh Strawberry Sponge Cake" class="product-img" loading="lazy">
+        </div>
+        <h3 class="product-title">Strawberry Cream Cake</h3>
+        <p class="product-desc">Layers of light chiffon, velvety pink cream, and fresh garden berries.</p>
+        <button class="price-peek" type="button" data-peek aria-label="Peek price for Strawberry Cream Cake">
+          <span class="price-value">2,099 Rs.</span>
+          <span class="price-flap"><i class="fa-solid fa-eye"></i> Peek for price</span>
+        </button>
+      </article>
+
+      <!-- Product 4: Gourmet Glazed Cinnamon Roll -->
+      <article class="product-card">
+        <div class="product-img-wrap">
+          <img src="cinnamon-roll.jpg" alt="Gourmet Glazed Cinnamon Roll" class="product-img" loading="lazy">
+        </div>
+        <h3 class="product-title">Gourmet Cinnamon Roll</h3>
+        <p class="product-desc">Warm brown sugar &amp; Saigon cinnamon glaze topped with vanilla cream.</p>
+        <button class="price-peek" type="button" data-peek aria-label="Peek price for Gourmet Cinnamon Roll">
+          <span class="price-value">990 Rs.</span>
+          <span class="price-flap"><i class="fa-solid fa-eye"></i> Peek for price</span>
+        </button>
+      </article>
+
+    </div>
+
+    <div class="products-cta">
+      <a class="btn btn-pink" href="https://mypeekaboo.pk/products/" target="_blank" rel="noopener">
+        View All Products on Official Menu <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Story Section -->
+<section class="story-section" id="about">
+  <div class="wrap story-grid">
+    <div class="story-text">
+      <p class="story-badge"><i class="fa-solid fa-award"></i> Heritage &amp; Passion</p>
+      <h2 style="font-size: clamp(2rem, 3.6vw, 2.8rem); color: #09BBBE; text-transform: uppercase;">
+        Welcome to Gujranwala's Sweetest Secret
+      </h2>
+      <p style="font-size: 1.12rem; color: #4a5568; line-height: 1.75;">
+        We took the inspiration from the world’s finest artisanal bakeries, blended it with Gujranwala's hospitable warmth, and created a sanctuary of mouth-watering aromas and joyful moments.
+      </p>
+      <p style="font-size: 1.05rem; color: #718096; line-height: 1.7;">
+        Whether it's your morning flat white, a lively brunch with friends, or a showstopper celebration cake that commands every eye in the room — at Peekaboo, every moment is crafted to perfection.
+      </p>
+
+      <div class="story-quote-list">
+        <div class="story-quote-item">
+          <i class="fa-solid fa-circle-check"></i>
+          <span>Freshly Baked Every Single Morning</span>
+        </div>
+        <div class="story-quote-item">
+          <i class="fa-solid fa-circle-check"></i>
+          <span>Specialty Espresso &amp; Artisan Teas</span>
+        </div>
+        <div class="story-quote-item">
+          <i class="fa-solid fa-circle-check"></i>
+          <span>Handcrafted Daily with Love to Make You Smile</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-card-box glass-card">
+      <div class="story-illustration">
+        <div style="text-align: center;">
+          <div style="font-size: 3.8rem; color: #09BBBE; margin-bottom: 12px; animation: pulseGlow 3s ease-in-out infinite;">
+            <i class="fa-solid fa-cake-candles"></i>
+          </div>
+          <h3 style="font-size: 1.85rem; color: #09BBBE; text-transform: uppercase; font-weight: 900;">
+            Pure Ingredients
+          </h3>
+          <p style="color: #09BBBE; font-weight: 700; margin-top: 8px; font-size: 1.05rem;">
+            100% Real Dairy Butter • French Pastry Flour • Belgian Chocolate
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Visit / Contact Section -->
+<section class="visit-section" id="visit">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="section-title">Visit Us Today</h2>
+      <p class="section-subtitle">Handcrafted Daily with Love</p>
+      <p class="section-desc">Tucked in Satellite Town, Gujranwala — walk in for warm bakes, fragrant coffee, and lovely memories.</p>
+    </div>
+
+    <div class="visit-grid">
+      <!-- Info Card -->
+      <div class="visit-info-card glass-card">
+        <div class="visit-row">
+          <div class="visit-icon-circle">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+          <div>
+            <p class="visit-label">Our Address</p>
+            <a class="visit-value" href="https://maps.app.goo.gl/E5K47J5UCfnwaeUM7" target="_blank" rel="noopener">11/D Dastghir Road, Satellite Town, Gujranwala</a>
+          </div>
+        </div>
+
+        <div class="visit-row">
+          <div class="visit-icon-circle">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+          <div>
+            <p class="visit-label">Direct Phone / Orders</p>
+            <a class="visit-value" href="tel:+923008443868">+92 300 8443868</a>
+          </div>
+        </div>
+
+        <div class="visit-row">
+          <div class="visit-icon-circle">
+            <i class="fa-regular fa-envelope"></i>
+          </div>
+          <div>
+            <p class="visit-label">Official Email</p>
+            <a class="visit-value" href="mailto:Info@mypeekaboo.pk">Info@mypeekaboo.pk</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Map & Action Card -->
+      <div class="visit-map-card glass-card">
+        <h3>You Can't Hide from the Craving</h3>
+        <p>Walk in for fresh croissants, creamy cheesecakes, artisanal sourdough, and cozy cafe vibes with family and friends.</p>
+        
+        <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 10px;">
+          <a class="btn btn-primary" href="https://maps.app.goo.gl/E5K47J5UCfnwaeUM7" target="_blank" rel="noopener">
+            <i class="fa-solid fa-diamond-turn-right"></i> Get Directions
+          </a>
+          <a class="btn btn-outline" href="tel:+923008443868">
+            <i class="fa-solid fa-phone"></i> Call Direct
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="#home" class="brand-logo-wrap" style="margin-bottom: 8px;">
+          <img src="logo.png" alt="Peekaboo Cafe & Baked Shop"
+            style="height: 48px; width: auto; object-fit: contain; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.15));">
+        </a>
+        <p class="footer-tag">
+          Gujranwala's sweetest secret — Delicious treats for you, handcrafted daily with love.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#products">Our Treats</a></li>
+          <li><a href="#about">Story &amp; Heritage</a></li>
+          <li><a href="#visit">Location &amp; Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact &amp; Hours</h4>
+        <ul>
+          <li><a href="mailto:Info@mypeekaboo.pk">Info@mypeekaboo.pk</a></li>
+          <li><a href="tel:+923008443868">+92 300 8443868</a></li>
+          <li><a href="https://maps.app.goo.gl/E5K47J5UCfnwaeUM7" target="_blank" rel="noopener">11/D Dastghir Road, Satellite Town, Gujranwala</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>Copyright &copy; 2026 Peekaboo. All rights reserved.</span>
+      <a class="back-top-btn" href="#home" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Floating Particles
+  (function initCanvasParticles() {
+    const canvas = document.getElementById('particles-bg');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+
+    window.addEventListener('resize', () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    });
+
+    const particles = Array.from({ length: 28 }, () => ({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      size: Math.random() * 2.5 + 1,
+      speedY: Math.random() * 0.35 + 0.15,
+      speedX: (Math.random() - 0.5) * 0.25,
+      opacity: Math.random() * 0.35 + 0.15,
+      color: Math.random() > 0.5 ? '#09BBBE' : '#F7D9E8'
+    }));
+
+    function renderParticles() {
+      ctx.clearRect(0, 0, width, height);
+      particles.forEach(p => {
+        p.y -= p.speedY;
+        p.x += p.speedX;
+        if (p.y < 0) p.y = height;
+        if (p.x < 0) p.x = width;
+        if (p.x > width) p.x = 0;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fillStyle = p.color;
+        ctx.globalAlpha = p.opacity;
+        ctx.fill();
+      });
+      requestAnimationFrame(renderParticles);
+    }
+    renderParticles();
+  })();
+
+  // 3D Parallax Tilt Effect on Hero Card
+  const heroCard = document.getElementById('heroCard');
+  if (heroCard && window.innerWidth > 900) {
+    heroCard.addEventListener('mousemove', (e) => {
+      const rect = heroCard.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      heroCard.style.transform = `perspective(1000px) rotateY(${x * 10}deg) rotateX(${-y * 10}deg) translateY(-6px)`;
+    });
+    heroCard.addEventListener('mouseleave', () => {
+      heroCard.style.transform = '';
+    });
+  }
+
+  // Initialize Lenis Smooth Scroll
+  let lenis;
+  if (typeof Lenis !== 'undefined') {
+    lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true,
+      wheelMultiplier: 1.0,
+      touchMultiplier: 1.5,
+      infinite: false,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Synchronize anchor links with Lenis for butter-smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId && targetId !== '#') {
+          const targetElem = document.querySelector(targetId);
+          if (targetElem) {
+            e.preventDefault();
+            lenis.scrollTo(targetElem, { offset: -70, duration: 1.2 });
+          }
+        }
+      });
+    });
+  } else {
+    // Native smooth scroll fallback if Lenis is offline
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId && targetId !== '#') {
+          const targetElem = document.querySelector(targetId);
+          if (targetElem) {
+            e.preventDefault();
+            targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      });
+    });
+  }
+
+  // Sticky nav shadow with smooth threshold
+  const nav = document.getElementById('siteNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 30);
+  }, { passive: true });
+
+  // Mobile menu toggle
+  const navToggle = document.getElementById('navToggle');
+  const navMobile = document.getElementById('navMobile');
+  navToggle.addEventListener('click', () => {
+    const open = navMobile.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open);
+  });
+  navMobile.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navMobile.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', false);
+  }));
+
+  // Touch & click support for price peek flap
+  document.querySelectorAll('[data-peek]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('peek');
+    });
+  });
+
+  // Staggered reveal observer with smooth spring transition
+  const revealCards = document.querySelectorAll('.product-card');
+  const ioCards = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const idx = Array.from(revealCards).indexOf(entry.target);
+        setTimeout(() => {
+          entry.target.classList.add('in-view');
+        }, idx * 110);
+        ioCards.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealCards.forEach(el => ioCards.observe(el));
+
+  const revealBoxes = document.querySelectorAll('.story-card-box, .visit-info-card, .visit-map-card');
+  const ioBoxes = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        ioBoxes.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealBoxes.forEach(el => ioBoxes.observe(el));
+</script>
+
+</body>
+</html>
