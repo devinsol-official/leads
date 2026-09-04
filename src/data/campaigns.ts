@@ -33,6 +33,7 @@ export const CAMPAIGN_CATEGORIES = [
   "CleanTech",
   "Food & Restaurant",
   "Real Estate",
+  "E-Commerce & Beauty",
 ] as const;
 
 export const CAMPAIGNS_DATA: CampaignSite[] = [
@@ -199,6 +200,30 @@ export const CAMPAIGNS_DATA: CampaignSite[] = [
     featured: true,
     htmlPath: "src/campaign/2026/(pk)/uk-real-estate/index.html",
     tags: ["Real Estate", "Construction", "Property Investment", "Gujranwala"],
+    metrics: {
+      views: 0,
+      previewCount: 0,
+    }
+  },
+  {
+    id: "zulvera",
+    title: "Zulvera",
+    slug: "zulvera",
+    campaignCode: "2026",
+    country: {
+      code: "PK",
+      name: "Pakistan",
+      flag: "🇵🇰",
+      flagUrl: "https://flagcdn.com/w40/pk.png",
+    },
+    category: "E-Commerce & Beauty",
+    tagline: "Haute Parfumerie, Rare Botanicals & Artisan Personal Care",
+    description: "An opulent e-commerce destination featuring pure French extrait de parfums, 24K biological gold serums, and precision rose quartz beauty tools.",
+    thumbnailUrl: "/thumbnails/zulvera.png",
+    claimed: false,
+    featured: true,
+    htmlPath: "src/campaign/2026/(pk)/zulvera/index.html",
+    tags: ["E-Commerce", "Luxury Perfume", "Skincare", "Beauty Tools", "Grooming"],
     metrics: {
       views: 0,
       previewCount: 0,

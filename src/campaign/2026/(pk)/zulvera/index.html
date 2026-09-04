@@ -1,0 +1,2156 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>ZULVERA — Haute Parfumerie, Rare Botanicals & Artisan Personal Care</title>
+  <meta name="description" content="Discover Zulvera: an opulent boutique of luxury perfumes, botanical skincare elixirs, and precision grooming instruments engineered for discerning connoisseurs.">
+  <meta name="keywords" content="Zulvera, luxury perfume, haute parfumerie, organic skincare, beauty tools, rose quartz roller, luxury grooming">
+  <meta name="theme-color" content="#050706">
+  
+  <!-- Favicon Monogram -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23081c15' stroke='%23d4af37' stroke-width='2'/%3E%3Ctext x='32' y='42' font-family='Playfair Display, serif' font-size='28' font-weight='700' fill='%23eecf6d' text-anchor='middle'%3EZ%3C/text%3E%3C/svg%3E">
+
+  <!-- Preconnect & Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Lenis Smooth Scroll Engine -->
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            noir: '#050706',
+            emeraldDark: '#071610',
+            emeraldMid: '#0d281e',
+            emeraldAccent: '#164233',
+            gold: {
+              100: '#fff8db',
+              200: '#fae49d',
+              300: '#eecf6d',
+              400: '#d4af37',
+              500: '#b88d22',
+              600: '#8c6712'
+            },
+            champagne: '#f5ecdc',
+            champagneLight: '#fbf8f2'
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            display: ['"Cinzel"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          },
+          animation: {
+            'float-slow': 'floatSlow 7s ease-in-out infinite',
+            'float-reverse': 'floatReverse 8s ease-in-out infinite',
+            'pulse-soft': 'pulseSoft 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'marquee': 'marquee 22s linear infinite',
+          },
+          keyframes: {
+            floatSlow: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+            floatReverse: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(8px)' },
+            },
+            pulseSoft: {
+              '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
+              '50%': { opacity: '0.85', transform: 'scale(1.04)' },
+            },
+            marquee: {
+              '0%': { transform: 'translateX(0%)' },
+              '100%': { transform: 'translateX(-50%)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Lenis smooth scroll optimization */
+    html.lenis, html.lenis body {
+      height: auto;
+    }
+    .lenis.lenis-smooth {
+      scroll-behavior: auto !important;
+    }
+    .lenis.lenis-smooth [data-lenis-prevent] {
+      overscroll-behavior: contain;
+    }
+    .lenis.lenis-stopped {
+      overflow: hidden;
+    }
+    .lenis.lenis-smooth iframe {
+      pointer-events: none;
+    }
+
+    /* Modern Performance Tuning */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #050706;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #19382b;
+      border-radius: 4px;
+      border: 1px solid rgba(212, 175, 55, 0.25);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #d4af37;
+    }
+
+    /* Custom Glass & Gold Effects */
+    .glass-noir {
+      background: rgba(8, 22, 16, 0.78);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    .glass-gold-subtle {
+      background: linear-gradient(135deg, rgba(238, 207, 109, 0.08) 0%, rgba(13, 40, 30, 0.45) 100%);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+    }
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #fff7d6 0%, #eecf6d 35%, #d4af37 70%, #997316 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gold-button-gradient {
+      background: linear-gradient(135deg, #fae49d 0%, #d4af37 50%, #9b7214 100%);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .gold-button-gradient:hover {
+      background: linear-gradient(135deg, #ffffff 0%, #fae49d 40%, #d4af37 100%);
+      box-shadow: 0 10px 25px -5px rgba(212, 175, 55, 0.45);
+      transform: translateY(-2px);
+    }
+    .gold-button-gradient:active {
+      transform: translateY(0);
+    }
+    .gold-border-glow {
+      box-shadow: 0 0 25px -5px rgba(212, 175, 55, 0.25);
+    }
+    .luxury-card {
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @media (hover: hover) {
+      .luxury-card:hover {
+        transform: translateY(-6px);
+        border-color: rgba(212, 175, 55, 0.55);
+        box-shadow: 0 18px 36px -12px rgba(212, 175, 55, 0.22);
+      }
+      .luxury-card:hover .image-zoom-wrap img {
+        transform: scale(1.08);
+      }
+    }
+    .image-zoom-wrap {
+      overflow: hidden;
+    }
+    .image-zoom-wrap img {
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform;
+    }
+    
+    /* Background noise subtle texture */
+    .bg-grain {
+      background-image: radial-gradient(rgba(212, 175, 55, 0.04) 1px, transparent 0);
+      background-size: 24px 24px;
+    }
+
+    ::selection {
+      background: #d4af37;
+      color: #050706;
+    }
+  </style>
+</head>
+
+<body class="bg-noir text-zinc-100 font-sans antialiased overflow-x-hidden relative bg-grain">
+
+  <!-- ================= TOP LUXURY BANNER ================= -->
+  <aside aria-label="Announcement" class="relative z-50 bg-gradient-to-r from-emeraldDark via-emeraldMid to-emeraldDark border-b border-gold-400/20 text-xs py-2 px-3 sm:px-4 text-center">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="hidden md:flex items-center gap-2 text-gold-300/80 font-mono tracking-wider">
+        <i class="fa-solid fa-sparkles text-gold-400 text-xs"></i>
+        <span>HAUTE MAISON DE BEAUTÉ — EST. 2026</span>
+      </div>
+      <div class="w-full md:w-auto flex items-center justify-center gap-2 sm:gap-3 text-[11px] sm:text-xs">
+        <span class="inline-block w-2 h-2 rounded-full bg-gold-400 animate-ping shrink-0"></span>
+        <span class="text-champagne font-medium tracking-wide">COMPLIMENTARY ATOMIZER ON ORDERS OVER <span class="text-gold-300 font-semibold" id="bannerThresholdText">₨ 30,000 / $110</span></span>
+        <span class="hidden sm:inline-block px-2 py-0.5 rounded text-[10px] tracking-widest uppercase bg-gold-400/20 border border-gold-400/40 text-gold-200">CODE: ROYALNOIR</span>
+      </div>
+      <div class="hidden lg:flex items-center gap-4 text-xs font-mono text-zinc-400">
+        <button onclick="toggleCurrency()" id="currencyToggleBtn" class="flex items-center gap-1.5 hover:text-gold-300 transition-colors border border-white/10 px-2.5 py-0.5 rounded-full bg-black/40 cursor-pointer">
+          <i class="fa-solid fa-globe text-gold-400"></i>
+          <span id="currentCurrencyLabel">PKR (₨)</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ================= NAVIGATION BAR ================= -->
+  <header id="mainHeader" class="sticky top-0 z-40 transition-all duration-300 backdrop-blur-xl border-b border-gold-400/15 bg-noir/90">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 sm:h-20 flex items-center justify-between">
+      
+      <!-- Mobile Menu Trigger & Search -->
+      <div class="flex items-center gap-2 lg:hidden">
+        <button onclick="toggleMobileMenu()" class="text-zinc-300 hover:text-gold-300 p-2.5 text-xl focus:outline-none cursor-pointer" aria-label="Open Navigation Menu">
+          <i class="fa-solid fa-bars-staggered"></i>
+        </button>
+        <button onclick="openSearchModal()" class="text-zinc-300 hover:text-gold-300 p-2 text-lg cursor-pointer" aria-label="Search Catalog">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+
+      <!-- Desktop Nav Left: Categories -->
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-medium tracking-widest text-zinc-300 uppercase">
+        <a href="#featured" class="hover:text-gold-300 transition-colors relative group py-2">
+          Collections
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-gold-300 to-gold-500 transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="#catalog" onclick="filterCategory('perfumes')" class="hover:text-gold-300 transition-colors relative group py-2">
+          Perfumes
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-gold-300 to-gold-500 transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="#catalog" onclick="filterCategory('skincare')" class="hover:text-gold-300 transition-colors relative group py-2">
+          Skincare
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-gold-300 to-gold-500 transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="#catalog" onclick="filterCategory('tools')" class="hover:text-gold-300 transition-colors relative group py-2">
+          Beauty Tools
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-gold-300 to-gold-500 transition-all duration-300 group-hover:w-full"></span>
+        </a>
+      </nav>
+
+      <!-- Center Brand Emblem / Logo -->
+      <a href="#" class="flex flex-col items-center group cursor-pointer text-center">
+        <span class="font-display text-2xl sm:text-3xl tracking-[0.24em] sm:tracking-[0.28em] font-bold text-transparent bg-clip-text bg-gradient-to-r from-gold-100 via-gold-300 to-gold-500 uppercase transition-all duration-300 group-hover:tracking-[0.32em]">
+          ZULVERA
+        </span>
+        <span class="text-[8px] sm:text-[9px] tracking-[0.4em] text-gold-400/80 uppercase font-mono mt-0.5">
+          PARIS &bull; DUBAI &bull; LAHORE
+        </span>
+      </a>
+
+      <!-- Desktop Nav Right: Controls & Cart -->
+      <div class="flex items-center gap-2 sm:gap-4">
+        <!-- Desktop Search Trigger -->
+        <button onclick="openSearchModal()" class="hidden sm:flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-gold-400/20 bg-emeraldMid/30 hover:border-gold-400/50 text-xs text-zinc-300 transition-all cursor-pointer">
+          <i class="fa-solid fa-magnifying-glass text-gold-400"></i>
+          <span class="text-zinc-400">Search Atelier...</span>
+          <kbd class="ml-2 font-mono text-[10px] bg-black/50 text-gold-300/80 px-1.5 py-0.5 rounded border border-white/10">⌘K</kbd>
+        </button>
+
+        <!-- Currency toggle mobile icon button -->
+        <button onclick="toggleCurrency()" class="lg:hidden p-2 text-zinc-300 hover:text-gold-300 transition-colors font-mono text-xs font-bold border border-white/10 rounded-full px-2.5 py-1 bg-black/40" title="Switch Currency">
+          <span id="mobileTopCurrencyIndicator">PKR</span>
+        </button>
+
+        <!-- Wishlist Button -->
+        <button onclick="openWishlistModal()" class="relative p-2 text-zinc-300 hover:text-gold-300 transition-colors cursor-pointer" title="View Wishlist" aria-label="View Wishlist">
+          <i class="fa-regular fa-heart text-lg"></i>
+          <span id="wishlistCountBadge" class="hidden absolute -top-1 -right-1 w-4 h-4 rounded-full bg-rose-600 text-[10px] font-bold text-white flex items-center justify-center font-mono">0</span>
+        </button>
+
+        <!-- Cart Trigger Button -->
+        <button onclick="toggleCartDrawer(true)" class="relative flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full border border-gold-400/30 bg-gradient-to-r from-emeraldMid/80 to-emeraldDark/80 hover:border-gold-400 text-gold-200 transition-all shadow-lg shadow-gold-500/10 group cursor-pointer" aria-label="Open Shopping Bag">
+          <i class="fa-solid fa-bag-shopping text-base text-gold-400 group-hover:scale-110 transition-transform"></i>
+          <span class="hidden sm:inline-block text-xs font-semibold tracking-wider font-mono">BAG</span>
+          <span id="cartCountBadge" class="w-5 h-5 rounded-full bg-gold-400 text-noir text-xs font-bold flex items-center justify-center font-mono">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Navigation -->
+  <div id="mobileMenu" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md transition-all duration-300 opacity-0 pointer-events-none">
+    <div class="w-4/5 max-w-sm h-full bg-noir border-r border-gold-400/20 p-6 flex flex-col justify-between transform -translate-x-full transition-transform duration-300" id="mobileMenuContent">
+      <div>
+        <div class="flex items-center justify-between pb-6 border-b border-gold-400/20">
+          <span class="font-display text-xl tracking-widest text-gold-300">ZULVERA</span>
+          <button onclick="toggleMobileMenu()" class="text-zinc-400 hover:text-white text-2xl p-1 cursor-pointer" aria-label="Close Menu">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <nav class="mt-8 flex flex-col gap-3 text-sm tracking-widest uppercase font-medium">
+          <a href="#featured" onclick="toggleMobileMenu()" class="text-zinc-200 hover:text-gold-300 py-2.5 border-b border-white/5 flex items-center justify-between">
+            <span>Featured Gems</span>
+            <i class="fa-solid fa-angle-right text-xs text-gold-400"></i>
+          </a>
+          <a href="#catalog" onclick="filterCategory('all'); toggleMobileMenu()" class="text-zinc-200 hover:text-gold-300 py-2.5 border-b border-white/5 flex items-center justify-between">
+            <span>All Masterpieces</span>
+            <i class="fa-solid fa-angle-right text-xs text-gold-400"></i>
+          </a>
+          <a href="#catalog" onclick="filterCategory('perfumes'); toggleMobileMenu()" class="text-zinc-200 hover:text-gold-300 py-2.5 border-b border-white/5 flex items-center justify-between">
+            <span>French Perfumes</span>
+            <i class="fa-solid fa-angle-right text-xs text-gold-400"></i>
+          </a>
+          <a href="#catalog" onclick="filterCategory('skincare'); toggleMobileMenu()" class="text-zinc-200 hover:text-gold-300 py-2.5 border-b border-white/5 flex items-center justify-between">
+            <span>Rare Botanicals</span>
+            <i class="fa-solid fa-angle-right text-xs text-gold-400"></i>
+          </a>
+          <a href="#catalog" onclick="filterCategory('tools'); toggleMobileMenu()" class="text-zinc-200 hover:text-gold-300 py-2.5 border-b border-white/5 flex items-center justify-between">
+            <span>Artisan Tools</span>
+            <i class="fa-solid fa-angle-right text-xs text-gold-400"></i>
+          </a>
+          <a href="#rituals" onclick="toggleMobileMenu()" class="text-zinc-200 hover:text-gold-300 py-2.5 border-b border-white/5 flex items-center justify-between">
+            <span>Daily Rituals</span>
+            <i class="fa-solid fa-angle-right text-xs text-gold-400"></i>
+          </a>
+          <a href="#reviews" onclick="toggleMobileMenu()" class="text-zinc-200 hover:text-gold-300 py-2.5 border-b border-white/5 flex items-center justify-between">
+            <span>Client Praise</span>
+            <i class="fa-solid fa-angle-right text-xs text-gold-400"></i>
+          </a>
+        </nav>
+      </div>
+      <div class="pt-6 border-t border-gold-400/20 text-xs font-mono text-zinc-400 space-y-3">
+        <button onclick="toggleCurrency()" class="w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl bg-emeraldMid/50 border border-white/10 text-white cursor-pointer">
+          <span class="flex items-center gap-2"><i class="fa-solid fa-globe text-gold-400"></i> Currency</span>
+          <span id="mobileCurrencyDisplay" class="text-gold-300 font-bold">PKR (₨)</span>
+        </button>
+        <p class="text-[11px] text-center text-zinc-500">Free Tracked Delivery on Orders Above ₨ 30,000</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="relative min-h-[88vh] flex items-center justify-center overflow-hidden pt-8 pb-16 sm:pt-12 sm:pb-20 px-4 sm:px-6">
+    <!-- Ambient glowing orbs -->
+    <div class="absolute top-1/4 left-1/10 w-72 sm:w-96 h-72 sm:h-96 bg-gold-400/10 rounded-full blur-[100px] pointer-events-none animate-pulse-soft"></div>
+    <div class="absolute bottom-1/4 right-1/10 w-80 sm:w-[450px] h-80 sm:h-[450px] bg-emeraldMid/35 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <!-- Geometric Luxury Overlay Borders (Desktop) -->
+    <div class="absolute inset-x-8 top-12 bottom-12 border border-gold-400/10 rounded-3xl pointer-events-none hidden lg:block">
+      <div class="absolute -top-1.5 -left-1.5 w-3 h-3 bg-gold-400/40 rounded-full"></div>
+      <div class="absolute -top-1.5 -right-1.5 w-3 h-3 bg-gold-400/40 rounded-full"></div>
+      <div class="absolute -bottom-1.5 -left-1.5 w-3 h-3 bg-gold-400/40 rounded-full"></div>
+      <div class="absolute -bottom-1.5 -right-1.5 w-3 h-3 bg-gold-400/40 rounded-full"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
+      
+      <!-- Left Column: Copywriting -->
+      <div class="lg:col-span-7 text-center lg:text-left space-y-5 sm:space-y-6">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-gold-400/30 bg-emeraldMid/30 text-gold-300 text-[11px] sm:text-xs font-mono tracking-widest uppercase">
+          <i class="fa-solid fa-crown text-gold-400"></i>
+          <span>The New Standard of Personal Luxury</span>
+        </div>
+
+        <h1 class="font-serif text-3xl sm:text-5xl xl:text-6xl font-bold leading-[1.15] tracking-tight">
+          Where Sensorial Alchemy Meets <br class="hidden sm:inline">
+          <span class="gold-gradient-text italic font-serif">Timeless Grandeur.</span>
+        </h1>
+
+        <p class="text-zinc-300 text-sm sm:text-base lg:text-lg max-w-2xl font-normal leading-relaxed mx-auto lg:mx-0">
+          Immerse yourself in Zulvera’s artisanal collection of extrait de parfums, cell-renewing golden elixirs, and precision ergonomic daily grooming tools crafted for pure ritualistic indulgence.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="pt-3 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4">
+          <a href="#catalog" class="w-full sm:w-auto px-7 py-3.5 sm:py-4 rounded-full gold-button-gradient text-noir font-bold text-xs sm:text-sm tracking-widest uppercase flex items-center justify-center gap-3 shadow-xl cursor-pointer">
+            <span>Explore The Collection</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="#rituals" class="w-full sm:w-auto px-7 py-3.5 sm:py-4 rounded-full border border-gold-400/30 hover:border-gold-400 text-gold-200 font-medium text-xs sm:text-sm tracking-widest uppercase hover:bg-emeraldMid/30 transition-all flex items-center justify-center gap-2 cursor-pointer">
+            <i class="fa-solid fa-wand-magic-sparkles text-gold-400"></i>
+            <span>The Zulvera Ritual</span>
+          </a>
+        </div>
+
+        <!-- Social Proof Stats -->
+        <div class="pt-6 sm:pt-8 border-t border-gold-400/15 grid grid-cols-3 gap-3 sm:gap-6 text-center lg:text-left max-w-lg mx-auto lg:mx-0">
+          <div>
+            <div class="font-serif text-xl sm:text-3xl font-bold text-gold-300">100%</div>
+            <div class="text-[10px] sm:text-[11px] font-mono text-zinc-400 uppercase tracking-wider mt-1">Pure Botanicals</div>
+          </div>
+          <div>
+            <div class="font-serif text-xl sm:text-3xl font-bold text-gold-300">24+ Hrs</div>
+            <div class="text-[10px] sm:text-[11px] font-mono text-zinc-400 uppercase tracking-wider mt-1">Sillage & Longevity</div>
+          </div>
+          <div>
+            <div class="font-serif text-xl sm:text-3xl font-bold text-gold-300">4.96 ★</div>
+            <div class="text-[10px] sm:text-[11px] font-mono text-zinc-400 uppercase tracking-wider mt-1">Client Praise</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Interactive Hero Showcase Visual -->
+      <div class="lg:col-span-5 relative flex justify-center mt-4 lg:mt-0">
+        <!-- Floating decorative badge -->
+        <div class="hidden sm:block absolute -top-4 -right-2 z-20 glass-noir rounded-2xl p-3 sm:p-4 border border-gold-400/40 shadow-2xl animate-float-slow max-w-[210px]">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-full bg-gold-400/20 text-gold-300 flex items-center justify-center text-sm">
+              <i class="fa-solid fa-sparkles"></i>
+            </div>
+            <div>
+              <p class="text-[11px] font-bold text-gold-200 uppercase tracking-wider">Top Fragrance</p>
+              <p class="text-[10px] text-zinc-400">Sovereign Amber Noire</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Hero Card Container -->
+        <div class="relative w-full max-w-sm sm:max-w-md rounded-3xl p-2.5 sm:p-3 glass-gold-subtle gold-border-glow">
+          <div class="relative w-full h-[380px] sm:h-[460px] rounded-2xl overflow-hidden shadow-2xl border border-gold-400/30">
+            <img src="/campaign/2026/zulvera/hero.png" alt="Zulvera Luxury Fragrances and Skincare Collection" class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700" loading="eager" fetchpriority="high">
+            <div class="absolute inset-0 bg-gradient-to-t from-noir via-transparent to-noir/20"></div>
+            
+            <div class="absolute bottom-4 inset-x-4 glass-noir rounded-xl p-3.5 sm:p-4 border border-gold-400/30">
+              <div class="flex items-center justify-between gap-3">
+                <div class="min-w-0">
+                  <span class="text-[9px] sm:text-[10px] font-mono tracking-widest text-gold-400 uppercase block truncate">Featured Limited Edition</span>
+                  <h3 class="font-serif text-base sm:text-lg font-bold text-white truncate">Sovereign Amber & 24K Set</h3>
+                  <p class="text-xs text-zinc-300 font-mono mt-0.5" id="heroPriceTag">₨ 38,500 <span class="line-through text-zinc-500 text-[11px]">₨ 45,000</span></p>
+                </div>
+                <button onclick="quickAddToCart('p1')" class="px-3.5 py-2 rounded-lg gold-button-gradient text-noir font-bold text-xs flex items-center gap-1.5 shadow-md shrink-0 cursor-pointer">
+                  <i class="fa-solid fa-bag-shopping"></i>
+                  <span>Add</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating badge bottom-left -->
+        <div class="hidden sm:block absolute -bottom-4 -left-2 z-20 glass-noir rounded-2xl p-3 sm:p-3.5 border border-gold-400/40 shadow-2xl animate-float-reverse max-w-[220px]">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-full bg-emeraldMid text-emerald-400 flex items-center justify-center text-sm border border-emerald-500/30">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <div>
+              <p class="text-[11px] font-bold text-white">Guaranteed Authentic</p>
+              <p class="text-[10px] text-zinc-400">Bottled in Grasse & Paris</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= MARQUEE VALUE PROPOSITION ================= -->
+  <div class="relative py-3.5 sm:py-4 bg-emeraldDark/90 border-y border-gold-400/20 overflow-hidden">
+    <div class="flex whitespace-nowrap animate-marquee items-center gap-8 sm:gap-12 text-[11px] sm:text-xs font-mono tracking-[0.22em] text-gold-300/80 uppercase">
+      <span>✦ Extrait De Parfum (35% Pure Oil)</span>
+      <span>✦ Handcrafted Solid Rose Quartz Tools</span>
+      <span>✦ Wild Bulgarian Rose & Calabrian Bergamot</span>
+      <span>✦ Cash on Delivery Across Pakistan</span>
+      <span>✦ Ultra-Fast 24-48h Insured Courier</span>
+      <span>✦ Bespoke Gold Lacquered Presentation Box</span>
+      <span>✦ Extrait De Parfum (35% Pure Oil)</span>
+      <span>✦ Handcrafted Solid Rose Quartz Tools</span>
+      <span>✦ Wild Bulgarian Rose & Calabrian Bergamot</span>
+      <span>✦ Cash on Delivery Across Pakistan</span>
+      <span>✦ Ultra-Fast 24-48h Insured Courier</span>
+      <span>✦ Bespoke Gold Lacquered Presentation Box</span>
+    </div>
+  </div>
+
+  <!-- ================= HIGHLIGHTED CATEGORIES PREVIEW ================= -->
+  <section id="featured" class="py-16 sm:py-20 px-4 sm:px-6 max-w-7xl mx-auto scroll-mt-20">
+    <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16 space-y-2.5">
+      <span class="text-xs font-mono uppercase tracking-[0.3em] text-gold-400">Curated Haute Pillars</span>
+      <h2 class="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight">The Three Pillars of Zulvera</h2>
+      <p class="text-zinc-400 text-xs sm:text-sm md:text-base">Indulge across our signature disciplines, created without compromise for your everyday sanctuary.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+      
+      <!-- Pillar 1: Haute Perfumery -->
+      <div onclick="filterCategory('perfumes')" class="group relative rounded-3xl overflow-hidden glass-noir border border-gold-400/20 p-6 sm:p-8 cursor-pointer luxury-card flex flex-col justify-between h-[380px] sm:h-[420px]">
+        <div class="absolute inset-0 bg-gradient-to-t from-noir via-noir/65 to-transparent z-10"></div>
+        <img src="/campaign/2026/zulvera/perfume-amber.jpg" alt="Zulvera Perfumes Collection" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 opacity-60" loading="lazy">
+        
+        <div class="relative z-20 flex justify-between items-start">
+          <span class="text-[10px] sm:text-[11px] font-mono uppercase tracking-widest text-gold-400 bg-black/70 px-3 py-1 rounded-full border border-gold-400/30">01 / Scents</span>
+          <span class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gold-400/10 border border-gold-400/40 text-gold-300 flex items-center justify-center text-sm group-hover:bg-gold-400 group-hover:text-noir transition-all">
+            <i class="fa-solid fa-arrow-up-right"></i>
+          </span>
+        </div>
+
+        <div class="relative z-20 space-y-2">
+          <h3 class="font-serif text-xl sm:text-2xl font-bold text-white group-hover:text-gold-200 transition-colors">Haute Parfumerie</h3>
+          <p class="text-xs text-zinc-300 leading-relaxed font-light">
+            Extrait concentrations blended with Grasse florals, Cambodian agarwood, and ambergris crystals that linger endlessly.
+          </p>
+          <span class="inline-block pt-1 text-xs font-mono text-gold-400 tracking-wider">Explore Scents →</span>
+        </div>
+      </div>
+
+      <!-- Pillar 2: Rare Botanical Skincare -->
+      <div onclick="filterCategory('skincare')" class="group relative rounded-3xl overflow-hidden glass-noir border border-gold-400/20 p-6 sm:p-8 cursor-pointer luxury-card flex flex-col justify-between h-[380px] sm:h-[420px]">
+        <div class="absolute inset-0 bg-gradient-to-t from-noir via-noir/65 to-transparent z-10"></div>
+        <img src="/campaign/2026/zulvera/gold-serum.jpg" alt="Zulvera Skincare Elixirs" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 opacity-60" loading="lazy">
+        
+        <div class="relative z-20 flex justify-between items-start">
+          <span class="text-[10px] sm:text-[11px] font-mono uppercase tracking-widest text-gold-400 bg-black/70 px-3 py-1 rounded-full border border-gold-400/30">02 / Alchemy</span>
+          <span class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gold-400/10 border border-gold-400/40 text-gold-300 flex items-center justify-center text-sm group-hover:bg-gold-400 group-hover:text-noir transition-all">
+            <i class="fa-solid fa-arrow-up-right"></i>
+          </span>
+        </div>
+
+        <div class="relative z-20 space-y-2">
+          <h3 class="font-serif text-xl sm:text-2xl font-bold text-white group-hover:text-gold-200 transition-colors">Elixir Botanica</h3>
+          <p class="text-xs text-zinc-300 leading-relaxed font-light">
+            24-karat bioactive gold leaf, botanical bakuchiol, and multi-molecular peptide creams for instant cellular radiance.
+          </p>
+          <span class="inline-block pt-1 text-xs font-mono text-gold-400 tracking-wider">Explore Skincare →</span>
+        </div>
+      </div>
+
+      <!-- Pillar 3: Daily Tools & Grooming -->
+      <div onclick="filterCategory('tools')" class="group relative rounded-3xl overflow-hidden glass-noir border border-gold-400/20 p-6 sm:p-8 cursor-pointer luxury-card flex flex-col justify-between h-[380px] sm:h-[420px]">
+        <div class="absolute inset-0 bg-gradient-to-t from-noir via-noir/65 to-transparent z-10"></div>
+        <img src="/campaign/2026/zulvera/quartz-roller.jpg" alt="Zulvera Daily Care Tools" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 opacity-60" loading="lazy">
+        
+        <div class="relative z-20 flex justify-between items-start">
+          <span class="text-[10px] sm:text-[11px] font-mono uppercase tracking-widest text-gold-400 bg-black/70 px-3 py-1 rounded-full border border-gold-400/30">03 / Precision</span>
+          <span class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gold-400/10 border border-gold-400/40 text-gold-300 flex items-center justify-center text-sm group-hover:bg-gold-400 group-hover:text-noir transition-all">
+            <i class="fa-solid fa-arrow-up-right"></i>
+          </span>
+        </div>
+
+        <div class="relative z-20 space-y-2">
+          <h3 class="font-serif text-xl sm:text-2xl font-bold text-white group-hover:text-gold-200 transition-colors">Artisan Instruments</h3>
+          <p class="text-xs text-zinc-300 leading-relaxed font-light">
+            Sculpting Brazilian rose quartz rollers, volcanic obsidian gua shas, and Japanese stainless precision daily grooming kits.
+          </p>
+          <span class="inline-block pt-1 text-xs font-mono text-gold-400 tracking-wider">Explore Tools →</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= MAIN PRODUCT CATALOG & FILTERS ================= -->
+  <section id="catalog" class="py-12 sm:py-16 px-4 sm:px-6 max-w-7xl mx-auto scroll-mt-20">
+    
+    <!-- Header & Interactive Category Tabs -->
+    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 border-b border-gold-400/20">
+      <div>
+        <div class="flex items-center gap-2 text-xs font-mono uppercase tracking-[0.3em] text-gold-400">
+          <i class="fa-solid fa-gem"></i>
+          <span>Haute Boutique</span>
+        </div>
+        <h2 class="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold mt-1.5">Signature Masterpieces</h2>
+        <p class="text-zinc-400 text-xs sm:text-sm mt-1">Each bottle and tool is numbered, certified, and sealed with our signature wax stamp.</p>
+      </div>
+
+      <!-- Filter Tabs: Fully scrollable and touch-friendly on mobile -->
+      <div class="flex items-center gap-2 overflow-x-auto pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 scrollbar-none">
+        <button onclick="filterCategory('all')" class="cat-btn px-4 py-2 rounded-full text-xs font-medium tracking-wider uppercase whitespace-nowrap transition-all bg-gold-400 text-noir font-bold shadow-md cursor-pointer shrink-0" data-category="all">
+          All (8)
+        </button>
+        <button onclick="filterCategory('perfumes')" class="cat-btn px-4 py-2 rounded-full text-xs font-medium tracking-wider uppercase whitespace-nowrap transition-all bg-emeraldMid/40 text-zinc-300 hover:text-white border border-white/10 cursor-pointer shrink-0" data-category="perfumes">
+          Perfumes
+        </button>
+        <button onclick="filterCategory('skincare')" class="cat-btn px-4 py-2 rounded-full text-xs font-medium tracking-wider uppercase whitespace-nowrap transition-all bg-emeraldMid/40 text-zinc-300 hover:text-white border border-white/10 cursor-pointer shrink-0" data-category="skincare">
+          Skincare & Serums
+        </button>
+        <button onclick="filterCategory('tools')" class="cat-btn px-4 py-2 rounded-full text-xs font-medium tracking-wider uppercase whitespace-nowrap transition-all bg-emeraldMid/40 text-zinc-300 hover:text-white border border-white/10 cursor-pointer shrink-0" data-category="tools">
+          Daily Tools
+        </button>
+      </div>
+    </div>
+
+    <!-- Live Search & Sorting Bar -->
+    <div class="py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div class="relative flex-1 max-w-md">
+        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gold-400 text-xs pointer-events-none"></i>
+        <input type="text" id="liveSearchInput" oninput="handleLiveSearch(this.value)" placeholder="Search perfumes, gold elixirs, rollers..." class="w-full pl-10 pr-4 py-2.5 rounded-full bg-emeraldMid/30 border border-gold-400/20 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-gold-400 transition-colors">
+      </div>
+
+      <div class="flex items-center gap-3">
+        <label for="catalogSortSelect" class="text-xs text-zinc-400 font-mono shrink-0">SORT BY:</label>
+        <select id="catalogSortSelect" onchange="handleSortChange(this.value)" class="bg-noir border border-gold-400/20 text-xs text-zinc-200 py-2 px-3 rounded-xl focus:outline-none focus:border-gold-400 cursor-pointer">
+          <option value="featured">Featured Curations</option>
+          <option value="price-asc">Price: Modest to Opulent</option>
+          <option value="price-desc">Price: Opulent to Modest</option>
+          <option value="rating">Client Acclaim (Rating)</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Products Grid Container -->
+    <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7 pt-3">
+      <!-- Injected Dynamically by JavaScript -->
+    </div>
+
+    <!-- Empty Results Fallback -->
+    <div id="noProductsFound" class="hidden py-20 text-center glass-noir rounded-3xl border border-white/10 max-w-lg mx-auto mt-6">
+      <i class="fa-regular fa-compass text-4xl text-gold-400/50 mb-3"></i>
+      <h4 class="font-serif text-xl font-semibold text-white">No Creations Found</h4>
+      <p class="text-xs text-zinc-400 mt-1">Refine your query or browse our classic categories above.</p>
+      <button onclick="filterCategory('all'); document.getElementById('liveSearchInput').value='';" class="mt-4 px-5 py-2 rounded-full gold-button-gradient text-noir text-xs font-bold uppercase tracking-wider cursor-pointer">
+        Reset Search
+      </button>
+    </div>
+
+  </section>
+
+  <!-- ================= LUXURY STORY & INGREDIENT SPOTLIGHT ================= -->
+  <section class="py-16 sm:py-20 bg-gradient-to-b from-noir via-emeraldDark to-noir border-y border-gold-400/20 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      
+      <div class="lg:col-span-6 relative">
+        <div class="relative mx-auto max-w-md lg:max-w-none">
+          <div class="rounded-3xl overflow-hidden border border-gold-400/30 glass-noir shadow-2xl p-2">
+            <img src="/campaign/2026/zulvera/alchemy-artisan.jpg" alt="Botanical Perfumer Crafting at Grasse Atelier" class="rounded-2xl w-full h-[360px] sm:h-[460px] object-cover" loading="lazy">
+          </div>
+          <div class="absolute -bottom-5 -right-3 glass-noir p-4 sm:p-5 rounded-2xl border border-gold-400/40 shadow-xl max-w-xs hidden sm:block">
+            <div class="flex items-center gap-3">
+              <i class="fa-solid fa-award text-gold-300 text-2xl"></i>
+              <div>
+                <h5 class="text-xs font-bold text-white uppercase tracking-wider">Crafted In Micro-Batches</h5>
+                <p class="text-[11px] text-zinc-400">Never mass produced. Only 500 bottles per seasonal harvest.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-6 space-y-5 sm:space-y-6">
+        <span class="text-xs font-mono uppercase tracking-[0.3em] text-gold-400">The Alchemy Behind Zulvera</span>
+        <h2 class="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+          Rare Extracts Sourced From The Far Corners of Earth.
+        </h2>
+        <p class="text-zinc-300 text-xs sm:text-sm lg:text-base leading-relaxed">
+          At Zulvera, beauty is not manufactured — it is unhurriedly distilled. We harvest wild Damask Roses at pre-dawn in the Isparta valley, age Cambodian Dehn Al Oud for ten years in charred barrels, and engineer daily sculpting instruments using pure volcanic obsidian and healing Brazilian rose quartz.
+        </p>
+
+        <!-- Feature List -->
+        <div class="space-y-3.5 pt-1">
+          <div class="flex items-start gap-3.5 p-3.5 sm:p-4 rounded-2xl glass-noir border border-white/5">
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gold-400/10 text-gold-300 flex items-center justify-center shrink-0 border border-gold-400/30">
+              <i class="fa-solid fa-leaf"></i>
+            </div>
+            <div>
+              <h4 class="text-sm font-bold text-white">Botanical Integrity</h4>
+              <p class="text-xs text-zinc-400 mt-0.5">Free from parabens, synthetic dyes, phthalates, and aggressive sulfates.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3.5 p-3.5 sm:p-4 rounded-2xl glass-noir border border-white/5">
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gold-400/10 text-gold-300 flex items-center justify-center shrink-0 border border-gold-400/30">
+              <i class="fa-solid fa-flask"></i>
+            </div>
+            <div>
+              <h4 class="text-sm font-bold text-white">Unmatched 35% Extrait Density</h4>
+              <p class="text-xs text-zinc-400 mt-0.5">Three times more concentrated than commercial eau de parfums for enduring sillage.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3.5 p-3.5 sm:p-4 rounded-2xl glass-noir border border-white/5">
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gold-400/10 text-gold-300 flex items-center justify-center shrink-0 border border-gold-400/30">
+              <i class="fa-solid fa-gem"></i>
+            </div>
+            <div>
+              <h4 class="text-sm font-bold text-white">Grade-AAA Gemstone Tools</h4>
+              <p class="text-xs text-zinc-400 mt-0.5">Each stone is hand-carved and welded with non-squeak rose gold zinc alloy joints.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= THE DAILY RITUAL (HOW IT WORKS) ================= -->
+  <section id="rituals" class="py-16 sm:py-20 px-4 sm:px-6 max-w-7xl mx-auto scroll-mt-20">
+    <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16 space-y-2.5">
+      <span class="text-xs font-mono uppercase tracking-[0.3em] text-gold-400">Sensory Journey</span>
+      <h2 class="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold">The 3-Step Zulvera Ritual</h2>
+      <p class="text-zinc-400 text-xs sm:text-sm">Transform your morning and evening routines into an empowering royal coronation.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 relative">
+      <!-- Step 1 -->
+      <div class="glass-noir rounded-3xl p-6 sm:p-8 border border-gold-400/20 relative luxury-card">
+        <div class="font-serif text-4xl sm:text-5xl font-bold text-gold-400/30 mb-3 sm:mb-4">01</div>
+        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-gold-400/10 text-gold-300 flex items-center justify-center text-lg sm:text-xl mb-4 border border-gold-400/30">
+          <i class="fa-solid fa-droplet"></i>
+        </div>
+        <h3 class="font-serif text-lg sm:text-xl font-bold text-white mb-1.5">Prime & Nurture</h3>
+        <p class="text-xs text-zinc-300 leading-relaxed">
+          Warm 3 drops of our 24K Saffron Radiance Elixir between your palms. Press gently onto freshly cleansed cheeks, forehead, and décolletage to activate cellular hydration.
+        </p>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="glass-noir rounded-3xl p-6 sm:p-8 border border-gold-400/20 relative luxury-card">
+        <div class="font-serif text-4xl sm:text-5xl font-bold text-gold-400/30 mb-3 sm:mb-4">02</div>
+        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-gold-400/10 text-gold-300 flex items-center justify-center text-lg sm:text-xl mb-4 border border-gold-400/30">
+          <i class="fa-solid fa-spa"></i>
+        </div>
+        <h3 class="font-serif text-lg sm:text-xl font-bold text-white mb-1.5">Sculpt & Drain</h3>
+        <p class="text-xs text-zinc-300 leading-relaxed">
+          Glide the chilled Rose Quartz Sculpting Roller upward along the jawline and cheekbones for 4 minutes. Stimulate lymphatic drainage and chisel contours naturally.
+        </p>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="glass-noir rounded-3xl p-6 sm:p-8 border border-gold-400/20 relative luxury-card">
+        <div class="font-serif text-4xl sm:text-5xl font-bold text-gold-400/30 mb-3 sm:mb-4">03</div>
+        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-gold-400/10 text-gold-300 flex items-center justify-center text-lg sm:text-xl mb-4 border border-gold-400/30">
+          <i class="fa-solid fa-wind"></i>
+        </div>
+        <h3 class="font-serif text-lg sm:text-xl font-bold text-white mb-1.5">Anoint & Magnetize</h3>
+        <p class="text-xs text-zinc-300 leading-relaxed">
+          Mist our Extrait De Parfum at pulse points — clavicle, wrists, and behind ears. Let warmth body chemistry weave your signature, captivating magnetic aura.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CLIENT REVIEWS / TESTIMONIALS ================= -->
+  <section id="reviews" class="py-16 sm:py-20 bg-emeraldDark/40 border-t border-gold-400/20 px-4 sm:px-6 scroll-mt-20">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-12 gap-4">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-[0.3em] text-gold-400">Patron Acclaim</span>
+          <h2 class="font-serif text-2xl sm:text-4xl font-bold mt-1">Echoes From Our Circle</h2>
+        </div>
+        <div class="flex items-center gap-2 text-gold-300 text-xs sm:text-sm font-mono">
+          <div class="flex text-gold-400">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <span>4.98 / 5.0 (1,840+ Verified Reviews)</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Review 1 -->
+        <div class="glass-noir p-5 sm:p-6 rounded-3xl border border-gold-400/20 space-y-3.5">
+          <div class="flex items-center justify-between">
+            <div class="flex text-gold-400 text-xs">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <span class="text-[10px] font-mono text-zinc-500">Verified Buyer &bull; Lahore</span>
+          </div>
+          <p class="text-xs text-zinc-200 leading-relaxed italic">
+            "Sovereign Amber Noire is mesmerizing. I sprayed it before a gala in Islamabad at 7 PM, and the next morning after waking up, the dry-down of Madagascar vanilla and smokey oud was still dancing in the room. Worth every single rupee."
+          </p>
+          <div class="flex items-center gap-3 pt-2 border-t border-white/5">
+            <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-gold-400/20 text-gold-300 flex items-center justify-center font-serif font-bold text-xs">
+              AK
+            </div>
+            <div>
+              <p class="text-xs font-bold text-white">Amina Khan</p>
+              <p class="text-[10px] text-gold-400 font-mono">Purchased: Sovereign Amber Noire</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="glass-noir p-5 sm:p-6 rounded-3xl border border-gold-400/20 space-y-3.5">
+          <div class="flex items-center justify-between">
+            <div class="flex text-gold-400 text-xs">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <span class="text-[10px] font-mono text-zinc-500">Verified Buyer &bull; Karachi</span>
+          </div>
+          <p class="text-xs text-zinc-200 leading-relaxed italic">
+            "The 24K Saffron Elixir paired with the Rose Quartz Gua Sha has completely replaced my expensive aesthetician visits. My cheekbones look naturally contoured and my morning puffiness vanishes within minutes."
+          </p>
+          <div class="flex items-center gap-3 pt-2 border-t border-white/5">
+            <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-gold-400/20 text-gold-300 flex items-center justify-center font-serif font-bold text-xs">
+              ZM
+            </div>
+            <div>
+              <p class="text-xs font-bold text-white">Zainab Mansoor</p>
+              <p class="text-[10px] text-gold-400 font-mono">Purchased: Saffron Elixir + Gua Sha</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="glass-noir p-5 sm:p-6 rounded-3xl border border-gold-400/20 space-y-3.5">
+          <div class="flex items-center justify-between">
+            <div class="flex text-gold-400 text-xs">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <span class="text-[10px] font-mono text-zinc-500">Verified Buyer &bull; Dubai</span>
+          </div>
+          <p class="text-xs text-zinc-200 leading-relaxed italic">
+            "The presentation packaging alone gives European luxury houses a run for their money. Velvet lined box, heavy crystal flacon, magnetic caps with substantial heft. Zulvera is our proudest luxury export."
+          </p>
+          <div class="flex items-center gap-3 pt-2 border-t border-white/5">
+            <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-gold-400/20 text-gold-300 flex items-center justify-center font-serif font-bold text-xs">
+              TR
+            </div>
+            <div>
+              <p class="text-xs font-bold text-white">Tariq Rehman</p>
+              <p class="text-[10px] text-gold-400 font-mono">Purchased: Royal Elysium Set</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= VIP NEWSLETTER & CONCIERGE ================= -->
+  <section class="py-16 sm:py-20 px-4 sm:px-6 relative overflow-hidden">
+    <div class="max-w-4xl mx-auto glass-gold-subtle rounded-3xl p-6 sm:p-12 text-center border border-gold-400/40 relative">
+      <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gold-400/20 text-gold-300 mx-auto flex items-center justify-center text-xl sm:text-2xl mb-4 border border-gold-400/30">
+        <i class="fa-solid fa-envelope-open-text"></i>
+      </div>
+      <span class="text-xs font-mono uppercase tracking-[0.3em] text-gold-400">The Secret Society</span>
+      <h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-white mt-1.5">Become a Zulvera Private Member</h2>
+      <p class="text-zinc-300 text-xs sm:text-sm max-w-xl mx-auto mt-2 leading-relaxed">
+        Receive private invites to seasonal small-batch drops, bespoke monogramming service, and a 15% privileges voucher on your first order.
+      </p>
+
+      <form onsubmit="handleNewsletterSubmit(event)" class="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+        <input type="email" id="newsletterEmail" required placeholder="Enter your private email..." class="flex-1 px-5 py-3.5 rounded-full bg-black/60 border border-gold-400/30 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-gold-400">
+        <button type="submit" class="px-7 py-3.5 rounded-full gold-button-gradient text-noir font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 shadow-lg cursor-pointer">
+          <span>Join Circle</span>
+          <i class="fa-solid fa-arrow-right text-xs"></i>
+        </button>
+      </form>
+      <div id="newsletterSuccessMsg" class="hidden mt-4 text-xs font-mono text-emerald-400 flex items-center justify-center gap-2">
+        <i class="fa-solid fa-circle-check"></i>
+        <span>Welcome to the Zulvera Circle. Your 15% code is: <strong>ROYALNOIR</strong></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LUXURY FOOTER ================= -->
+  <footer class="bg-noir border-t border-gold-400/20 pt-14 pb-12 px-4 sm:px-6 text-zinc-400 text-xs">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10 pb-12 border-b border-white/5">
+      
+      <!-- Col 1: Brand Info -->
+      <div class="lg:col-span-2 space-y-4">
+        <span class="font-display text-2xl tracking-[0.22em] font-bold text-gold-300 uppercase">ZULVERA</span>
+        <p class="text-zinc-400 text-xs leading-relaxed max-w-sm">
+          A bespoke house dedicated to the fine craft of French haute parfumerie, cold-pressed botanical skincare elixirs, and precision personal care tools designed to elevate the everyday.
+        </p>
+        <div class="flex items-center gap-3 text-sm text-gold-400 pt-2">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-emeraldMid flex items-center justify-center hover:bg-gold-400 hover:text-noir transition-all" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-emeraldMid flex items-center justify-center hover:bg-gold-400 hover:text-noir transition-all" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-emeraldMid flex items-center justify-center hover:bg-gold-400 hover:text-noir transition-all" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+          <a href="https://wa.me/923008492026?text=Hello%20Zulvera%20Atelier,%20I%20would%20like%20to%20inquire%20about%20your%20perfumes." target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-emeraldMid flex items-center justify-center hover:bg-gold-400 hover:text-noir transition-all" aria-label="WhatsApp Concierge"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <!-- Col 2: Categories -->
+      <div class="space-y-3">
+        <h4 class="font-mono text-xs font-bold text-gold-300 uppercase tracking-widest">Collections</h4>
+        <ul class="space-y-2">
+          <li><a href="#catalog" onclick="filterCategory('perfumes')" class="hover:text-gold-200 transition-colors">Extrait de Parfums</a></li>
+          <li><a href="#catalog" onclick="filterCategory('perfumes')" class="hover:text-gold-200 transition-colors">Smoky Amber & Ouds</a></li>
+          <li><a href="#catalog" onclick="filterCategory('skincare')" class="hover:text-gold-200 transition-colors">24K Gold Saffron Elixirs</a></li>
+          <li><a href="#catalog" onclick="filterCategory('skincare')" class="hover:text-gold-200 transition-colors">Peptide Infusion Creams</a></li>
+          <li><a href="#catalog" onclick="filterCategory('tools')" class="hover:text-gold-200 transition-colors">Rose Quartz Face Sculptors</a></li>
+          <li><a href="#catalog" onclick="filterCategory('tools')" class="hover:text-gold-200 transition-colors">Artisan Grooming Sets</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Concierge -->
+      <div class="space-y-3">
+        <h4 class="font-mono text-xs font-bold text-gold-300 uppercase tracking-widest">Customer Concierge</h4>
+        <ul class="space-y-2">
+          <li><a href="javascript:void(0)" onclick="openTrackingModal()" class="hover:text-gold-200 transition-colors">Track Your Order</a></li>
+          <li><a href="javascript:void(0)" onclick="openPolicyModal('shipping')" class="hover:text-gold-200 transition-colors">Shipping & Returns Policy</a></li>
+          <li><a href="javascript:void(0)" onclick="openPolicyModal('authenticity')" class="hover:text-gold-200 transition-colors">Authenticity Verification</a></li>
+          <li><a href="javascript:void(0)" onclick="openPolicyModal('cod')" class="hover:text-gold-200 transition-colors">Cash on Delivery Info</a></li>
+          <li><a href="https://wa.me/923008492026?text=I%20would%20like%20to%20book%20a%20private%20scent%20consultation" target="_blank" rel="noopener noreferrer" class="hover:text-gold-200 transition-colors">Book Private Scent Consultation</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Boutiques -->
+      <div class="space-y-3">
+        <h4 class="font-mono text-xs font-bold text-gold-300 uppercase tracking-widest">Ateliers</h4>
+        <p class="text-zinc-400">
+          <strong class="text-zinc-200 block">Flagship Salon</strong>
+          Gulberg III, MM Alam Road, Lahore<br>
+          Daily: 11:00 AM – 10:00 PM
+        </p>
+        <p class="text-zinc-400 pt-2">
+          <strong class="text-zinc-200 block">Online Dispatch Concierge</strong>
+          WhatsApp: <a href="https://wa.me/923008492026" class="text-gold-300 hover:underline">+92 300 8492026</a><br>
+          Email: <a href="mailto:concierge@zulvera.com" class="text-gold-300 hover:underline">concierge@zulvera.com</a>
+        </p>
+      </div>
+
+    </div>
+
+    <div class="max-w-7xl mx-auto pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] font-mono text-zinc-500">
+      <p>&copy; 2026 ZULVERA HAUTE PARFUMERIE & BEAUTÉ. ALL RIGHTS RESERVED.</p>
+      <div class="flex items-center gap-6">
+        <span>Payment Secured By 256-Bit SSL</span>
+        <div class="flex items-center gap-2.5 text-zinc-400 text-sm">
+          <i class="fa-brands fa-cc-visa" title="Visa"></i>
+          <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+          <i class="fa-solid fa-money-bill-wave" title="Cash on Delivery Accepted"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= SLIDE-OVER SHOPPING BAG / CART DRAWER ================= -->
+  <div id="cartDrawerBackdrop" onclick="toggleCartDrawer(false)" class="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none"></div>
+
+  <aside id="cartDrawer" aria-label="Shopping Bag" class="fixed top-0 right-0 z-50 w-full max-w-md h-full bg-noir border-l border-gold-400/30 flex flex-col justify-between transform translate-x-full transition-transform duration-300 shadow-2xl">
+    
+    <!-- Drawer Header -->
+    <div class="p-5 sm:p-6 border-b border-gold-400/20 flex items-center justify-between bg-emeraldDark/70">
+      <div class="flex items-center gap-3">
+        <i class="fa-solid fa-bag-shopping text-gold-400 text-lg"></i>
+        <h3 class="font-serif text-lg font-bold text-white tracking-wide">Your Shopping Bag</h3>
+        <span id="drawerItemCountPill" class="text-[11px] font-mono bg-gold-400/20 text-gold-300 px-2.5 py-0.5 rounded-full border border-gold-400/30">0 Items</span>
+      </div>
+      <button onclick="toggleCartDrawer(false)" class="text-zinc-400 hover:text-white text-2xl p-1 focus:outline-none cursor-pointer" aria-label="Close Bag">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Free Delivery Progress Tracker -->
+    <div class="bg-emeraldMid/30 px-5 sm:px-6 py-3 border-b border-white/5">
+      <div class="flex items-center justify-between text-xs mb-1.5 font-mono">
+        <span id="shippingProgressText" class="text-zinc-300">Add ₨ 30,000 more for Complimentary Delivery</span>
+        <span id="shippingProgressPercent" class="text-gold-400 font-bold">0%</span>
+      </div>
+      <div class="w-full h-1.5 bg-black/60 rounded-full overflow-hidden">
+        <div id="shippingProgressBar" class="h-full bg-gradient-to-r from-gold-400 to-gold-200 transition-all duration-300 w-0"></div>
+      </div>
+    </div>
+
+    <!-- Items List Container -->
+    <div id="cartItemsList" class="flex-1 overflow-y-auto p-5 sm:p-6 space-y-4">
+      <!-- Injected Dynamically by JS -->
+    </div>
+
+    <!-- Drawer Footer / Checkout Actions -->
+    <div class="p-5 sm:p-6 border-t border-gold-400/20 bg-emeraldDark/80 space-y-3.5">
+      
+      <!-- Coupon Code Input -->
+      <div class="flex gap-2">
+        <input type="text" id="couponInput" placeholder="Promo code (e.g. ROYALNOIR)" class="flex-1 px-3 py-2 text-xs rounded-xl bg-black/50 border border-gold-400/20 text-white uppercase placeholder-zinc-500 focus:outline-none focus:border-gold-400">
+        <button onclick="applyCoupon()" class="px-4 py-2 bg-emeraldMid hover:bg-emeraldAccent border border-gold-400/30 text-gold-300 text-xs font-mono font-bold rounded-xl transition-all cursor-pointer">
+          Apply
+        </button>
+      </div>
+      <div id="couponAppliedBadge" class="hidden text-[11px] font-mono text-emerald-400 flex items-center justify-between">
+        <span>Discount Applied (-15% VIP code)</span>
+        <button onclick="removeCoupon()" class="text-zinc-400 hover:text-white underline text-[10px] cursor-pointer">Remove</button>
+      </div>
+
+      <!-- Financial Calculations -->
+      <div class="space-y-1.5 text-xs font-mono">
+        <div class="flex justify-between text-zinc-400">
+          <span>Subtotal</span>
+          <span id="cartSubtotalVal" class="text-zinc-200">₨ 0</span>
+        </div>
+        <div class="flex justify-between text-zinc-400">
+          <span>Discount</span>
+          <span id="cartDiscountVal" class="text-emerald-400">-₨ 0</span>
+        </div>
+        <div class="flex justify-between text-zinc-400">
+          <span>Insured Shipping</span>
+          <span id="cartShippingVal" class="text-zinc-200">₨ 0</span>
+        </div>
+        <div class="flex justify-between text-sm font-bold text-white pt-2 border-t border-white/10 font-serif">
+          <span>Estimated Total</span>
+          <span id="cartGrandTotalVal" class="text-gold-300 text-base font-mono font-bold">₨ 0</span>
+        </div>
+      </div>
+
+      <!-- Checkout Action Buttons -->
+      <button onclick="openCheckoutModal()" id="btnProceedCheckout" class="w-full py-3.5 sm:py-4 rounded-full gold-button-gradient text-noir font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 shadow-xl cursor-pointer">
+        <span>Proceed to Secure Checkout</span>
+        <i class="fa-solid fa-lock text-xs"></i>
+      </button>
+
+      <button onclick="toggleCartDrawer(false)" class="w-full text-center text-xs text-zinc-400 hover:text-gold-300 transition-colors py-1 cursor-pointer">
+        Continue Exploring Collections
+      </button>
+    </div>
+
+  </aside>
+
+  <!-- ================= QUICK VIEW PRODUCT MODAL ================= -->
+  <div id="quickViewModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 transition-all duration-300 opacity-0 pointer-events-none overflow-y-auto">
+    <div class="relative w-full max-w-3xl bg-noir border border-gold-400/40 rounded-3xl overflow-hidden shadow-2xl glass-noir p-5 sm:p-8 my-6 max-h-[90vh] overflow-y-auto">
+      <button onclick="closeQuickView()" class="absolute top-4 right-4 text-zinc-400 hover:text-white text-2xl z-20 p-1 cursor-pointer" aria-label="Close Preview">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center" id="quickViewContent">
+        <!-- Injected Dynamically by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= CHECKOUT MODAL (FULL FLEDGED WORKING FLOW) ================= -->
+  <div id="checkoutModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 transition-all duration-300 opacity-0 pointer-events-none overflow-y-auto">
+    <div class="relative w-full max-w-2xl bg-noir border border-gold-400/50 rounded-3xl shadow-2xl glass-noir p-5 sm:p-8 my-8 max-h-[92vh] overflow-y-auto">
+      
+      <button onclick="closeCheckoutModal()" class="absolute top-4 right-4 text-zinc-400 hover:text-white text-2xl p-1 cursor-pointer" aria-label="Close Checkout">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="flex items-center gap-3 pb-5 border-b border-gold-400/20">
+        <div class="w-10 h-10 rounded-full bg-gold-400/10 text-gold-300 flex items-center justify-center border border-gold-400/30 shrink-0">
+          <i class="fa-solid fa-shield-check text-lg"></i>
+        </div>
+        <div>
+          <h3 class="font-serif text-xl sm:text-2xl font-bold text-white">Express Checkout</h3>
+          <p class="text-[11px] sm:text-xs text-zinc-400 font-mono">Encrypted 256-Bit SSL Atelier Order Pipeline</p>
+        </div>
+      </div>
+
+      <!-- Checkout Form -->
+      <form id="checkoutForm" onsubmit="handlePlaceOrder(event)" class="space-y-5 sm:space-y-6 pt-5">
+        
+        <!-- Contact Information -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-mono font-bold text-gold-300 uppercase tracking-widest">1. Personal & Contact Details</h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+            <div>
+              <label for="orderFullName" class="text-[11px] font-mono text-zinc-400 block mb-1">FULL NAME *</label>
+              <input type="text" id="orderFullName" required placeholder="e.g. Usama Malik" class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-gold-400/20 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-gold-400">
+            </div>
+            <div>
+              <label for="orderEmail" class="text-[11px] font-mono text-zinc-400 block mb-1">EMAIL ADDRESS *</label>
+              <input type="email" id="orderEmail" required placeholder="e.g. usama@example.com" class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-gold-400/20 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-gold-400">
+            </div>
+            <div class="sm:col-span-2">
+              <label for="orderPhone" class="text-[11px] font-mono text-zinc-400 block mb-1">PHONE NUMBER (FOR DISPATCH SMS / WHATSAPP) *</label>
+              <input type="tel" id="orderPhone" required placeholder="+92 300 1234567" class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-gold-400/20 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-gold-400">
+            </div>
+          </div>
+        </div>
+
+        <!-- Shipping Destination -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-mono font-bold text-gold-300 uppercase tracking-widest">2. Destination Delivery Address</h4>
+          <div class="space-y-3">
+            <div>
+              <label for="orderAddress" class="text-[11px] font-mono text-zinc-400 block mb-1">STREET ADDRESS / HOUSE NUMBER *</label>
+              <input type="text" id="orderAddress" required placeholder="House #, Street name, Sector / Phase" class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-gold-400/20 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-gold-400">
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              <div>
+                <label for="orderCity" class="text-[11px] font-mono text-zinc-400 block mb-1">CITY *</label>
+                <input type="text" id="orderCity" required placeholder="Lahore / Karachi / Islamabad" class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-gold-400/20 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-gold-400">
+              </div>
+              <div>
+                <label for="orderPostalCode" class="text-[11px] font-mono text-zinc-400 block mb-1">POSTAL CODE</label>
+                <input type="text" id="orderPostalCode" placeholder="54000" class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-gold-400/20 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-gold-400">
+              </div>
+              <div class="col-span-2 sm:col-span-1">
+                <label for="orderCountry" class="text-[11px] font-mono text-zinc-400 block mb-1">COUNTRY</label>
+                <select id="orderCountry" class="w-full px-3 py-2.5 rounded-xl bg-black/60 border border-gold-400/20 text-xs text-white focus:outline-none focus:border-gold-400">
+                  <option value="PK">Pakistan</option>
+                  <option value="UAE">United Arab Emirates</option>
+                  <option value="US">United States</option>
+                  <option value="UK">United Kingdom</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Payment Method -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-mono font-bold text-gold-300 uppercase tracking-widest">3. Payment Preference</h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <label class="flex items-center gap-3 p-3.5 rounded-xl border border-gold-400/50 bg-emeraldMid/40 cursor-pointer">
+              <input type="radio" name="paymentMethod" value="COD" checked class="text-gold-400 focus:ring-0">
+              <div>
+                <span class="text-xs font-bold text-white block">Cash on Delivery (COD)</span>
+                <span class="text-[10px] text-zinc-400">Pay when order arrives safely</span>
+              </div>
+            </label>
+            <label class="flex items-center gap-3 p-3.5 rounded-xl border border-white/10 bg-black/40 hover:border-gold-400/30 cursor-pointer">
+              <input type="radio" name="paymentMethod" value="ONLINE" class="text-gold-400 focus:ring-0">
+              <div>
+                <span class="text-xs font-bold text-white block">Direct Bank Transfer / Card</span>
+                <span class="text-[10px] text-zinc-400">Instant VIP express processing</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Gift Message Option -->
+        <div>
+          <label for="orderNotes" class="text-[11px] font-mono text-zinc-400 block mb-1">COMPLIMENTARY CALLIGRAPHED GIFT NOTE (OPTIONAL)</label>
+          <textarea id="orderNotes" rows="2" placeholder="Write a personal note to be hand-written on embossed parchment..." class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-gold-400/20 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-gold-400"></textarea>
+        </div>
+
+        <!-- Final Summary -->
+        <div class="p-4 rounded-2xl bg-black/60 border border-gold-400/20 space-y-2 text-xs font-mono">
+          <div class="flex justify-between text-zinc-400">
+            <span>Total Payable Amount:</span>
+            <span id="checkoutPayableTotal" class="text-gold-300 text-sm font-bold">₨ 0</span>
+          </div>
+          <div class="text-[11px] text-zinc-500 flex items-center gap-1.5">
+            <i class="fa-solid fa-truck-fast text-gold-400"></i>
+            <span>Standard dispatch: 24 to 48 business hours with tracking ID.</span>
+          </div>
+        </div>
+
+        <button type="submit" id="btnSubmitOrder" class="w-full py-4 rounded-full gold-button-gradient text-noir font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 shadow-2xl cursor-pointer">
+          <span>Authorize & Place Order</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= ORDER CONFIRMATION SUCCESS MODAL ================= -->
+  <div id="orderSuccessModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 transition-all duration-300 opacity-0 pointer-events-none">
+    <div class="relative w-full max-w-md bg-noir border border-gold-400 rounded-3xl p-6 sm:p-8 text-center glass-noir shadow-2xl space-y-4">
+      <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gold-400/20 text-gold-300 mx-auto flex items-center justify-center text-2xl sm:text-3xl border border-gold-400 animate-bounce">
+        <i class="fa-solid fa-check"></i>
+      </div>
+      
+      <span class="text-xs font-mono uppercase tracking-[0.3em] text-gold-400">Congratulations</span>
+      <h3 class="font-serif text-xl sm:text-2xl font-bold text-white">Your Zulvera Order is Sealed</h3>
+      <p class="text-xs text-zinc-300 leading-relaxed">
+        Thank you for choosing Zulvera. Our master blenders are preparing your order with utmost reverence and sealing your parcel in our signature gold lacquered presentation box.
+      </p>
+
+      <div class="p-3.5 rounded-xl bg-black/70 border border-gold-400/30 text-xs font-mono space-y-1">
+        <div class="flex justify-between text-zinc-400">
+          <span>Tracking Reference:</span>
+          <span id="successOrderNumber" class="text-gold-300 font-bold">#ZLV-2026-9481</span>
+        </div>
+        <div class="flex justify-between text-zinc-400">
+          <span>Total Amount:</span>
+          <span id="successOrderAmount" class="text-white">₨ 38,500</span>
+        </div>
+      </div>
+
+      <button onclick="closeOrderSuccessModal()" class="w-full py-3.5 rounded-full gold-button-gradient text-noir font-bold text-xs uppercase tracking-wider cursor-pointer">
+        Return to Atelier
+      </button>
+    </div>
+  </div>
+
+  <!-- ================= SEARCH OVERLAY MODAL ================= -->
+  <div id="searchOverlayModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md p-4 sm:p-8 flex flex-col items-center transition-all duration-300 opacity-0 pointer-events-none">
+    <div class="w-full max-w-2xl relative">
+      <button onclick="closeSearchModal()" class="absolute -top-12 right-0 text-zinc-400 hover:text-white text-2xl p-1 cursor-pointer">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="relative">
+        <i class="fa-solid fa-magnifying-glass absolute left-5 top-1/2 -translate-y-1/2 text-gold-400 text-lg"></i>
+        <input type="text" id="modalSearchInput" oninput="handleModalSearch(this.value)" placeholder="Search perfumes, gold elixirs, jade rollers, notes..." class="w-full pl-14 pr-6 py-3.5 sm:py-4 rounded-2xl bg-emeraldMid/40 border border-gold-400/40 text-sm sm:text-base text-white placeholder-zinc-500 focus:outline-none focus:border-gold-300 shadow-2xl">
+      </div>
+
+      <div id="modalSearchResults" class="mt-4 sm:mt-6 space-y-2.5 max-h-[60vh] overflow-y-auto">
+        <!-- Live modal search items -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= POLICY MODAL ================= -->
+  <div id="policyModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 transition-all duration-300 opacity-0 pointer-events-none">
+    <div class="relative w-full max-w-lg bg-noir border border-gold-400/40 rounded-3xl p-6 sm:p-8 glass-noir shadow-2xl space-y-4">
+      <button onclick="closePolicyModal()" class="absolute top-4 right-4 text-zinc-400 hover:text-white text-2xl p-1 cursor-pointer">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="w-12 h-12 rounded-full bg-gold-400/10 text-gold-300 flex items-center justify-center text-xl border border-gold-400/30" id="policyIcon">
+        <i class="fa-solid fa-file-contract"></i>
+      </div>
+      <h3 class="font-serif text-xl font-bold text-white" id="policyTitle">Atelier Policy</h3>
+      <div class="text-xs text-zinc-300 leading-relaxed space-y-2 max-h-[50vh] overflow-y-auto" id="policyBody">
+        <!-- Dynamic Policy content -->
+      </div>
+      <button onclick="closePolicyModal()" class="w-full py-3 rounded-full gold-button-gradient text-noir font-bold text-xs uppercase tracking-wider cursor-pointer">
+        Understood
+      </button>
+    </div>
+  </div>
+
+  <!-- ================= TOAST NOTIFICATION CONTAINER ================= -->
+  <div id="toastContainer" class="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+  <!-- ================= SCRIPT LOGIC (ENGINE & INTERACTION) ================= -->
+  <script>
+    // ==========================================
+    // 0. INITIALIZE LENIS SMOOTH SCROLL
+    // ==========================================
+    let lenis = null;
+    try {
+      if (typeof Lenis !== 'undefined') {
+        lenis = new Lenis({
+          duration: 1.0,
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          smoothWheel: true,
+          touchMultiplier: 1.5,
+          infinite: false,
+        });
+
+        function raf(time) {
+          lenis.raf(time);
+          requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        // Connect anchor clicks to Lenis smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+            const targetId = this.getAttribute('href');
+            if (targetId && targetId !== '#') {
+              const targetElem = document.querySelector(targetId);
+              if (targetElem) {
+                e.preventDefault();
+                lenis.scrollTo(targetElem, { offset: -70 });
+              }
+            }
+          });
+        });
+      }
+    } catch (e) {
+      console.warn("Smooth scroll initialization skipped:", e);
+    }
+
+    // ==========================================
+    // 1. COMPREHENSIVE PRODUCT DATABASE WITH DUAL PATH ASSETS
+    // ==========================================
+    const PRODUCTS = [
+      {
+        id: "p1",
+        title: "Sovereign Amber Noire",
+        category: "perfumes",
+        tagline: "Extrait de Parfum • 35% Pure Oil Concentration",
+        pricePKR: 38500,
+        priceUSD: 138,
+        rating: 4.98,
+        reviewsCount: 342,
+        image: "/campaign/2026/zulvera/perfume-amber.jpg",
+        fallbackImage: "images/perfume-amber.jpg",
+        badge: "Bestseller",
+        notes: "Smoked Cambodian Agarwood, Rare Ambergris, Madagascar Bourbon Vanilla, Damask Rose",
+        volume: "100ml / 3.4 FL. OZ.",
+        description: "An intoxicating oriental elixir that opens with celestial Calabrian bergamot, dissolving slowly into smoky heartwoods and sensual ambergris. Bottled in heavy fluted black crystal with a 24k gold engraved crest.",
+        inStock: true
+      },
+      {
+        id: "p2",
+        title: "Royal Elysium Blanche",
+        category: "perfumes",
+        tagline: "Floral Extrait • Sensual Daytime Radiance",
+        pricePKR: 32000,
+        priceUSD: 115,
+        rating: 4.95,
+        reviewsCount: 218,
+        image: "/campaign/2026/zulvera/perfume-white.jpg",
+        fallbackImage: "images/perfume-white.jpg",
+        badge: "Limited Drop",
+        notes: "Grasse Jasmine, Italian Neroli, White Musk, Solar Amber, Pink Peppercorn",
+        volume: "100ml / 3.4 FL. OZ.",
+        description: "Pure bottled aristocracy. An ethereal white floral bouquet accented by crisp Italian neroli and luminous solar musks that project a clean, aristocratic aura from dusk to dawn.",
+        inStock: true
+      },
+      {
+        id: "p3",
+        title: "Imperial Saffron & Santal",
+        category: "perfumes",
+        tagline: "Warm Woody Extrait • Unisex Grandeur",
+        pricePKR: 36000,
+        priceUSD: 129,
+        rating: 4.96,
+        reviewsCount: 189,
+        image: "/campaign/2026/zulvera/saffron-santal.jpg",
+        fallbackImage: "images/saffron-santal.jpg",
+        badge: "New Release",
+        notes: "Kashmiri Red Saffron, Mysore Sandalwood, Cardamom Pods, Cedarwood Smoke",
+        volume: "100ml / 3.4 FL. OZ.",
+        description: "A tribute to royal subcontinental courts. Hand-picked Kashmiri saffron threads married to creamy vintage Mysore sandalwood for an enveloping, majestic presence.",
+        inStock: true
+      },
+      {
+        id: "p4",
+        title: "24K Cellular Radiance Saffron Elixir",
+        category: "skincare",
+        tagline: "Bioactive Gold Infusion • Cellular Youth Serum",
+        pricePKR: 19500,
+        priceUSD: 70,
+        rating: 4.99,
+        reviewsCount: 456,
+        image: "/campaign/2026/zulvera/gold-serum.jpg",
+        fallbackImage: "images/gold-serum.jpg",
+        badge: "Award Winner",
+        notes: "Active 24K Gold Micro-flakes, Botanical Bakuchiol, Cold-Pressed Rosehip, Squalane",
+        volume: "50ml / 1.7 FL. OZ.",
+        description: "A multi-corrective facial nectar. Infused with floating 24K biological gold leaf flakes and organic Kashmiri saffron to accelerate cell regeneration, smooth fine lines, and impart a goddess-like natural dew.",
+        inStock: true
+      },
+      {
+        id: "p5",
+        title: "Opulence Velvet Peptide Infusion Cream",
+        category: "skincare",
+        tagline: "Triple Peptide Complex • Deep Barrier Restorative",
+        pricePKR: 22500,
+        priceUSD: 81,
+        rating: 4.93,
+        reviewsCount: 164,
+        image: "/campaign/2026/zulvera/peptide-cream.jpg",
+        fallbackImage: "images/peptide-cream.jpg",
+        badge: "Staff Pick",
+        notes: "Copper Peptides, Ceramides NP/AP, Snow Mushroom Polysaccharides, Shea Butter",
+        volume: "60ml / 2.0 FL. OZ.",
+        description: "Velvety, rich, and instantly comforting. This luxurious restorative cream cushions dry and stressed complexions, locking in 72 hours of continuous hydration while sculpting firmness.",
+        inStock: true
+      },
+      {
+        id: "p6",
+        title: "Rose Quartz Dual Facial Sculptor & Roller",
+        category: "tools",
+        tagline: "Handcrafted Brazilian Crystal • Silent Gliding Mechanism",
+        pricePKR: 8500,
+        priceUSD: 31,
+        rating: 4.97,
+        reviewsCount: 610,
+        image: "/campaign/2026/zulvera/quartz-roller.jpg",
+        fallbackImage: "images/quartz-roller.jpg",
+        badge: "Essential",
+        notes: "100% Grade AAA Solid Brazilian Rose Quartz, Rose Gold Zinc Alloy Frame",
+        volume: "Includes Velvet Travel Pouch",
+        description: "Crafted from raw, ethically-mined Brazilian rose quartz. Features dual rolling heads engineered to drain fluid retention, relieve facial tension, and enhance skincare absorption.",
+        inStock: true
+      },
+      {
+        id: "p7",
+        title: "Imperial Black Obsidian Gua Sha Board",
+        category: "tools",
+        tagline: "Volcanic Mineral Contour • Chiseled Jawline Tool",
+        pricePKR: 6500,
+        priceUSD: 24,
+        rating: 4.92,
+        reviewsCount: 304,
+        image: "/campaign/2026/zulvera/obsidian-guasha.jpg",
+        fallbackImage: "images/obsidian-guasha.jpg",
+        badge: "Hot Ritual",
+        notes: "Raw Natural Volcanic Obsidian Glass, Ergonomic Comfort Ridges",
+        volume: "Hard Presentation Box Included",
+        description: "The ultimate tool for razor-sharp facial contouring. High thermal conductivity holds cool temperatures naturally to de-puff under-eye hollows and release jaw stress.",
+        inStock: true
+      },
+      {
+        id: "p8",
+        title: "Precision Artisan Grooming Instrument Kit",
+        category: "tools",
+        tagline: "Japanese 440C Stainless Steel • Luxury Set",
+        pricePKR: 14500,
+        priceUSD: 52,
+        rating: 4.96,
+        reviewsCount: 220,
+        image: "/campaign/2026/zulvera/grooming-kit.jpg",
+        fallbackImage: "images/grooming-kit.jpg",
+        badge: "Exclusive",
+        notes: "Japanese High-Carbon 440C Steel, Matte Obsidian PVD Coating, Calf Leather Pouch",
+        volume: "Precision Hand-Ground Tools",
+        description: "Hand-sharpened Japanese steel manicure, brow shaping, and daily grooming instruments encased in genuine pebble-grain calf leather with gold stitching.",
+        inStock: true
+      }
+    ];
+
+    // ==========================================
+    // 2. APPLICATION STATE
+    // ==========================================
+    let currentCurrency = 'PKR';
+    let cart = [];
+    let wishlist = [];
+    let activeCategory = 'all';
+    let searchQuery = '';
+    let sortMethod = 'featured';
+    let appliedCoupon = null;
+
+    try {
+      const savedCart = localStorage.getItem('zulvera_cart');
+      if (savedCart) cart = JSON.parse(savedCart);
+      const savedWish = localStorage.getItem('zulvera_wishlist');
+      if (savedWish) wishlist = JSON.parse(savedWish);
+    } catch(e) {
+      console.warn("Storage access notice:", e);
+    }
+
+    // ==========================================
+    // 3. CURRENCY FORMATTER & SWITCHER
+    // ==========================================
+    function formatMoney(amountPKR, amountUSD) {
+      if (currentCurrency === 'USD') {
+        const val = amountUSD !== undefined ? amountUSD : Math.round(amountPKR / 278);
+        return `$${val.toLocaleString()}`;
+      } else {
+        return `₨ ${amountPKR.toLocaleString()}`;
+      }
+    }
+
+    function toggleCurrency() {
+      currentCurrency = currentCurrency === 'PKR' ? 'USD' : 'PKR';
+      const curLabel = document.getElementById('currentCurrencyLabel');
+      if (curLabel) curLabel.innerText = currentCurrency === 'PKR' ? 'PKR (₨)' : 'USD ($)';
+      
+      const mobIndicator = document.getElementById('mobileTopCurrencyIndicator');
+      if (mobIndicator) mobIndicator.innerText = currentCurrency;
+
+      const mobLabel = document.getElementById('mobileCurrencyDisplay');
+      if (mobLabel) mobLabel.innerText = currentCurrency === 'PKR' ? 'PKR (₨)' : 'USD ($)';
+      
+      const thresholdText = document.getElementById('bannerThresholdText');
+      if (thresholdText) {
+        thresholdText.innerText = currentCurrency === 'USD' ? '$110 / ₨ 30,000' : '₨ 30,000 / $110';
+      }
+
+      // Update Hero display
+      const heroTag = document.getElementById('heroPriceTag');
+      if (heroTag) {
+        if (currentCurrency === 'USD') {
+          heroTag.innerHTML = `$138 <span class="line-through text-zinc-500 text-[11px]">$162</span>`;
+        } else {
+          heroTag.innerHTML = `₨ 38,500 <span class="line-through text-zinc-500 text-[11px]">₨ 45,000</span>`;
+        }
+      }
+
+      renderProducts();
+      renderCart();
+      showToast(`Currency updated to ${currentCurrency}`);
+    }
+
+    // ==========================================
+    // 4. RENDER PRODUCTS
+    // ==========================================
+    function renderProducts() {
+      const grid = document.getElementById('productsGrid');
+      const noFound = document.getElementById('noProductsFound');
+      if (!grid) return;
+
+      let list = PRODUCTS.filter(p => {
+        const matchesCategory = activeCategory === 'all' || p.category === activeCategory;
+        const matchesSearch = !searchQuery || 
+          p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          p.notes.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          p.tagline.toLowerCase().includes(searchQuery.toLowerCase());
+        return matchesCategory && matchesSearch;
+      });
+
+      if (sortMethod === 'price-asc') {
+        list.sort((a, b) => (currentCurrency === 'USD' ? a.priceUSD - b.priceUSD : a.pricePKR - b.pricePKR));
+      } else if (sortMethod === 'price-desc') {
+        list.sort((a, b) => (currentCurrency === 'USD' ? b.priceUSD - a.priceUSD : b.pricePKR - a.pricePKR));
+      } else if (sortMethod === 'rating') {
+        list.sort((a, b) => b.rating - a.rating);
+      }
+
+      if (list.length === 0) {
+        grid.innerHTML = '';
+        noFound.classList.remove('hidden');
+        return;
+      } else {
+        noFound.classList.add('hidden');
+      }
+
+      grid.innerHTML = list.map(product => {
+        const priceStr = formatMoney(product.pricePKR, product.priceUSD);
+        const isWish = wishlist.includes(product.id);
+
+        return `
+          <div class="luxury-card group rounded-3xl overflow-hidden glass-noir border border-gold-400/20 flex flex-col justify-between relative bg-emeraldDark/30">
+            <!-- Top Badges -->
+            <div class="absolute top-3 left-3 right-3 z-20 flex items-center justify-between pointer-events-none">
+              <span class="px-2.5 sm:px-3 py-1 rounded-full text-[9px] sm:text-[10px] font-mono uppercase tracking-widest bg-black/80 border border-gold-400/30 text-gold-300 font-bold backdrop-blur-md">
+                ${product.badge}
+              </span>
+              <button onclick="toggleWishlist('${product.id}')" class="pointer-events-auto w-8 h-8 rounded-full bg-black/60 hover:bg-gold-400/20 text-zinc-300 hover:text-gold-300 flex items-center justify-center transition-all border border-white/10 cursor-pointer" title="Add to Wishlist" aria-label="Add to Wishlist">
+                <i class="${isWish ? 'fa-solid text-rose-500' : 'fa-regular'} fa-heart text-xs"></i>
+              </button>
+            </div>
+
+            <!-- Image Container with Fallback & Quick View -->
+            <div class="relative h-60 sm:h-64 w-full overflow-hidden image-zoom-wrap bg-black/50 cursor-pointer" onclick="openQuickView('${product.id}')">
+              <img src="${product.image}" onerror="this.onerror=null; this.src='${product.fallbackImage}';" alt="${product.title}" class="w-full h-full object-cover object-center" loading="lazy">
+              <div class="absolute inset-0 bg-gradient-to-t from-noir via-transparent to-transparent opacity-60"></div>
+              
+              <!-- Quick View Floating Button on Hover -->
+              <div class="absolute inset-0 hidden sm:flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40 backdrop-blur-[2px]">
+                <span class="px-4 py-2 rounded-full glass-noir border border-gold-400/60 text-xs font-mono text-gold-200 tracking-wider flex items-center gap-2 transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                  <i class="fa-regular fa-eye"></i> Quick View
+                </span>
+              </div>
+            </div>
+
+            <!-- Product Details Content -->
+            <div class="p-4 sm:p-5 flex-1 flex flex-col justify-between space-y-3">
+              <div>
+                <div class="flex items-center justify-between text-[10px] sm:text-[11px] font-mono text-zinc-400">
+                  <span class="uppercase tracking-wider text-gold-400/90">${product.category}</span>
+                  <span class="flex items-center gap-1 text-gold-300">
+                    <i class="fa-solid fa-star text-[10px]"></i> ${product.rating}
+                  </span>
+                </div>
+
+                <h3 class="font-serif text-base sm:text-lg font-bold text-white mt-1 group-hover:text-gold-200 transition-colors line-clamp-1" title="${product.title}">
+                  ${product.title}
+                </h3>
+
+                <p class="text-xs text-zinc-400 line-clamp-2 mt-1 font-light leading-relaxed">
+                  ${product.tagline}
+                </p>
+              </div>
+
+              <!-- Price & Add Button -->
+              <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+                <div>
+                  <span class="text-[9px] sm:text-[10px] font-mono text-zinc-500 block">Price</span>
+                  <span class="font-mono text-sm sm:text-base font-bold text-gold-300">${priceStr}</span>
+                </div>
+                
+                <button onclick="quickAddToCart('${product.id}')" class="px-3.5 sm:px-4 py-2 rounded-full gold-button-gradient text-noir font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 shadow-md hover:shadow-gold-500/20 cursor-pointer">
+                  <i class="fa-solid fa-plus text-[10px]"></i>
+                  <span>Add</span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+        `;
+      }).join('');
+    }
+
+    function filterCategory(cat) {
+      activeCategory = cat;
+      document.querySelectorAll('.cat-btn').forEach(btn => {
+        if (btn.getAttribute('data-category') === cat) {
+          btn.className = 'cat-btn px-4 py-2 rounded-full text-xs font-medium tracking-wider uppercase whitespace-nowrap transition-all bg-gold-400 text-noir font-bold shadow-md cursor-pointer shrink-0';
+        } else {
+          btn.className = 'cat-btn px-4 py-2 rounded-full text-xs font-medium tracking-wider uppercase whitespace-nowrap transition-all bg-emeraldMid/40 text-zinc-300 hover:text-white border border-white/10 cursor-pointer shrink-0';
+        }
+      });
+      renderProducts();
+    }
+
+    function handleLiveSearch(val) {
+      searchQuery = val.trim();
+      renderProducts();
+    }
+
+    function handleSortChange(val) {
+      sortMethod = val;
+      renderProducts();
+    }
+
+    // ==========================================
+    // 5. SHOPPING CART SYSTEM
+    // ==========================================
+    function quickAddToCart(productId) {
+      const product = PRODUCTS.find(p => p.id === productId);
+      if (!product) return;
+
+      const existing = cart.find(item => item.id === productId);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({
+          id: product.id,
+          title: product.title,
+          pricePKR: product.pricePKR,
+          priceUSD: product.priceUSD,
+          image: product.image,
+          fallbackImage: product.fallbackImage,
+          volume: product.volume,
+          quantity: 1
+        });
+      }
+
+      saveCart();
+      renderCart();
+      toggleCartDrawer(true);
+      showToast(`Added ${product.title} to your bag`);
+    }
+
+    function updateCartQuantity(productId, delta) {
+      const item = cart.find(i => i.id === productId);
+      if (!item) return;
+
+      item.quantity += delta;
+      if (item.quantity <= 0) {
+        cart = cart.filter(i => i.id !== productId);
+      }
+
+      saveCart();
+      renderCart();
+    }
+
+    function removeCartItem(productId) {
+      cart = cart.filter(i => i.id !== productId);
+      saveCart();
+      renderCart();
+      showToast("Item removed from your bag");
+    }
+
+    function saveCart() {
+      try {
+        localStorage.setItem('zulvera_cart', JSON.stringify(cart));
+      } catch(e) {}
+    }
+
+    function renderCart() {
+      const cartCountBadge = document.getElementById('cartCountBadge');
+      const drawerItemCountPill = document.getElementById('drawerItemCountPill');
+      const cartItemsList = document.getElementById('cartItemsList');
+      const cartSubtotalVal = document.getElementById('cartSubtotalVal');
+      const cartDiscountVal = document.getElementById('cartDiscountVal');
+      const cartShippingVal = document.getElementById('cartShippingVal');
+      const cartGrandTotalVal = document.getElementById('cartGrandTotalVal');
+      const checkoutPayableTotal = document.getElementById('checkoutPayableTotal');
+      const btnProceedCheckout = document.getElementById('btnProceedCheckout');
+      
+      const totalCount = cart.reduce((acc, item) => acc + item.quantity, 0);
+      if (cartCountBadge) cartCountBadge.innerText = totalCount;
+      if (drawerItemCountPill) drawerItemCountPill.innerText = `${totalCount} ${totalCount === 1 ? 'Creation' : 'Creations'}`;
+
+      if (cart.length === 0) {
+        if (cartItemsList) {
+          cartItemsList.innerHTML = `
+            <div class="h-full flex flex-col items-center justify-center text-center p-6 space-y-4">
+              <div class="w-14 h-14 rounded-full bg-emeraldMid/50 text-gold-400 flex items-center justify-center text-xl border border-gold-400/20">
+                <i class="fa-solid fa-bag-shopping"></i>
+              </div>
+              <h4 class="font-serif text-base sm:text-lg font-bold text-white">Your Bag is Empty</h4>
+              <p class="text-xs text-zinc-400 leading-relaxed max-w-xs">
+                Explore our haute parfumerie, gold botanical elixirs, and precision tools to elevate your senses.
+              </p>
+              <button onclick="toggleCartDrawer(false)" class="mt-2 px-6 py-2.5 rounded-full gold-button-gradient text-noir text-xs font-bold uppercase tracking-wider cursor-pointer">
+                Discover Creations
+              </button>
+            </div>
+          `;
+        }
+        if (cartSubtotalVal) cartSubtotalVal.innerText = formatMoney(0, 0);
+        if (cartDiscountVal) cartDiscountVal.innerText = `-${formatMoney(0, 0)}`;
+        if (cartShippingVal) cartShippingVal.innerText = formatMoney(0, 0);
+        if (cartGrandTotalVal) cartGrandTotalVal.innerText = formatMoney(0, 0);
+        if (checkoutPayableTotal) checkoutPayableTotal.innerText = formatMoney(0, 0);
+        if (btnProceedCheckout) btnProceedCheckout.disabled = true;
+
+        updateShippingProgress(0);
+        return;
+      }
+
+      if (btnProceedCheckout) btnProceedCheckout.disabled = false;
+
+      // Render Items
+      if (cartItemsList) {
+        cartItemsList.innerHTML = cart.map(item => {
+          const itemPrice = formatMoney(item.pricePKR * item.quantity, item.priceUSD * item.quantity);
+          return `
+            <div class="flex gap-3.5 p-3 sm:p-3.5 rounded-2xl bg-black/40 border border-white/5 relative group hover:border-gold-400/30 transition-all">
+              <div class="w-16 h-18 sm:h-20 rounded-xl overflow-hidden bg-emeraldDark shrink-0 border border-white/10">
+                <img src="${item.image}" onerror="this.onerror=null; this.src='${item.fallbackImage || item.image}';" alt="${item.title}" class="w-full h-full object-cover">
+              </div>
+              <div class="flex-1 flex flex-col justify-between">
+                <div class="flex justify-between items-start gap-2">
+                  <div>
+                    <h4 class="font-serif text-xs sm:text-sm font-bold text-white line-clamp-1">${item.title}</h4>
+                    <span class="text-[10px] font-mono text-zinc-400 block">${item.volume || '100ml'}</span>
+                  </div>
+                  <button onclick="removeCartItem('${item.id}')" class="text-zinc-500 hover:text-rose-400 text-xs p-1 cursor-pointer" title="Remove item">
+                    <i class="fa-regular fa-trash-can"></i>
+                  </button>
+                </div>
+
+                <div class="flex items-center justify-between pt-2">
+                  <!-- Quantity selector -->
+                  <div class="flex items-center border border-gold-400/30 rounded-lg overflow-hidden bg-black/50">
+                    <button onclick="updateCartQuantity('${item.id}', -1)" class="w-6 h-6 flex items-center justify-center text-zinc-400 hover:text-white text-xs cursor-pointer">
+                      <i class="fa-solid fa-minus text-[8px]"></i>
+                    </button>
+                    <span class="w-6 text-center font-mono text-xs font-bold text-gold-300">${item.quantity}</span>
+                    <button onclick="updateCartQuantity('${item.id}', 1)" class="w-6 h-6 flex items-center justify-center text-zinc-400 hover:text-white text-xs cursor-pointer">
+                      <i class="fa-solid fa-plus text-[8px]"></i>
+                    </button>
+                  </div>
+
+                  <span class="font-mono text-xs font-bold text-white">${itemPrice}</span>
+                </div>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      // Calculation
+      const subtotalPKR = cart.reduce((acc, item) => acc + (item.pricePKR * item.quantity), 0);
+      const subtotalUSD = cart.reduce((acc, item) => acc + (item.priceUSD * item.quantity), 0);
+
+      let discountPKR = 0;
+      let discountUSD = 0;
+      if (appliedCoupon) {
+        discountPKR = Math.round(subtotalPKR * appliedCoupon.discountPercent);
+        discountUSD = Math.round(subtotalUSD * appliedCoupon.discountPercent);
+      }
+
+      const thresholdPKR = 30000;
+      const isFreeShipping = subtotalPKR >= thresholdPKR;
+      const shippingPKR = isFreeShipping ? 0 : 500;
+      const shippingUSD = isFreeShipping ? 0 : 5;
+
+      const grandTotalPKR = subtotalPKR - discountPKR + shippingPKR;
+      const grandTotalUSD = subtotalUSD - discountUSD + shippingUSD;
+
+      if (cartSubtotalVal) cartSubtotalVal.innerText = formatMoney(subtotalPKR, subtotalUSD);
+      if (cartDiscountVal) cartDiscountVal.innerText = `-${formatMoney(discountPKR, discountUSD)}`;
+      if (cartShippingVal) cartShippingVal.innerText = isFreeShipping ? "COMPLIMENTARY" : formatMoney(shippingPKR, shippingUSD);
+      if (cartGrandTotalVal) cartGrandTotalVal.innerText = formatMoney(grandTotalPKR, grandTotalUSD);
+      if (checkoutPayableTotal) checkoutPayableTotal.innerText = formatMoney(grandTotalPKR, grandTotalUSD);
+
+      updateShippingProgress(subtotalPKR, thresholdPKR);
+    }
+
+    function updateShippingProgress(subtotal, threshold = 30000) {
+      const text = document.getElementById('shippingProgressText');
+      const bar = document.getElementById('shippingProgressBar');
+      const percentLabel = document.getElementById('shippingProgressPercent');
+      if (!text || !bar) return;
+
+      if (subtotal >= threshold) {
+        text.innerHTML = `<span class="text-emerald-400 font-bold">✓ Unlocked Complimentary Express Delivery</span>`;
+        bar.style.width = '100%';
+        if (percentLabel) percentLabel.innerText = '100%';
+      } else {
+        const remaining = threshold - subtotal;
+        const pct = Math.min(100, Math.round((subtotal / threshold) * 100));
+        text.innerText = currentCurrency === 'USD' 
+          ? `Add $${Math.round(remaining / 278)} more for Free Delivery` 
+          : `Add ₨ ${remaining.toLocaleString()} more for Free Delivery`;
+        bar.style.width = `${pct}%`;
+        if (percentLabel) percentLabel.innerText = `${pct}%`;
+      }
+    }
+
+    function toggleCartDrawer(open) {
+      const drawer = document.getElementById('cartDrawer');
+      const backdrop = document.getElementById('cartDrawerBackdrop');
+      if (open) {
+        drawer.classList.remove('translate-x-full');
+        backdrop.classList.remove('opacity-0', 'pointer-events-none');
+        document.body.style.overflow = 'hidden';
+      } else {
+        drawer.classList.add('translate-x-full');
+        backdrop.classList.add('opacity-0', 'pointer-events-none');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function applyCoupon() {
+      const input = document.getElementById('couponInput');
+      const badge = document.getElementById('couponAppliedBadge');
+      const code = input.value.trim().toUpperCase();
+
+      if (code === 'ROYALNOIR') {
+        appliedCoupon = { code: 'ROYALNOIR', discountPercent: 0.15 };
+        badge.classList.remove('hidden');
+        renderCart();
+        showToast("Privilege code 'ROYALNOIR' applied (-15%)");
+      } else {
+        showToast("Invalid or expired coupon. Try ROYALNOIR");
+      }
+    }
+
+    function removeCoupon() {
+      appliedCoupon = null;
+      document.getElementById('couponAppliedBadge').classList.add('hidden');
+      document.getElementById('couponInput').value = '';
+      renderCart();
+      showToast("Coupon removed");
+    }
+
+    // ==========================================
+    // 6. QUICK VIEW MODAL
+    // ==========================================
+    function openQuickView(productId) {
+      const p = PRODUCTS.find(item => item.id === productId);
+      if (!p) return;
+
+      const modal = document.getElementById('quickViewModal');
+      const content = document.getElementById('quickViewContent');
+      const priceStr = formatMoney(p.pricePKR, p.priceUSD);
+
+      content.innerHTML = `
+        <div class="relative rounded-2xl overflow-hidden border border-gold-400/30 bg-black h-72 sm:h-96">
+          <img src="${p.image}" onerror="this.onerror=null; this.src='${p.fallbackImage}';" alt="${p.title}" class="w-full h-full object-cover">
+          <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-[10px] font-mono uppercase tracking-widest bg-black/80 border border-gold-400/30 text-gold-300 font-bold">
+            ${p.badge}
+          </span>
+        </div>
+
+        <div class="space-y-3.5">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-gold-400">${p.category}</span>
+            <h3 class="font-serif text-xl sm:text-2xl font-bold text-white mt-0.5">${p.title}</h3>
+            <p class="text-xs text-zinc-300 font-mono mt-0.5">${p.volume || '100ml / 3.4 FL. OZ.'}</p>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <div class="flex text-gold-400 text-xs">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <span class="text-xs font-mono text-zinc-400">${p.rating} (${p.reviewsCount} reviews)</span>
+          </div>
+
+          <div class="font-mono text-xl sm:text-2xl font-bold text-gold-300">
+            ${priceStr}
+          </div>
+
+          <p class="text-xs text-zinc-300 leading-relaxed font-light">
+            ${p.description}
+          </p>
+
+          <div class="p-3 rounded-xl bg-black/50 border border-gold-400/20 text-xs font-mono space-y-1">
+            <span class="text-gold-400 font-bold uppercase text-[10px] tracking-wider block">Signature Notes & Specs:</span>
+            <p class="text-zinc-300 text-[11px]">${p.notes}</p>
+          </div>
+
+          <div class="pt-2 flex items-center gap-3">
+            <button onclick="quickAddToCart('${p.id}'); closeQuickView();" class="flex-1 py-3.5 rounded-full gold-button-gradient text-noir font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 shadow-xl cursor-pointer">
+              <i class="fa-solid fa-bag-shopping"></i>
+              <span>Add to Bag</span>
+            </button>
+            <button onclick="toggleWishlist('${p.id}')" class="p-3.5 rounded-full border border-gold-400/40 hover:bg-gold-400/20 text-zinc-300 transition-colors cursor-pointer" aria-label="Add to Wishlist">
+              <i class="${wishlist.includes(p.id) ? 'fa-solid text-rose-500' : 'fa-regular'} fa-heart"></i>
+            </button>
+          </div>
+        </div>
+      `;
+
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeQuickView() {
+      const modal = document.getElementById('quickViewModal');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      document.body.style.overflow = '';
+    }
+
+    // ==========================================
+    // 7. CHECKOUT & ORDER LOGIC
+    // ==========================================
+    function openCheckoutModal() {
+      if (cart.length === 0) {
+        showToast("Your shopping bag is empty");
+        return;
+      }
+      toggleCartDrawer(false);
+      const modal = document.getElementById('checkoutModal');
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCheckoutModal() {
+      const modal = document.getElementById('checkoutModal');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      document.body.style.overflow = '';
+    }
+
+    function handlePlaceOrder(e) {
+      e.preventDefault();
+      const randomOrderNum = `#ZLV-${Math.floor(100000 + Math.random() * 900000)}`;
+      const grandTotalVal = document.getElementById('cartGrandTotalVal').innerText;
+
+      document.getElementById('successOrderNumber').innerText = randomOrderNum;
+      document.getElementById('successOrderAmount').innerText = grandTotalVal;
+
+      cart = [];
+      saveCart();
+      renderCart();
+
+      closeCheckoutModal();
+      const successModal = document.getElementById('orderSuccessModal');
+      successModal.classList.remove('opacity-0', 'pointer-events-none');
+    }
+
+    function closeOrderSuccessModal() {
+      const modal = document.getElementById('orderSuccessModal');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      document.body.style.overflow = '';
+    }
+
+    // ==========================================
+    // 8. WISHLIST TOGGLE & FILTER VIEW
+    // ==========================================
+    function toggleWishlist(productId) {
+      const index = wishlist.indexOf(productId);
+      if (index > -1) {
+        wishlist.splice(index, 1);
+        showToast("Removed from your wishlist");
+      } else {
+        wishlist.push(productId);
+        showToast("Added to your wishlist");
+      }
+      try {
+        localStorage.setItem('zulvera_wishlist', JSON.stringify(wishlist));
+      } catch(e) {}
+
+      updateWishlistBadge();
+      renderProducts();
+    }
+
+    function updateWishlistBadge() {
+      const badge = document.getElementById('wishlistCountBadge');
+      if (!badge) return;
+      if (wishlist.length > 0) {
+        badge.innerText = wishlist.length;
+        badge.classList.remove('hidden');
+      } else {
+        badge.classList.add('hidden');
+      }
+    }
+
+    function openWishlistModal() {
+      if (wishlist.length === 0) {
+        showToast("Your wishlist is currently empty");
+        return;
+      }
+      activeCategory = 'all';
+      searchQuery = '';
+      const input = document.getElementById('liveSearchInput');
+      if (input) input.value = '';
+      
+      const grid = document.getElementById('productsGrid');
+      const list = PRODUCTS.filter(p => wishlist.includes(p.id));
+      
+      grid.innerHTML = list.map(product => {
+        const priceStr = formatMoney(product.pricePKR, product.priceUSD);
+        return `
+          <div class="luxury-card group rounded-3xl overflow-hidden glass-noir border border-gold-400/40 p-4 space-y-3">
+            <img src="${product.image}" onerror="this.onerror=null; this.src='${product.fallbackImage}';" class="w-full h-48 object-cover rounded-xl">
+            <h4 class="font-serif text-base font-bold text-white">${product.title}</h4>
+            <div class="flex justify-between items-center">
+              <span class="font-mono text-gold-300 font-bold">${priceStr}</span>
+              <button onclick="quickAddToCart('${product.id}')" class="px-3.5 py-1.5 rounded-full gold-button-gradient text-noir text-xs font-bold cursor-pointer">Add to Bag</button>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      const catalogSection = document.getElementById('catalog');
+      if (catalogSection) {
+        if (lenis) {
+          lenis.scrollTo(catalogSection, { offset: -70 });
+        } else {
+          catalogSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+      showToast(`Showing ${wishlist.length} item(s) in your Wishlist`);
+    }
+
+    // ==========================================
+    // 9. SEARCH MODAL OVERLAY (CMD+K / SEARCH BUTTON)
+    // ==========================================
+    function openSearchModal() {
+      const modal = document.getElementById('searchOverlayModal');
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      const input = document.getElementById('modalSearchInput');
+      input.focus();
+      handleModalSearch('');
+    }
+
+    function closeSearchModal() {
+      const modal = document.getElementById('searchOverlayModal');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+    }
+
+    function handleModalSearch(val) {
+      const container = document.getElementById('modalSearchResults');
+      const q = val.trim().toLowerCase();
+      
+      const matched = PRODUCTS.filter(p => 
+        !q || 
+        p.title.toLowerCase().includes(q) || 
+        p.category.toLowerCase().includes(q) || 
+        p.notes.toLowerCase().includes(q)
+      );
+
+      if (matched.length === 0) {
+        container.innerHTML = `<p class="text-zinc-500 text-xs font-mono text-center py-6">No matching creations found.</p>`;
+        return;
+      }
+
+      container.innerHTML = matched.map(p => `
+        <div onclick="openQuickView('${p.id}'); closeSearchModal();" class="flex items-center gap-3.5 p-3 rounded-2xl glass-noir border border-white/5 hover:border-gold-400/40 cursor-pointer transition-all">
+          <img src="${p.image}" onerror="this.onerror=null; this.src='${p.fallbackImage}';" class="w-12 h-14 rounded-lg object-cover">
+          <div class="flex-1 min-w-0">
+            <h4 class="font-serif text-xs sm:text-sm font-bold text-white truncate">${p.title}</h4>
+            <p class="text-[10px] text-zinc-400 font-mono truncate">${p.tagline}</p>
+          </div>
+          <span class="font-mono text-xs text-gold-300 font-bold shrink-0">${formatMoney(p.pricePKR, p.priceUSD)}</span>
+        </div>
+      `).join('');
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        openSearchModal();
+      }
+      if (e.key === 'Escape') {
+        closeSearchModal();
+        closeQuickView();
+        closeCheckoutModal();
+        closePolicyModal();
+        toggleCartDrawer(false);
+      }
+    });
+
+    // ==========================================
+    // 10. MOBILE MENU TOGGLE
+    // ==========================================
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const content = document.getElementById('mobileMenuContent');
+      if (menu.classList.contains('pointer-events-none')) {
+        menu.classList.remove('opacity-0', 'pointer-events-none');
+        content.classList.remove('-translate-x-full');
+      } else {
+        menu.classList.add('opacity-0', 'pointer-events-none');
+        content.classList.add('-translate-x-full');
+      }
+    }
+
+    // ==========================================
+    // 11. POLICY MODALS & TRACKING (WORKING MODALS)
+    // ==========================================
+    const POLICIES = {
+      shipping: {
+        title: "Insured Shipping & Return Guarantee",
+        icon: "fa-solid fa-truck-ramp-box",
+        body: `
+          <p><strong>Dispatch Velocity:</strong> All confirmed orders are dispatched within 24–48 business hours from our central Lahore dispatch hub.</p>
+          <p><strong>Insured Delivery:</strong> Every parcel is protected with 100% loss & breakage insurance in sealed, tamper-evident presentation boxes.</p>
+          <p><strong>Complimentary Delivery:</strong> Orders exceeding ₨ 30,000 (or $110 USD) receive free express priority transit.</p>
+          <p><strong>14-Day Return Guarantee:</strong> Unopened and intact bottled fragrances and unopened skincare jars may be returned or exchanged within 14 calendar days.</p>
+        `
+      },
+      authenticity: {
+        title: "Seal of Authenticity & Provenance",
+        icon: "fa-solid fa-award",
+        body: `
+          <p><strong>Grasse & Grasse Agronomy:</strong> Zulvera's aromatic essences are distilled in Grasse, France under direct botanical oversight, preserving natural harvest compounds.</p>
+          <p><strong>Wax Seal & Monogram:</strong> Every creation is individually batch-numbered with a stamped wax seal verifying tamper-free preservation.</p>
+          <p><strong>Cruelty Free:</strong> Zulvera products are 100% cruelty free and free of harsh parabens, sulfates, and synthetic dyes.</p>
+        `
+      },
+      cod: {
+        title: "Cash on Delivery (COD) Guidelines",
+        icon: "fa-solid fa-hand-holding-dollar",
+        body: `
+          <p><strong>Nationwide Coverage:</strong> We proudly offer Cash on Delivery across all major cities and districts of Pakistan.</p>
+          <p><strong>Verification:</strong> Our concierge will verify your contact number via automated WhatsApp/SMS dispatch notification prior to courier release.</p>
+          <p><strong>Parcel Inspection:</strong> Couriers allow you to inspect the exterior luxury wax seal before making payment.</p>
+        `
+      }
+    };
+
+    function openPolicyModal(type) {
+      const data = POLICIES[type] || POLICIES.shipping;
+      document.getElementById('policyTitle').innerText = data.title;
+      document.getElementById('policyIcon').innerHTML = `<i class="${data.icon}"></i>`;
+      document.getElementById('policyBody').innerHTML = data.body;
+
+      const modal = document.getElementById('policyModal');
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closePolicyModal() {
+      const modal = document.getElementById('policyModal');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      document.body.style.overflow = '';
+    }
+
+    function openTrackingModal() {
+      const order = prompt("Please enter your 10-digit Zulvera Tracking or Consignment # (e.g. ZLV-2026-9481):");
+      if (order) {
+        showToast(`Order #${order} is verified & in priority courier transit.`);
+      }
+    }
+
+    function handleNewsletterSubmit(e) {
+      e.preventDefault();
+      document.getElementById('newsletterEmail').value = '';
+      document.getElementById('newsletterSuccessMsg').classList.remove('hidden');
+      showToast("Privilege membership granted! Use code: ROYALNOIR");
+    }
+
+    // ==========================================
+    // 12. TOAST NOTIFICATION UTILITY
+    // ==========================================
+    function showToast(msg) {
+      const container = document.getElementById('toastContainer');
+      const toast = document.createElement('div');
+      toast.className = 'pointer-events-auto px-4 py-2.5 rounded-full glass-noir border border-gold-400 text-xs text-white font-mono flex items-center gap-2 shadow-2xl transform translate-y-3 opacity-0 transition-all duration-250';
+      toast.innerHTML = `<i class="fa-solid fa-sparkles text-gold-400"></i> <span>${msg}</span>`;
+      container.appendChild(toast);
+
+      requestAnimationFrame(() => {
+        toast.classList.remove('translate-y-3', 'opacity-0');
+      });
+
+      setTimeout(() => {
+        toast.classList.add('translate-y-3', 'opacity-0');
+        setTimeout(() => toast.remove(), 250);
+      }, 3000);
+    }
+
+    // ==========================================
+    // 13. INITIALIZE ON DOM LOAD
+    // ==========================================
+    window.addEventListener('DOMContentLoaded', () => {
+      renderProducts();
+      renderCart();
+      updateWishlistBadge();
+    });
+  </script>
+
+</body>
+</html>
